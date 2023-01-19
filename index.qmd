@@ -1,11 +1,9 @@
 ---
-title: "Quarto-blank-website"
+title: "EOSE09 - Economy and Society: Regional Development and Growth"
+listing:
+  contents:
+    - "labs/*.qmd"
+    - "lectures/*.qmd"
+    - "resources/*.qmd"
+  type: grid
 ---
-
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```

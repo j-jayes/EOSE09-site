@@ -10,6 +10,9 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+  page-footer:
+    center: |
+      If you have any questions, please feel free to [contact me here {{< fa paper-plane >}}]({{< var email.contact >}})
 
 format: html
 
@@ -17,3 +20,4 @@ execute:
   echo: false
   warning: false
   message: false
+  freeze: auto

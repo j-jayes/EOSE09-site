@@ -2,8 +2,4 @@
 title: "About"
 ---
 
-About this site
-
-```{r}
-1 + 1
-```
+This site holds the Stata labs and one lecture for the course [EOSE09 - Economy and Society: Regional Development and Growth](https://kursplaner.lu.se/pdf/kurs/en/EOSE09), offered at Lund University in Sweden.
