@@ -14,7 +14,13 @@ website:
     center: |
       If you have any questions, please feel free to [contact me here {{< fa paper-plane >}}]({{< var email.contact >}})
 
-format: html
+format:
+  html:
+    theme:
+    - flatly
+    - custom.scss
+    css: styles.css
+    toc: true
 
 execute:
   echo: false

@@ -9,6 +9,7 @@ format:
     code-overflow: wrap
 execute: 
   eval: false
+image: "Lab-1-resources/preview.png"
 ---
 
 ## Purpose

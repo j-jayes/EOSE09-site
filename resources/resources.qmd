@@ -1,5 +1,29 @@
 ---
 title: "Resources"
 image: "resource_logo.png"
+author: "Jonathan Jayes"
 ---
+
+### Stata commands
+
+This [Stata tutorial](StataTutorial.pdf) from Oscar Torres Reyna.
+
+### Useful blog posts
+
+[Asjad Naqvi's mapping guide for Stata part 1](https://medium.com/the-stata-guide/covid-19-visualizations-with-stata-part-4-maps-fbd4fe2642f6)
+
+[Asjad Naqvi's mapping guide for Stata part 2](https://medium.com/the-stata-guide/maps-in-stata-ii-fcb574270269)
+
+[A World Bank blog on mapping in Stata](https://blogs.worldbank.org/impactevaluations/making-visually-appealing-maps-stata-guest-post-asjad-naqvi)
+
+
+### Youtube channels
+
+[Sebastian Wai's channel](https://www.youtube.com/@sebastianwaiecon)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PWFZ_-eQd8I?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+[Econometrics Academy from Ani Katchova](https://www.youtube.com/@econometricsacademy)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YMt5K68ZvjQ?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
