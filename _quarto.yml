@@ -1,0 +1,19 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  favicon: assets/favicon.ico
+  title: "{{< var title >}}"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format: html
+
+execute:
+  echo: false
+  warning: false
+  message: false
