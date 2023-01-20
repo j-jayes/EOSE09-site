@@ -1,7 +1,7 @@
 ---
-title: "Stata Lab 1 Mapping Growth: Basic maps"
+title: "Stata Lab 2 Mapping Growth: Across Space and Time"
 author: Vinzent Ostermeyer, adapted Jonathan Jayes
-date: 2023-01-30
+date: 2023-02-17
 format:
   # pdf:
   #   toc: true
@@ -10,7 +10,7 @@ format:
     code-overflow: wrap
 execute: 
   eval: false
-image: "Lab-1-resources/preview.png"
+image: "Lab-2-resources/preview.png"
 ---
 
 ## Purpose
@@ -25,19 +25,6 @@ You can read the document on this website, or download the same information in [
 
 It will include the commands the we use and the output, as well as some hints and tips that will be useful during your projects, I hope.🤞
 
-## Structure
-
-Today we will be covering the following topics:
-
-1.  Installing basic packages: We will go over how to install the necessary packages in order to run our analysis. This will include packages such as "spmap" and "geo2xy" which will allow us to create maps in Stata.
-
-2.  Data types: We will discuss the different types of data that we will be working with in this lab. Specifically, we will be using time series data from a spreadsheet and map data from a shapefile. It is important to understand the structure and format of these data types in order to properly analyze and visualize them.
-
-3.  Basic mapping: Once we have our data, we will learn how to draw a basic map using the "maps" and "maptools" packages. We will go over how to import the shapefile data, how to define the map scale, and how to add different layers to the map such as points, lines, and polygons.
-
-By the end of this lab, you should have a solid understanding of how to install necessary packages, how to work with different types of data, and how to draw a basic map in Stata.
-
-📊🗺️💻 Let's get started!
 
 ## Getting started
 

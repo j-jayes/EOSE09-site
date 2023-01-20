@@ -6,4 +6,5 @@ listing:
     - "lectures/*.qmd"
     - "resources/*.qmd"
   type: grid
+  sort: "date asc"
 ---
