@@ -1,0 +1,66 @@
+---
+title: "Stata-resources"
+author: "JJayes"
+date: "2023-01-19"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Purpose
+
+Scrape website of Stata for resources and text to make a table.
+
+```{r, eval=FALSE}
+library(tidyverse)
+library(rvest)
+
+get_info <- function(url_in) {
+  url <- url_in
+
+  html <- read_html(url)
+
+  message("Getting info")
+  titles <- html %>%
+    html_nodes("dt") %>%
+    html_nodes("a") %>%
+    html_text() %>%
+    str_squish() %>%
+    as_tibble() %>%
+    rename(title = value) %>%
+    mutate(rn = row_number())
+
+  links <- html %>%
+    html_nodes("dt") %>%
+    html_nodes("a") %>%
+    html_attr("href") %>%
+    as_tibble() %>%
+    rename(link = value) %>%
+    mutate(rn = row_number())
+
+  descs <- html %>%
+    html_nodes("dd") %>%
+    # html_nodes("a") %>%
+    html_text() %>%
+    str_squish() %>%
+    as_tibble() %>%
+    rename(desc = value) %>%
+    filter(!str_detect(desc, "[0-9]+ Users")) %>%
+    mutate(rn = row_number())
+
+  df <- titles %>%
+    inner_join(links) %>%
+    inner_join(descs) %>%
+    select(-rn)
+
+  return(df)
+}
+
+resources <- get_info("https://www.stata.com/links/resources-for-learning-stata/")
+
+resources %>% write_rds("resources/stata-resources.rds")
+
+```
+
