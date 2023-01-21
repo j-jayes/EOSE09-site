@@ -113,7 +113,11 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#install-additional-programs-and-set-up" id="toc-install-additional-programs-and-set-up" class="nav-link" data-scroll-target="#install-additional-programs-and-set-up">Install additional programs and set-up</a></li>
   </ul></li>
+  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types">Data types</a>
+  <ul class="collapse">
   <li><a href="#importing-the-roses-wolf-dataset-from-excel-into-stata" id="toc-importing-the-roses-wolf-dataset-from-excel-into-stata" class="nav-link" data-scroll-target="#importing-the-roses-wolf-dataset-from-excel-into-stata">Importing the Roses-Wolf dataset from Excel into Stata</a></li>
+  <li><a href="#importing-the-shapefiles-into-stata" id="toc-importing-the-shapefiles-into-stata" class="nav-link" data-scroll-target="#importing-the-shapefiles-into-stata">Importing the shapefiles into Stata</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -210,7 +214,7 @@ Note
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-always comment your code
+Always comment your code
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -241,8 +245,35 @@ version 16.1 // version control</code></pre>
 </section>
 </section>
 </section>
-<section id="importing-the-roses-wolf-dataset-from-excel-into-stata" class="level2">
-<h2 class="anchored" data-anchor-id="importing-the-roses-wolf-dataset-from-excel-into-stata">Importing the Roses-Wolf dataset from Excel into Stata</h2>
+<section id="data-types" class="level2">
+<h2 class="anchored" data-anchor-id="data-types">Data types</h2>
+<p>In order to draw a map in Stata, we need to combine the information from our shapefile (which contains the geographic information such as the shape and location of the features on the map) with the information from our spreadsheet (which contains the data we want to display on the map, such as population or income).</p>
+<p>The process of combining these two types of data is called “joining” or “merging” and it allows us to link the attributes from the spreadsheet to the geographic features in the shapefile. Without joining the data, we would only have the shape of the features on the map, but not the information we want to display.</p>
+<p>You are likely familiar with the first type of data, it is a wide dataset in an excel spreadsheet.</p>
+<p>The second is a <code>shapefile</code> - a file that stores the information a software program needs to draw a map.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Shapefiles 🗺️📊💻📂
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A shapefile is a type of data file that is used to store geographic information, such as the location of streets, buildings, and other features on a map. It is a common format used in geographic information systems (GIS) software.</p>
+<p>A shapefile consists of four components with different file extensions:</p>
+<ul>
+<li><p>.shp (shapefile): This file stores the actual geometric data for the features in the map, such as the shape of a street or a building.</p></li>
+<li><p>.shx (shape index): This file stores the index of the geometric data in the .shp file, which is used to quickly access the data in the correct order.</p></li>
+<li><p>.dbf (database file): This file stores the attribute data for the features in the map, such as the name of a street or the population of a building.</p></li>
+<li><p>.prj (projection file): This file stores information about the coordinate system and projection used for the data in the shapefile. This is important for ensuring that the map is displayed correctly and that measurements are accurate.</p></li>
+</ul>
+<p>Together, these four files make up a complete shapefile and are necessary to properly display and analyze the geographic information.</p>
+</div>
+</div>
+<section id="importing-the-roses-wolf-dataset-from-excel-into-stata" class="level3">
+<h3 class="anchored" data-anchor-id="importing-the-roses-wolf-dataset-from-excel-into-stata">Importing the Roses-Wolf dataset from Excel into Stata</h3>
 <p>At the moment, the database we want to use to draw our maps is in an excel sheet.</p>
 <p>It has many tabs, and some lines are filled with headings before the data begins, as show here:</p>
 <div class="quarto-figure quarto-figure-center">
@@ -288,7 +319,12 @@ destring year_*, replace</code></pre>
 <p></p><figcaption class="figure-caption">Reshape graphic</figcaption><p></p>
 </figure>
 </div>
-<pre><code>help reshape
+<p>The reshape command in Stata is used to change the shape of the data from one format to another. In this specific case, the reshape long option is used to change the data from a “wide” format to a “long” format.</p>
+<p>The variables that come after “year_” are the variables that will be converted from wide to long format. In this case, “year_” is not a variable, it is a prefix of the variables that will be reshaped.</p>
+<p>The option i(NUTSCodes Region Countrycurrentborder) specifies the identifier variables, which are variables that uniquely identify the observations in the dataset and will not be reshaped. In this case, “NUTSCodes”, “Region”, and “Countrycurrentborder” are the identifier variables.</p>
+<p>The option j(year) specifies the variable that will be used as the new variable name for the reshaped variables. In this case, the new variable name will be “year” and it will be the identifier of the year of the data.</p>
+<p>We save the data as a <code>.dta</code> file with the <code>save</code> command. The replace option overwrites any file with the same name in the directory.</p>
+<pre><code>help reshape // Read up about the command here
 reshape long year_, i(NUTSCodes Region Countrycurrentborder) j(year)
 rename year_ regional_gdp_millions
 save regional_gdp, replace </code></pre>
@@ -305,8 +341,89 @@ Tip
 <p>Never overwrite your raw data - this could be a big problem if you haven’t saved it somewhere else. Good practice is to save a copy of your data in a different folder before the analysis, and make any changes through your do-file (e.g.&nbsp;changing “one” to “1” in Stata rather than excel).</p>
 </div>
 </div>
+<p>Now we can see the data in a long format if we use the browse (<code>br</code>) command:</p>
+<p><img src="Lab-1-resources/regional_gdp.PNG" class="img-fluid"></p>
+<p>We repeat this process for the remaining sheets in the Excel workbook.</p>
+<pre><code>import excel using RosesWolf_RegionalGDP_v6.xlsx, sheet("A1b Regional GDP (2011PPP)") firstrow cellrange(A6:O179) clear allstring // repetition of the steps above for each sheet
+rename (D E F G H I J K L M N O) (year_1900 year_1910 year_1925 year_1938 year_1950 year_1960 year_1970 year_1980 year_1990 year_2000 year_2010 year_2015)
+destring year_*, replace
+reshape long year_, i(NUTSCodes Region Countrycurrentborder) j(year)
+rename year_ regional_gdp_2011_ppp_millions
+save regional_gdp_2011_ppp, replace
+...</code></pre>
+</section>
+<section id="importing-the-shapefiles-into-stata" class="level3">
+<h3 class="anchored" data-anchor-id="importing-the-shapefiles-into-stata">Importing the shapefiles into Stata</h3>
+<p>Describe importing a shapefile into Stata</p>
+<pre><code>clear // clear the dataset in memory
+
+shp2dta using regions_nuts2, database(regions) coordinates(nutscoord) genid(_ID) replace</code></pre>
+<p>Now we have a little data cleaning to do: There are three particular regions that need to be joined together in the Roses-Wolf database in order to be plotted correclty.</p>
+<p>TODO insert image of joining together</p>
+<pre><code>use regions, clear // fixing the identifier of the NUTS_Codes so that the merge below works for all regions in the dataset
+replace NUTS_CODE = "AT12+AT13" if NUTS_CODE == "AT123"
+replace NUTS_CODE = "DE71+DE72" if NUTS_CODE == "DE712"
+replace NUTS_CODE = "DE91+DE92" if NUTS_CODE == "DE912"
+save regions, replace</code></pre>
+<section id="projections" class="level4">
+<h4 class="anchored" data-anchor-id="projections">Projections</h4>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>TODO explain projections and include xkcd comic.</p>
+<p>Have a look at <a href="https://www.statalist.org/forums/forum/general-stata-discussion/general/1306288-legend-in-spmap">this link</a> to the Stata forum that explains different projections.</p>
+</div>
+</div>
+<p>We will use the Albers projection, which is saved as <code>nutscoord.dta</code> in your working directory.</p>
+<pre><code>use nutscoord, clear // we use the Albers projection; every projection looks a bit different</code></pre>
+<p>Let’s give a gander what the projection looks using the <code>scatter</code> command.</p>
+<pre><code>scatter _Y _X
+scatter _Y _X, msize(tiny) msymbol(point)</code></pre>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Lab-1-resources/scatter_no_opts.png" class="img-fluid figure-img" width="696"></p>
+<p></p><figcaption class="figure-caption">Comparison of scatter plots</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Lab-1-resources/scatter_with_opts.png" class="img-fluid figure-img" width="696"></p>
+<p></p><figcaption class="figure-caption">Comparison of scatter plots</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>TODO Explain the graph options msize and msymbol in Stata’s scatter command.</p>
+</div>
+</div>
+<p>help geo2xy // you can try the other projections as well geo2xy _Y _X, proj(albers) replace scatter _Y _X, msize(tiny) msymbol(point) save nutscoord, replace</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
