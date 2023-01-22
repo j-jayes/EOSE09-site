@@ -1,0 +1,313 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{longtable}
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Resources},
+  pdfauthor={Jonathan Jayes},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Resources}
+\author{Jonathan Jayes}
+\date{3/30/23}
+
+\begin{document}
+\maketitle
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, boxrule=0pt, enhanced, borderline west={3pt}{0pt}{shadecolor}, frame hidden, interior hidden, sharp corners]}{\end{tcolorbox}}\fi
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+🔥 Welcome to our page of resources for learning Stata, the powerful
+econometrics software used by researchers and analysts in many fields.
+📚 Here you will find a variety of materials to help you get started and
+become proficient in using Stata, including tutorials, documentation,
+and examples.🤓 Whether you're a beginner or an experienced user, these
+resources will help you make the most of this powerful tool💻📊.
+
+\hypertarget{stata-commands}{%
+\subsubsection{Stata commands}\label{stata-commands}}
+
+This \href{StataTutorial.pdf}{Stata tutorial} from Oscar Torres Reyna.
+
+\hypertarget{links-to-a-bunch-of-resources-from-stata}{%
+\subsubsection{Links to a bunch of resources from
+Stata}\label{links-to-a-bunch-of-resources-from-stata}}
+
+\begin{longtable}{ll}
+\caption*{
+{\large \textbf{Resources to help you learn Stata}} \\ 
+{\small \href{https://www.stata.com/links/resources-for-learning-stata/}{From the Stata website}}
+} \\ 
+\toprule
+Title and link & Description \\ 
+\midrule
+<a href = http://www.princeton.edu/~otorres/Stata>
+Stata Online Training Page
+      </a> & A series of pages giving a step-by-step instruction in Stata. Topics start from basic Stata usage, and progress through common data management tasks through to using Stata for a wide variety of analysis topics. \\ 
+<a href = http://data.princeton.edu/stata/>
+Stata Tutorial
+      </a> & A brief and informative introduction to Stata. There are also some nice notes about fitting generalized linear models using Stata. \\ 
+<a href = /bookstore/stata-cheat-sheets/>
+Stata cheat sheets
+      </a> & These compact yet well-organized sheets cover everything you need, from syntax and data processing to plotting and programming, making them handy references to download for quick use. \\ 
+<a href = http://www.ssc.wisc.edu/sscc/pubs/stat.htm>
+Articles on Statistical Computing
+      </a> & A large collection of well-written and informative pages about a broad set of topics, including an in-depth Introduction to Stata for Researchers, and a careful treatment of Multiple Imputation in Stata. \\ 
+<a href = https://stats.idre.ucla.edu/stata/>
+Resources to help you learn and use Stata
+      </a> & An extensive resource of Stata information, including FAQs, learning modules, a quick-reference guide, annotated output, textbook examples, and more. Don't miss the Stata Web Books. \\ 
+<a href = http://www.nd.edu/~rwilliam/stats/StataHighlights.html>
+Stata Highlights
+      </a> & Excerpts from Graduate Statistics I and Graduate Statistics II notes which highlight the use of Stata for solving various problems. In particular, there are some good pointers on interpreting predictive margins and marginal effects. \\ 
+<a href = http://techtips.surveydesign.com.au>
+Tips for using Stata
+      </a> & Describes some tips to enhance your efficient use of Stata. New users may want to visit the Getting Started with Stata page. \\ 
+<a href = http://wlm.userweb.mwn.de/wlmstata.htm>
+Internet Guide to Stata
+      </a> & This brief guide focuses on Stata for Windows. \\ 
+<a href = https://medium.com/the-stata-guide>
+The Stata Guide
+      </a> & Information on Stata, data visualizations, data management, and programming. \\ 
+<a href = http://www.cmm.bris.ac.uk/learning-training/course-topics.shtml>
+Multilevel Modelling
+      </a> & There approximately 150 pages of materials covering fitting multilevel models for continuous and binary dependent variables in Stata using the xtmixed and xtmelogit commands. Users have to register to access the pdfs, datasets and do-files, but all materials are made freely available. \\ 
+<a href = http://biostat.mc.vanderbilt.edu/wiki/Main/BiostatisticsTwoClassPage>
+Biostatistics II
+      </a> & Lecture notes from the second semester biostatistics class at Vanderbilt. These notes contain extensive screen shots of using the Stata menu system to do a wide range of statistical analyses common in the biostatistics world. The datasets used for the examples are also available, so that it is possible to work through the lessons and replicate the results. \\ 
+<a href = http://personalpages.manchester.ac.uk/staff/mark.lunt/stats_course.html>
+Statistical Modelling in Stata
+      </a> & Lecture notes, exercises and solutions for an introductory statistics course on basic statistical inference. The materials start with the basics and work up through introductory survival analysis. \\ 
+<a href = http://fmwww.bc.edu/GStat/docs/StataIntro.pdf>
+Introduction to Stata
+      </a> & A 67-page description of Stata, its key features and benefits, and other useful information. \\ 
+<a href = https://www.udemy.com/an-introduction-to-stata/>
+An Introduction to Stata
+      </a> & A series of video tutorials introducing Stata basics—navigating Stata's interface, inspecting and modifying data, and saving commands in a do-file. \\ 
+<a href = https://www.udemy.com/visualizing-data-using-stata/>
+Visualizing data using Stata
+      </a> & A series of videos for Stata graphics. These videos demonstrate how to create graphs such as histograms, box plots, bar graphs, scatterplots, and fitted regression lines, and they show how to customize the look of a graph. \\ 
+<a href = http://stataproject.blogspot.com/>
+The Stata Project-Oriented Guide
+      </a> & A series of short tutorials covering the typical steps in a statistical project. The tutorials range from data management to automation with a dash of statistics and postestimation. \\ 
+<a href = https://www.iser.essex.ac.uk/resources/survival-analysis-with-stata>
+Survival Analysis with Stata
+      </a> & Lessons, programs, do-files, and a PDF book about survival analysis in Stata. (Updated June 2008) \\ 
+<a href = https://stats.idre.ucla.edu/stata/webbooks/reg/>
+Regression with Stata
+      </a> & The Statistical Consulting Group at Academic Technology Services has created a “web book” covering a variety of topics on performing regression analysis with Stata. The book does not teach regression but gives examples showing how to use Stata for performing regression analysis. Written for Stata 7. \\ 
+<a href = http://www.iser.essex.ac.uk/files/teaching/stephenj/docs/ISER-Stata-workshops-Jenkins.zip>
+Workshops on “Audit trails, reproducibility and output processing” and “Effective use of Stata Graphics”
+      </a> & Workshop notes, Powerpoint presentations, data files, and do-files \\ 
+<a href = http://www.nd.edu/~rwilliam/gologit2>
+gologit2
+      </a> & Programs, readings, and documentation for generalized ordered logit and partial proportional-odds models for ordinal dependent variables (gologit2) and ordinal generalized linear models (oglm). \\ 
+<a href = http://www.nd.edu/~rwilliam/oglm>
+oglm
+      </a> & An introduction to Stata and various commands. \\ 
+<a href = http://personal.lse.ac.uk/lembcke/ecStata/2009/MResStataNotesJan2009PartA.pdf>
+An Introduction to Stata
+      </a> & Microeconometrics class notes for use with Stata 10 \\ 
+<a href = http://schmidheiny.name/teaching/shortguides.htm>
+Short Guides to Microeconometrics (with Stata commands)
+      </a> & Weekly video postings by StataCorp showing how to do common tasks in Stata. \\ 
+<a href = http://youtube.com/user/StataCorp>
+Stata video tutorials
+      </a> & New to Stata? Sign up for the Ready, Set, Go Stata webinar. More experienced user? See the complete list of Stata webinars. \\ 
+<a href = /training/webinar/>
+Free Stata webinars
+      </a> & Not Elsewhere Classified is the official Stata blog that has articles written by Stata developers and StataCorp staff on the use of Stata and other news related to the use of Stata. \\ 
+<a href = http://blog.stata.com/>
+The Stata Blog
+      </a> & Answers to the most frequently asked questions in statistics, data management, graphics, and operating system issues. \\ 
+<a href = /support/faqs/>
+Stata Technical Support FAQs
+      </a> & Statalist is a forum where over 40,000 Stata users from experts to neophytes maintain a lively dialogue about all things statistical and Stata. \\ 
+<a href = http://www.statalist.org/>
+Statalist
+      </a> & Classroom and web-based courses, on-site training courses, webinars, NetCourses, and more. \\ 
+<a href = /learn/>
+Stata training
+      </a> & The Stata Journal is a quarterly publication containing articles about statistics, data analysis, teaching methods, and effective use of Stata's language. \\ 
+<a href = http://www.stata-journal.com>
+Stata Journal
+      </a> & Also see the Stata Technical Bulletin FAQ. Although the SJ superseded the STB, past STB issues contain valuable information. The FAQ includes information on how to obtain over the net the software associated with the published articles. \\ 
+<a href = /support/faqs/graphics/gph/stata-graphs/>
+Visual overview for creating graphs
+      </a> & Scroll through over 100 graphs that are broken out by category. Click on a graph to see the command that created it. \\ 
+<a href = http://www.epidata.dk/php/downloadc.php?file=statanot.pdf>
+Danish Short Course Materials
+      </a> & Download our cheat sheets for calling Python from Stata and our guide for working with dates and times in Stata. \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{useful-blog-posts}{%
+\subsubsection{Useful blog posts}\label{useful-blog-posts}}
+
+\href{https://medium.com/the-stata-guide/covid-19-visualizations-with-stata-part-4-maps-fbd4fe2642f6}{Asjad
+Naqvi's mapping guide for Stata part 1}
+
+\href{https://medium.com/the-stata-guide/maps-in-stata-ii-fcb574270269}{Asjad
+Naqvi's mapping guide for Stata part 2}
+
+\href{https://blogs.worldbank.org/impactevaluations/making-visually-appealing-maps-stata-guest-post-asjad-naqvi}{A
+World Bank blog on mapping in Stata}
+
+\hypertarget{youtube-channels}{%
+\subsubsection{Youtube channels}\label{youtube-channels}}
+
+\href{https://www.youtube.com/@sebastianwaiecon}{Sebastian Wai's
+channel}
+
+\href{https://www.youtube.com/@econometricsacademy}{Econometrics Academy
+from Ani Katchova}
+
+
+
+\end{document}
