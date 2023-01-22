@@ -845,14 +845,14 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In Stata, the clmethod() command is used to specify the method for creating breaks (or intervals) on a color scale in a graph. The clbreaks() command is used to specify the values of the breaks.</p>
+<p>In Stata, the <code>clmethod()</code> command is used to specify the method for creating breaks (or intervals) on a color scale in a graph. The <code>clbreaks()</code> command is used to specify the values of the breaks.</p>
 <p>In this specific example, the command “clmethod(custom) clbreaks(0 (1000) 12000)” is used to create a custom color scale with the following properties:</p>
 <ul>
 <li>The scale starts at 0.</li>
 <li>The gradations of the scale are 1,000.</li>
 <li>The top end of the scale is 12,000.</li>
 </ul>
-<p>The clbreaks() command is set to “0 (1000) 12000” which means that the color scale starts at 0 and continues to increase in increments of 1,000 up to 12,000. In other words, the scale will have 12 breaks or intervals: 0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000.</p>
+<p>The <code>clbreaks()</code> command is set to “0 (1000) 12000” which means that the color scale starts at 0 and continues to increase in increments of 1,000 up to 12,000. In other words, the scale will have 12 breaks or intervals: 0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000.</p>
 <p>This custom scale will be used to colour the data points in the graph accordingly.</p>
 <p>It’s important to note that the command “clmethod(custom)” is required to use the custom breaks defined in the “clbreaks()” command.</p>
 </div>
