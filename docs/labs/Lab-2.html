@@ -103,18 +103,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a>
-  <ul class="collapse">
-  <li><a href="#install-additional-programs-and-set-up" id="toc-install-additional-programs-and-set-up" class="nav-link" data-scroll-target="#install-additional-programs-and-set-up">Install additional programs and set-up</a></li>
-  </ul></li>
-  <li><a href="#importing-the-roses-wolf-dataset-from-excel-into-stata" id="toc-importing-the-roses-wolf-dataset-from-excel-into-stata" class="nav-link" data-scroll-target="#importing-the-roses-wolf-dataset-from-excel-into-stata">Importing the Roses-Wolf dataset from Excel into Stata</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -148,154 +137,9 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="purpose" class="level2">
-<h2 class="anchored" data-anchor-id="purpose">Purpose</h2>
-<p>🗺️ One goal of this course is to teach students how to identify a good map – one which is clear, informative and attractive – and familiarise students with the commands which allow the creation of these maps in Stata.📈</p>
-<p>In addition, your lab paper (📅 due March 3rd) requires that you include at least 6 maps, so it is worth concentrating in the labs and making use of these resources.📝</p>
-<p>📚 This document is intended to allow you to keep up with the Stata Lab 1 that we will work through in class.📊</p>
-<p>You can read the document on this website, or download the same information in <a href="Lab-1.pdf">pdf format here📚</a>.</p>
-<p>It will include the commands the we use and the output, as well as some hints and tips that will be useful during your projects, I hope.🤞</p>
-</section>
-<section id="getting-started" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
-<p>Given that you have encountered Stata previously in your studies, I will not spend undue time explaining the basics. If you want to brush up on Stata’s syntax, I reccomend having a look at <a href="https://github.com/j-jayes/EOSE09/blob/b8444dd95783f4434ab63c4ad28b0f3033d4fd0a/resources/StataTutorial.pdf">these slides</a> from Oscar Torres-Reyna, or <a href="https://www.youtube.com/watch?v=oXsPgQe-aqs&amp;ab_channel=SebastianWaiEcon">this set of Youtube videos</a> From Sebastian Wai.</p>
-<section id="install-additional-programs-and-set-up" class="level3">
-<h3 class="anchored" data-anchor-id="install-additional-programs-and-set-up">Install additional programs and set-up</h3>
-<p>First we need to install the packages in Stata that we will make use of. Please do this before our lab session in order to save time.</p>
-<p>We use the <code>ssc install</code> command, as follows:</p>
-<pre><code>ssc install spmap, replace
-ssc install geo2xy, replace
-ssc install shp2dta, replace
-ssc install schemepack, replace
-ssc install scheme-burd, replace
-ssc install colrspace, replace
-ssc install palettes, replace
-ssc install egenmore, replace
-ssc install outreg2, replace</code></pre>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>To run do-files click the “run-button” or highlight the lines of code and hit ctrl + D (Windows) or shift + cmd + D (Mac)</p>
-</div>
-</div>
-<p>Running the command should produce output in the console that looks like this:</p>
-<blockquote class="blockquote">
-<p><strong>. ssc install geo2xy, replace</strong><br>
-&nbsp;&nbsp;<code>checking geo2xy consistency and verifying not already installed...</code><br>
-&nbsp;&nbsp;<code>installing into c:\ado\plus\... installation complete.</code><br>
-&nbsp;&nbsp;<code>...</code></p>
-</blockquote>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-always comment your code
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In Stata you can comment your code in one line</p>
-<p><code>// like so</code></p>
-<p>Or if you want to write a longer string</p>
-<p><code>/*You can put your longer string of text inside a set of slashes and stars*/</code></p>
-</div>
-</div>
-<section id="setting-a-directory" class="level4">
-<h4 class="anchored" data-anchor-id="setting-a-directory">Setting a directory</h4>
-<p>It is useful to put all of your work inside a specific file directory. This way, Stata knows where to look for your files and where to save output, like regression tables.</p>
-<p>The path to my folder where I have the files for this lab is:</p>
-<p><code>C:/Users/User/Documents/Recon/EOSE09/stata_files/</code></p>
-<p>If you have a Mac, it will look something like this:</p>
-<p><code>Users/Jonathan/Documents/Stata-lab/</code></p>
-<p>If you want to change the settings on your Mac to display the file path in your <strong>Finder</strong> window, follow <a href="https://www.lifewire.com/use-macs-hidden-finder-path-bar-2260868">this link</a>.</p>
-<p>To tell Stata that this is where I want it to look for my files, I’ll use the <code>cd</code> (current directory) command in my do-file.</p>
-<pre><code>cd "C:/Users/User/Documents/Recon/EOSE09/stata_files/" // set your directory</code></pre>
-<p>If successful, in the console I will see the following output:</p>
-<blockquote class="blockquote">
-<p><strong>. <code>cd "C:/Users/User/Documents/Recon/EOSE09/stata_files/" // set your directory</code></strong><br>
-&nbsp;&nbsp;<code>C:\Users\User\Documents\Recon\EOSE09\stata_files</code></p>
-</blockquote>
-<p>You can call the help window by typing <code>help</code> into the console, and set your Stata version for compatability reasons with the <code>version</code> command, like so:</p>
-<pre><code>help // Stata's help function; cf. also the web or Statalist
-version 16.1 // version control</code></pre>
-</section>
-</section>
-</section>
-<section id="importing-the-roses-wolf-dataset-from-excel-into-stata" class="level2">
-<h2 class="anchored" data-anchor-id="importing-the-roses-wolf-dataset-from-excel-into-stata">Importing the Roses-Wolf dataset from Excel into Stata</h2>
-<p>At the moment, the database we want to use to draw our maps is in an excel sheet.</p>
-<p>It has many tabs, and some lines are filled with headings before the data begins, as show here:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Lab-1-resources/excel_format.PNG" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Screenshot of excel file</figcaption><p></p>
-</figure>
-</div>
-<p>What we want to do is import the data from each tab, and append it together.</p>
-<pre><code>import excel using RosesWolf_RegionalGDP_v6.xlsx, sheet("A1 Regional GDP") firstrow cellrange(A6:O179) clear // import Excel sheet
-rename (D E F G H I J K L M N O) (year_1900 year_1910 year_1925 year_1938 year_1950 year_1960 year_1970 year_1980 year_1990 year_2000 year_2010 year_2015)</code></pre>
-<p>This is what the data now looks like inside Stata. It is a wide dataframe, with 173 rows (the number of regions) and 15 variables (3 identifiers and 12 years worth of data)</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Lab-1-resources/stata_view_1.PNG" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Screenshot of Stata format</figcaption><p></p>
-</figure>
-</div>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Recall that the Roses Wolf database has geographic data on GDP and population at the nomenclature of territorial units 2 (NUTS-2) level, from 1900 to 2015.</p>
-</div>
-</div>
-<p>Next we want to be sure that Stata is reading in the values as numbers rather than text. For this we use the <code>destring</code> command.</p>
-<pre><code>import excel using RosesWolf_RegionalGDP_v6.xlsx, sheet("A1 Regional GDP") firstrow cellrange(A6:O179) clear allstring `// we import each sheet in the Excel file separately and save it as one file`
-rename (D E F G H I J K L M N O) (year_1900 year_1910 year_1925 year_1938 year_1950 year_1960 year_1970 year_1980 year_1990 year_2000 year_2010 year_2015)
-destring year_*, replace</code></pre>
-<p>If there are non-numerical values in a string you cannot use destring and should not use the force-option as it would create missing values A better approach is to check all cases that are non-numerical and replace them (e.g.&nbsp;change “one” to “1”)</p>
-<p>Other common data cleaning commands could include:</p>
-<p><code>// tab var1 if missing(real(var1))</code> <code>// replace var1 ... if ...</code> <code>// destring var1, replace</code></p>
-<p>Next we want to take the data from a wide format to a long format. A long format means that each row is an observation, each column is a variable, and each cell has just one value in it.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Lab-1-resources/wide_to_long.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Reshape graphic</figcaption><p></p>
-</figure>
-</div>
-<pre><code>help reshape
-reshape long year_, i(NUTSCodes Region Countrycurrentborder) j(year)
-rename year_ regional_gdp_millions
-save regional_gdp, replace </code></pre>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Never overwrite your raw data - this could be a big problem if you haven’t saved it somewhere else. Good practice is to save a copy of your data in a different folder before the analysis, and make any changes through your do-file (e.g.&nbsp;changing “one” to “1” in Stata rather than excel).</p>
-</div>
-</div>
+<p>To be added.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
