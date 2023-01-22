@@ -859,14 +859,20 @@ Tip
 </div>
 <p>The number of breaks is a stylistic choice and can impact the message that the reader takes away. Consider how the dark blue areas stand out in Sweden and the UK in the second figure, compared to the first.</p>
 <p>(I think you see by now what the graph editor looks like - I’m saving the image from the editor from now on.)</p>
-<div class="column-page quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>spmap regional_gdp_cap_1990 using <span class="st">"nutscoord.dta"</span> <span class="cf">if</span> year <span class="sc">==</span> <span class="dv">1950</span>, <span class="fu">id</span>(_ID) <span class="fu">fcolor</span>(Blues2) <span class="fu">legend</span>(<span class="fu">pos</span>(<span class="dv">9</span>)) <span class="fu">legstyle</span>(<span class="dv">2</span>) <span class="sc">/</span><span class="er">//</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">title</span>(<span class="st">"Regional GDP per Capita - 1950 "</span>, <span class="fu">size</span>(medium)) <span class="sc">/</span><span class="er">//</span></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">osize</span>(<span class="fl">0.02</span> ..) <span class="fu">ocolor</span>(gs8 ..) <span class="sc">/</span><span class="er">//</span></span>
 <span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clmethod</span>(custom) <span class="fu">clbreaks</span>(<span class="dv">0</span> (<span class="dv">1000</span>) <span class="dv">12000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>spmap regional_gdp_cap_1990 using <span class="st">"nutscoord.dta"</span> <span class="cf">if</span> year <span class="sc">==</span> <span class="dv">1950</span>, <span class="fu">id</span>(_ID) <span class="fu">fcolor</span>(Blues2) <span class="fu">legend</span>(<span class="fu">pos</span>(<span class="dv">9</span>)) <span class="fu">legstyle</span>(<span class="dv">1</span>) <span class="sc">/</span><span class="er">//</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">title</span>(<span class="st">"Regional GDP per Capita - 1950"</span>, <span class="fu">size</span>(medium)) <span class="sc">/</span><span class="er">//</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">osize</span>(<span class="fl">0.02</span> ..) <span class="fu">ocolor</span>(white ..) <span class="sc">/</span><span class="er">//</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clmethod</span>(custom) <span class="fu">clbreaks</span>(<span class="dv">0</span> <span class="dv">3000</span> (<span class="dv">1000</span>) <span class="dv">6000</span> <span class="dv">12000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="column-page quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -874,14 +880,6 @@ Tip
 <p></p><figcaption class="figure-caption">Lots of breaks</figcaption><p></p>
 </figure>
 </div>
-</div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>spmap regional_gdp_cap_1990 using <span class="st">"nutscoord.dta"</span> <span class="cf">if</span> year <span class="sc">==</span> <span class="dv">1950</span>, <span class="fu">id</span>(_ID) <span class="fu">fcolor</span>(Blues2) <span class="fu">legend</span>(<span class="fu">pos</span>(<span class="dv">9</span>)) <span class="fu">legstyle</span>(<span class="dv">1</span>) <span class="sc">/</span><span class="er">//</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">title</span>(<span class="st">"Regional GDP per Capita - 1950"</span>, <span class="fu">size</span>(medium)) <span class="sc">/</span><span class="er">//</span></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">osize</span>(<span class="fl">0.02</span> ..) <span class="fu">ocolor</span>(white ..) <span class="sc">/</span><span class="er">//</span></span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clmethod</span>(custom) <span class="fu">clbreaks</span>(<span class="dv">0</span> <span class="dv">3000</span> (<span class="dv">1000</span>) <span class="dv">6000</span> <span class="dv">12000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">

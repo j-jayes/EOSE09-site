@@ -666,9 +666,6 @@ The number of breaks is a stylistic choice and can impact the message that the r
 
 (I think you see by now what the graph editor looks like - I'm saving the image from the editor from now on.)
 
-
-::: {layout-ncol=2 .column-page}
-
 ```{r}
 spmap regional_gdp_cap_1990 using "nutscoord.dta" if year == 1950, id(_ID) fcolor(Blues2) legend(pos(9)) legstyle(2) ///
 	title("Regional GDP per Capita - 1950 ", size(medium)) ///
@@ -676,7 +673,6 @@ spmap regional_gdp_cap_1990 using "nutscoord.dta" if year == 1950, id(_ID) fcolo
 	clmethod(custom) clbreaks(0 (1000) 12000)
 ```
 
-![Lots of breaks](Lab-1-resources/spmap_7.PNG)
 
 ```{r}
 spmap regional_gdp_cap_1990 using "nutscoord.dta" if year == 1950, id(_ID) fcolor(Blues2) legend(pos(9)) legstyle(1) ///
@@ -684,6 +680,12 @@ spmap regional_gdp_cap_1990 using "nutscoord.dta" if year == 1950, id(_ID) fcolo
 	osize(0.02 ..) ocolor(white ..) ///
 	clmethod(custom) clbreaks(0 3000 (1000) 6000 12000)
 ```
+
+::: {layout-ncol=2 .column-page}
+
+
+![Lots of breaks](Lab-1-resources/spmap_7.PNG)
+
 
 
 ![Fewer breaks](Lab-1-resources/spmap_8.PNG)
