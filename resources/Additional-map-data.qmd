@@ -9,7 +9,7 @@ In Lab 2 we will look at mapping growth across space and time.
 
 In addition to the database that we have used so far, we can introduce more data from Eurostat.
 
-You can have a look at their nice interactive web-based tool [here or in the iframe below](https://ec.europa.eu/eurostat/cache/RCI/#?vis=nuts2.scitech&lang=en) and download the data in excel format from my Github (here)[].
+You can have a look at their nice interactive web-based tool [here or in the iframe below](https://ec.europa.eu/eurostat/cache/RCI/#?vis=nuts2.scitech&lang=en) and download the latest data in excel format from my Github (here)[https://github.com/j-jayes/EOSE09-site/tree/ad2aad711527b4d535e9512ba21ae67cc4949c2d/resources/adm-resources].
 
 ```{r}
 #| column: page
@@ -17,7 +17,7 @@ You can have a look at their nice interactive web-based tool [here or in the ifr
 knitr::include_url("https://ec.europa.eu/eurostat/cache/RCI/#?vis=nuts2.economy&lang=en", height = 800)
 ```
 
-I will download the earlier earliest value from each series and put it up later this week (before January 27), until then, you can get an idea of the data from the link above.
+I will download the earliest values from each series and put it up later this week (before January 27), until then, you can get an idea of the data from the link above.
 
 This is what the data looks like:
 
