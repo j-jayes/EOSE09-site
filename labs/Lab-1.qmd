@@ -42,7 +42,7 @@ By the end of this lab, you should have a solid understanding of how to install 
 
 ## Getting started
 
-Given that you have encountered Stata previously in your studies, I will not spend undue time explaining the basics. If you want to brush up on Stata's syntax, I reccomend having a look at [these slides](https:#github.com/j-jayes/EOSE09/blob/b8444dd95783f4434ab63c4ad28b0f3033d4fd0a/resources/StataTutorial.pdf) from Oscar Torres-Reyna, or [this set of Youtube videos](https:#www.youtube.com/watch?v=oXsPgQe-aqs&ab_channel=SebastianWaiEcon) From Sebastian Wai.
+Given that you have encountered Stata previously in your studies, I will not spend undue time explaining the basics. If you want to brush up on Stata's syntax, I reccomend having a look at [these slides](https:#github.com/j-jayes/EOSE09/blob/b8444dd95783f4434ab63c4ad28b0f3033d4fd0a/resources/StataTutorial.pdf) from Oscar Torres-Reyna, or [this set of Youtube videos](https:#www.youtube.com/watch?v=oXsPgQe-aqs&ab_channel=SebastianWaiEcon) From Sebastian Wai. I've put together a comptehensive set of resources on [this page here](resources/resources.qmd).
 
 ### Install additional programs and set-up
 
