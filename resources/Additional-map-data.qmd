@@ -1,5 +1,5 @@
 ---
-title: "Additional map data"
+title: "Additional Maps and Data"
 image: "resource_logo_2.png"
 author: "Jonathan Jayes"
 date: 2023-03-29
