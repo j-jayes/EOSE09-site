@@ -22,7 +22,7 @@ In addition, your lab paper (📅 due March 3rd) requires that you include at le
 
 📚 This document is intended to allow you to keep up with the Stata Lab 1 that we will work through in class.📊
 
-You can read the document on this website, or download the same information in [pdf format here📚](Lab-1.pdf).
+You can read the document on this website, or download the same information in [pdf format here📚 (coming soon - sorry!)](Lab-1.pdf).
 
 It will include the commands the we use and the output, as well as some hints and tips that will be useful during your projects, I hope.🤞
 

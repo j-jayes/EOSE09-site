@@ -1,0 +1,158 @@
+---
+title: "Additional Maps and Data"
+image: "resource_logo_2.png"
+author: "Jonathan Jayes"
+date: 2023-03-29
+---
+
+
+In Lab 2 we will look at mapping growth across space and time.
+
+In addition to the database that we have used so far, we can introduce more data from Eurostat.
+
+You can have a look at their nice interactive web-based tool [here or in the iframe below](https://ec.europa.eu/eurostat/cache/RCI/#?vis=nuts2.scitech&lang=en) and download the latest data in excel format from my Github [here](https://github.com/j-jayes/EOSE09-site/tree/main/resources/adm-resources).
+
+
+```{r}
+#| column: page
+#| out-width: "100%"
+knitr::include_url("https://ec.europa.eu/eurostat/cache/RCI/#?vis=nuts2.economy&lang=en", height = 800)
+```
+
+
+I will download the earliest values from each series and put it up later this week (before January 27), until then, you can get an idea of the data from the link above.
+
+This is what the data looks like:
+
+
+```{r}
+library(tidyverse)
+library(sf)
+library(gt)
+
+df <- read_rds(here::here("resources/adm-resources/regions_illustrated.rds")) %>% 
+  rename(nuts_code = code)
+  
+map <- read_rds(here::here("resources/adm-resources/map_simple.rds"))
+```
+
+```{r}
+df_map <- df %>% 
+  inner_join(map)
+```
+
+```{r}
+# indicators <- df_map %>% 
+#   group_by(stat_domain) %>% 
+#   count(indicator) %>% 
+#   select(-n) %>% 
+#   ungroup()
+# 
+# tab_indicators <- function(stat_domain_id) {
+#   indicators %>%
+#     filter(stat_domain == stat_domain_id) %>%
+#     distinct(indicator) %>%
+#     gt() %>%
+#     tab_header(title = md(glue::glue("**{stat_domain_id}**"))) %>%
+#     tab_options(column_labels.hidden = T)
+# }
+# 
+# for (i in unique(indicators$stat_domain)) {
+#   tab_indicators(i)
+# }
+
+df_map %>%
+  group_by(stat_domain) %>%
+  count(indicator) %>%
+  select(-n) %>%
+  gt() %>%
+  tab_style(
+    style = list(
+      cell_fill(color = "#191970"),
+      cell_text(color = "white")
+    ),
+    locations = cells_row_groups(groups = everything())
+  ) %>%
+  tab_header(title = md("**List of indicators**")) %>%
+  tab_options(column_labels.hidden = T)
+```
+
+
+We can draw plots list this with the data: showing the relationship between economic activity and gdp
+
+
+```{r}
+
+df_map %>%
+  filter(indicator %in% c(
+    "Economic activity rate (% of population aged 15-64)",
+    "Gross domestic product (Euro per inhabitant)"
+  )) %>%
+  select(-stat_domain) %>%
+  distinct() %>%
+  pivot_wider(names_from = indicator, values_from = value) %>%
+  mutate(country = fct_lump(country, 8)) %>%
+  ggplot(aes(`Gross domestic product (Euro per inhabitant)`, `Economic activity rate (% of population aged 15-64)`, colour = country)) +
+  geom_point() +
+  labs(colour = "Country")
+```
+
+
+We can also make a map of the Economic Activity Rate:
+
+
+```{r}
+df_map %>%
+  filter(indicator %in% c(
+    "Economic activity rate (% of population aged 15-64)",
+    "Gross domestic product (Euro per inhabitant)"
+  )) %>%
+  select(-stat_domain) %>%
+  distinct() %>%
+  pivot_wider(names_from = indicator, values_from = value) %>%
+  ggplot(aes(fill = `Economic activity rate (% of population aged 15-64)`, geometry = geometry)) +
+  geom_sf() +
+  coord_sf() +
+  scale_fill_viridis_c(labels = scales::percent_format()) +
+  labs(fill = "Economic activity rate\n(% of population aged 15-64)")
+
+```
+
+
+This is the relationship between GDP and medical doctors per 100 000 inhabitants.
+
+
+```{r}
+df_map %>%
+  filter(indicator %in% c(
+    "Medical doctors (per 100 000 inhabitants)",
+    "Gross domestic product (Euro per inhabitant)"
+  )) %>%
+  select(-stat_domain) %>%
+  distinct() %>%
+  pivot_wider(names_from = indicator, values_from = value) %>%
+  mutate(country = fct_lump(country, 8)) %>%
+  ggplot(aes(`Gross domestic product (Euro per inhabitant)`, `Medical doctors (per 100 000 inhabitants)`, colour = country)) +
+  geom_point() +
+  geom_smooth(aes(group = 1)) +
+  labs(colour = "Country")
+```
+
+
+A map of Medical doctors (per 100 000 inhabitants)
+
+
+```{r}
+df_map %>% 
+    filter(indicator %in% c(
+    "Medical doctors (per 100 000 inhabitants)"
+  )) %>%
+  select(-stat_domain) %>%
+  distinct() %>%
+  ggplot(aes(fill = value, geometry = geometry)) +
+  geom_sf() +
+  coord_sf() +
+  scale_fill_viridis_c(labels = scales::percent_format()) +
+  labs(fill = "Medical doctors \n(per 100 000 inhabitants)")
+```
+
