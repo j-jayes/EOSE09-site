@@ -5,6 +5,7 @@ listing:
     - "labs/*.qmd"
     - "lectures/*.qmd"
     - "resources/*.qmd"
+    - "!lectures/ideas.qmd"
   type: grid
   sort: "date asc"
 ---

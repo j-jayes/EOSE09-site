@@ -1,0 +1,48 @@
+---
+title: "ChatGPT tips"
+image: "resource_logo_3.png"
+author: "Jonathan Jayes"
+date: 2023-04-01
+---
+
+## Intro
+
+ChatGPT is very popular. We haven't decided as LU how to deal with it.
+
+I would like you to use it when you have questions, and if you want to, post it's answers in the discussion section on Canvas.
+
+## How can we use it?
+
+For example, if we want to know about shapefiles, and why there are four files that need to be in our working directory, we can ask ChatGPT this:
+
+![](ChatGPT-1.PNG)
+
+Further, we can ask why we need all of these files in our working directory.
+
+![](ChatGPT-2.PNG)
+
+## What are the concerns?
+
+Sometimes ChatGPT can hallucinate and get syntax wrong. The codechunk below uses `import` where it should say `use`. The `map` command that it suggests does not even exist...
+
+![](ChatGPT-3.PNG)
+
+This is why I suggest putting the output onto the discussions section on Canvas, such that we can all better understand where we can and cannot use ChatGPT as a resource.
+
+## How can it be usefu?
+
+I think it can be a useful tool for you to answer questions quickly - ChatGPT does does too! But it isn't always going to out compete Statalist as a way to get answer about specific Stata syntax questions.
+
+<blockquote>
+
+ChatGPT can be a helpful tool when learning how to do graphing and econometrics in Stata by providing quick and easy access to information and examples.
+
+For graphing in Stata, ChatGPT can help you to understand different types of graphs and how to create them, including scatter plots, line graphs, histograms, and box plots. It can also provide tips and tricks for customizing and formatting your graphs, such as adding labels, changing colors, and adjusting axis scales.
+
+For econometrics in Stata, ChatGPT can help you to understand different types of econometric models, such as linear regression, panel data models, time series models, and limited dependent variable models. It can also provide guidance on how to conduct hypothesis testing, interpret results, and report findings.
+
+In addition, ChatGPT can assist with providing examples and explanations of Stata commands and syntax, allowing you to quickly apply the information you learn to your own data analysis.
+
+Overall, ChatGPT can be a useful resource for supplementing your learning of graphing and econometrics in Stata by providing explanations, examples, and guidance, making it easier for you to understand and apply the concepts in your own work.
+
+</blockquote>
