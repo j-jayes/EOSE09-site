@@ -6,6 +6,7 @@ listing:
     - "lectures/*.qmd"
     - "resources/*.qmd"
     - "!lectures/ideas.qmd"
+    - "!resoures/adm-resources/ADM-prep.qmd"
   type: grid
   sort: "date asc"
 ---

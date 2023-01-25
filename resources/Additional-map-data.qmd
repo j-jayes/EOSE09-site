@@ -58,6 +58,7 @@ df_map <- df %>%
 # }
 
 df_map %>%
+  filter(period == "late") %>% 
   group_by(stat_domain) %>%
   count(indicator) %>%
   select(-n) %>%
@@ -80,7 +81,8 @@ We can draw plots list this with the data: showing the relationship between econ
 df_map %>%
   filter(indicator %in% c(
     "Economic activity rate (% of population aged 15-64)",
-    "Gross domestic product (Euro per inhabitant)"
+    "Gross domestic product (Euro per inhabitant)",
+    period == "late"
   )) %>%
   select(-stat_domain) %>%
   distinct() %>%
@@ -97,7 +99,8 @@ We can also make a map of the Economic Activity Rate:
 df_map %>%
   filter(indicator %in% c(
     "Economic activity rate (% of population aged 15-64)",
-    "Gross domestic product (Euro per inhabitant)"
+    "Gross domestic product (Euro per inhabitant)",
+    period == "late"
   )) %>%
   select(-stat_domain) %>%
   distinct() %>%
@@ -108,24 +111,6 @@ df_map %>%
   scale_fill_viridis_c(labels = scales::percent_format()) +
   labs(fill = "Economic activity rate\n(% of population aged 15-64)")
 
-```
-
-This is the relationship between GDP and medical doctors per 100 000 inhabitants.
-
-```{r}
-df_map %>%
-  filter(indicator %in% c(
-    "Medical doctors (per 100 000 inhabitants)",
-    "Gross domestic product (Euro per inhabitant)"
-  )) %>%
-  select(-stat_domain) %>%
-  distinct() %>%
-  pivot_wider(names_from = indicator, values_from = value) %>%
-  mutate(country = fct_lump(country, 8)) %>%
-  ggplot(aes(`Gross domestic product (Euro per inhabitant)`, `Medical doctors (per 100 000 inhabitants)`, colour = country)) +
-  geom_point() +
-  geom_smooth(aes(group = 1)) +
-  labs(colour = "Country")
 ```
 
 A map of Medical doctors (per 100 000 inhabitants)

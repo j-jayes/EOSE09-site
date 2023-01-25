@@ -1,0 +1,128 @@
+---
+title: "ADM-Data-Prep"
+execute: 
+  eval: false
+  echo: true
+---
+
+## Purpose
+
+Ingest and collect together the data from [here](https://ec.europa.eu/eurostat/cache/RCI/#?vis=nuts2.scitech&lang=en)
+
+```{r}
+library(tidyverse)
+```
+
+Prep: these are the years for each series.
+
+```{r}
+series_dates <- tribble(
+  ~category, ~early, ~late,
+  "economy", 2012, 2020,
+  "population", 2011, 2020,
+  "health", 2011, 2019,
+  "education", 2013, 2021,
+  "labour_market", 2012, 2021,
+  "tourism", 2013, 2020,
+  "digital_economy_and_society", 2012, 2021,
+  "agriculture", 2012, 2021,
+  "transport", 2012, 2020,
+  "science_and_technology", 2011, 2020
+)
+
+series_dates <- series_dates %>% 
+  pivot_longer(-category, values_to = "year") %>% 
+  mutate(sheet = str_c(category, "_", name)) %>% 
+  select(sheet, year)
+```
+
+Function to get data.
+
+```{r}
+get_data <- function(f_name, sheet_name) {
+  message("Getting data from ", f_name)
+  
+  df <- readxl::read_excel(f_name)
+  
+  df %>%
+    select(-sortOrder) %>%
+    pivot_longer(-c("Region", "Code", "Country"), names_to = "indicator") %>%
+    mutate(
+      # remove brackets
+      value = str_remove(value, "\\(.*"),
+      # remove spaces
+      value = str_remove_all(value, " "),
+    ) %>%
+    mutate(value = case_when(
+      # replace pct sign
+      str_detect(value, "%") ~ parse_number(value) / 100,
+      # otherwise go numeric
+      TRUE ~ as.numeric(value)
+    )) %>% 
+    mutate(stat_domain = sheet_name)
+}
+```
+
+Get files in this chunk.
+
+```{r}
+list_of_files <- list.files(here::here("resources", "adm-resources"), pattern = ".xlsx")
+
+tbl_of_files <- list_of_files %>% 
+  as_tibble() %>% 
+  mutate(file_path = here::here("resources/adm-resources/", value),
+         value = str_remove(value, "\\.xlsx")) %>% 
+  rename(sheet = value)
+
+tbl_of_files <- tbl_of_files %>% 
+  mutate(data = pmap(list(file_path, sheet), get_data))
+
+tbl_of_files <- tbl_of_files %>% 
+  inner_join(series_dates)
+
+df <- tbl_of_files %>% 
+  unnest(data)
+
+```
+
+
+```{r}
+df <- df %>%
+  select(-c(sheet, file_path)) %>%
+  mutate(
+    period = str_extract(stat_domain, "early|late"),
+    stat_domain = str_replace_all(stat_domain, "_", " "),
+    stat_domain = str_remove(stat_domain, "early|late"),
+    stat_domain = str_to_title(stat_domain),
+    stat_domain = str_squish(stat_domain),
+    indicator = str_squish(indicator)
+  ) %>%
+  janitor::clean_names() 
+
+# series_to_distinct <- c(
+#   "Population (persons)",
+#   "Population density (persons per square kilometre)",
+#   "Employment rate (% of population aged 20-64)",
+#   "Unemployment rate (% of labour force aged 15-74)",
+#   "Gross domestic product (PPS per inhabitant)",
+#   "Gross domestic product (PPS per inhabitant in % of the EU-27 average)"
+# )
+
+
+# df_to_join <- df %>% 
+#   filter(indicator %in% series_to_distinct) %>% 
+#   distinct(region, code, country, indicator, .keep_all = T)
+
+# df <- df %>% 
+#   filter(!indicator %in% series_to_distinct) %>% 
+#   bind_rows(df_to_join)
+
+df <- df %>% 
+  arrange(code, stat_domain, indicator, period)
+
+
+
+df %>% write_rds(here::here("resources/adm-resources/regions_illustrated.rds"), compress = "gz")
+df %>% 
+  write_excel_csv(here::here("resources/adm-resources/regions_illustrated.csv"))
+```
