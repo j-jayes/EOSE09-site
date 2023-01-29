@@ -178,7 +178,7 @@ This is what the data now looks like inside Stata. It is a wide dataframe, with 
 ::: callout-tip
 Recall that the Roses Wolf database has geographic data on GDP and population at the nomenclature of territorial units 2 (NUTS-2) level, from 1900 to 2015.
 
-If you want to have a look at this data in more detail, have a look at [this Shiny app](https:#jonathan-jayes.shinyapps.io/Roses-Wolf-database-on-regional-GDP/).
+If you want to have a look at this data in more detail, have a look at [this Shiny app](https://jonathan-jayes.shinyapps.io/Roses-Wolf-database-on-regional-GDP/).
 :::
 
 Next we want to be sure that Stata is reading in the values as numbers rather than text. For this we use the `destring` command.
@@ -254,7 +254,7 @@ shp2dta using regions_nuts2, database(regions) coordinates(nutscoord) genid(_ID)
 Now we have a little data cleaning to do:
 There are three particular regions that need to be joined together in the Roses-Wolf database in order to be plotted correctly. If we don't correct these, there will be holes in our map, as shown below:
 
-![Screenshot from [my Shiny app](https:#jonathan-jayes.shinyapps.io/Roses-Wolf-database-on-regional-GDP/)](Lab-1-resources/hole_in_map.PNG)
+![Screenshot from [my Shiny app](https://jonathan-jayes.shinyapps.io/Roses-Wolf-database-on-regional-GDP/)](Lab-1-resources/hole_in_map.PNG)
 
 ```{r}
 use regions, clear # fixing the identifier of the NUTS_Codes so that the merge below works for all regions in the dataset
