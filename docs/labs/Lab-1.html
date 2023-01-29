@@ -256,7 +256,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
-<p>Given that you have encountered Stata previously in your studies, I will not spend undue time explaining the basics. If you want to brush up on Stata’s syntax, I recommend having a look at <a href="https:#github.com/j-jayes/EOSE09/blob/b8444dd95783f4434ab63c4ad28b0f3033d4fd0a/resources/StataTutorial.pdf">these slides</a> from Oscar Torres-Reyna, or <a href="https:#www.youtube.com/watch?v=oXsPgQe-aqs&amp;ab_channel=SebastianWaiEcon">this set of Youtube videos</a> From Sebastian Wai. I’ve put together a comprehensive set of resources on <a href="resources/resources.qmd">this page here</a>.</p>
+<p>Given that you have encountered Stata previously in your studies, I will not spend undue time explaining the basics. If you want to brush up on Stata’s syntax, I recommend having a look at <a href="https://github.com/j-jayes/EOSE09/blob/b8444dd95783f4434ab63c4ad28b0f3033d4fd0a/resources/StataTutorial.pdf">these slides</a> from Oscar Torres-Reyna, or <a href="https://www.youtube.com/watch?v=oXsPgQe-aqs&amp;ab_channel=SebastianWaiEcon">this set of Youtube videos</a> From Sebastian Wai. I’ve put together a comprehensive set of resources on <a href="resources/resources.qmd">this page here</a>.</p>
 <section id="install-additional-programs-and-set-up" class="level3">
 <h3 class="anchored" data-anchor-id="install-additional-programs-and-set-up">Install additional programs and set-up</h3>
 <p>First we need to install the packages in Stata that we will make use of. Please do this before our lab session in order to save time.</p>
@@ -315,7 +315,7 @@ Always comment your code
 <p><code>C:/Users/User/Documents/Recon/EOSE09/stata_files/</code></p>
 <p>If you have a Mac, it will look something like this:</p>
 <p><code>Users/Jonathan/Documents/Stata-lab/</code></p>
-<p>If you want to change the settings on your Mac to display the file path in your <strong>Finder</strong> window, follow <a href="https:#www.lifewire.com/use-macs-hidden-finder-path-bar-2260868">this link</a>.</p>
+<p>If you want to change the settings on your Mac to display the file path in your <strong>Finder</strong> window, follow <a href="https://www.lifewire.com/use-macs-hidden-finder-path-bar-2260868">this link</a>.</p>
 <p>To tell Stata that this is where I want it to look for my files, I’ll use the <code>cd</code> (current directory) command in my do-file.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cd <span class="st">"C:/Users/User/Documents/Recon/EOSE09/stata_files/"</span> <span class="co"># set your directory</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -490,10 +490,10 @@ Mercator popularity
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Lab-1-resources/projections.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Obligatory <a href="https:#xkcd.com/977/">XKCD comic</a></figcaption><p></p>
+<p></p><figcaption class="figure-caption">Obligatory <a href="https://xkcd.com/977/">XKCD comic</a></figcaption><p></p>
 </figure>
 </div>
-<p>Have a look at <a href="https:#www.statalist.org/forums/forum/general-stata-discussion/general/1306288-legend-in-spmap">this link</a> to the Stata forum that explains different projections.</p>
+<p>Have a look at <a href="https://www.statalist.org/forums/forum/general-stata-discussion/general/1306288-legend-in-spmap">this link</a> to the Stata forum that explains different projections.</p>
 </div>
 </div>
 <p>We will use the Albers projection, which is saved as <code>nutscoord.dta</code> in your working directory.</p>
@@ -729,7 +729,7 @@ Tip
 </section>
 <section id="exporting-summary-tables" class="level3">
 <h3 class="anchored" data-anchor-id="exporting-summary-tables">Exporting summary tables</h3>
-<p>Here the <code>outreg2</code> command makes a table in MS Word format. To learn more about outreg2, see <a href="https:#www.princeton.edu/~otorres/Outreg2.pdf">this link</a>.</p>
+<p>Here the <code>outreg2</code> command makes a table in MS Word format. To learn more about outreg2, see <a href="https://www.princeton.edu/~otorres/Outreg2.pdf">this link</a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>outreg2 using sum_table.doc, replace <span class="fu">sum</span>(log) <span class="fu">keep</span>(regional_gdp_cap_1990) <span class="fu">eqkeep</span>(N mean sd) label</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>outreg2 <span class="cf">if</span> year <span class="sc">==</span> <span class="dv">1950</span> using sum_table_1950.doc, replace <span class="fu">sum</span>(log) <span class="fu">keep</span>(regional_gdp_cap_1990) <span class="fu">eqkeep</span>(N mean sd) label</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

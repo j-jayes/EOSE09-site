@@ -42,7 +42,7 @@ By the end of this lab, you should have a solid understanding of how to install 
 
 ## Getting started
 
-Given that you have encountered Stata previously in your studies, I will not spend undue time explaining the basics. If you want to brush up on Stata's syntax, I recommend having a look at [these slides](https:#github.com/j-jayes/EOSE09/blob/b8444dd95783f4434ab63c4ad28b0f3033d4fd0a/resources/StataTutorial.pdf) from Oscar Torres-Reyna, or [this set of Youtube videos](https:#www.youtube.com/watch?v=oXsPgQe-aqs&ab_channel=SebastianWaiEcon) From Sebastian Wai. I've put together a comprehensive set of resources on [this page here](resources/resources.qmd).
+Given that you have encountered Stata previously in your studies, I will not spend undue time explaining the basics. If you want to brush up on Stata's syntax, I recommend having a look at [these slides](https://github.com/j-jayes/EOSE09/blob/b8444dd95783f4434ab63c4ad28b0f3033d4fd0a/resources/StataTutorial.pdf) from Oscar Torres-Reyna, or [this set of Youtube videos](https://www.youtube.com/watch?v=oXsPgQe-aqs&ab_channel=SebastianWaiEcon) From Sebastian Wai. I've put together a comprehensive set of resources on [this page here](resources/resources.qmd).
 
 ### Install additional programs and set-up
 
@@ -101,7 +101,7 @@ If you have a Mac, it will look something like this:
 
 `Users/Jonathan/Documents/Stata-lab/`
 
-If you want to change the settings on your Mac to display the file path in your **Finder** window, follow [this link](https:#www.lifewire.com/use-macs-hidden-finder-path-bar-2260868).
+If you want to change the settings on your Mac to display the file path in your **Finder** window, follow [this link](https://www.lifewire.com/use-macs-hidden-finder-path-bar-2260868).
 
 To tell Stata that this is where I want it to look for my files, I'll use the `cd` (current directory) command in my do-file.
 
@@ -273,9 +273,9 @@ Map projections are methods used to represent the surface of the Earth on a flat
 
 Web Mercator, also known as Google Web Mercator, Spherical Mercator, WGS 84 Web Mercator or WGS 84/Pseudo-Mercator, is a variant of the Mercator projection that is optimized for use on the web. It is the projection used by Google Maps, OpenStreetMap, and many other online mapping services.
 
-![Obligatory [XKCD comic](https:#xkcd.com/977/)](Lab-1-resources/projections.png)
+![Obligatory [XKCD comic](https://xkcd.com/977/)](Lab-1-resources/projections.png)
 
-Have a look at [this link](https:#www.statalist.org/forums/forum/general-stata-discussion/general/1306288-legend-in-spmap) to the Stata forum that explains different projections.
+Have a look at [this link](https://www.statalist.org/forums/forum/general-stata-discussion/general/1306288-legend-in-spmap) to the Stata forum that explains different projections.
 :::
 
 We will use the Albers projection, which is saved as `nutscoord.dta` in your working directory.
@@ -519,7 +519,7 @@ You can use the option `, detail` or simply `, d` after the summarize command to
 
 ### Exporting summary tables
 
-Here the `outreg2` command makes a table in MS Word format. To learn more about outreg2, see [this link](https:#www.princeton.edu/~otorres/Outreg2.pdf).
+Here the `outreg2` command makes a table in MS Word format. To learn more about outreg2, see [this link](https://www.princeton.edu/~otorres/Outreg2.pdf).
 
 ```{r}
 
