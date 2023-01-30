@@ -6,6 +6,10 @@ date: 2023-03-29
 execute: 
   warning: false
   message: false
+format: 
+  html:
+    fig-width: 8
+    fig-height: 8
 ---
 
 In Lab 2 we will look at mapping growth across space and time.
@@ -29,6 +33,9 @@ library(tidyverse)
 theme_set(theme_light())
 library(sf)
 library(gt)
+library(rnaturalearth)
+
+world <- ne_countries(scale = "medium", returnclass = "sf", continent = c("europe", "africa"))
 
 df <- read_rds(here::here("resources/adm-resources/regions_illustrated.rds")) %>% 
   rename(nuts_code = code)
@@ -72,8 +79,9 @@ plot_levels <- function(indicator_in, period_in) {
       period == period_in
     ) %>%
     ggplot(aes(fill = value, geometry = geometry)) +
-    geom_sf() +
-    coord_sf() +
+  geom_sf(data = world, aes(geometry = geometry), fill = "grey", colour = "white") +
+  geom_sf() +
+  coord_sf(xlim = c(-23, 42), ylim = c(35, 70), crs = st_crs(4326)) +
     scale_fill_viridis_c(labels = scales::number_format()) +
     labs(fill = indicator_in) +
     theme(legend.position = "bottom") +
@@ -101,8 +109,9 @@ plot_pc <- function(indicator_in, period_in) {
     group_by(region) %>%
     mutate(value_pc = value[indicator == indicator_in] / value[indicator == "Population (persons)"]) %>%
     ggplot(aes(fill = value_pc, geometry = geometry)) +
-    geom_sf() +
-    coord_sf() +
+  geom_sf(data = world, aes(geometry = geometry), fill = "grey", colour = "white") +
+  geom_sf() +
+  coord_sf(xlim = c(-23, 42), ylim = c(35, 70), crs = st_crs(4326)) +
     scale_fill_viridis_c(labels = scales::number_format()) +
     labs(
       fill = str_c(indicator_in, " per capita"),
