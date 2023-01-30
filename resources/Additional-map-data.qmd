@@ -3,6 +3,9 @@ title: "Additional Maps and Data"
 image: "resource_logo_2.png"
 author: "Jonathan Jayes"
 date: 2023-03-29
+execute: 
+  warning: false
+  message: false
 ---
 
 In Lab 2 we will look at mapping growth across space and time.
@@ -23,6 +26,7 @@ This is what the data looks like:
 
 ```{r}
 library(tidyverse)
+theme_set(theme_light())
 library(sf)
 library(gt)
 
@@ -30,33 +34,14 @@ df <- read_rds(here::here("resources/adm-resources/regions_illustrated.rds")) %>
   rename(nuts_code = code)
   
 map <- read_rds(here::here("resources/adm-resources/map_simple.rds"))
-```
 
-```{r}
 df_map <- df %>% 
   inner_join(map)
 ```
 
-```{r}
-# indicators <- df_map %>% 
-#   group_by(stat_domain) %>% 
-#   count(indicator) %>% 
-#   select(-n) %>% 
-#   ungroup()
-# 
-# tab_indicators <- function(stat_domain_id) {
-#   indicators %>%
-#     filter(stat_domain == stat_domain_id) %>%
-#     distinct(indicator) %>%
-#     gt() %>%
-#     tab_header(title = md(glue::glue("**{stat_domain_id}**"))) %>%
-#     tab_options(column_labels.hidden = T)
-# }
-# 
-# for (i in unique(indicators$stat_domain)) {
-#   tab_indicators(i)
-# }
+## Series
 
+```{r}
 df_map %>%
   filter(period == "late") %>% 
   group_by(stat_domain) %>%
@@ -74,58 +59,195 @@ df_map %>%
   tab_options(column_labels.hidden = T)
 ```
 
-We can draw plots list this with the data: showing the relationship between economic activity and gdp
+## Plots
 
 ```{r}
+#| echo: true
+#| code-fold: true
 
-df_map %>%
-  filter(indicator %in% c(
-    "Economic activity rate (% of population aged 15-64)",
-    "Gross domestic product (Euro per inhabitant)",
-    period == "late"
-  )) %>%
-  select(-stat_domain) %>%
-  distinct() %>%
-  pivot_wider(names_from = indicator, values_from = value) %>%
-  mutate(country = fct_lump(country, 8)) %>%
-  ggplot(aes(`Gross domestic product (Euro per inhabitant)`, `Economic activity rate (% of population aged 15-64)`, colour = country)) +
-  geom_point() +
-  labs(colour = "Country")
+plot_levels <- function(indicator_in, period_in) {
+  df_map %>%
+    filter(
+      indicator == indicator_in,
+      period == period_in
+    ) %>%
+    ggplot(aes(fill = value, geometry = geometry)) +
+    geom_sf() +
+    coord_sf() +
+    scale_fill_viridis_c(labels = scales::number_format()) +
+    labs(fill = indicator_in) +
+    theme(legend.position = "bottom") +
+    guides(fill = guide_colourbar(title.position = "top", title.hjust = 0.5, barwidth = 20)) +
+    labs(title = indicator_in)
+}
+
+plot_pc <- function(indicator_in, period_in) {
+  stat_domain_in <- df_map %>%
+    filter(
+      indicator == indicator_in,
+      period == period_in
+    ) %>%
+    distinct(stat_domain) %>%
+    pull()
+
+
+  df_map %>%
+    filter(
+      indicator %in% c(indicator_in, "Population (persons)"),
+      period == period_in,
+      stat_domain == stat_domain_in
+    ) %>%
+    distinct(region, indicator, value, .keep_all = T) %>%
+    group_by(region) %>%
+    mutate(value_pc = value[indicator == indicator_in] / value[indicator == "Population (persons)"]) %>%
+    ggplot(aes(fill = value_pc, geometry = geometry)) +
+    geom_sf() +
+    coord_sf() +
+    scale_fill_viridis_c(labels = scales::number_format()) +
+    labs(
+      fill = str_c(indicator_in, " per capita"),
+      title = str_c(indicator_in, " per capita")
+    ) +
+    theme(legend.position = "bottom") +
+    guides(fill = guide_colourbar(title.position = "top", title.hjust = 0.5, barwidth = 20))
+}
+
+plot_scatter <- function(indicator_in, period_in) {
+  df_map %>%
+    filter(
+      indicator %in% c(indicator_in, "Gross domestic product (Euro per inhabitant)"),
+      period == period_in
+    ) %>%
+    distinct(region, indicator, .keep_all = T) %>%
+    select(-c(stat_domain, year)) %>%
+    pivot_wider(names_from = indicator, values_from = value) %>%
+    mutate(country = fct_lump(country, 10)) %>%
+    ggplot(aes(
+      x = `Gross domestic product (Euro per inhabitant)`,
+      y = .data[[indicator_in]],
+      colour = country
+    )) +
+    geom_point() +
+    geom_smooth(aes(group = 1), se = F) +
+    scale_x_continuous(labels = scales::dollar_format(prefix = "€")) +
+    labs(
+      colour = "Country",
+      title = str_c("Scatterplot of GDP per capita and\n", indicator_in)
+    )
+}
+
+
 ```
 
-We can also make a map of the Economic Activity Rate:
+
+:::: {.column-page}
+::: {.panel-tabset}
+
+### Agriculture
+
+What can we say about milk production? Look at Switzerland go!
 
 ```{r}
-df_map %>%
-  filter(indicator %in% c(
-    "Economic activity rate (% of population aged 15-64)",
-    "Gross domestic product (Euro per inhabitant)",
-    period == "late"
-  )) %>%
-  select(-stat_domain) %>%
-  distinct() %>%
-  pivot_wider(names_from = indicator, values_from = value) %>%
-  ggplot(aes(fill = `Economic activity rate (% of population aged 15-64)`, geometry = geometry)) +
-  geom_sf() +
-  coord_sf() +
-  scale_fill_viridis_c(labels = scales::percent_format()) +
-  labs(fill = "Economic activity rate\n(% of population aged 15-64)")
-
+plot_levels("Production of cow milk on farms (1 000 tonnes)", "early")
 ```
 
-A map of Medical doctors (per 100 000 inhabitants)
+How about sheep farming? Sheesh have a look at Crete!
 
 ```{r}
-df_map %>% 
-    filter(indicator %in% c(
-    "Medical doctors (per 100 000 inhabitants)"
-  )) %>%
-  select(-stat_domain) %>%
-  distinct() %>%
-  ggplot(aes(fill = value, geometry = geometry)) +
-  geom_sf() +
-  coord_sf() +
-  scale_fill_viridis_c(labels = scales::percent_format()) +
-  labs(fill = "Medical doctors \n(per 100 000 inhabitants)")
+plot_pc("Livestock farming, Live sheep", "early")
 ```
 
+There isn't a super clear relationship between number of cows and GDP per capita. Good news that you can farm in a rich country still!
+
+```{r}
+plot_scatter("Livestock farming, Dairy cows", "early")
+```
+
+### Economy
+
+Why does Turkey have such a low level of employment among women?
+
+```{r}
+plot_levels("Employment rate, Females (% of population aged 20-64)", "late") +
+  scale_fill_viridis_c(labels = scales::percent_format())
+```
+
+It seems that there is a strong relationship between GDP per capita and the economic activity rate. Can you guess about the direction of causality?
+
+```{r}
+plot_scatter("Economic activity rate (% of population aged 15-64)", "early")
+```
+
+Do we see agglomeration effects with higher GDP per capita in areas with higher population density? Note the logged y axis.
+
+```{r}
+plot_scatter("Population density (persons per square kilometre)", "early") +
+  scale_y_log10() +
+  labs(y = "Population density (persons per square kilometre)\n(Log scale)")
+```
+
+### Education
+
+Look at how well Scandinavia compares to Western Europe in rates of university education among women!
+
+(I don't know why France is mising...)
+
+```{r}
+plot_levels("Tertiary educational attainment, Females (% of population aged 25-64)", "early") +
+  scale_fill_viridis_c(labels = scales::percent_format())
+```
+
+Who leaves school early? Maybe people in places where formal education is not that enticing?
+
+```{r}
+plot_levels("Early leavers from education and training (% of population aged 18-24)", "early")
+```
+
+Look at how the countries separate here - wow!
+
+```{r}
+plot_scatter("Employment rate of recent graduates (% of population aged 20-34)", "early") +
+  scale_y_continuous(labels = scales::percent_format())
+```
+
+### Health
+
+See how few hospital beds Sweden has compared to Norway.
+
+```{r}
+plot_levels("Hospital beds (per 100 000 inhabitants)", "early")
+```
+
+Seems like you have to be a rich country in order to live long enough to die from cancer :(
+
+```{r}
+plot_levels("Death due to cancer (crude death rate)", "early")
+```
+
+Look at how the countries separate here - wow!
+
+```{r}
+plot_scatter("Medical doctors (per 100 000 inhabitants)", "early") 
+```
+
+
+### Population
+
+```{r}
+plot_levels("Total fertility rate (live births per woman)", "early")
+```
+
+
+```{r}
+plot_levels("Life expectancy at birth, Total (years)", "late")
+```
+
+Interesting demographic trends! You have to be rich enough to have children in a rich country!
+
+```{r}
+plot_scatter("Total fertility rate (live births per woman)", "early") 
+```
+
+
+:::
+::::
