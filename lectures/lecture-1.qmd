@@ -1,0 +1,1425 @@
+---
+title: "Data visualization"
+title-slide-attributes:
+  data-background-image: "lecture-1-resources/preview.png"
+  data-background-size: "30%"
+  data-background-opacity: "0.6"
+format: 
+  revealjs:
+    code-overflow: wrap
+    width: 1600
+    height: 900
+    fig-align: center
+    default-image-extension: svg
+    fig-width: 8
+    fig-height: 6
+    chalkboard: true
+image: "lecture-1-resources/preview.png"
+editor: 
+  markdown: 
+    wrap: sentence
+---
+
+```{r}
+#| include: false
+#| echo: false
+
+knitr::opts_chunk$set(comment = "")
+library(tidyverse)
+library(lubridate)
+library(cowplot)
+library(colorspace)
+library(here)
+library(gt)
+theme_set(theme_light(16)) # 16 for full width, 18 for half width 
+update_geom_defaults("point", list(size = 2)) # 2 for full width, 2.5 for half width
+```
+
+## Purpose
+
+::: columns
+::: {.column width="40%"}
+1.  Get you excited about storytelling with data
+
+2.  Show some tips and tricks to make your maps and charts pop
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="50%"}
+<iframe width="600" height="400" src="https://www.youtube.com/embed/hVimVzgtD6w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+
+</iframe>
+
+[Hans Rosling's *the best stats you've ever seen*](https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen)
+:::
+:::
+
+::: aside
+This is not about the software.
+Rather, it is about the theory behind communicating well with data
+:::
+
+## Structure
+
+::: columns
+::: {.column width="40%"}
+1.  Overcoming Excel
+
+2.  Improving your maps
+
+3.  Telling a story with data
+
+4.  Reproducing figures for publication
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="50%"}
+```{r}
+#| fig-align: center
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "overcoming_excel.png"))
+```
+:::
+:::
+
+::: aside
+A cartoon in the style of Aardman Animations depicting an animatronic computer fighting with a spreadsheet, vibrant green lighting
+:::
+
+## Everything is a story
+
+```{r}
+#| fig-align: center
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "abed.PNG"))
+```
+
+## Dan Harmon's Story Circle
+
+```{r}
+#| fig-align: center
+
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "story-circle.jpg"))
+```
+
+## Our Story Circle
+
+```{r}
+#| fig-align: center
+
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "story-circle.jpg"))
+```
+
+::: notes
+Zone of comfort: Data in excel
+
+Want something: to be better at communicating with your data
+
+Enter an unfamiliar situation: Looking closely at maps and charts
+
+Adapt to it: Practice discussing the differences
+
+Get what they wanted: Banging chart skills
+
+Pay a heavy price: Hard to concentrate - relax with an inspiring video
+
+Return to familiar situation: your projects
+
+Having changed: I hope you learn something.
+
+:::
+
+## Overcoming Excel
+
+<br>
+
+```{r}
+#| fig-align: center
+
+# The popularity data
+pop_df = 
+  data.frame(
+  lang = c("SQL", "Python", "R", "SAS", "Matlab", "SPSS", "Stata"),
+  n_jobs = c(107130, 66976, 48772, 25644, 11464, 3717, 1624),
+  free = c(T, T, T, F, F, F, F)
+  )
+
+## Plot it
+pop_df %>% 
+  mutate(lang = lang %>% factor(ordered = T)) %>%
+  ggplot(aes(x = lang, y = n_jobs, fill = free)) +
+  geom_col() +
+  geom_hline(yintercept = 0) +
+  aes(x = reorder(lang, -n_jobs), fill = reorder(free, -free)) +
+  xlab("Statistical language") +
+  scale_y_continuous(label = scales::comma) +
+  ylab("Number of jobs") +
+  labs(
+    title = "Comparing statistical languages",
+    subtitle = "Number of job postings on Indeed.com, 2022/01/06"
+    ) +
+  scale_fill_manual(
+    "Free?",
+    labels = c("True", "False"),
+    values = c("#f92672", "darkslategray")
+    ) +
+  ggthemes::theme_pander(base_size = 17) +
+  # theme_ipsum() +
+  theme(legend.position = "bottom")
+```
+
+::: notes
+Excel itself is not a bad tool.
+
+It is very popular!
+See the info on jobs that require it.
+:::
+
+## Overcoming Excel
+
+<br>
+
+```{r}
+#| fig-align: center
+
+tribble(
+  ~state, ~pct_req_excel,
+  "North Carolina", 43.48,
+  "Virginia", 51.43,
+  "Georgia", 44.53,
+  "South Carolina", 46.15,
+  "California", 51.44,
+  "New York", 51.03,
+) %>%
+  mutate(state = fct_reorder(state, pct_req_excel)) %>%
+  ggplot(aes(pct_req_excel, state)) +
+  geom_col(fill = "#f92672") +
+  scale_x_continuous(labels = scales::percent_format(scale = 1)) +
+  labs(
+    title = "The prevalence of Excel",
+    caption = "Source: Formby et al (2017)",
+    subtitle = "Percent of graduate jobs requiring Excel proficiency",
+    y = NULL,
+    x = NULL
+  ) +
+  ggthemes::theme_pander(base_size = 17)
+```
+
+[*Formby et al* (2017) Microsoft Excel: Is It An Important Job Skill for College Graduates?](https://files.eric.ed.gov/fulltext/EJ1140801.pdf)
+
+## Overcoming Excel
+
+<br>
+
+### Takeaways:
+
+::: columns
+::: {.column width="50%"}
+1.  You will likely use Excel in the future 📊
+
+2.  Excel's default plots and tables can be improved upon 📈
+
+3.  Simple rules can help you make your message clear 💎
+:::
+
+::: {.column width="50%"}
+
+
+
+:::
+:::
+
+## {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
+
+::: {style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;"}
+[Overcoming Excel]{style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px"}
+
+<br>
+
+[Charts]{style="font-size: 60px; font-weight: bold;"}
+
+:::
+
+
+## Overcoming Excel: Column plot
+
+<br>
+
+```{r}
+#| include: false
+#| echo: false
+
+artists <- tibble(
+  artist = c("ABBA", "Avicii", "José González", "Timbuktu", "Robyn"),
+  monthly_streamers = c(23483532, 29468049, 4067263, 383274, 3110310)
+) %>%
+  arrange(desc(monthly_streamers)) %>%
+  mutate(
+    rank = row_number(),
+    monthly_streamers = monthly_streamers / 1000000
+  ) %>%
+  relocate(rank, .before = artist)
+
+```
+
+::: columns
+::: {.column width="30%"}
+-   We often encounter datasets containing simple amounts 🤏
+
+-   Here is some data on a sample of Swedish musical artists 🎵
+
+-   I put this data into Excel, and asked for a recommended chart 📊
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="60%"}
+<!-- ::: {style="all:initial;"} -->
+
+```{r}
+artists %>%
+  gt() %>%
+  tab_header(title = md("**Swedish musical artists**")) %>%
+  fmt_number(monthly_streamers, decimals = 2) %>%
+  cols_label(
+    artist = "Artist",
+    monthly_streamers = "Monthly listeners (m)",
+    rank = "Rank"
+  ) %>%
+  cols_align(columns = c(rank), align = c("center")) %>%
+  cols_align(columns = c(artist), align = c("left")) %>%
+  cols_align(columns = c(monthly_streamers), align = c("right")) %>%
+  cols_align_decimal(columns = c(monthly_streamers)) %>%
+  tab_source_note(md("Datasource: [Spotify charts Nov 2022](https://charts.spotify.com/home)")) %>%
+  tab_options(
+    heading.title.font.size = 42,
+    table.font.size = 32,
+    source_notes.font.size = 28
+  ) %>%
+  as_raw_html(inline_css = TRUE)
+```
+
+<!-- ::: -->
+
+:::
+:::
+
+## Your turn
+
+```{r}
+library(countdown)
+
+countdown(minutes = 2, seconds = 30, play_sound = TRUE)
+```
+
+```{r}
+#| fig-align: center
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "excel_1.png"))
+```
+
+Discuss with your neighbour:
+
+-   What do we like?
+
+-   What is confusing?
+
+## Tip 1: Avoid rotated axis labels
+
+### Ugly 🤢
+
+```{r}
+#| fig-align: center
+
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "excel_1.png"))
+```
+
+## Tip 1: Avoid rotated axis labels
+
+### Flip axes so that the text is easier to read 👓
+
+```{r}
+#| fig-align: center
+
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "excel_2.png"))
+```
+
+## Tip 2: Pay attention to the order of the bars
+
+### Bad 👎
+
+```{r}
+#| fig-align: center
+
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "excel_1.png"))
+```
+
+## Tip 2: Pay attention to the order of the bars
+
+### It is clear that José González recieves more streams than Robyn
+
+```{r}
+#| fig-align: center
+
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "excel_3.png"))
+```
+
+## Tip 3: Consider your titles, labels and axes
+
+### Uninformative️ ❗
+
+```{r}
+#| fig-align: center
+
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "excel_1.png"))
+```
+
+## Tip 3: Consider your titles, labels and axes
+
+### Note the title, x-axis title, x-axis labels 📙
+
+```{r}
+#| fig-align: center
+
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "excel_4.png"))
+```
+
+## Tip 3: Consider your titles, labels and axes
+
+### Titles and captions have different application areas
+
+:::: columns
+::: {.column width="45%"}
+```{r}
+#| fig-align: center
+artists %>%
+  mutate(artist = fct_reorder(artist, desc(rank))) %>% 
+  ggplot(aes(artist, monthly_streamers)) +
+  geom_col(fill = "#E69F00") +
+  scale_y_continuous(labels = scales::number_format()) +
+  labs(x = NULL,
+       y = "Monthly listeners (millions)",
+       title = "Monthly streams for Swedish musical artists",
+       subtitle = "Data from Spotify charts - November 2022") +
+    scale_x_discrete(
+      name = NULL,
+      expand = c(0, 0.4)
+    ) +
+    coord_flip(clip = "off") +
+    theme_minimal_vgrid(12, rel_small = 1) +
+    theme(
+      axis.line.y = element_blank(),
+      axis.ticks.y = element_blank()
+    )
+```
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="45%"}
+```{r}
+#| fig-align: center
+#| fig-cap: "Figure 1: Monthly streams for Swedish musical artists. Data sources: [Spotify charts](https://charts.spotify.com/home) in November 2022"
+
+artists %>%
+  mutate(artist = fct_reorder(artist, desc(rank))) %>% 
+  ggplot(aes(artist, monthly_streamers)) +
+  geom_col(fill = "#E69F00") +
+  scale_y_continuous(labels = scales::number_format()) +
+  labs(x = NULL,
+       y = "Monthly listeners (millions)") +
+    scale_x_discrete(
+      name = NULL,
+      expand = c(0, 0.4)
+    ) +
+    coord_flip(clip = "off") +
+    theme_minimal_vgrid(12, rel_small = 1) +
+    theme(
+      axis.line.y = element_blank(),
+      axis.ticks.y = element_blank()
+    )
+```
+:::
+::::
+
+## We can use dots instead of bars
+
+```{r}
+#| fig-align: center
+
+artists %>%
+  mutate(artist = fct_reorder(artist, desc(rank))) %>% 
+  ggplot(aes(artist, monthly_streamers)) +
+  geom_col(fill = "#E69F00") +
+  scale_y_continuous(labels = scales::number_format()) +
+  labs(x = NULL,
+       y = "Monthly listeners (millions)") +
+    scale_x_discrete(
+      name = NULL,
+      expand = c(0, 0.4)
+    ) +
+    coord_flip(clip = "off") +
+    theme_minimal_vgrid(12, rel_small = 1) +
+    theme(
+      axis.line.y = element_blank(),
+      axis.ticks.y = element_blank()
+    )
+```
+
+## We can use dots instead of bars
+
+```{r}
+#| fig-align: center
+
+artists %>%
+  mutate(artist = fct_reorder(artist, desc(rank))) %>% 
+  ggplot(aes(artist, monthly_streamers)) +
+  geom_point(colour = "#E69F00", size = 6) +
+  scale_y_continuous(labels = scales::number_format()) +
+  labs(x = NULL,
+       y = "Monthly listeners (millions)") +
+    scale_x_discrete(
+      name = NULL,
+      expand = c(0, 0.4)
+    ) +
+    coord_flip(clip = "off") +
+    theme_minimal_vgrid(12, rel_small = 1) +
+    theme(
+      axis.line.y = element_blank(),
+      axis.ticks.y = element_blank()
+    )
+```
+
+## Dots are preferable if we want to truncate the axes
+
+Dataset: Solar panels in Sweden
+
+```{r}
+#| fig-align: center
+#| fig-width: 8
+#| fig-height: 6
+
+df <- read_rds(here::here("lectures", "lecture-1-resources", "solar_panels_se.rds"))
+
+df %>%
+  filter(
+    power_class == "Total",
+    nchar(region_code) == 2,
+    year == 2021,
+    region != "Riket"
+  ) %>%
+  mutate(
+    region = str_remove(region, "län"),
+    region = fct_reorder(region, installed_capacity_mw),
+    installed_capacity_mw = 200 + installed_capacity_mw
+  ) %>%
+  ggplot(aes(installed_capacity_mw, region)) +
+  geom_point(colour = "#56B4E9", size = 4) +
+  labs(
+    x = "Installed solar generating capacity (MW)",
+    y = "Swedish county"
+  )
+```
+
+## Dots are preferable if we want to truncate the axes
+
+<br>
+
+```{r}
+#| fig-align: center
+#| fig-width: 8
+#| fig-height: 6
+
+p <- df %>%
+  filter(
+    power_class == "Total",
+    nchar(region_code) == 2,
+    year == 2021,
+    region != "Riket"
+  ) %>%
+  mutate(
+    region = str_remove(region, "län"),
+    region = fct_reorder(region, installed_capacity_mw),
+    installed_capacity_mw = 200 + installed_capacity_mw
+  ) %>%
+  ggplot(aes(installed_capacity_mw, region)) +
+  geom_col(fill = "#56B4E9") +
+  coord_cartesian(xlim = c(200, NA)) +
+  labs(
+    x = "Installed solar generating capacity (MW)",
+    y = "Swedish county"
+  )
+
+stamp_bad(p)
+```
+
+[Bar lengths do<br>not accurately<br>represent the<br>data values]{.absolute bottom="10%" right="0%"}
+
+## Dots are preferable if we want to truncate the axes
+
+<br>
+
+```{r}
+#| fig-align: center
+#| fig-width: 8
+#| fig-height: 6
+
+p <- df %>%
+  filter(
+    power_class == "Total",
+    nchar(region_code) == 2,
+    year == 2021,
+    region != "Riket"
+  ) %>%
+  mutate(
+    region = str_remove(region, "län"),
+    region = fct_reorder(region, installed_capacity_mw),
+    installed_capacity_mw = 200 + installed_capacity_mw
+  ) %>%
+  ggplot(aes(installed_capacity_mw, region)) +
+  geom_col(fill = "#56B4E9") +
+  # coord_cartesian(xlim = c(200, NA)) +
+  labs(
+    x = "Installed solar generating capacity (MW)",
+    y = "Swedish county"
+  )
+
+stamp_bad(p)
+```
+
+[Key features<br>of the data<br>are obscured]{.absolute bottom="10%" right="0%"}
+
+## Dots are preferable if we want to truncate the axes
+
+<br>
+
+```{r}
+#| fig-align: center
+#| fig-width: 8
+#| fig-height: 6
+
+df %>%
+  filter(
+    power_class == "Total",
+    nchar(region_code) == 2,
+    year == 2021,
+    region != "Riket"
+  ) %>%
+  mutate(
+    region = str_remove(region, "län"),
+    region = fct_reorder(region, installed_capacity_mw),
+    installed_capacity_mw = 200 + installed_capacity_mw
+  ) %>%
+  ggplot(aes(installed_capacity_mw, region)) +
+  geom_point(colour = "#56B4E9", size = 4) +
+  labs(
+    x = "Installed solar generating capacity (MW)",
+    y = "Swedish county"
+  )
+```
+
+## {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
+
+::: {style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;"}
+[Overcoming Excel]{style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px"}
+
+<br>
+
+[Tables]{style="font-size: 60px; font-weight: bold;"}
+
+:::
+
+## Overcoming Excel: Tables
+
+:::: columns
+::: {.column width="30%"}
+-   We often encounter datasets containing simple amounts 🤏
+
+-   Here is some data on a sample of Swedish musical artists 🎵
+
+-   I put this data into Excel, and asked it to insert a table 🗃️
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="60%"}
+
+```{r}
+artists %>%
+  gt() %>%
+  tab_header(title = md("**Swedish musical artists**")) %>%
+  fmt_number(monthly_streamers, decimals = 2) %>%
+  cols_label(
+    artist = "Artist",
+    monthly_streamers = "Monthly listeners (m)",
+    rank = "Rank"
+  ) %>%
+  cols_align(columns = c(rank), align = c("center")) %>%
+  cols_align(columns = c(artist), align = c("left")) %>%
+  cols_align_decimal(columns = c(monthly_streamers)) %>%
+  tab_source_note(md("Datasource: [Spotify charts Nov 2022](https://charts.spotify.com/home)")) %>%
+  tab_options(
+    heading.title.font.size = 42,
+    table.font.size = 32,
+    source_notes.font.size = 28
+  ) %>%
+  as_raw_html(inline_css = TRUE)
+```
+
+:::
+::::
+
+## Your turn again
+
+```{r}
+library(countdown)
+
+countdown(minutes = 2, seconds = 30, play_sound = TRUE)
+```
+
+```{r}
+#| fig-align: center
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "excel_tab_1.png"))
+```
+
+Discuss with your neighbour:
+
+-   What do we like?
+
+-   What is confusing?
+
+## {background-color="FFFFFF"}
+
+:::: columns
+::: {.column width="10%"}
+:::
+
+::: {.column width="80%"}
+
+```{r}
+
+table_rules <- tribble(
+  ~number, ~rule,
+  1, "Do not use vertical lines.",
+  2, "Do not use heavy horizontal lines between data rows.
+    (Horizontal lines as separator between the title row and the first data row or as frame for the entire table are fine.)",
+  3, "Text columns should be left aligned.",
+  4, "Number columns should be right aligned and should use the same number of decimal digits throughout.",
+  5, "Columns containing single characters are centred.",
+  6, "The header fields are aligned with their data, i.e., the heading for a text column will be left aligned and the heading for a number column will be right aligned."
+) %>%
+  mutate(rule = str_squish(rule))
+
+table_rules %>%
+  gt() %>%
+  cols_label(number = "Number", rule = "Rule") %>%
+  tab_header(title = md("**Key rules for table layout**")) %>%
+  tab_source_note(md("Source: [Claus Wilke's *Fundamentals of Data Visualization*](https://clauswilke.com/dataviz/figure-titles-captions.html#tables)")) %>%
+  cols_align(align = "center", columns = number) %>% 
+  tab_options(
+    heading.title.font.size = 42,
+    table.font.size = 32,
+    source_notes.font.size = 28
+  ) %>%
+  as_raw_html(inline_css = TRUE)
+
+```
+
+:::
+
+::: {.column width="10%"}
+:::
+::::
+
+## Let's apply these rules
+
+:::: columns
+::: {.column width="60%"}
+
+```{r}
+countdown(minutes = 1, seconds = 30, play_sound = TRUE)
+
+table_rules %>%
+  gt() %>%
+  cols_label(number = "Number", rule = "Rule") %>%
+  tab_header(title = md("**Key rules for table layout**")) %>%
+  tab_source_note(md("Source: [Claus Wilke's *Fundamentals of Data Visualization*](https://clauswilke.com/dataviz/figure-titles-captions.html#tables)")) %>%
+  cols_align(align = "center", columns = number) %>%
+  tab_options(
+    heading.title.font.size = 42,
+    table.font.size = 32,
+    source_notes.font.size = 28
+  ) %>%
+  as_raw_html(inline_css = TRUE)
+
+```
+
+:::
+
+::: {.column width="40%"}
+
+```{r}
+#| fig-align: center
+#| fig-cap: "Table A"
+
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "excel_tab_2.png"))
+```
+
+```{r}
+#| fig-align: center
+#| fig-cap: "Table B"
+
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "excel_tab_3.png"))
+```
+
+:::
+::::
+
+## Let's apply these rules
+
+:::: columns
+::: {.column width="60%"}
+
+```{r}
+countdown(minutes = 1, seconds = 30, play_sound = TRUE)
+
+table_rules %>%
+  gt() %>%
+  cols_label(number = "Number", rule = "Rule") %>%
+  tab_header(title = md("**Key rules for table layout**")) %>%
+  tab_source_note(md("Source: [Claus Wilke's *Fundamentals of Data Visualization*](https://clauswilke.com/dataviz/figure-titles-captions.html#tables)")) %>%
+  cols_align(align = "center", columns = number) %>%
+  tab_options(
+    heading.title.font.size = 42,
+    table.font.size = 32,
+    source_notes.font.size = 28
+  ) %>%
+  as_raw_html(inline_css = TRUE)
+
+```
+
+:::
+
+::: {.column width="40%"}
+```{r}
+#| fig-align: center
+#| fig-cap: "Table C"
+
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "excel_tab_4.png"))
+```
+
+
+```{r}
+#| fig-align: center
+#| fig-cap: "Table D"
+
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "excel_tab_5.png"))
+```
+
+
+:::
+::::
+
+## Plotting related time series
+
+Dataset: Fertility and births outside of marriage in Denmark 🇩🇰 and Greece 🇬🇷.
+
+Default choice for plotting is two line plots 
+
+```{r}
+df <- read.csv(here::here("lectures", "lecture-1-resources", "df_denmark_greece.csv")) %>% as_tibble()
+
+```
+
+```{r}
+#| fig-align: center
+
+df %>%
+  # gives meaningful variable names
+  rename(
+    `Total fertility rate` = tfr,
+    `Proportion of births outside marriage` = pbom
+  ) %>%
+  # makes it into a longer dataset so that we can facet
+  # wrap by indicator
+  pivot_longer(-c(country, year), names_to = "indicator") %>%
+  ggplot(aes(year, value, colour = country)) +
+  # here we say nrow = 2 so that they are above one another
+  facet_wrap(~indicator, nrow = 2, scales = "free_y") +
+  geom_line(linewidth = 2.5) +
+  # remove unnecessary axis labels
+  labs(
+    y = NULL,
+    x = "Year",
+    colour = "Country"
+  ) +
+  scale_color_brewer(palette = "Dark2") +
+  ggthemes::theme_pander(base_size = 17) +
+  theme(legend.position = "bottom")
+```
+
+## Plotting related time series
+
+<br>
+
+:::: columns
+::: {.column width="60%"}
+
+```{r}
+df %>%
+  # gives meaningful variable names
+  rename(
+    `Total fertility rate` = tfr,
+    `Proportion of births outside marriage` = pbom
+  ) %>%
+  # makes it into a longer dataset so that we can facet
+  # wrap by indicator
+  pivot_longer(-c(country, year), names_to = "indicator") %>%
+  ggplot(aes(year, value, colour = country)) +
+  # here we say nrow = 2 so that they are above one another
+  facet_wrap(~indicator, nrow = 2, scales = "free_y") +
+  geom_line(linewidth = 2.5) +
+  # remove unnecessary axis labels
+  labs(
+    y = NULL,
+    x = "Year",
+    colour = "Country"
+  ) +
+  scale_color_brewer(palette = "Dark2") +
+  ggthemes::theme_pander(base_size = 17) +
+  theme(legend.position = "bottom")
+```
+
+:::
+
+::: {.column width="40%"}
+
+### Pros 👍
+
+- Familiar
+
+### Cons 👎
+
+- Hard to keep track of each series
+
+- Difficult to compare movements across short periods
+
+:::
+::::
+
+## An alternative: time on a third axis
+
+<br>
+
+```{r}
+#| fig-align: center
+library(ggrepel)
+library(scales)
+library(ggtext)
+
+df %>%
+  mutate(year_flag = ifelse(test = year %% 7 == 0,
+    yes = year,
+    no = NA
+  )) %>%
+  ggplot(aes(tfr, pbom, colour = country, label = year_flag)) +
+  geom_point() +
+  geom_segment(aes(
+    x = tfr,
+    y = pbom,
+    xend = c(tail(tfr, n = -1), NA),
+    yend = c(tail(pbom, n = -1), NA)
+  ),
+  arrow = arrow(length = unit(0.25, "cm"))
+  ) +
+  geom_text_repel(colour = "black") +
+  scale_y_continuous(labels = percent_format(scale = 1)) +
+  scale_colour_manual(values = c("#C60C30", "#0D5EAF")) +
+  labs(
+    x = "Total fertility rate",
+    y = "Proportion of births\noutside of marriage",
+    title = "Fertility vs births outside of marriage 
+       in<br><span style='color:#C60C30'>Denmark</span> and 
+       <span style='color:#0D5EAF'>Greece</span>"
+  ) +
+  ggthemes::theme_pander(base_size = 17) +
+  theme(
+    legend.position = "none",
+    plot.title = element_markdown()
+  )
+
+```
+
+
+## What have we learned?
+
+<br>
+
+:::: columns
+::: {.column width="60%"}
+
+```{r}
+#| fig-align: center
+library(ggrepel)
+library(scales)
+library(ggtext)
+
+df %>%
+  mutate(year_flag = ifelse(test = year %% 7 == 0,
+    yes = year,
+    no = NA
+  )) %>%
+  ggplot(aes(tfr, pbom, colour = country, label = year_flag)) +
+  geom_point() +
+  geom_segment(aes(
+    x = tfr,
+    y = pbom,
+    xend = c(tail(tfr, n = -1), NA),
+    yend = c(tail(pbom, n = -1), NA)
+  ),
+  arrow = arrow(length = unit(0.25, "cm"))
+  ) +
+  geom_text_repel(colour = "black") +
+  scale_y_continuous(labels = percent_format(scale = 1)) +
+  scale_colour_manual(values = c("#C60C30", "#0D5EAF")) +
+  labs(
+    x = "Total fertility rate",
+    y = "Proportion of births\noutside of marriage",
+    title = "Fertility vs births outside of marriage 
+       in<br><span style='color:#C60C30'>Denmark</span> and 
+       <span style='color:#0D5EAF'>Greece</span>"
+  ) +
+    ggthemes::theme_pander(base_size = 17) +
+  theme(
+    legend.position = "none",
+    plot.title = element_markdown()
+  )
+
+```
+
+:::
+::: {.column width="40%"}
+
+- Both countries saw a large drop in fertility from the 1960s until the 1980s
+
+- In Denmark, after 1970 we see an increase in the share of children born outside of marriage
+
+- In contrast, Greek families have relatively few children outside of marriage.
+
+- After 1990, Danish fertility increased from 1.3 to 1.8, while Greek fertility remained at 'lowest-low' levels, below replacement.
+
+:::
+::::
+
+## What have we changed?
+
+<br>
+
+:::: columns
+::: {.column width="60%"}
+
+```{r}
+#| fig-align: center
+library(ggrepel)
+library(scales)
+library(ggtext)
+
+df %>%
+  mutate(year_flag = ifelse(test = year %% 7 == 0,
+    yes = year,
+    no = NA
+  )) %>%
+  ggplot(aes(tfr, pbom, colour = country, label = year_flag)) +
+  geom_point() +
+  geom_segment(aes(
+    x = tfr,
+    y = pbom,
+    xend = c(tail(tfr, n = -1), NA),
+    yend = c(tail(pbom, n = -1), NA)
+  ),
+  arrow = arrow(length = unit(0.25, "cm"))
+  ) +
+  geom_text_repel(colour = "black") +
+  scale_y_continuous(labels = percent_format(scale = 1)) +
+  scale_colour_manual(values = c("#C60C30", "#0D5EAF")) +
+  labs(
+    x = "Total fertility rate",
+    y = "Proportion of births\noutside of marriage",
+    title = "Fertility vs births outside of marriage 
+       in<br><span style='color:#C60C30'>Denmark</span> and 
+       <span style='color:#0D5EAF'>Greece</span>"
+  ) +
+    ggthemes::theme_pander(base_size = 17) +
+
+  theme(
+    legend.position = "none",
+    plot.title = element_markdown()
+  )
+
+```
+
+:::
+::: {.column width="40%"}
+
+- Indicators on the x- and y-axis and then show time with text labels
+
+- Legend is replaced with colour coded title
+
+- Colours have meaning (main colour of country flag)
+
+- Percentage labels on the y-axis
+
+:::
+::::
+
+## Giving context
+
+Sometimes we may want to show a particular series of data in its correct context. 
+
+For instance, in our line graph above which showed the evolution of the share of births outside of marriage in **Denmark and Greece**, we might want to know if these two represent the **extremes** within Europe.
+
+## Giving context
+
+Do **Denmark and Greece** represent the **extremes** of the share of children born outside of marriage in Europe?
+
+<br>
+
+```{r}
+#| fig-align: center
+
+
+df <- read_rds(here::here("lectures", "lecture-1-resources", "births_outside_marriage.rds"))
+
+df %>%
+  filter(flag == 1) %>%
+  ggplot(aes(x = year, y = pbom, group = country, colour = country)) +
+  geom_line(linewidth = 2) +
+  scale_color_brewer(palette = "Dark2") +
+  scale_y_continuous(labels = percent_format(scale = 1)) +
+  labs(
+    title = "Proportion of births outside of marriage",
+    y = NULL,
+    x = NULL,
+    colour = "Country"
+  ) +
+    ggthemes::theme_pander(base_size = 17) +
+  theme(legend.position = "bottom")
+```
+
+## Giving context with an average
+
+One way to do this would be to show an average for Europe
+
+```{r}
+#| fig-align: center
+
+df %>%
+  group_by(year) %>% #<<
+  mutate(mean_pbom = mean(pbom, na.rm = T)) %>% #<<
+  ungroup() %>% #<<
+  ggplot() +
+  geom_line(aes(x = year, y = pbom, group = country, colour = country),
+    data = df %>% filter(flag == 1),
+    linewidth = 2
+  ) +
+  geom_line(aes(x = year, y = mean_pbom, colour = "European average"), linewidth = 2) + #<<
+  scale_y_continuous(labels = percent_format(scale = 1)) +
+  scale_color_brewer(palette = "Dark2") +
+  labs(
+    title = "Proportion of births outside of marriage",
+    x = NULL,
+    y = NULL,
+    colour = "Country"
+  ) +
+  ggthemes::theme_pander(base_size = 17) +
+  theme(legend.position = "bottom")
+```
+
+## Giving context with an interval ribbon
+
+```{r}
+#| fig-align: center
+
+df %>%
+  group_by(year) %>%
+  mutate(
+    mean_pbom = mean(pbom, na.rm = T),
+    pct_10 = quantile(pbom, .1, na.rm = T), #<<
+    pct_90 = quantile(pbom, .9, na.rm = T)
+  ) %>% #<< 
+  ungroup() %>%
+  ggplot() +
+  geom_line(aes(x = year, y = pbom, group = country, colour = country),
+    data = df %>% filter(flag == 1), linewidth = 2
+  ) +
+  geom_ribbon(aes(
+    x = year, ymin = pct_10, ymax = pct_90, #<<
+    fill = "Interval \n(10th to 90th percentile)"
+  ), alpha = .3) + #<<
+  geom_line(aes(x = year, y = mean_pbom, colour = "European average"), linewidth = 2) +
+  scale_y_continuous(labels = percent_format(scale = 1)) +
+  scale_fill_manual(values = "#FFB38A") + #<<
+  scale_color_brewer(palette = "Dark2") +
+  guides(
+    fill = guide_legend(order = 2), #<<
+    col = guide_legend(order = 1)
+  ) + #<<
+  labs(
+    y = "Proportion of births\noutside of marriage",
+    x = NULL,
+    colour = "Country",
+    fill = ""
+  ) +
+  ggthemes::theme_pander(base_size = 17) +
+  theme(legend.position = "bottom")
+```
+
+## Giving context with all of the data
+
+This is silly
+
+```{r}
+#| fig-align: center
+#| fig-height: 10
+#| fig-width: 10
+
+df %>%   
+  ggplot(aes(x = year, y = pbom, group = country, colour = country)) +
+  geom_line() +
+  scale_y_continuous(labels = percent_format(scale = 1)) +
+  labs(title = "Proportion of births outside of marriage",
+       y = NULL,
+       x = NULL,
+       colour = "Country") +
+  theme(legend.text = element_text(size = 4),
+        axis.title = element_text(size = 8),
+        legend.position = "bottom")
+```
+
+## Giving context with all of the data
+
+Here we [highlight]{style="color: #C60C30;"} the [series]{style="color: #0D5EAF;"} we are interested in and draw in the remaining series in [grey]{style="color: #7f7f7f;"}
+
+```{r}
+#| fig-align: center
+
+library(gghighlight)
+
+df %>%
+  ggplot() +
+  geom_line(aes(x = year, y = pbom, colour = country), linewidth = 1.5) +
+  gghighlight(flag == 1) +
+  scale_y_continuous(labels = percent_format(scale = 1)) +
+  theme(
+    legend.text = element_text(size = 4),
+    legend.position = "bottom",
+    plot.title = element_markdown(size = 14)
+  ) +
+  scale_colour_manual(values = c("#C60C30", "#0D5EAF")) +
+  labs(
+    title = "Proportion of births outside of marriage in <span style='color:#C60C30'>Denmark</span> and <span style='color:#0D5EAF'>Greece</span>",
+    y = NULL,
+    x = NULL,
+    colour = "Country"
+  )
+```
+
+
+## What have we changed?
+
+<br>
+
+:::: columns
+::: {.column width="60%"}
+
+```{r}
+#| fig-align: center
+df %>%
+  ggplot() +
+  geom_line(aes(x = year, y = pbom, colour = country), linewidth = 1.5) +
+  gghighlight(flag == 1) +
+  scale_y_continuous(labels = percent_format(scale = 1)) +
+  theme(
+    legend.text = element_text(size = 4),
+    legend.position = "bottom",
+    plot.title = element_markdown(size = 14)
+  ) +
+  scale_colour_manual(values = c("#C60C30", "#0D5EAF")) +
+  labs(
+    title = "Proportion of births outside of marriage in <span style='color:#C60C30'>Denmark</span> and <span style='color:#0D5EAF'>Greece</span>",
+    y = NULL,
+    x = NULL,
+    colour = "Country"
+  )
+
+```
+
+:::
+::: {.column width="40%"}
+
+- Shows each of the series
+
+- We can see that Denmark is a leader in the beginning, but is caught up by other nations
+
+- Does not hide outliers
+
+- Makes clear the trends in your countries of interest
+
+:::
+::::
+
+## Legends
+
+colour dots by region.
+
+
+## Tips for polishing your figures
+
+```{r}
+knitr::include_url("https://colorbrewer2.org/#type=sequential&scheme=OrRd&n=3", height = 800)
+```
+
+
+## Dataset:
+
+Daily hours between sunrise and sunset for various locations in 2022
+
+```{r}
+#| echo: false
+sun_hours <- read_rds(here::here("lectures", "lecture-1-resources", "sun_hours.rds"))
+
+sun_hours %>%
+  select(-sun_hours_period) %>%
+  head(10) %>%
+  gt() %>%
+  tab_header(title = "Sunrise and sunset time") %>%
+  cols_label(
+    city = "City",
+    date = "Date",
+    sun_hours = "Hours between sunrise and sunset"
+  ) %>%
+  tab_source_note(md("Source: [Schools observatory](https://www.schoolsobservatory.org/learn/astro/nightsky/sunrs_set/sunrs_world)")) %>%
+  tab_options(
+    heading.title.font.size = 32,
+    table.font.size = 26,
+    source_notes.font.size = 20
+  ) %>%
+  as_raw_html(inline_css = TRUE)
+
+```
+
+## Dataset:
+
+Locations of cities on a map
+
+```{r}
+#| fig-align: center
+
+# library(tidygeocoder)
+# locations <- sun_hours %>%
+#   count(city) %>%
+#   geocode(city, method = "osm")
+# locations %>%
+#   write_rds(here::here("lectures", "lecture-1-resources", "sun_hours_coords.rds"))
+
+locations <- read_rds(here::here("lectures", "lecture-1-resources", "sun_hours_coords.rds"))
+
+library(leaflet)
+
+m <- leaflet(locations)
+m %>%
+  addProviderTiles(providers$CartoDB.Positron) %>%
+  addCircleMarkers(~long, ~lat) %>%
+  addPopups(~long, ~lat, popup = ~city)
+
+```
+
+## Sun hours in a table
+
+```{r}
+months <- c("City",
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec")
+
+sun_hours_tab <- sun_hours %>%
+  mutate(month = lubridate::month(date)) %>%
+  group_by(city, month) %>%
+  summarise(mean_sun_hour = mean(sun_hours)) %>%
+  ungroup() %>%
+  pivot_wider(names_from = month, values_from = mean_sun_hour)
+
+colnames(sun_hours_tab) <- months
+
+sun_hours_tab %>%
+  gt() %>%
+  fmt_number(columns = -City, decimals = 1) %>%
+  cols_align_decimal(columns = -City) %>%
+  cols_align(columns = City, align = "left") %>%
+  tab_options(
+    table.font.size = 26,
+  ) %>%
+  as_raw_html(inline_css = TRUE)
+```
+
+## Sun hours mapped onto y position
+
+```{r}
+#| fig-align: center
+#| fig-width: 10
+#| fig-height: 8
+
+sun_hours %>%
+  ggplot(aes(x = date, y = sun_hours, color = city)) +
+  geom_line(linewidth = 1) +
+  scale_y_continuous(labels = scales::number_format(accuracy = 1)) +
+  scale_color_manual(
+    name = NULL,
+    values = c("#E69F00", "#56B4E9", "#009E73", "#CC79A7")
+  ) +
+  theme_minimal_grid(16) +
+  labs(x = NULL, y = "Hours between sunrise and sunet")
+```
+
+## Sun hours mapped onto colour
+
+```{r}
+#| fig-align: center
+#| fig-width: 10
+#| fig-height: 8
+sun_hours %>%
+  mutate(
+    month = month(date, label = T)
+  ) %>%
+  group_by(city, month) %>%
+  summarise(mean_sun_hours = mean(sun_hours)) %>%
+  ggplot(aes(x = month, y = city, fill = mean_sun_hours)) +
+  geom_tile(width = .95, height = 0.95) +
+  scale_fill_viridis_c(
+    option = "B", begin = 0.15, end = 0.98,
+    name = "Hours of sunlight"
+  ) +
+  scale_x_discrete(name = "Month") +
+  scale_y_discrete(name = NULL) +
+  coord_fixed(expand = FALSE) +
+  theme_half_open(16) +
+  theme(
+    axis.line = element_blank(),
+    axis.ticks = element_blank(),
+    legend.title = element_text(size = 14)
+  )
+```
+

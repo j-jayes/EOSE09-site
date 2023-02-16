@@ -131,3 +131,42 @@ df <- readr::read_rds("resources/adm-resources/regions_illustrated.rds")
 df %>% 
   write_excel_csv2("resources/adm-resources/regions_illustrated_excel.csv")
 ```
+
+
+```{r}
+library(haven)
+
+stata <- read_dta(here::here("resources", 
+                                    "adm-resources", 
+                                    "RosesWolf_Regional_Fahad.dta"))
+
+df <- readxl::read_excel(here::here("resources", 
+                                    "adm-resources", 
+                                    "urbanization.xlsx"), skip = 3) %>%
+  janitor::clean_names()
+
+df <- df %>%
+  select(geo_codes, geo_labels, contains("pct")) %>% 
+  rename_with(.cols = contains("pct"), .fn = ~ str_c(.x, "_2021"))
+
+df %>% 
+  rename(NUTS_CODE = geo_codes) %>% 
+  filter(NUTS_CODE %in% stata$nuts) %>% 
+  write_dta(here::here(
+    "resources",
+    "adm-resources",
+    "urbanisation.dta"
+  ))
+
+stata <- stata %>% 
+  left_join(df, by = c("nuts" = "geo_codes")) 
+
+stata %>%
+  filter(country == "Italy") %>%
+  write_dta(here::here(
+    "resources",
+    "adm-resources",
+    "RosesWolf_Regional_Added_pop_densiy.dta"
+  ))
+```
+

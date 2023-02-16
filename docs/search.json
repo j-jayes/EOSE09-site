@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "EOSE09 - Economy and Society: Regional Development and Growth",
     "section": "",
-    "text": "Lab 1 Exercises\n\n\n\n\n\n\nJonathan Jayes\n\n\nJan 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStata Lab 1 Mapping Growth: Basic Maps\n\n\n\n\n\n\nVinzent Ostermeyer, adapted Jonathan Jayes\n\n\nJan 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStata Lab Hints: Basic Graphs\n\n\n\n\n\n\nJonathan Jayes\n\n\nFeb 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStata Lab 2 Mapping Growth: Across Space and Time\n\n\n\n\n\n\nVinzent Ostermeyer, adapted Jonathan Jayes\n\n\nFeb 17, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdditional Maps and Data\n\n\n\n\n\n\nJonathan Jayes\n\n\nMar 29, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nJonathan Jayes\n\n\nMar 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChatGPT tips\n\n\n\n\n\n\nJonathan Jayes\n\n\nApr 1, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Lab 1 Exercises\n\n\n\n\n\n\nJonathan Jayes\n\n\nJan 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStata Lab 1 Mapping Growth: Basic Maps\n\n\n\n\n\n\nVinzent Ostermeyer, adapted Jonathan Jayes\n\n\nJan 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStata Lab Hints: Basic Graphs\n\n\n\n\n\n\nJonathan Jayes\n\n\nFeb 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStata Lab 2 Mapping Growth: Across Space and Time\n\n\n\n\n\n\nVinzent Ostermeyer, adapted Jonathan Jayes\n\n\nFeb 17, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdditional Maps and Data\n\n\n\n\n\n\nJonathan Jayes\n\n\nMar 29, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nJonathan Jayes\n\n\nMar 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChatGPT tips\n\n\n\n\n\n\nJonathan Jayes\n\n\nApr 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData visualization\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "labs/Lab-1-exercises.html",
@@ -180,5 +180,537 @@
     "title": "Resources",
     "section": "",
     "text": "🔥 Welcome to our page of resources for learning Stata, the powerful econometrics software used by researchers and analysts in many fields. 📚 Here you will find a variety of materials to help you get started and become proficient in using Stata, including tutorials, documentation, and examples.🤓 Whether you’re a beginner or an experienced user, these resources will help you make the most of this powerful tool💻📊.\n\nStata commands\nThis Stata tutorial from Oscar Torres Reyna.\n\n\nLinks to a bunch of resources from Stata\n\n\n\n\n\n\n  \n    \n      Resources to help you learn Stata\n    \n    \n      From the Stata website\n    \n  \n  \n    \n      Title and link\n      Description\n    \n  \n  \n    \nStata Online Training Page\n      \nA series of pages giving a step-by-step instruction in Stata. Topics start from basic Stata usage, and progress through common data management tasks through to using Stata for a wide variety of analysis topics.\n    \nStata Tutorial\n      \nA brief and informative introduction to Stata. There are also some nice notes about fitting generalized linear models using Stata.\n    \nStata cheat sheets\n      \nThese compact yet well-organized sheets cover everything you need, from syntax and data processing to plotting and programming, making them handy references to download for quick use.\n    \nArticles on Statistical Computing\n      \nA large collection of well-written and informative pages about a broad set of topics, including an in-depth Introduction to Stata for Researchers, and a careful treatment of Multiple Imputation in Stata.\n    \nResources to help you learn and use Stata\n      \nAn extensive resource of Stata information, including FAQs, learning modules, a quick-reference guide, annotated output, textbook examples, and more. Don't miss the Stata Web Books.\n    \nStata Highlights\n      \nExcerpts from Graduate Statistics I and Graduate Statistics II notes which highlight the use of Stata for solving various problems. In particular, there are some good pointers on interpreting predictive margins and marginal effects.\n    \nSocial Science Research, Stata & OS X Programming\n      \nPosts on research, Stata & OSX programming.\n    \nTips for using Stata\n      \nDescribes some tips to enhance your efficient use of Stata. New users may want to visit the Getting Started with Stata page.\n    \nInternet Guide to Stata\n      \nThis brief guide focuses on Stata for Windows.\n    \nThe Stata Guide\n      \nInformation on Stata, data visualizations, data management, and programming.\n    \nMultilevel Modelling\n      \nThere approximately 150 pages of materials covering fitting multilevel models for continuous and binary dependent variables in Stata using the xtmixed and xtmelogit commands. Users have to register to access the pdfs, datasets and do-files, but all materials are made freely available.\n    \nBiostatistics II\n      \nLecture notes from the second semester biostatistics class at Vanderbilt. These notes contain extensive screen shots of using the Stata menu system to do a wide range of statistical analyses common in the biostatistics world. The datasets used for the examples are also available, so that it is possible to work through the lessons and replicate the results.\n    \nStatistical Modelling in Stata\n      \nLecture notes, exercises and solutions for an introductory statistics course on basic statistical inference. The materials start with the basics and work up through introductory survival analysis.\n    \nIntroduction to Stata\n      \nA 67-page description of Stata, its key features and benefits, and other useful information.\n    \nAn Introduction to Stata\n      \nA series of video tutorials introducing Stata basics—navigating Stata's interface, inspecting and modifying data, and saving commands in a do-file.\n    \nVisualizing data using Stata\n      \nA series of videos for Stata graphics. These videos demonstrate how to create graphs such as histograms, box plots, bar graphs, scatterplots, and fitted regression lines, and they show how to customize the look of a graph.\n    \nThe Stata Project-Oriented Guide\n      \nA series of short tutorials covering the typical steps in a statistical project. The tutorials range from data management to automation with a dash of statistics and postestimation.\n    \nSurvival Analysis with Stata\n      \nLessons, programs, do-files, and a PDF book about survival analysis in Stata. (Updated June 2008)\n    \nRegression with Stata\n      \nThe Statistical Consulting Group at Academic Technology Services has created a “web book” covering a variety of topics on performing regression analysis with Stata. The book does not teach regression but gives examples showing how to use Stata for performing regression analysis. Written for Stata 7.\n    \nWorkshops on “Audit trails, reproducibility and output processing” and “Effective use of Stata Graphics”\n      \nWorkshop notes, Powerpoint presentations, data files, and do-files\n    \ngologit2\n      \nPrograms, readings, and documentation for generalized ordered logit and partial proportional-odds models for ordinal dependent variables (gologit2) and ordinal generalized linear models (oglm).\n    \noglm\n      \nAn introduction to Stata and various commands.\n    \nAn Introduction to Stata\n      \nMicroeconometrics class notes for use with Stata 10\n    \nShort Guides to Microeconometrics (with Stata commands)\n      \nWeekly video postings by StataCorp showing how to do common tasks in Stata.\n    \nStata video tutorials\n      \nNew to Stata? Sign up for the Ready, Set, Go Stata webinar. More experienced user? See the complete list of Stata webinars.\n    \nFree Stata webinars\n      \nNot Elsewhere Classified is the official Stata blog that has articles written by Stata developers and StataCorp staff on the use of Stata and other news related to the use of Stata.\n    \nThe Stata Blog\n      \nAnswers to the most frequently asked questions in statistics, data management, graphics, and operating system issues.\n    \nStata Technical Support FAQs\n      \nStatalist is a forum where over 40,000 Stata users from experts to neophytes maintain a lively dialogue about all things statistical and Stata.\n    \nStatalist\n      \nClassroom and web-based courses, on-site training courses, webinars, NetCourses, and more.\n    \nStata training\n      \nThe Stata Journal is a quarterly publication containing articles about statistics, data analysis, teaching methods, and effective use of Stata's language.\n    \nStata Journal\n      \nAlso see the Stata Technical Bulletin FAQ. Although the SJ superseded the STB, past STB issues contain valuable information. The FAQ includes information on how to obtain over the net the software associated with the published articles.\n    \nVisual overview for creating graphs\n      \nScroll through over 100 graphs that are broken out by category. Click on a graph to see the command that created it.\n    \nDanish Short Course Materials\n      \nDownload our cheat sheets for calling Python from Stata and our guide for working with dates and times in Stata.\n  \n  \n  \n\n\n\n\n\n\nUseful blog posts\nAsjad Naqvi’s mapping guide for Stata part 1\nAsjad Naqvi’s mapping guide for Stata part 2\nA World Bank blog on mapping in Stata\n\n\nYoutube channels\nSebastian Wai’s channel\n\n\nEconometrics Academy from Ani Katchova"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#dataset",
+    "href": "lectures/lecture-1.html#dataset",
+    "title": "Data visualization",
+    "section": "Dataset:",
+    "text": "Dataset:\nDaily hours between sunrise and sunset for various locations in 2022\n\n\n\n\n  \n  \n  \n    \n      Sunrise and sunset time\n    \n    \n  \n  \n    \n      City\n      Date\n      Hours between sunrise and sunset\n      month\n    \n  \n  \n    Cape Town, South Africa\n2022-01-01\n14.55000\nJan\n    Cape Town, South Africa\n2022-01-02\n14.53333\nJan\n    Cape Town, South Africa\n2022-01-03\n14.53333\nJan\n    Cape Town, South Africa\n2022-01-04\n14.51667\nJan\n    Cape Town, South Africa\n2022-01-05\n14.50000\nJan\n    Cape Town, South Africa\n2022-01-06\n14.48333\nJan\n    Cape Town, South Africa\n2022-01-07\n14.46667\nJan\n    Cape Town, South Africa\n2022-01-08\n14.45000\nJan\n    Cape Town, South Africa\n2022-01-09\n14.43333\nJan\n    Cape Town, South Africa\n2022-01-10\n14.41667\nJan\n  \n  \n    \n      Source: Schools observatory"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#dataset-1",
+    "href": "lectures/lecture-1.html#dataset-1",
+    "title": "Data visualization",
+    "section": "Dataset:",
+    "text": "Dataset:\nLocations of cities on a map"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#dataset-2",
+    "href": "lectures/lecture-1.html#dataset-2",
+    "title": "Data visualization",
+    "section": "Dataset",
+    "text": "Dataset\nLocations of cities on a map"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#sun-hours-mapped-onto-y-position",
+    "href": "lectures/lecture-1.html#sun-hours-mapped-onto-y-position",
+    "title": "Data visualization",
+    "section": "Sun hours mapped onto y position",
+    "text": "Sun hours mapped onto y position"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#sun-hours-mapped-onto-colour",
+    "href": "lectures/lecture-1.html#sun-hours-mapped-onto-colour",
+    "title": "Data visualization",
+    "section": "Sun hours mapped onto colour",
+    "text": "Sun hours mapped onto colour"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#sun-hours-in-a-table",
+    "href": "lectures/lecture-1.html#sun-hours-in-a-table",
+    "title": "Data visualization",
+    "section": "Sun hours in a table",
+    "text": "Sun hours in a table\n\n\n\n\n  \n  \n  \n  \n    \n      City\n      Jan\n      Feb\n      Mar\n      Apr\n      May\n      Jun\n      Jul\n      Aug\n      Sep\n      Oct\n      Nov\n      Dec\n    \n  \n  \n    Lund, Sweden\n 8.1\n 9.8\n11.9\n14.1\n16.0\n17.0\n16.5\n14.8\n12.7\n10.5\n 8.6\n 7.5\n    Panama City, Panama\n11.8\n11.9\n12.1\n12.3\n12.4\n12.5\n12.5\n12.3\n12.1\n12.0\n11.8\n11.8\n    Livingstone, Zambia\n13.1\n12.7\n12.2\n11.7\n11.2\n11.0\n11.1\n11.5\n12.0\n12.5\n13.0\n13.2\n    Cape Town, South Africa\n14.3\n13.4\n12.3\n11.2\n10.2\n 9.8\n10.0\n10.8\n11.9\n13.0\n14.0\n14.6"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#we-often-encounter-datasets-containing-simple-amounts",
+    "href": "lectures/lecture-1.html#we-often-encounter-datasets-containing-simple-amounts",
+    "title": "Data visualization",
+    "section": "We often encounter datasets containing simple amounts",
+    "text": "We often encounter datasets containing simple amounts\n\n\n\n\n\n\n  \n    \n      Swedish musical artists\n    \n    \n  \n  \n    \n      Rank\n      Artist\n      Monthly listeners (m)\n    \n  \n  \n    1\nAvicii\n29.47\n    2\nABBA\n23.48\n    3\nJosé González\n 4.07\n    4\nRobyn\n 3.11\n    5\nTimbuktu\n 0.38\n  \n  \n  \n    \n       Datasource: Spotify"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#we-can-visualize-amounts-with-bar-plots",
+    "href": "lectures/lecture-1.html#we-can-visualize-amounts-with-bar-plots",
+    "title": "Data visualization",
+    "section": "We can visualize amounts with bar plots",
+    "text": "We can visualize amounts with bar plots"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#bars-can-also-run-horizontally",
+    "href": "lectures/lecture-1.html#bars-can-also-run-horizontally",
+    "title": "Data visualization",
+    "section": "Bars can also run horizontally",
+    "text": "Bars can also run horizontally"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#avoid-rotated-axis-labels",
+    "href": "lectures/lecture-1.html#avoid-rotated-axis-labels",
+    "title": "Data visualization",
+    "section": "Avoid rotated axis labels",
+    "text": "Avoid rotated axis labels"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#avoid-rotated-axis-labels-1",
+    "href": "lectures/lecture-1.html#avoid-rotated-axis-labels-1",
+    "title": "Data visualization",
+    "section": "Avoid rotated axis labels",
+    "text": "Avoid rotated axis labels"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#pay-attention-to-the-order-of-the-bars",
+    "href": "lectures/lecture-1.html#pay-attention-to-the-order-of-the-bars",
+    "title": "Data visualization",
+    "section": "Pay attention to the order of the bars",
+    "text": "Pay attention to the order of the bars"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#we-can-use-dots-instead-of-bars",
+    "href": "lectures/lecture-1.html#we-can-use-dots-instead-of-bars",
+    "title": "Data visualization",
+    "section": "We can use dots instead of bars",
+    "text": "We can use dots instead of bars"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#dots-are-preferable-if-we-want-to-truncate-the-axes",
+    "href": "lectures/lecture-1.html#dots-are-preferable-if-we-want-to-truncate-the-axes",
+    "title": "Data visualization",
+    "section": "Dots are preferable if we want to truncate the axes",
+    "text": "Dots are preferable if we want to truncate the axes\nDataset: Solar panels in Sweden"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#dots-are-preferable-if-we-want-to-truncate-the-axes-1",
+    "href": "lectures/lecture-1.html#dots-are-preferable-if-we-want-to-truncate-the-axes-1",
+    "title": "Data visualization",
+    "section": "Dots are preferable if we want to truncate the axes",
+    "text": "Dots are preferable if we want to truncate the axes\n\n\nBar lengths donot accuratelyrepresent thedata values"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#purpose",
+    "href": "lectures/lecture-1.html#purpose",
+    "title": "Data visualization",
+    "section": "Purpose",
+    "text": "Purpose\n\n\n\nGet you excited about storytelling with data\nShow some tips and tricks to make your maps and charts pop\n\n\n\n\n\n\nHans Rosling’s the best stats you’ve ever seen\n\n\n\n\nThis is not about the software. Rather, it is about the theory behind communicating well with data"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#structure",
+    "href": "lectures/lecture-1.html#structure",
+    "title": "Data visualization",
+    "section": "Structure",
+    "text": "Structure\n\n\n\nOvercoming Excel\nImproving your maps\nTelling a story with data\nReproducing figures for publication\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA cartoon in the style of Aardman Animations depicting an animatronic computer fighting with a spreadsheet, vibrant green lighting"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#everything-is-a-story",
+    "href": "lectures/lecture-1.html#everything-is-a-story",
+    "title": "Data visualization",
+    "section": "Everything is a story",
+    "text": "Everything is a story"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#dan-harmons-story-circle",
+    "href": "lectures/lecture-1.html#dan-harmons-story-circle",
+    "title": "Data visualization",
+    "section": "Dan Harmon’s Story Circle",
+    "text": "Dan Harmon’s Story Circle"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#our-story-circle",
+    "href": "lectures/lecture-1.html#our-story-circle",
+    "title": "Data visualization",
+    "section": "Our Story Circle",
+    "text": "Our Story Circle\n\n\nZone of comfort: Data in excel\nWant something: to be better at communicating with your data\nEnter an unfamiliar situation: Looking closely at maps and charts\nAdapt to it: Practice discussing the differences\nGet what they wanted: Banging chart skills\nPay a heavy price: Hard to concentrate - relax with an inspiring video\nReturn to familiar situation: your projects\nHaving changed: I hope you learn something."
+  },
+  {
+    "objectID": "lectures/lecture-1.html#datasets",
+    "href": "lectures/lecture-1.html#datasets",
+    "title": "Data visualization",
+    "section": "Datasets",
+    "text": "Datasets"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#overcoming-excel",
+    "href": "lectures/lecture-1.html#overcoming-excel",
+    "title": "Data visualization",
+    "section": "Overcoming Excel",
+    "text": "Overcoming Excel\n\n\n\nExcel itself is not a bad tool.\nIt is very popular! See the info on jobs that require it."
+  },
+  {
+    "objectID": "lectures/lecture-1.html#overcoming-excel-1",
+    "href": "lectures/lecture-1.html#overcoming-excel-1",
+    "title": "Data visualization",
+    "section": "Overcoming Excel",
+    "text": "Overcoming Excel\n\n\nFormby et al (2017) Microsoft Excel: Is It An Important Job Skill for College Graduates?"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#overcoming-excel-example-1",
+    "href": "lectures/lecture-1.html#overcoming-excel-example-1",
+    "title": "Data visualization",
+    "section": "Overcoming Excel: example 1",
+    "text": "Overcoming Excel: example 1\n\n\n\nSome data on a sample of Swedish musical artists\n\n\n\n\n\n\n\n\n\n\n  \n    \n      Swedish musical artists\n    \n    \n  \n  \n    \n      Rank\n      Artist\n      Monthly listeners (m)\n    \n  \n  \n    1\nAvicii\n29.47\n    2\nABBA\n23.48\n    3\nJosé González\n 4.07\n    4\nRobyn\n 3.11\n    5\nTimbuktu\n 0.38\n  \n  \n  \n    \n       Datasource: Spotify charts Nov 2022"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#overcoming-excel-2",
+    "href": "lectures/lecture-1.html#overcoming-excel-2",
+    "title": "Data visualization",
+    "section": "Overcoming Excel",
+    "text": "Overcoming Excel\n\nTakeaways:\n\n\n\nYou will likely use Excel in the future 📊\nExcel’s default plots and tables can be improved upon 📈\nSimple rules can help you make your message clear 💎"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#test",
+    "href": "lectures/lecture-1.html#test",
+    "title": "Data visualization",
+    "section": "test",
+    "text": "test\n\n\n\n−+\n02:30"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#overcoming-excel-column-plot",
+    "href": "lectures/lecture-1.html#overcoming-excel-column-plot",
+    "title": "Data visualization",
+    "section": "Overcoming Excel: Column plot",
+    "text": "Overcoming Excel: Column plot\n\n\n\n\nWe often encounter datasets containing simple amounts 🤏\nHere is some data on a sample of Swedish musical artists 🎵\nI put this data into Excel, and asked for a recommended chart 📊\n\n\n\n\n\n\n\n\n\n  \n  \n  \n    \n      Swedish musical artists\n    \n    \n  \n  \n    \n      Rank\n      Artist\n      Monthly listeners (m)\n    \n  \n  \n    1\nAvicii\n29.47\n    2\nABBA\n23.48\n    3\nJosé González\n 4.07\n    4\nRobyn\n 3.11\n    5\nTimbuktu\n 0.38\n  \n  \n    \n      Datasource: Spotify charts Nov 2022"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#overcoming-excel-column-plot-1",
+    "href": "lectures/lecture-1.html#overcoming-excel-column-plot-1",
+    "title": "Data visualization",
+    "section": "Overcoming Excel: Column plot",
+    "text": "Overcoming Excel: Column plot\n\n\n\n−+\n02:30\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat do we like?\nWhat is confusing?"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#your-turn",
+    "href": "lectures/lecture-1.html#your-turn",
+    "title": "Data visualization",
+    "section": "Your turn",
+    "text": "Your turn\n\n\n\n−+\n02:30\n\n\n\n\nDiscuss with your neighbour:\n\nWhat do we like?\nWhat is confusing?"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#tip-1-avoid-rotated-axis-labels",
+    "href": "lectures/lecture-1.html#tip-1-avoid-rotated-axis-labels",
+    "title": "Data visualization",
+    "section": "Tip 1: Avoid rotated axis labels",
+    "text": "Tip 1: Avoid rotated axis labels\nUgly 🤢"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#tip-1-avoid-rotated-axis-labels-1",
+    "href": "lectures/lecture-1.html#tip-1-avoid-rotated-axis-labels-1",
+    "title": "Data visualization",
+    "section": "Tip 1: Avoid rotated axis labels",
+    "text": "Tip 1: Avoid rotated axis labels\nFlip axes so that the text is easier to read 👓"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#tip-2-pay-attention-to-the-order-of-the-bars",
+    "href": "lectures/lecture-1.html#tip-2-pay-attention-to-the-order-of-the-bars",
+    "title": "Data visualization",
+    "section": "Tip 2: Pay attention to the order of the bars",
+    "text": "Tip 2: Pay attention to the order of the bars\nBad 👎"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#tip-2-pay-attention-to-the-order-of-the-bars-1",
+    "href": "lectures/lecture-1.html#tip-2-pay-attention-to-the-order-of-the-bars-1",
+    "title": "Data visualization",
+    "section": "Tip 2: Pay attention to the order of the bars",
+    "text": "Tip 2: Pay attention to the order of the bars\nIt is clear that José González recieves more streams than Robyn"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#tip-3-consider-your-labels",
+    "href": "lectures/lecture-1.html#tip-3-consider-your-labels",
+    "title": "Data visualization",
+    "section": "Tip 3: Consider your labels",
+    "text": "Tip 3: Consider your labels"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#tip-3-consider-your-labels-1",
+    "href": "lectures/lecture-1.html#tip-3-consider-your-labels-1",
+    "title": "Data visualization",
+    "section": "Tip 3: Consider your labels",
+    "text": "Tip 3: Consider your labels"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#improving-legends",
+    "href": "lectures/lecture-1.html#improving-legends",
+    "title": "Data visualization",
+    "section": "Improving legends",
+    "text": "Improving legends"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#legends",
+    "href": "lectures/lecture-1.html#legends",
+    "title": "Data visualization",
+    "section": "Legends",
+    "text": "Legends\ncolour dots by region."
+  },
+  {
+    "objectID": "lectures/lecture-1.html#dots-are-preferable-if-we-want-to-truncate-the-axes-2",
+    "href": "lectures/lecture-1.html#dots-are-preferable-if-we-want-to-truncate-the-axes-2",
+    "title": "Data visualization",
+    "section": "Dots are preferable if we want to truncate the axes",
+    "text": "Dots are preferable if we want to truncate the axes\n\n\nKey featuresof the dataare obscured"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#tip-3-consider-your-labels-and-axes",
+    "href": "lectures/lecture-1.html#tip-3-consider-your-labels-and-axes",
+    "title": "Data visualization",
+    "section": "Tip 3: Consider your labels and axes",
+    "text": "Tip 3: Consider your labels and axes\nUninformative️ ❗"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#tip-3-consider-your-labels-and-axes-1",
+    "href": "lectures/lecture-1.html#tip-3-consider-your-labels-and-axes-1",
+    "title": "Data visualization",
+    "section": "Tip 3: Consider your labels and axes",
+    "text": "Tip 3: Consider your labels and axes\nNote the title, x-axis title, x-axis labels 📙"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#we-can-use-dots-instead-of-bars-1",
+    "href": "lectures/lecture-1.html#we-can-use-dots-instead-of-bars-1",
+    "title": "Data visualization",
+    "section": "We can use dots instead of bars",
+    "text": "We can use dots instead of bars"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#we-can-use-dots-instead-of-bars-2",
+    "href": "lectures/lecture-1.html#we-can-use-dots-instead-of-bars-2",
+    "title": "Data visualization",
+    "section": "We can use dots instead of bars",
+    "text": "We can use dots instead of bars"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#dots-are-preferable-if-we-want-to-truncate-the-axes-3",
+    "href": "lectures/lecture-1.html#dots-are-preferable-if-we-want-to-truncate-the-axes-3",
+    "title": "Data visualization",
+    "section": "Dots are preferable if we want to truncate the axes",
+    "text": "Dots are preferable if we want to truncate the axes"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#dots-are-preferable-if-we-want-to-truncate-the-axes-4",
+    "href": "lectures/lecture-1.html#dots-are-preferable-if-we-want-to-truncate-the-axes-4",
+    "title": "Data visualization",
+    "section": "Dots are preferable if we want to truncate the axes",
+    "text": "Dots are preferable if we want to truncate the axes"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#dots-are-preferable-if-we-want-to-truncate-the-axes-5",
+    "href": "lectures/lecture-1.html#dots-are-preferable-if-we-want-to-truncate-the-axes-5",
+    "title": "Data visualization",
+    "section": "Dots are preferable if we want to truncate the axes",
+    "text": "Dots are preferable if we want to truncate the axes\nSolar panels in Sweden"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#dots-are-preferable-if-we-want-to-truncate-the-axes-6",
+    "href": "lectures/lecture-1.html#dots-are-preferable-if-we-want-to-truncate-the-axes-6",
+    "title": "Data visualization",
+    "section": "Dots are preferable if we want to truncate the axes",
+    "text": "Dots are preferable if we want to truncate the axes"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#tip-3-consider-your-titles-labels-and-axes",
+    "href": "lectures/lecture-1.html#tip-3-consider-your-titles-labels-and-axes",
+    "title": "Data visualization",
+    "section": "Tip 3: Consider your titles, labels and axes",
+    "text": "Tip 3: Consider your titles, labels and axes\nUninformative️ ❗"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#tip-3-consider-your-titles-labels-and-axes-1",
+    "href": "lectures/lecture-1.html#tip-3-consider-your-titles-labels-and-axes-1",
+    "title": "Data visualization",
+    "section": "Tip 3: Consider your titles, labels and axes",
+    "text": "Tip 3: Consider your titles, labels and axes\nNote the title, x-axis title, x-axis labels 📙"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#tip-3-consider-your-titles-labels-and-axes-2",
+    "href": "lectures/lecture-1.html#tip-3-consider-your-titles-labels-and-axes-2",
+    "title": "Data visualization",
+    "section": "Tip 3: Consider your titles, labels and axes",
+    "text": "Tip 3: Consider your titles, labels and axes\nTitles and captions have different application areas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Monthly streams for Swedish musical artists. Data sources: Spotify charts in November 2022"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#legends-1",
+    "href": "lectures/lecture-1.html#legends-1",
+    "title": "Data visualization",
+    "section": "Legends:",
+    "text": "Legends:\ncolour dots by region."
+  },
+  {
+    "objectID": "lectures/lecture-1.html#overcoming-excel-tables",
+    "href": "lectures/lecture-1.html#overcoming-excel-tables",
+    "title": "Data visualization",
+    "section": "Overcoming Excel: Tables",
+    "text": "Overcoming Excel: Tables\n\n\n\nWe often encounter datasets containing simple amounts 🤏\nHere is some data on a sample of Swedish musical artists 🎵\nI put this data into Excel, and asked it to insert a table 🗃️\n\n\n\n\n\n\n\n\n  \n  \n  \n    \n      Swedish musical artists\n    \n    \n  \n  \n    \n      Rank\n      Artist\n      Monthly listeners (m)\n    \n  \n  \n    1\nAvicii\n29.47\n    2\nABBA\n23.48\n    3\nJosé González\n 4.07\n    4\nRobyn\n 3.11\n    5\nTimbuktu\n 0.38\n  \n  \n    \n      Datasource: Spotify charts Nov 2022"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#your-turn-again",
+    "href": "lectures/lecture-1.html#your-turn-again",
+    "title": "Data visualization",
+    "section": "Your turn again",
+    "text": "Your turn again\n\n\n\n−+\n02:30\n\n\n\n\nDiscuss with your neighbour:\n\nWhat do we like?\nWhat is confusing?"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#key-rules-for-table-layout",
+    "href": "lectures/lecture-1.html#key-rules-for-table-layout",
+    "title": "Data visualization",
+    "section": "Key rules for table layout",
+    "text": "Key rules for table layout\n\nDo not use vertical lines.\nDo not use horizontal lines between data rows. (Horizontal lines as separator between the title row and the first data row or as frame for the entire table are fine.)\nText columns should be left aligned.\nNumber columns should be right aligned and should use the same number of decimal digits throughout.\nColumns containing single characters are centred.\nThe header fields are aligned with their data, i.e., the heading for a text column will be left aligned and the heading for a number column will be right aligned."
+  },
+  {
+    "objectID": "lectures/lecture-1.html#section",
+    "href": "lectures/lecture-1.html#section",
+    "title": "Data visualization",
+    "section": "",
+    "text": "Overcoming Excel\n\nCharts"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#section-1",
+    "href": "lectures/lecture-1.html#section-1",
+    "title": "Data visualization",
+    "section": "",
+    "text": "Overcoming Excel\n\nTables"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#tips-for-polishing-your-figures",
+    "href": "lectures/lecture-1.html#tips-for-polishing-your-figures",
+    "title": "Data visualization",
+    "section": "Tips for polishing your figures",
+    "text": "Tips for polishing your figures"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#section-2",
+    "href": "lectures/lecture-1.html#section-2",
+    "title": "Data visualization",
+    "section": "",
+    "text": "Key rules for table layout\n    \n    \n  \n  \n    \n      Number\n      Rule\n    \n  \n  \n    1\nDo not use vertical lines.\n    2\nDo not use heavy horizontal lines between data rows. (Horizontal lines as separator between the title row and the first data row or as frame for the entire table are fine.)\n    3\nText columns should be left aligned.\n    4\nNumber columns should be right aligned and should use the same number of decimal digits throughout.\n    5\nColumns containing single characters are centred.\n    6\nThe header fields are aligned with their data, i.e., the heading for a text column will be left aligned and the heading for a number column will be right aligned.\n  \n  \n    \n      Source: Claus Wilke's Fundamentals of Data Visualization"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#lets-apply-these-rules",
+    "href": "lectures/lecture-1.html#lets-apply-these-rules",
+    "title": "Data visualization",
+    "section": "Let’s apply these rules",
+    "text": "Let’s apply these rules\n\n\n\n\n\n\n  \n  \n  \n    \n      Key rules for table layout\n    \n    \n  \n  \n    \n      Number\n      Rule\n    \n  \n  \n    1\nDo not use vertical lines.\n    2\nDo not use heavy horizontal lines between data rows. (Horizontal lines as separator between the title row and the first data row or as frame for the entire table are fine.)\n    3\nText columns should be left aligned.\n    4\nNumber columns should be right aligned and should use the same number of decimal digits throughout.\n    5\nColumns containing single characters are centred.\n    6\nThe header fields are aligned with their data, i.e., the heading for a text column will be left aligned and the heading for a number column will be right aligned.\n  \n  \n    \n      Source: Claus Wilke's Fundamentals of Data Visualization\n    \n  \n  \n\n\n\n\n\n\n\n\n\n\nTable A\n\n\n\n\n\n\n\n\n\nTable B"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#lets-apply-these-rules-1",
+    "href": "lectures/lecture-1.html#lets-apply-these-rules-1",
+    "title": "Data visualization",
+    "section": "Let’s apply these rules",
+    "text": "Let’s apply these rules\n\n\n\n\n\n\n  \n  \n  \n    \n      Key rules for table layout\n    \n    \n  \n  \n    \n      Number\n      Rule\n    \n  \n  \n    1\nDo not use vertical lines.\n    2\nDo not use heavy horizontal lines between data rows. (Horizontal lines as separator between the title row and the first data row or as frame for the entire table are fine.)\n    3\nText columns should be left aligned.\n    4\nNumber columns should be right aligned and should use the same number of decimal digits throughout.\n    5\nColumns containing single characters are centred.\n    6\nThe header fields are aligned with their data, i.e., the heading for a text column will be left aligned and the heading for a number column will be right aligned.\n  \n  \n    \n      Source: Claus Wilke's Fundamentals of Data Visualization\n    \n  \n  \n\n\n\n\n\n\n\n\n\n\nTable C\n\n\n\n\n\n\n\n\n\nTable D"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#time-on-a-third-axis",
+    "href": "lectures/lecture-1.html#time-on-a-third-axis",
+    "title": "Data visualization",
+    "section": "Time on a third axis",
+    "text": "Time on a third axis\nDataset: Fertility and births outside of marriage in Denmark 🇩🇰 and Greece 🇬🇷.\nDefault choice for plotting is two line plots"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#time-on-a-third-axis-1",
+    "href": "lectures/lecture-1.html#time-on-a-third-axis-1",
+    "title": "Data visualization",
+    "section": "Time on a third axis",
+    "text": "Time on a third axis\n\n\n\n\n\n\n\n\nPros 👍\n\nFamiliar\n\nCons 👎\n\nHard to keep track of each series\nDifficult to compare movements across short periods"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#plotting-related-time-series",
+    "href": "lectures/lecture-1.html#plotting-related-time-series",
+    "title": "Data visualization",
+    "section": "Plotting related time series",
+    "text": "Plotting related time series\nDataset: Fertility and births outside of marriage in Denmark 🇩🇰 and Greece 🇬🇷.\nDefault choice for plotting is two line plots"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#plotting-related-time-series-1",
+    "href": "lectures/lecture-1.html#plotting-related-time-series-1",
+    "title": "Data visualization",
+    "section": "Plotting related time series",
+    "text": "Plotting related time series\n\n\n\n\n\n\n\n\n\nPros 👍\n\nFamiliar\n\nCons 👎\n\nHard to keep track of each series\nDifficult to compare movements across short periods"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#an-alternative-time-on-a-third-axis",
+    "href": "lectures/lecture-1.html#an-alternative-time-on-a-third-axis",
+    "title": "Data visualization",
+    "section": "An alternative: time on a third axis",
+    "text": "An alternative: time on a third axis"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#what-have-we-learned",
+    "href": "lectures/lecture-1.html#what-have-we-learned",
+    "title": "Data visualization",
+    "section": "What have we learned?",
+    "text": "What have we learned?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBoth countries saw a large drop in fertility from the 1960s until the 1980s\nIn Denmark, after 1970 we see an increase in the share of children born outside of marriage\nIn contrast, Greek families have relatively few children outside of marriage.\nAfter 1990, Danish fertility increased from 1.3 to 1.8, while Greek fertility remained at ‘lowest-low’ levels, below replacement."
+  },
+  {
+    "objectID": "lectures/lecture-1.html#what-have-we-changed",
+    "href": "lectures/lecture-1.html#what-have-we-changed",
+    "title": "Data visualization",
+    "section": "What have we changed?",
+    "text": "What have we changed?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIndicators on the x- and y-axis and then show time with text labels\nLegend is replaced with colour coded title\nColours have meaning (main colour of country flag)\nPercentage labels on the y-axis"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#giving-context-with-colour",
+    "href": "lectures/lecture-1.html#giving-context-with-colour",
+    "title": "Data visualization",
+    "section": "Giving context with colour",
+    "text": "Giving context with colour\nSometimes we may want to show a particular series of data in its correct context.\nFor instance, in our line graph above which showed the evolution of the share of births outside of marriage in Denmark and Greece, we might want to know if these two represent the extremes within Europe."
+  },
+  {
+    "objectID": "lectures/lecture-1.html#giving-context-with-colour-1",
+    "href": "lectures/lecture-1.html#giving-context-with-colour-1",
+    "title": "Data visualization",
+    "section": "Giving context with colour",
+    "text": "Giving context with colour\nDo Denmark and Greece represent the extremes of the share of children born outside of marriage in Europe?"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#do-denmark-and-greece-represent-the-extremes-of-the-share-of-children-born-outside-of-marriage-in-europe",
+    "href": "lectures/lecture-1.html#do-denmark-and-greece-represent-the-extremes-of-the-share-of-children-born-outside-of-marriage-in-europe",
+    "title": "Data visualization",
+    "section": "Do Denmark and Greece represent the extremes of the share of children born outside of marriage in Europe?",
+    "text": "Do Denmark and Greece represent the extremes of the share of children born outside of marriage in Europe?\nOne way to do this would be to show an average for Europe"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#giving-context",
+    "href": "lectures/lecture-1.html#giving-context",
+    "title": "Data visualization",
+    "section": "Giving context",
+    "text": "Giving context\nSometimes we may want to show a particular series of data in its correct context.\nFor instance, in our line graph above which showed the evolution of the share of births outside of marriage in Denmark and Greece, we might want to know if these two represent the extremes within Europe."
+  },
+  {
+    "objectID": "lectures/lecture-1.html#giving-context-1",
+    "href": "lectures/lecture-1.html#giving-context-1",
+    "title": "Data visualization",
+    "section": "Giving context",
+    "text": "Giving context\nDo Denmark and Greece represent the extremes of the share of children born outside of marriage in Europe?"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#giving-context-with-an-average",
+    "href": "lectures/lecture-1.html#giving-context-with-an-average",
+    "title": "Data visualization",
+    "section": "Giving context with an average",
+    "text": "Giving context with an average\nOne way to do this would be to show an average for Europe"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#giving-context-with-an-interval-ribbon",
+    "href": "lectures/lecture-1.html#giving-context-with-an-interval-ribbon",
+    "title": "Data visualization",
+    "section": "Giving context with an interval ribbon",
+    "text": "Giving context with an interval ribbon"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#giving-context-with-all-of-the-data",
+    "href": "lectures/lecture-1.html#giving-context-with-all-of-the-data",
+    "title": "Data visualization",
+    "section": "Giving context with all of the data",
+    "text": "Giving context with all of the data\nThis is silly"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#giving-context-with-all-of-the-data-1",
+    "href": "lectures/lecture-1.html#giving-context-with-all-of-the-data-1",
+    "title": "Data visualization",
+    "section": "Giving context with all of the data",
+    "text": "Giving context with all of the data\nHere we highlight the series we are interested in and draw in the remaining series in grey"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#what-have-we-changed-1",
+    "href": "lectures/lecture-1.html#what-have-we-changed-1",
+    "title": "Data visualization",
+    "section": "What have we changed?",
+    "text": "What have we changed?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nShows each of the series\nWe can see that Denmark is a leader in the beginning, but is caught up by other nations\nDoes not hide outliers\nMakes clear the trends in your countries of interest"
   }
 ]
