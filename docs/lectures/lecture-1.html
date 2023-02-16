@@ -30,6 +30,70 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -324,17 +388,6 @@
   </style>
   <link href="../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
   <script src="../site_libs/countdown-0.4.0/countdown.js"></script>
-  <script src="../site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-  <script src="../site_libs/jquery-1.12.4/jquery.min.js"></script>
-  <link href="../site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
-  <script src="../site_libs/leaflet-1.3.1/leaflet.js"></script>
-  <link href="../site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
-  <script src="../site_libs/proj4-2.6.2/proj4.min.js"></script>
-  <script src="../site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-  <link href="../site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
-  <script src="../site_libs/leaflet-binding-2.1.1/leaflet.js"></script>
-  <script src="../site_libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-  <script src="../site_libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -372,8 +425,8 @@
 <div class="columns">
 <div class="column" style="width:40%;">
 <ol type="1">
-<li><p>Overcoming Excel</p></li>
 <li><p>Improving your maps</p></li>
+<li><p>Overcoming Excel</p></li>
 <li><p>Telling a story with data</p></li>
 <li><p>Reproducing figures for publication</p></li>
 </ol>
@@ -406,7 +459,7 @@
 <section id="our-story-circle" class="slide level2">
 <h2>Our Story Circle</h2>
 
-<img data-src="lecture-1-resources/story-circle.jpg" width="450" class="r-stretch quarto-figure-center"><aside class="notes">
+<img data-src="lecture-1-resources/image_our_story_circle.png" width="541" class="r-stretch quarto-figure-center"><aside class="notes">
 <p>Zone of comfort: Data in excel</p>
 <p>Want something: to be better at communicating with your data</p>
 <p>Enter an unfamiliar situation: Looking closely at maps and charts</p>
@@ -427,11 +480,450 @@
           display:block!important;
       }</style></aside>
 </section>
+<section id="section" class="slide level2" data-background-color="#e99869" data-background-image="lecture-1-resources/preview.png" data-background-position="left" data-background-size="contain">
+<h2></h2>
+<div style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;">
+<p><span style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px">Improving your maps</span></p>
+<p><br></p>
+<p><span style="font-size: 60px; font-weight: bold;">Legend breaks</span></p>
+</div>
+</section>
+<section id="recap-from-lab-1-exercies" class="slide level2">
+<h2>Recap from Lab 1 exercies</h2>
+<blockquote>
+<p>Make a map of the share of employment in industry in the year 2010 across the whole dataset</p>
+</blockquote>
+</section>
+<section id="recap-from-lab-1-exercies-1" class="slide level2">
+<h2>Recap from Lab 1 exercies</h2>
+<p><br></p>
+<h3 id="what-is-wrong-with-this-map">What is wrong with this map? 🗺️</h3>
+
+<img data-src="lecture-1-resources/stata_1.png" width="830" class="r-stretch"></section>
+<section id="recap-from-lab-1-exercies-2" class="slide level2">
+<h2>Recap from Lab 1 exercies</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_4d63746d" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture-1-resources/stata_1.png" width="830"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Discuss with your neighbour:</p>
+<ul>
+<li><p>What do we like?</p></li>
+<li><p>What is confusing?</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>spmap employment_share_industry using <span class="st">"nutscoord.dta"</span> </span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="cf">if</span> year <span class="sc">==</span> <span class="dv">2010</span>, </span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="fu">id</span>(_ID) <span class="fu">fcolor</span>(Spectral) <span class="fu">legstyle</span>(<span class="dv">2</span>) </span>
+<span id="cb1-4"><a href="#cb1-4"></a>    <span class="fu">title</span>(<span class="st">"Employment Share Industry - 2010"</span>, <span class="fu">size</span>(large)) </span>
+<span id="cb1-5"><a href="#cb1-5"></a>    <span class="fu">osize</span>(<span class="fl">0.02</span> ..) <span class="fu">ocolor</span>(white ..) </span>
+<span id="cb1-6"><a href="#cb1-6"></a>    <span class="fu">clmethod</span>(custom) <span class="fu">clbreaks</span>(<span class="dv">0</span> (<span class="fl">0.2</span>) <span class="dv">1</span>)</span>
+<span id="cb1-7"><a href="#cb1-7"></a>    <span class="fu">legend</span>(<span class="fu">pos</span>(<span class="dv">9</span>) <span class="fu">size</span>(medium) <span class="fu">rowgap</span>(<span class="fl">1.5</span>) </span>
+<span id="cb1-8"><a href="#cb1-8"></a>    <span class="fu">label</span>(<span class="dv">6</span> <span class="st">"80-100 %"</span>) <span class="fu">label</span>(<span class="dv">5</span> <span class="st">"60-80 %"</span>) </span>
+<span id="cb1-9"><a href="#cb1-9"></a>    <span class="fu">label</span>(<span class="dv">4</span> <span class="st">"40-60 %"</span>) <span class="fu">label</span>(<span class="dv">3</span> <span class="st">"20-40 %"</span>) <span class="fu">label</span>(<span class="dv">2</span> <span class="st">"0-20 %"</span>) </span>
+<span id="cb1-10"><a href="#cb1-10"></a>    <span class="fu">label</span>(<span class="dv">1</span> <span class="st">"No Data"</span>)) </span>
+<span id="cb1-11"><a href="#cb1-11"></a>    <span class="fu">ndfcolor</span>(gray) <span class="fu">ndocolor</span>(white ..) <span class="fu">ndsize</span>(<span class="fl">0.02</span> ..)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lets-plot-the-disribution-of-the-data" class="slide level2">
+<h2>Let’s plot the disribution of the data</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture-1-resources/stata_1_2.png" width="1452"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>histogram employment_share_industry <span class="cf">if</span> year <span class="sc">==</span> <span class="dv">2010</span>, </span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">color</span>(midblue)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lets-plot-the-disribution-of-the-data-1" class="slide level2">
+<h2>Let’s plot the disribution of the data</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture-1-resources/stata_2.png" width="1452"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>kdensity employment_share_industry <span class="cf">if</span> year <span class="sc">==</span> <span class="dv">2010</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="now-lets-make-breaks-based-on-this-information" class="slide level2">
+<h2>Now let’s make breaks based on this information</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture-1-resources/stata_3.png" width="830"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="5,7,8,9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>spmap employment_share_industry using <span class="st">"nutscoord.dta"</span> </span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="cf">if</span> year <span class="sc">==</span> <span class="dv">2010</span>, <span class="fu">id</span>(_ID) <span class="fu">fcolor</span>(Spectral) <span class="fu">legstyle</span>(<span class="dv">2</span>) </span>
+<span id="cb4-3"><a href="#cb4-3"></a>    <span class="fu">title</span>(<span class="st">"Employment Share Industry - 2010"</span>, <span class="fu">size</span>(large)) </span>
+<span id="cb4-4"><a href="#cb4-4"></a>    <span class="fu">osize</span>(<span class="fl">0.02</span> ..) <span class="fu">ocolor</span>(white ..) </span>
+<span id="cb4-5"><a href="#cb4-5"></a>    <span class="fu">clmethod</span>(custom) <span class="fu">clbreaks</span>(<span class="dv">0</span> (<span class="fl">0.075</span>) <span class="fl">0.5</span>) </span>
+<span id="cb4-6"><a href="#cb4-6"></a>    <span class="fu">legend</span>(<span class="fu">pos</span>(<span class="dv">9</span>) <span class="fu">size</span>(medium) <span class="fu">rowgap</span>(<span class="fl">1.5</span>) </span>
+<span id="cb4-7"><a href="#cb4-7"></a>    <span class="fu">label</span>(<span class="dv">7</span> <span class="st">"37-45 %"</span>) <span class="fu">label</span>(<span class="dv">6</span> <span class="st">"30-37 %"</span>) </span>
+<span id="cb4-8"><a href="#cb4-8"></a>    <span class="fu">label</span>(<span class="dv">5</span> <span class="st">"23-30 %"</span>) <span class="fu">label</span>(<span class="dv">4</span> <span class="st">"15-23 %"</span>) </span>
+<span id="cb4-9"><a href="#cb4-9"></a>    <span class="fu">label</span>(<span class="dv">3</span> <span class="st">"8-15 %"</span>) <span class="fu">label</span>(<span class="dv">2</span> <span class="st">"0-8 %"</span>) </span>
+<span id="cb4-10"><a href="#cb4-10"></a>    <span class="fu">label</span>(<span class="dv">1</span> <span class="st">"No Data"</span>)) </span>
+<span id="cb4-11"><a href="#cb4-11"></a>    <span class="fu">ndfcolor</span>(gray) <span class="fu">ndocolor</span>(white ..) <span class="fu">ndsize</span>(<span class="fl">0.02</span> ..)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="colour-scales" class="slide level2">
+<h2>Colour scales</h2>
+<p>Uses of color in data visualization</p>
+<div class="fragment">
+
+<table style="border: none; line-height: 2.5;">
+<tbody><tr style="background: white;">
+<td style="text-align: left; width: 50%;">
+<ol type="1">
+<li>Distinguish categories (qualitative)</li>
+</ol>
+</td>
+<td>
+<img src="lecture-1-resources/qualitative.png" width="100%" style="text-align: right; vertical-align: middle">
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</section>
+<section id="qualitative-scale-example" class="slide level2">
+<h2>Qualitative scale example</h2>
+
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-16-1.png" width="768" class="r-stretch quarto-figure-center"><p>Palette name: Okabe-Ito</p>
+</section>
+<section id="qualitative-scale-example-1" class="slide level2">
+<h2>Qualitative scale example</h2>
+
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-17-1.png" width="768" class="r-stretch quarto-figure-center"><p>Palette name: Brewer Set1</p>
+</section>
+<section id="qualitative-scale-example-2" class="slide level2">
+<h2>Qualitative scale example</h2>
+
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-18-1.png" width="768" class="r-stretch quarto-figure-center"><p>Palette name: Brewer Dark2</p>
+</section>
+<section id="uses-of-color-in-data-visualization" class="slide level2">
+<h2>Uses of color in data visualization</h2>
+
+<table style="border: none; line-height: 2.5;">
+<tbody><tr style="background: white;">
+<td style="text-align: left; width: 50%;">
+<ol type="1">
+<li>Distinguish categories (qualitative)</li>
+</ol>
+</td>
+<td>
+<img src="lecture-1-resources/qualitative.png" width="100%" style="text-align: right; vertical-align: middle">
+</td>
+</tr>
+<tr style="background: white;">
+<td style="text-align: left;">
+<ol start="2" type="1">
+<li>Represent numeric values (sequential)</li>
+</ol>
+</td>
+<td>
+<img src="lecture-1-resources/sequential.png" width="100%" style="text-align: right; vertical-align: middle">
+</td>
+</tr>
+
+</tbody></table>
+</section>
+<section id="sequential-scale-example" class="slide level2">
+<h2>Sequential scale example</h2>
+
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-19-1.png" width="960" class="r-stretch quarto-figure-center"><p>Palette name: inferno</p>
+</section>
+<section id="sequential-scale-example-1" class="slide level2">
+<h2>Sequential scale example</h2>
+
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch quarto-figure-center"><p>Palette name: viridis</p>
+</section>
+<section id="uses-of-color-in-data-visualization-1" class="slide level2">
+<h2>Uses of color in data visualization</h2>
+
+<table style="border: none; line-height: 2.5;">
+<tbody><tr style="background: white;">
+<td style="text-align: left; width: 50%;">
+<ol type="1">
+<li>Distinguish categories (qualitative)</li>
+</ol>
+</td>
+<td>
+<img src="lecture-1-resources/qualitative.png" width="100%" style="text-align: right; vertical-align: middle">
+</td>
+</tr>
+<tr style="background: white;">
+<td style="text-align: left;">
+<ol start="2" type="1">
+<li>Represent numeric values (sequential)</li>
+</ol>
+</td>
+<td>
+<img src="lecture-1-resources/sequential.png" width="100%" style="text-align: right; vertical-align: middle">
+</td>
+</tr>
+<tr style="background: white;">
+<td style="text-align: left;">
+<ol start="3" type="1">
+<li>Represent numeric values (diverging)</li>
+</ol>
+</td>
+<td>
+<img src="lecture-1-resources/diverging.png" width="100%" style="text-align: right; vertical-align: middle">
+</td>
+</tr>
+
+</tbody></table>
+</section>
+<section id="diverging-scale-example" class="slide level2">
+<h2>Diverging scale example</h2>
+
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-21-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+<section id="uses-of-color-in-data-visualization-2" class="slide level2">
+<h2>Uses of color in data visualization</h2>
+
+<table style="border: none; line-height: 2.5;">
+<tbody><tr style="background: white;">
+<td style="text-align: left; width: 50%;">
+<ol type="1">
+<li>Distinguish categories (qualitative)</li>
+</ol>
+</td>
+<td>
+<img src="lecture-1-resources/qualitative.png" width="100%" style="text-align: right; vertical-align: middle;">
+</td>
+</tr>
+<tr style="background: white;">
+<td style="text-align: left;">
+<ol start="2" type="1">
+<li>Represent numeric values (sequential)</li>
+</ol>
+</td>
+<td>
+<img src="lecture-1-resources/sequential.png" width="100%" style="text-align: right; vertical-align: middle">
+</td>
+</tr>
+<tr style="background: white;">
+<td style="text-align: left;">
+<ol start="3" type="1">
+<li>Represent numeric values (diverging)</li>
+</ol>
+</td>
+<td>
+<img src="lecture-1-resources/diverging.png" width="100%" style="text-align: right; vertical-align: middle">
+</td>
+</tr>
+<tr style="background: white;">
+<td style="text-align: left;">
+<ol start="4" type="1">
+<li>Highlight</li>
+</ol>
+</td>
+<td>
+<img src="lecture-1-resources/highlight.png" width="100%" style="text-align: right; vertical-align: middle">
+</td>
+</tr>
+
+</tbody></table>
+</section>
+<section id="highlight-example" class="slide level2">
+<h2>Highlight example</h2>
+
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-22-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+<section id="using-density-plots-to-set-your-legend-breaks" class="slide level2">
+<h2>Using density plots to set your legend breaks</h2>
+<p>Dataset: Solar panels in Sweden</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="kayhkjalpc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+  
+  <table class="gt_table" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 26px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" bgcolor="#FFFFFF">
+  <thead class="gt_header">
+    <tr>
+      <td colspan="2" class="gt_heading gt_title gt_font_normal" style="background-color: #FFFFFF; text-align: center; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; color: #333333; font-size: 32px; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; font-weight: normal;" bgcolor="#FFFFFF" align="center"><strong>Installed solar capacity in Sweden</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="background-color: #FFFFFF; text-align: center; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; color: #333333; font-size: 85%; padding-top: 0; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; font-weight: normal;" bgcolor="#FFFFFF" align="center">Year: 2021</td>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings" style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Swedish county" style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: left;" bgcolor="#FFFFFF" valign="bottom" align="left">Swedish county</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Installed solar capacity (megawatts)" style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">Installed solar capacity (megawatts)</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body" style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3;">
+    <tr><td headers="lan_name" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Västra Götalands län</td>
+<td headers="installed_capacity_mw" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">266.21</td></tr>
+    <tr><td headers="lan_name" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Skåne län</td>
+<td headers="installed_capacity_mw" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">256.25</td></tr>
+    <tr><td headers="lan_name" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Stockholms län</td>
+<td headers="installed_capacity_mw" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">182.25</td></tr>
+    <tr><td headers="lan_name" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Östergötlands län</td>
+<td headers="installed_capacity_mw" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">106.81</td></tr>
+    <tr><td headers="lan_name" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Hallands län</td>
+<td headers="installed_capacity_mw" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">94.31</td></tr>
+    <tr><td headers="lan_name" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Jönköpings län</td>
+<td headers="installed_capacity_mw" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">88.53</td></tr>
+    <tr><td headers="lan_name" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Södermanlands län</td>
+<td headers="installed_capacity_mw" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">79.71</td></tr>
+    <tr><td headers="lan_name" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Uppsala län</td>
+<td headers="installed_capacity_mw" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">79.11</td></tr>
+    <tr><td headers="lan_name" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Kalmar län</td>
+<td headers="installed_capacity_mw" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">59.01</td></tr>
+    <tr><td headers="lan_name" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Västmanlands län</td>
+<td headers="installed_capacity_mw" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">49.45</td></tr>
+  </tbody>
+  <tfoot class="gt_sourcenotes" style="color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3;" bgcolor="#FFFFFF">
+    <tr>
+      <td class="gt_sourcenote" colspan="2" style="font-size: 20px; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px;">Source: <a href="https://www.energimyndigheten.se/">Energimyndigheten</a></td>
+    </tr>
+  </tfoot>
+  
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="how-to-decide-on-values-for-the-bins" class="slide level2">
+<h2>How to decide on values for the bins?</h2>
+<p>Use a histogram or a density plot to see where the weight of the distribution is.</p>
+
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-24-1.png" width="768" class="r-stretch quarto-figure-center"><div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>Reading layer `sverige-lan-counties-of-sweden' from data source 
+  `C:\Users\User\Documents\Recon\EOSE09-site\lectures\lecture-1-resources\maps\sverige-lan-counties-of-sweden.shp' 
+  using driver `ESRI Shapefile'
+Simple feature collection with 21 features and 2 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: 10.95051 ymin: 55.32758 xmax: 24.17761 ymax: 69.05997
+Geodetic CRS:  WGS 84</code></pre>
+</div>
+</div>
+</section>
+<section id="map-with-appropriate-breaks" class="slide level2">
+<h2>Map with appropriate breaks</h2>
+<p>Ask your neighbour:</p>
+<ol type="1">
+<li><p>what kind of palette is this?</p></li>
+<li><p>Is it appropriate to use with this data?</p></li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_bad8dab6" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+
+</div>
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-26-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+<section id="section-1" class="slide level2" data-background-color="#e99869" data-background-image="lecture-1-resources/preview.png" data-background-position="left" data-background-size="contain">
+<h2></h2>
+<div style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;">
+<p><span style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px">Improving your maps</span></p>
+<p><br></p>
+<p><span style="font-size: 60px; font-weight: bold;">Great Choropleths</span></p>
+</div>
+</section>
+<section id="examples-of-great-maps" class="slide level2">
+<h2>Examples of great maps</h2>
+<p><a href="https://www.ft.com/content/35188c6a-4870-11e8-8ee8-cae73aab7ccb">Financial Times analysis of Italian election results</a></p>
+
+<img data-src="lecture-1-resources/ft_italy_elections_1.PNG" width="367" class="r-stretch quarto-figure-center"><aside class="notes">
+<p>Maps work best when they show an emerging spatial pattern, as was the case with this map from the recent Italian elections.</p>
+<p>Showing the winner at municipality level clearly shows the political divisions in the country. In the north, the Northern League party triumphed largely on the back of an anti-immigration and anti-EU agenda. In the south, the anti-establishment Five Star Movement was even more successful, gaining a majority of votes in many areas</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="examples-of-great-maps-1" class="slide level2">
+<h2>Examples of great maps</h2>
+<p><a href="https://www.ft.com/content/35188c6a-4870-11e8-8ee8-cae73aab7ccb">Financial Times analysis of Italian election results</a></p>
+
+<img data-src="lecture-1-resources/ft_italy_elections_2.PNG" width="364" class="r-stretch quarto-figure-center"><aside class="notes">
+<p>Another interesting take on the results was to show the per cent share of vote. This helped to emphasise just how strong the support was for the two parties.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="examples-of-great-maps-2" class="slide level2">
+<h2>Examples of great maps</h2>
+<p><a href="https://pudding.cool/2018/10/city_3d/">Human Terrain from The Pudding</a></p>
+
+<img data-src="lecture-1-resources/population_southern_sweden.PNG" width="928" class="r-stretch quarto-figure-center"></section>
+<section id="examples-of-great-maps-3" class="slide level2">
+<h2>Examples of great maps</h2>
+<p><a href="https://dfsnow.github.io/ama_viz/exploratory_plots.html">The Coming Crisis: Exploring the U.S. Physician Shortage</a> by Daniel Snow</p>
+
+<img data-src="lecture-1-resources/map-with-scale.PNG" width="864" class="r-stretch quarto-figure-center"></section>
+<section id="section-2" class="slide level2" data-background-color="#e99869" data-background-image="lecture-1-resources/preview.png" data-background-position="left" data-background-size="contain">
+<h2></h2>
+<div style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;">
+<p><span style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px">Overcoming Excel</span></p>
+<p><br></p>
+<p><span style="font-size: 60px; font-weight: bold;">Motivation</span></p>
+</div>
+</section>
 <section id="overcoming-excel" class="slide level2">
 <h2>Overcoming Excel</h2>
 <p><br></p>
 
-<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-6-1.png" width="768" class="r-stretch quarto-figure-center"><aside class="notes">
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-31-1.png" width="768" class="r-stretch quarto-figure-center"><aside class="notes">
 <p>Excel itself is not a bad tool.</p>
 <p>It is very popular! See the info on jobs that require it.</p>
 <style type="text/css">
@@ -450,7 +942,7 @@
 <h2>Overcoming Excel</h2>
 <p><br></p>
 
-<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-7-1.png" width="768" class="r-stretch quarto-figure-center"><p><a href="https://files.eric.ed.gov/fulltext/EJ1140801.pdf"><em>Formby et al</em> (2017) Microsoft Excel: Is It An Important Job Skill for College Graduates?</a></p>
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-32-1.png" width="768" class="r-stretch quarto-figure-center"><p><a href="https://files.eric.ed.gov/fulltext/EJ1140801.pdf"><em>Formby et al</em> (2017) Microsoft Excel: Is It An Important Job Skill for College Graduates?</a></p>
 </section>
 <section id="overcoming-excel-2" class="slide level2">
 <h2>Overcoming Excel</h2>
@@ -468,7 +960,7 @@
 </div>
 </div>
 </section>
-<section id="section" class="slide level2" data-background-color="#e99869" data-background-image="lecture-1-resources/preview.png" data-background-position="left" data-background-size="contain">
+<section id="section-3" class="slide level2" data-background-color="#e99869" data-background-image="lecture-1-resources/preview.png" data-background-position="left" data-background-size="contain">
 <h2></h2>
 <div style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;">
 <p><span style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px">Overcoming Excel</span></p>
@@ -493,7 +985,7 @@
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="oyhxtoffid" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="pwnlkerczz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
   
   <table class="gt_table" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 32px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" bgcolor="#FFFFFF">
   <thead class="gt_header">
@@ -544,7 +1036,7 @@
 <h2>Your turn</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_9ccc1f19" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_105db091" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
@@ -596,7 +1088,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-18-1.png" width="768"></p>
+<p><img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-43-1.png" width="768"></p>
 </figure>
 </div>
 </div>
@@ -608,7 +1100,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-19-1.png" width="768"></p>
+<p><img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-44-1.png" width="768"></p>
 <p></p><figcaption>Figure 1: Monthly streams for Swedish musical artists. Data sources: <a href="https://charts.spotify.com/home">Spotify charts</a> in November 2022</figcaption><p></p>
 </figure>
 </div>
@@ -620,34 +1112,34 @@
 <section id="we-can-use-dots-instead-of-bars" class="slide level2">
 <h2>We can use dots instead of bars</h2>
 
-<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-20-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-45-1.png" width="768" class="r-stretch quarto-figure-center"></section>
 <section id="we-can-use-dots-instead-of-bars-1" class="slide level2">
 <h2>We can use dots instead of bars</h2>
 
-<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-21-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-46-1.png" width="768" class="r-stretch quarto-figure-center"></section>
 <section id="dots-are-preferable-if-we-want-to-truncate-the-axes" class="slide level2">
 <h2>Dots are preferable if we want to truncate the axes</h2>
 <p>Dataset: Solar panels in Sweden</p>
 
-<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-22-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-47-1.png" width="768" class="r-stretch quarto-figure-center"></section>
 <section id="dots-are-preferable-if-we-want-to-truncate-the-axes-1" class="slide level2">
 <h2>Dots are preferable if we want to truncate the axes</h2>
 <p><br></p>
 
-<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-23-1.png" width="768" class="r-stretch quarto-figure-center"><p><span class="absolute" style="bottom: 10%; right: 0%; ">Bar lengths do<br>not accurately<br>represent the<br>data values</span></p>
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-48-1.png" width="768" class="r-stretch quarto-figure-center"><p><span class="absolute" style="bottom: 10%; right: 0%; ">Bar lengths do<br>not accurately<br>represent the<br>data values</span></p>
 </section>
 <section id="dots-are-preferable-if-we-want-to-truncate-the-axes-2" class="slide level2">
 <h2>Dots are preferable if we want to truncate the axes</h2>
 <p><br></p>
 
-<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-24-1.png" width="768" class="r-stretch quarto-figure-center"><p><span class="absolute" style="bottom: 10%; right: 0%; ">Key features<br>of the data<br>are obscured</span></p>
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-49-1.png" width="768" class="r-stretch quarto-figure-center"><p><span class="absolute" style="bottom: 10%; right: 0%; ">Key features<br>of the data<br>are obscured</span></p>
 </section>
 <section id="dots-are-preferable-if-we-want-to-truncate-the-axes-3" class="slide level2">
 <h2>Dots are preferable if we want to truncate the axes</h2>
 <p><br></p>
 
-<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-25-1.png" width="768" class="r-stretch quarto-figure-center"></section>
-<section id="section-1" class="slide level2" data-background-color="#e99869" data-background-image="lecture-1-resources/preview.png" data-background-position="left" data-background-size="contain">
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-50-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+<section id="section-4" class="slide level2" data-background-color="#e99869" data-background-image="lecture-1-resources/preview.png" data-background-position="left" data-background-size="contain">
 <h2></h2>
 <div style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;">
 <p><span style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px">Overcoming Excel</span></p>
@@ -670,7 +1162,7 @@
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="imiqzubaqm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="onuhwprfkb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
   
   <table class="gt_table" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 32px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" bgcolor="#FFFFFF">
   <thead class="gt_header">
@@ -720,7 +1212,7 @@
 <h2>Your turn again</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_4c9dfc84" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_3087cafa" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
@@ -733,7 +1225,7 @@
 <li><p>What is confusing?</p></li>
 </ul>
 </section>
-<section id="section-2" class="slide level2" data-background-color="FFFFFF">
+<section id="section-5" class="slide level2" data-background-color="FFFFFF">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:10%;">
@@ -742,7 +1234,7 @@
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="zrlrosrbue" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="qhzhxtzuax" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
   
   <table class="gt_table" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 32px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" bgcolor="#FFFFFF">
   <thead class="gt_header">
@@ -792,8 +1284,14 @@
 <div class="column" style="width:60%;">
 <div class="cell">
 <div class="cell-output-display">
+<div class="countdown" id="timer_bea81d79" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+</div>
+</div>
+<div class="cell-output-display">
 
-<div id="wlnllbnrmv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="sjsrokbcnv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
   
   <table class="gt_table" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 32px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" bgcolor="#FFFFFF">
   <thead class="gt_header">
@@ -862,8 +1360,14 @@
 <div class="column" style="width:60%;">
 <div class="cell">
 <div class="cell-output-display">
+<div class="countdown" id="timer_75c3c5aa" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+</div>
+</div>
+<div class="cell-output-display">
 
-<div id="rppatgbhnb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="mjvzkkmzyg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
   
   <table class="gt_table" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 32px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" bgcolor="#FFFFFF">
   <thead class="gt_header">
@@ -926,15 +1430,23 @@
 </div>
 </div>
 </section>
+<section id="section-6" class="slide level2" data-background-color="#e99869" data-background-image="lecture-1-resources/preview.png" data-background-position="left" data-background-size="contain">
+<h2></h2>
+<div style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;">
+<p><span style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px">Storytelling with data</span></p>
+<p><br></p>
+<p><span style="font-size: 60px; font-weight: bold;">Related time series</span></p>
+</div>
+</section>
 <section id="plotting-related-time-series" class="slide level2">
 <h2>Plotting related time series</h2>
-<p>Dataset: Fertility and births outside of marriage in Denmark 🇩🇰 and Greece 🇬🇷.</p>
+<p>Dataset: Fertility and births outside of marriage in Denmark and Greece.</p>
 <p>Default choice for plotting is two line plots</p>
 <div class="cell">
 
 </div>
 
-<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-37-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-62-1.png" width="768" class="r-stretch quarto-figure-center"></section>
 <section id="plotting-related-time-series-1" class="slide level2">
 <h2>Plotting related time series</h2>
 <p><br></p>
@@ -942,7 +1454,7 @@
 <div class="column" style="width:60%;">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-38-1.png" width="768"></p>
+<p><img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-63-1.png" width="768"></p>
 </div>
 </div>
 </div><div class="column" style="width:40%;">
@@ -962,7 +1474,7 @@
 <h2>An alternative: time on a third axis</h2>
 <p><br></p>
 
-<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-39-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-64-1.png" width="768" class="r-stretch quarto-figure-center"></section>
 <section id="what-have-we-learned" class="slide level2">
 <h2>What have we learned?</h2>
 <p><br></p>
@@ -972,7 +1484,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-40-1.png" width="768"></p>
+<p><img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-65-1.png" width="768"></p>
 </figure>
 </div>
 </div>
@@ -996,7 +1508,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-41-1.png" width="768"></p>
+<p><img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-66-1.png" width="768"></p>
 </figure>
 </div>
 </div>
@@ -1011,6 +1523,14 @@
 </div>
 </div>
 </section>
+<section id="section-7" class="slide level2" data-background-color="#e99869" data-background-image="lecture-1-resources/preview.png" data-background-position="left" data-background-size="contain">
+<h2></h2>
+<div style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;">
+<p><span style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px">Storytelling with data</span></p>
+<p><br></p>
+<p><span style="font-size: 60px; font-weight: bold;">Giving context</span></p>
+</div>
+</section>
 <section id="giving-context" class="slide level2">
 <h2>Giving context</h2>
 <p>Sometimes we may want to show a particular series of data in its correct context.</p>
@@ -1021,26 +1541,26 @@
 <p>Do <strong>Denmark and Greece</strong> represent the <strong>extremes</strong> of the share of children born outside of marriage in Europe?</p>
 <p><br></p>
 
-<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-42-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-67-1.png" width="768" class="r-stretch quarto-figure-center"></section>
 <section id="giving-context-with-an-average" class="slide level2">
 <h2>Giving context with an average</h2>
 <p>One way to do this would be to show an average for Europe</p>
 
-<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-43-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-68-1.png" width="768" class="r-stretch quarto-figure-center"></section>
 <section id="giving-context-with-an-interval-ribbon" class="slide level2">
 <h2>Giving context with an interval ribbon</h2>
 
-<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-44-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-69-1.png" width="768" class="r-stretch quarto-figure-center"></section>
 <section id="giving-context-with-all-of-the-data" class="slide level2">
 <h2>Giving context with all of the data</h2>
 <p>This is silly</p>
 
-<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-45-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-70-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="giving-context-with-all-of-the-data-1" class="slide level2">
 <h2>Giving context with all of the data</h2>
 <p>Here we <span style="color: #C60C30;">highlight</span> the <span style="color: #0D5EAF;">series</span> we are interested in and draw in the remaining series in <span style="color: #7f7f7f;">grey</span></p>
 
-<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-46-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-71-1.png" width="768" class="r-stretch quarto-figure-center"></section>
 <section id="what-have-we-changed-1" class="slide level2">
 <h2>What have we changed?</h2>
 <p><br></p>
@@ -1050,7 +1570,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-47-1.png" width="768"></p>
+<p><img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-72-1.png" width="768"></p>
 </figure>
 </div>
 </div>
@@ -1065,199 +1585,49 @@
 </div>
 </div>
 </section>
-<section id="legends" class="slide level2">
-<h2>Legends</h2>
-<p>colour dots by region.</p>
+<section id="section-8" class="slide level2" data-background-color="#e99869" data-background-image="lecture-1-resources/preview.png" data-background-position="left" data-background-size="contain">
+<h2></h2>
+<div style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;">
+<p><span style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px">Storytelling with data</span></p>
+<p><br></p>
+<p><span style="font-size: 60px; font-weight: bold;">Tips for polished figures</span></p>
+</div>
 </section>
 <section id="tips-for-polishing-your-figures" class="slide level2">
 <h2>Tips for polishing your figures</h2>
-<div class="cell">
+<p>Where to get great colours from for your plots:</p>
+<div class="cell" data-layout-align="center">
 <iframe src="https://colorbrewer2.org/#type=sequential&amp;scheme=OrRd&amp;n=3" width="768" height="800" data-external="1">
 </iframe>
 </div>
-</section>
-<section id="dataset" class="slide level2">
-<h2>Dataset:</h2>
-<p>Daily hours between sunrise and sunset for various locations in 2022</p>
 <div class="cell">
-<div class="cell-output-display">
-
-<div id="eteabododn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-  
-  <table class="gt_table" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 26px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" bgcolor="#FFFFFF">
-  <thead class="gt_header">
-    <tr>
-      <td colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="background-color: #FFFFFF; text-align: center; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; color: #333333; font-size: 32px; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; font-weight: normal;" bgcolor="#FFFFFF" align="center">Sunrise and sunset time</td>
-    </tr>
-    
-  </thead>
-  <thead class="gt_col_headings" style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
-    <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="City" style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: center;" bgcolor="#FFFFFF" valign="bottom" align="center">City</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Date" style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">Date</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Hours between sunrise and sunset" style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">Hours between sunrise and sunset</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="month" style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: center;" bgcolor="#FFFFFF" valign="bottom" align="center">month</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body" style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3;">
-    <tr><td headers="city" class="gt_row gt_center" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">Cape Town, South Africa</td>
-<td headers="date" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">2022-01-01</td>
-<td headers="sun_hours" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">14.55000</td>
-<td headers="month" class="gt_row gt_center" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">Jan</td></tr>
-    <tr><td headers="city" class="gt_row gt_center" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">Cape Town, South Africa</td>
-<td headers="date" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">2022-01-02</td>
-<td headers="sun_hours" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">14.53333</td>
-<td headers="month" class="gt_row gt_center" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">Jan</td></tr>
-    <tr><td headers="city" class="gt_row gt_center" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">Cape Town, South Africa</td>
-<td headers="date" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">2022-01-03</td>
-<td headers="sun_hours" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">14.53333</td>
-<td headers="month" class="gt_row gt_center" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">Jan</td></tr>
-    <tr><td headers="city" class="gt_row gt_center" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">Cape Town, South Africa</td>
-<td headers="date" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">2022-01-04</td>
-<td headers="sun_hours" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">14.51667</td>
-<td headers="month" class="gt_row gt_center" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">Jan</td></tr>
-    <tr><td headers="city" class="gt_row gt_center" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">Cape Town, South Africa</td>
-<td headers="date" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">2022-01-05</td>
-<td headers="sun_hours" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">14.50000</td>
-<td headers="month" class="gt_row gt_center" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">Jan</td></tr>
-    <tr><td headers="city" class="gt_row gt_center" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">Cape Town, South Africa</td>
-<td headers="date" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">2022-01-06</td>
-<td headers="sun_hours" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">14.48333</td>
-<td headers="month" class="gt_row gt_center" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">Jan</td></tr>
-    <tr><td headers="city" class="gt_row gt_center" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">Cape Town, South Africa</td>
-<td headers="date" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">2022-01-07</td>
-<td headers="sun_hours" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">14.46667</td>
-<td headers="month" class="gt_row gt_center" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">Jan</td></tr>
-    <tr><td headers="city" class="gt_row gt_center" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">Cape Town, South Africa</td>
-<td headers="date" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">2022-01-08</td>
-<td headers="sun_hours" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">14.45000</td>
-<td headers="month" class="gt_row gt_center" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">Jan</td></tr>
-    <tr><td headers="city" class="gt_row gt_center" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">Cape Town, South Africa</td>
-<td headers="date" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">2022-01-09</td>
-<td headers="sun_hours" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">14.43333</td>
-<td headers="month" class="gt_row gt_center" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">Jan</td></tr>
-    <tr><td headers="city" class="gt_row gt_center" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">Cape Town, South Africa</td>
-<td headers="date" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">2022-01-10</td>
-<td headers="sun_hours" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">14.41667</td>
-<td headers="month" class="gt_row gt_center" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">Jan</td></tr>
-  </tbody>
-  <tfoot class="gt_sourcenotes" style="color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3;" bgcolor="#FFFFFF">
-    <tr>
-      <td class="gt_sourcenote" colspan="4" style="font-size: 20px; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px;">Source: <a href="https://www.schoolsobservatory.org/learn/astro/nightsky/sunrs_set/sunrs_world">Schools observatory</a></td>
-    </tr>
-  </tfoot>
-  
-</table>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>help spmap <span class="co"># Look for the palettes under fcolor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="dataset-1" class="slide level2">
-<h2>Dataset:</h2>
-<p>Locations of cities on a map</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="htmlwidget-f17ad666cb1efc508086" style="width:768px;height:576px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f17ad666cb1efc508086">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addCircleMarkers","args":[[55.7029296,8.9714493,-17.853135,-33.928992],[13.1929449,-79.5341802,25.861429,18.417396],10,null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addPopups","args":[[55.7029296,8.9714493,-17.853135,-33.928992],[13.1929449,-79.5341802,25.861429,18.417396],["Lund, Sweden","Panama City, Panama","Livingstone, Zambia","Cape Town, South Africa"],null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]}],"limits":{"lat":[-33.928992,55.7029296],"lng":[-79.5341802,25.861429]}},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
+<section id="recreating-published-figures" class="slide level2">
+<h2>Recreating published figures</h2>
+
+<img data-src="lecture-1-resources/GDP.png" width="375" class="r-stretch quarto-figure-center"><p class="caption">A FT chart published without the underlying data</p></section>
+<section id="recreating-published-figures-1" class="slide level2">
+<h2>Recreating published figures</h2>
+<p><br></p>
+
+<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-76-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+<section id="recreating-published-figures-2" class="slide level2">
+<h2>Recreating published figures</h2>
+<p><br></p>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/TVCFedRgg5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
 </section>
-<section id="sun-hours-in-a-table" class="slide level2">
-<h2>Sun hours in a table</h2>
-<div class="cell">
-<div class="cell-output-display">
-
-<div id="rwglqaggnh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-  
-  <table class="gt_table" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 26px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" bgcolor="#FFFFFF">
-  
-  <thead class="gt_col_headings" style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
-    <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="City" style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: left;" bgcolor="#FFFFFF" valign="bottom" align="left">City</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Jan" style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">Jan</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Feb" style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">Feb</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Mar" style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">Mar</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Apr" style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">Apr</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="May" style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">May</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Jun" style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">Jun</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Jul" style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">Jul</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Aug" style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">Aug</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Sep" style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">Sep</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Oct" style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">Oct</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Nov" style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">Nov</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Dec" style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">Dec</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body" style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3;">
-    <tr><td headers="City" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Lund, Sweden</td>
-<td headers="Jan" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right"> 8.1</td>
-<td headers="Feb" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right"> 9.8</td>
-<td headers="Mar" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">11.9</td>
-<td headers="Apr" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">14.1</td>
-<td headers="May" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">16.0</td>
-<td headers="Jun" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">17.0</td>
-<td headers="Jul" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">16.5</td>
-<td headers="Aug" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">14.8</td>
-<td headers="Sep" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">12.7</td>
-<td headers="Oct" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">10.5</td>
-<td headers="Nov" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right"> 8.6</td>
-<td headers="Dec" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right"> 7.5</td></tr>
-    <tr><td headers="City" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Panama City, Panama</td>
-<td headers="Jan" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">11.8</td>
-<td headers="Feb" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">11.9</td>
-<td headers="Mar" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">12.1</td>
-<td headers="Apr" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">12.3</td>
-<td headers="May" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">12.4</td>
-<td headers="Jun" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">12.5</td>
-<td headers="Jul" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">12.5</td>
-<td headers="Aug" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">12.3</td>
-<td headers="Sep" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">12.1</td>
-<td headers="Oct" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">12.0</td>
-<td headers="Nov" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">11.8</td>
-<td headers="Dec" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">11.8</td></tr>
-    <tr><td headers="City" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Livingstone, Zambia</td>
-<td headers="Jan" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">13.1</td>
-<td headers="Feb" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">12.7</td>
-<td headers="Mar" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">12.2</td>
-<td headers="Apr" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">11.7</td>
-<td headers="May" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">11.2</td>
-<td headers="Jun" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">11.0</td>
-<td headers="Jul" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">11.1</td>
-<td headers="Aug" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">11.5</td>
-<td headers="Sep" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">12.0</td>
-<td headers="Oct" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">12.5</td>
-<td headers="Nov" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">13.0</td>
-<td headers="Dec" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">13.2</td></tr>
-    <tr><td headers="City" class="gt_row gt_left" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Cape Town, South Africa</td>
-<td headers="Jan" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">14.3</td>
-<td headers="Feb" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">13.4</td>
-<td headers="Mar" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">12.3</td>
-<td headers="Apr" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">11.2</td>
-<td headers="May" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">10.2</td>
-<td headers="Jun" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right"> 9.8</td>
-<td headers="Jul" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">10.0</td>
-<td headers="Aug" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">10.8</td>
-<td headers="Sep" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">11.9</td>
-<td headers="Oct" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">13.0</td>
-<td headers="Nov" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">14.0</td>
-<td headers="Dec" class="gt_row gt_right" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">14.6</td></tr>
-  </tbody>
-  
-  
-</table>
-</div>
-</div>
-</div>
+<section id="you-pay-a-heavy-price" class="slide level2">
+<h2>You pay a heavy price</h2>
+<iframe width="1300" height="700" src="https://www.youtube.com/embed/5Zg-C8AAIGg?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
 </section>
-<section id="sun-hours-mapped-onto-y-position" class="slide level2">
-<h2>Sun hours mapped onto y position</h2>
+<section id="thank-you" class="slide level2">
+<h2>Thank you</h2>
 
-<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-52-1.png" width="960" class="r-stretch quarto-figure-center"></section>
-<section id="sun-hours-mapped-onto-colour" class="slide level2">
-<h2>Sun hours mapped onto colour</h2>
-
-
-<img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-53-1.png" width="960" class="r-stretch quarto-figure-center"><div class="footer footer-default">
+<div class="footer footer-default">
 
 </div>
 </section>

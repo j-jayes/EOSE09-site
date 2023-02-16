@@ -31,6 +31,11 @@ library(cowplot)
 library(colorspace)
 library(here)
 library(gt)
+library(ggrepel)
+library(gghighlight)
+library(scales)
+library(ggtext)
+
 theme_set(theme_light(16)) # 16 for full width, 18 for half width 
 update_geom_defaults("point", list(size = 2)) # 2 for full width, 2.5 for half width
 ```
@@ -65,9 +70,9 @@ Rather, it is about the theory behind communicating well with data
 
 ::: columns
 ::: {.column width="40%"}
-1.  Overcoming Excel
+1.  Improving your maps
 
-2.  Improving your maps
+2.  Overcoming Excel
 
 3.  Telling a story with data
 
@@ -109,7 +114,7 @@ knitr::include_graphics(here::here("lectures", "lecture-1-resources", "story-cir
 ```{r}
 #| fig-align: center
 
-knitr::include_graphics(here::here("lectures", "lecture-1-resources", "story-circle.jpg"))
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "image_our_story_circle.png"))
 ```
 
 ::: notes
@@ -128,6 +133,704 @@ Pay a heavy price: Hard to concentrate - relax with an inspiring video
 Return to familiar situation: your projects
 
 Having changed: I hope you learn something.
+
+:::
+
+## {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
+
+::: {style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;"}
+[Improving your maps]{style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px"}
+
+<br>
+
+[Legend breaks]{style="font-size: 60px; font-weight: bold;"}
+
+:::
+
+## Recap from Lab 1 exercies
+
+<blockquote>
+
+Make a map of the share of employment in industry in the year 2010 across the whole dataset
+
+</blockquote>
+
+## Recap from Lab 1 exercies
+
+<br>
+
+### What is wrong with this map? 🗺️
+
+```{r}
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "stata_1.png"))
+```
+
+## Recap from Lab 1 exercies
+
+```{r}
+library(countdown)
+
+countdown(minutes = 1, seconds = 0, play_sound = TRUE)
+```
+
+
+<br>
+
+:::: columns
+::: {.column width="50%"}
+
+```{r}
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "stata_1.png"))
+```
+
+:::
+::: {.column width="50%"}
+
+Discuss with your neighbour:
+
+-   What do we like?
+
+-   What is confusing?
+
+```{r}
+#| echo: true
+#| eval: false
+spmap employment_share_industry using "nutscoord.dta" 
+  if year == 2010, 
+  id(_ID) fcolor(Spectral) legstyle(2) 
+	title("Employment Share Industry - 2010", size(large)) 
+	osize(0.02 ..) ocolor(white ..) 
+	clmethod(custom) clbreaks(0 (0.2) 1)
+	legend(pos(9) size(medium) rowgap(1.5) 
+	label(6 "80-100 %") label(5 "60-80 %") 
+	label(4 "40-60 %") label(3 "20-40 %") label(2 "0-20 %") 
+	label(1 "No Data")) 
+	ndfcolor(gray) ndocolor(white ..) ndsize(0.02 ..)
+```
+
+:::
+::::
+
+## Let's plot the disribution of the data
+
+<br>
+
+:::: columns
+::: {.column width="50%"}
+
+```{r}
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "stata_1_2.png"))
+```
+
+:::
+::: {.column width="50%"}
+
+```{r}
+#| echo: true
+#| eval: false
+histogram employment_share_industry if year == 2010, 
+  color(midblue)
+```
+
+:::
+::::
+
+## Let's plot the disribution of the data
+
+<br>
+
+:::: columns
+::: {.column width="50%"}
+
+```{r}
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "stata_2.png"))
+```
+
+:::
+::: {.column width="50%"}
+
+```{r}
+#| echo: true
+#| eval: false
+kdensity employment_share_industry if year == 2010
+```
+
+:::
+::::
+
+## Now let's make breaks based on this information
+
+<br>
+
+:::: columns
+::: {.column width="50%"}
+
+```{r}
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "stata_3.png"))
+```
+
+:::
+::: {.column width="50%"}
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "5,7,8,9"
+
+spmap employment_share_industry using "nutscoord.dta" 
+  if year == 2010, id(_ID) fcolor(Spectral) legstyle(2) 
+	title("Employment Share Industry - 2010", size(large)) 
+	osize(0.02 ..) ocolor(white ..) 
+	clmethod(custom) clbreaks(0 (0.075) 0.5) 
+	legend(pos(9) size(medium) rowgap(1.5) 
+	label(7 "37-45 %") label(6 "30-37 %") 
+	label(5 "23-30 %") label(4 "15-23 %") 
+	label(3 "8-15 %") label(2 "0-8 %") 
+	label(1 "No Data")) 
+	ndfcolor(gray) ndocolor(white ..) ndsize(0.02 ..)
+	
+```
+
+:::
+::::
+
+## Colour scales
+
+Uses of color in data visualization
+
+. . .
+
+<table style = "border: none; line-height: 2.5;">
+<tr style = "background: white;">
+<td style = "text-align: left; width: 50%;">
+1. Distinguish categories (qualitative)
+</td>
+<td>
+<img src = "lecture-1-resources/qualitative.png" width = 100% style = "text-align: right; vertical-align: middle"></img>
+</td>
+</tr>
+</table>
+
+## Qualitative scale example
+
+```{r}
+#| fig-align: center
+
+df <- read_rds(here::here("lectures", "lecture-1-resources", "solar_panels_se.rds"))
+
+region_colors <- c("#E69F00", "#56B4E9", "#009E73")
+
+
+df %>%
+  filter(
+    nchar(region_code) > 2,
+    power_class == "Total",
+    year == 2021
+  ) %>%
+  mutate(county = case_when(
+    str_detect(region_code, "^01") ~ "Stockholm",
+    str_detect(region_code, "^12") ~ "Skåne",
+    str_detect(region_code, "^14") ~ "Västra Götalands",
+    TRUE ~ "Other"
+  )) %>%
+  filter(county != "Other") %>%
+  ggplot(aes(solar_cell_installations, installed_capacity_mw, colour = county)) +
+  geom_point() +
+  geom_text_repel(aes(label = region), show.legend = F) +
+  scale_x_log10() +
+  scale_y_log10() +
+  scale_color_manual(values = region_colors) +
+  labs(
+    x = "Number of solar panels installed",
+    y = "Installed solar capacity (megawatts)",
+    colour = "County"
+  )
+
+```
+
+Palette name: Okabe-Ito
+
+## Qualitative scale example
+
+```{r}
+#| fig-align: center
+
+df %>%
+  filter(
+    nchar(region_code) > 2,
+    power_class == "Total",
+    year == 2021
+  ) %>%
+  mutate(county = case_when(
+    str_detect(region_code, "^01") ~ "Stockholm",
+    str_detect(region_code, "^12") ~ "Skåne",
+    str_detect(region_code, "^14") ~ "Västra Götalands",
+    TRUE ~ "Other"
+  )) %>%
+  filter(county != "Other") %>%
+  ggplot(aes(solar_cell_installations, installed_capacity_mw, colour = county)) +
+  geom_point() +
+  geom_text_repel(aes(label = region), show.legend = F) +
+  scale_x_log10() +
+  scale_y_log10() +
+  scale_color_brewer(palette = "Set1") +
+  labs(
+    x = "Number of solar panels installed",
+    y = "Installed solar capacity (megawatts)",
+    colour = "County"
+  )
+```
+
+Palette name: Brewer Set1
+
+## Qualitative scale example
+
+```{r}
+#| fig-align: center
+
+df %>%
+  filter(
+    nchar(region_code) > 2,
+    power_class == "Total",
+    year == 2021
+  ) %>%
+  mutate(county = case_when(
+    str_detect(region_code, "^01") ~ "Stockholm",
+    str_detect(region_code, "^12") ~ "Skåne",
+    str_detect(region_code, "^14") ~ "Västra Götalands",
+    TRUE ~ "Other"
+  )) %>%
+  filter(county != "Other") %>%
+  ggplot(aes(solar_cell_installations, installed_capacity_mw, colour = county)) +
+  geom_point() +
+  geom_text_repel(aes(label = region), show.legend = F) +
+  scale_x_log10() +
+  scale_y_log10() +
+  scale_color_brewer(palette = "Dark2") +
+  labs(
+    x = "Number of solar panels installed",
+    y = "Installed solar capacity (megawatts)",
+    colour = "County"
+  )
+```
+
+Palette name: Brewer Dark2
+
+## Uses of color in data visualization
+
+<table style = "border: none; line-height: 2.5;">
+<tr style = "background: white;">
+<td style = "text-align: left; width: 50%;">
+1. Distinguish categories (qualitative)
+</td>
+<td>
+<img src = "lecture-1-resources/qualitative.png" width = 100% style = "text-align: right; vertical-align: middle"></img>
+</td>
+</tr>
+
+<tr style = "background: white;">
+<td style = "text-align: left;">
+2. Represent numeric values (sequential)
+</td>
+<td>
+<img src = "lecture-1-resources/sequential.png" width = 100% style = "text-align: right; vertical-align: middle"></img>
+</td>
+</tr>
+</table>
+
+## Sequential scale example
+
+```{r}
+#| fig-align: center
+#| fig-width: 10
+#| fig-height: 8
+
+sun_hours <- read_rds(here::here("lectures", "lecture-1-resources", "sun_hours.rds"))
+
+sun_hours %>%
+  mutate(
+    month = month(date, label = T)
+  ) %>%
+  group_by(city, month) %>%
+  summarise(mean_sun_hours = mean(sun_hours)) %>%
+  ggplot(aes(x = month, y = city, fill = mean_sun_hours)) +
+  geom_tile(width = .95, height = 0.95) +
+  scale_fill_viridis_c(
+    option = "B", begin = 0.15, end = 0.98,
+    name = "Hours of sunlight"
+  ) +
+  scale_x_discrete(name = "Month") +
+  scale_y_discrete(name = NULL) +
+  coord_fixed(expand = FALSE) +
+  theme_half_open(16) +
+  theme(
+    axis.line = element_blank(),
+    axis.ticks = element_blank(),
+    legend.title = element_text(size = 14)
+  )
+```
+
+Palette name: inferno
+
+## Sequential scale example
+
+```{r}
+#| fig-align: center
+#| fig-width: 10
+#| fig-height: 8
+
+sun_hours %>%
+  mutate(
+    month = month(date, label = T)
+  ) %>%
+  group_by(city, month) %>%
+  summarise(mean_sun_hours = mean(sun_hours)) %>%
+  ggplot(aes(x = month, y = city, fill = mean_sun_hours)) +
+  geom_tile(width = .95, height = 0.95) +
+  scale_fill_viridis_c(
+    option = "D", begin = 0.15, end = 0.98,
+    name = "Hours of sunlight"
+  ) +
+  scale_x_discrete(name = "Month") +
+  scale_y_discrete(name = NULL) +
+  coord_fixed(expand = FALSE) +
+  theme_half_open(16) +
+  theme(
+    axis.line = element_blank(),
+    axis.ticks = element_blank(),
+    legend.title = element_text(size = 14)
+  )
+```
+
+Palette name: viridis
+
+## Uses of color in data visualization
+
+<table style = "border: none; line-height: 2.5;">
+<tr style = "background: white;">
+<td style = "text-align: left; width: 50%;">
+1. Distinguish categories (qualitative)
+</td>
+<td>
+<img src = "lecture-1-resources/qualitative.png" width = 100% style = "text-align: right; vertical-align: middle"></img>
+</td>
+</tr>
+
+<tr style = "background: white;">
+<td style = "text-align: left;">
+2. Represent numeric values (sequential)
+</td>
+<td>
+<img src = "lecture-1-resources/sequential.png" width = 100% style = "text-align: right; vertical-align: middle"></img>
+</td>
+</tr>
+
+<tr style = "background: white;">
+<td style = "text-align: left;">
+3. Represent numeric values (diverging)
+</td>
+<td>
+<img src = "lecture-1-resources/diverging.png" width = 100% style = "text-align: right; vertical-align: middle"></img>
+</td>
+</tr>
+</table>
+
+## Diverging scale example
+
+```{r}
+#| fig-align: center
+df <- read_rds(here::here("lectures", "lecture-1-resources", "solar_panels_se.rds"))
+
+
+df %>%
+  filter(
+    nchar(region_code) > 2,
+    power_class == "Total",
+    year == 2021
+  ) %>%
+  mutate(county = case_when(
+    str_detect(region_code, "^01") ~ "Stockholm",
+    str_detect(region_code, "^12") ~ "Skåne",
+    str_detect(region_code, "^14") ~ "Västra Götalands",
+    TRUE ~ "Other"
+  )) %>%
+  filter(county == "Stockholm") %>%
+  mutate(
+    median_power = median(installed_capacity_mw),
+    share = installed_capacity_mw / median_power,
+    region = fct_reorder(region, share)
+  ) %>%
+  arrange(share) %>%
+  mutate(rn = row_number()) %>%
+  ggplot(aes(rn, share, colour = share)) +
+  geom_point() +
+  geom_hline(yintercept = 1.34, lty = 2) +
+  scale_y_log10() +
+  geom_text_repel(aes(label = region), show.legend = F) +
+  scale_color_gradient2(
+    low = "darkblue",
+    mid = "gray90",
+    high = "darkred",
+    midpoint = .7,
+    trans = "log",
+    labels = scales::number_format()
+  ) +
+  labs(
+    x = NULL,
+    y = NULL,
+    title = "Installed solar capacity relative to median",
+    subtitle = "In Stockholm county",
+    colour = "Installed solar capacity relative to median"
+  ) +
+  theme(legend.position = "bottom") +
+  guides(colour = guide_colorbar(
+    title.position = "top", barwidth = 25, title.hjust = .5
+  ))
+```
+
+## Uses of color in data visualization
+
+<table style = "border: none; line-height: 2.5;">
+<tr style = "background: white;">
+<td style = "text-align: left; width: 50%;">
+1. Distinguish categories (qualitative)
+</td>
+<td>
+<img src = "lecture-1-resources/qualitative.png" width = 100% style = "text-align: right; vertical-align: middle;"></img>
+</td>
+</tr>
+
+<tr style = "background: white;">
+<td style = "text-align: left;">
+2. Represent numeric values (sequential)
+</td>
+<td>
+<img src = "lecture-1-resources/sequential.png" width = 100% style = "text-align: right; vertical-align: middle"></img>
+</td>
+</tr>
+
+<tr style = "background: white;">
+<td style = "text-align: left;">
+3. Represent numeric values (diverging)
+</td>
+<td>
+<img src = "lecture-1-resources/diverging.png" width = 100% style = "text-align: right; vertical-align: middle"></img>
+</td>
+</tr>
+
+<tr style = "background: white;">
+<td style = "text-align: left;">
+4. Highlight
+</td>
+<td>
+<img src = "lecture-1-resources/highlight.png" width = 100% style = "text-align: right; vertical-align: middle"></img>
+</td>
+</tr>
+</table>
+
+## Highlight example
+
+```{r}
+#| fig-align: center
+
+df <- read_rds(here::here("lectures", "lecture-1-resources", "births_outside_marriage.rds"))
+
+df %>%
+  ggplot() +
+  geom_line(aes(x = year, y = pbom, colour = country), linewidth = 1.5) +
+  gghighlight(flag == 1) +
+  scale_y_continuous(labels = percent_format(scale = 1)) +
+  theme(
+    legend.text = element_text(size = 4),
+    legend.position = "bottom",
+    plot.title = element_markdown(size = 14)
+  ) +
+  scale_colour_manual(values = c("#C60C30", "#0D5EAF")) +
+  labs(
+    title = "Proportion of births outside of marriage in <span style='color:#C60C30'>Denmark</span> and <span style='color:#0D5EAF'>Greece</span>",
+    y = NULL,
+    x = NULL,
+    colour = "Country"
+  )
+```
+
+
+## Using density plots to set your legend breaks
+
+Dataset: Solar panels in Sweden
+
+```{r}
+df <- read_rds(here::here("lectures", "lecture-1-resources", "solar_panels_se.rds"))
+
+df_lan <- df %>%
+  filter(
+    power_class == "Total",
+    nchar(region_code) == 2,
+    year == 2021,
+    region != "Riket"
+  ) %>%
+  rename(lan_name = region)
+
+df_lan %>%
+  select(lan_name, installed_capacity_mw) %>%
+  slice_max(installed_capacity_mw, n = 10) %>%
+  gt() %>%
+  cols_label(
+    lan_name = "Swedish county",
+    installed_capacity_mw = "Installed solar capacity (megawatts)"
+  ) %>%
+  tab_header(
+    title = md("**Installed solar capacity in Sweden**"),
+    subtitle = "Year: 2021"
+  ) %>%
+  tab_source_note(md("Source: [Energimyndigheten](https://www.energimyndigheten.se/)")) %>%
+  tab_options(
+    heading.title.font.size = 32,
+    table.font.size = 26,
+    source_notes.font.size = 20
+  ) %>%
+  as_raw_html(inline_css = TRUE)
+```
+
+## How to decide on values for the bins?
+
+Use a histogram or a density plot to see where the weight of the distribution is.
+
+```{r}
+#| fig-align: center
+
+df_lan %>%
+  ggplot(aes(installed_capacity_mw)) +
+  geom_histogram(bins = 8, fill = "midnightblue", alpha = .8) +
+  scale_y_continuous(labels = scales::number_format(accuracy = 1)) +
+  labs(
+    y = "Number of counties",
+    x = "Installed solar capacity (megawatts)"
+  )
+```
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+#| fig-align: center
+
+library(sf)
+
+map <- st_read(here::here("lectures", "lecture-1-resources", "maps", "sverige-lan-counties-of-sweden.shp")) %>%
+  st_transform(crs = 4326) %>%
+  as_tibble() %>%
+  rename(lan_name = lan_namn)
+```
+
+## Map with appropriate breaks
+
+Ask your neighbour: 
+
+1. what kind of palette is this? 
+
+2. Is it appropriate to use with this data?
+
+```{r}
+#| fig-align: center
+countdown(minutes = 1, seconds = 0, play_sound = TRUE)
+
+
+df_map <- df_lan %>%
+  inner_join(map)
+
+df_map %>%
+  ggplot() +
+  geom_sf(aes(fill = installed_capacity_mw, geometry = geometry)) +
+  coord_sf() +
+  theme_map() +
+  # scale_fill_gradient2(
+  #   high = muted("red"),
+  #   mid = "pink",
+  #   low = muted("blue"),
+  #   midpoint = 100,
+  #   guide = "colourbar", aesthetics = "fill"
+  # ) +
+  scale_fill_binned(type = "viridis", labels = scales::number_format()) +
+  # theme_void() +
+  labs(
+    title = "Installed solar capacity in Sweden",
+    fill = "Installed capacity in megawatts"
+  )
+```
+
+
+## {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
+
+::: {style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;"}
+[Improving your maps]{style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px"}
+
+<br>
+
+[Great Choropleths]{style="font-size: 60px; font-weight: bold;"}
+
+:::
+
+## Examples of great maps
+
+[Financial Times analysis of Italian election results](https://www.ft.com/content/35188c6a-4870-11e8-8ee8-cae73aab7ccb)
+
+```{r}
+#| fig-align: center
+
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "ft_italy_elections_1.PNG"))
+```
+
+::: notes
+Maps work best when they show an emerging spatial pattern, as was the case with this map from the recent Italian elections.
+
+Showing the winner at municipality level clearly shows the political divisions in the country. In the north, the Northern League party triumphed largely on the back of an anti-immigration and anti-EU agenda. In the south, the anti-establishment Five Star Movement was even more successful, gaining a majority of votes in many areas
+:::
+
+## Examples of great maps
+
+[Financial Times analysis of Italian election results](https://www.ft.com/content/35188c6a-4870-11e8-8ee8-cae73aab7ccb)
+
+```{r}
+#| fig-align: center
+
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "ft_italy_elections_2.PNG"))
+```
+
+::: notes
+
+Another interesting take on the results was to show the per cent share of vote. This helped to emphasise just how strong the support was for the two parties.
+
+:::
+
+## Examples of great maps
+
+[Human Terrain from The Pudding](https://pudding.cool/2018/10/city_3d/)
+
+```{r}
+#| fig-align: center
+
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "population_southern_sweden.PNG"))
+```
+
+## Examples of great maps
+
+[The Coming Crisis: Exploring the U.S. Physician Shortage](https://dfsnow.github.io/ama_viz/exploratory_plots.html) by Daniel Snow
+
+```{r}
+#| fig-align: center
+
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "map-with-scale.PNG"))
+```
+
+## {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
+
+::: {style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;"}
+[Overcoming Excel]{style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px"}
+
+<br>
+
+[Motivation]{style="font-size: 60px; font-weight: bold;"}
 
 :::
 
@@ -310,8 +1013,6 @@ artists %>%
 ## Your turn
 
 ```{r}
-library(countdown)
-
 countdown(minutes = 2, seconds = 30, play_sound = TRUE)
 ```
 
@@ -824,9 +1525,21 @@ knitr::include_graphics(here::here("lectures", "lecture-1-resources", "excel_tab
 :::
 ::::
 
+
+## {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
+
+::: {style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;"}
+[Storytelling with data]{style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px"}
+
+<br>
+
+[Related time series]{style="font-size: 60px; font-weight: bold;"}
+
+:::
+
 ## Plotting related time series
 
-Dataset: Fertility and births outside of marriage in Denmark 🇩🇰 and Greece 🇬🇷.
+Dataset: Fertility and births outside of marriage in Denmark and Greece.
 
 Default choice for plotting is two line plots 
 
@@ -917,9 +1630,6 @@ df %>%
 
 ```{r}
 #| fig-align: center
-library(ggrepel)
-library(scales)
-library(ggtext)
 
 df %>%
   mutate(year_flag = ifelse(test = year %% 7 == 0,
@@ -964,9 +1674,6 @@ df %>%
 
 ```{r}
 #| fig-align: center
-library(ggrepel)
-library(scales)
-library(ggtext)
 
 df %>%
   mutate(year_flag = ifelse(test = year %% 7 == 0,
@@ -1024,9 +1731,6 @@ df %>%
 
 ```{r}
 #| fig-align: center
-library(ggrepel)
-library(scales)
-library(ggtext)
 
 df %>%
   mutate(year_flag = ifelse(test = year %% 7 == 0,
@@ -1075,6 +1779,17 @@ df %>%
 
 :::
 ::::
+
+## {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
+
+::: {style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;"}
+[Storytelling with data]{style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px"}
+
+<br>
+
+[Giving context]{style="font-size: 60px; font-weight: bold;"}
+
+:::
 
 ## Giving context
 
@@ -1207,8 +1922,6 @@ Here we [highlight]{style="color: #C60C30;"} the [series]{style="color: #0D5EAF;
 ```{r}
 #| fig-align: center
 
-library(gghighlight)
-
 df %>%
   ggplot() +
   geom_line(aes(x = year, y = pbom, colour = country), linewidth = 1.5) +
@@ -1272,154 +1985,81 @@ df %>%
 :::
 ::::
 
-## Legends
+## {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
 
-colour dots by region.
+::: {style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;"}
+[Storytelling with data]{style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px"}
 
+<br>
+
+[Tips for polished figures]{style="font-size: 60px; font-weight: bold;"}
+
+:::
 
 ## Tips for polishing your figures
 
+Where to get great colours from for your plots:
+
 ```{r}
+#| fig-align: center
 knitr::include_url("https://colorbrewer2.org/#type=sequential&scheme=OrRd&n=3", height = 800)
 ```
 
-
-## Dataset:
-
-Daily hours between sunrise and sunset for various locations in 2022
-
 ```{r}
-#| echo: false
-sun_hours <- read_rds(here::here("lectures", "lecture-1-resources", "sun_hours.rds"))
+#| echo: true
+#| eval: false
 
-sun_hours %>%
-  select(-sun_hours_period) %>%
-  head(10) %>%
-  gt() %>%
-  tab_header(title = "Sunrise and sunset time") %>%
-  cols_label(
-    city = "City",
-    date = "Date",
-    sun_hours = "Hours between sunrise and sunset"
-  ) %>%
-  tab_source_note(md("Source: [Schools observatory](https://www.schoolsobservatory.org/learn/astro/nightsky/sunrs_set/sunrs_world)")) %>%
-  tab_options(
-    heading.title.font.size = 32,
-    table.font.size = 26,
-    source_notes.font.size = 20
-  ) %>%
-  as_raw_html(inline_css = TRUE)
-
+help spmap # Look for the palettes under fcolor
 ```
 
-## Dataset:
+## Recreating published figures
 
-Locations of cities on a map
+```{r}
+#| fig-align: center
+#| fig-cap: "A FT chart published without the underlying data"
+
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "GDP.png"))
+```
+
+## Recreating published figures
+
+<br>
 
 ```{r}
 #| fig-align: center
 
-# library(tidygeocoder)
-# locations <- sun_hours %>%
-#   count(city) %>%
-#   geocode(city, method = "osm")
-# locations %>%
-#   write_rds(here::here("lectures", "lecture-1-resources", "sun_hours_coords.rds"))
+df <- read.csv(here::here("lectures", "lecture-1-resources", "/Fouquet_Broadberry.csv")) %>% as_tibble()
 
-locations <- read_rds(here::here("lectures", "lecture-1-resources", "sun_hours_coords.rds"))
+order <- df %>% group_by(country) %>% filter(x == max(x)) %>% 
+  arrange(desc(y)) %>% ungroup() %>% select(country) %>% as.list()
 
-library(leaflet)
-
-m <- leaflet(locations)
-m %>%
-  addProviderTiles(providers$CartoDB.Positron) %>%
-  addCircleMarkers(~long, ~lat) %>%
-  addPopups(~long, ~lat, popup = ~city)
-
-```
-
-## Sun hours in a table
-
-```{r}
-months <- c("City",
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep",
-            "Oct",
-            "Nov",
-            "Dec")
-
-sun_hours_tab <- sun_hours %>%
-  mutate(month = lubridate::month(date)) %>%
-  group_by(city, month) %>%
-  summarise(mean_sun_hour = mean(sun_hours)) %>%
-  ungroup() %>%
-  pivot_wider(names_from = month, values_from = mean_sun_hour)
-
-colnames(sun_hours_tab) <- months
-
-sun_hours_tab %>%
-  gt() %>%
-  fmt_number(columns = -City, decimals = 1) %>%
-  cols_align_decimal(columns = -City) %>%
-  cols_align(columns = City, align = "left") %>%
-  tab_options(
-    table.font.size = 26,
-  ) %>%
-  as_raw_html(inline_css = TRUE)
-```
-
-## Sun hours mapped onto y position
-
-```{r}
-#| fig-align: center
-#| fig-width: 10
-#| fig-height: 8
-
-sun_hours %>%
-  ggplot(aes(x = date, y = sun_hours, color = city)) +
-  geom_line(linewidth = 1) +
-  scale_y_continuous(labels = scales::number_format(accuracy = 1)) +
-  scale_color_manual(
-    name = NULL,
-    values = c("#E69F00", "#56B4E9", "#009E73", "#CC79A7")
-  ) +
-  theme_minimal_grid(16) +
-  labs(x = NULL, y = "Hours between sunrise and sunet")
-```
-
-## Sun hours mapped onto colour
-
-```{r}
-#| fig-align: center
-#| fig-width: 10
-#| fig-height: 8
-sun_hours %>%
-  mutate(
-    month = month(date, label = T)
-  ) %>%
-  group_by(city, month) %>%
-  summarise(mean_sun_hours = mean(sun_hours)) %>%
-  ggplot(aes(x = month, y = city, fill = mean_sun_hours)) +
-  geom_tile(width = .95, height = 0.95) +
-  scale_fill_viridis_c(
-    option = "B", begin = 0.15, end = 0.98,
-    name = "Hours of sunlight"
-  ) +
-  scale_x_discrete(name = "Month") +
-  scale_y_discrete(name = NULL) +
-  coord_fixed(expand = FALSE) +
-  theme_half_open(16) +
-  theme(
-    axis.line = element_blank(),
-    axis.ticks = element_blank(),
-    legend.title = element_text(size = 14)
+df %>%
+  mutate(country = fct_relevel(country, order)) %>%
+  mutate(flag = 1) %>%
+  ggplot(aes(x, y, colour = country, group = country)) +
+  # geom_point() +
+  geom_line(linewidth = 1.5, alpha = .8) +
+  gghighlight(flag == 1) +
+  scale_y_continuous(labels = dollar_format()) +
+  scale_color_brewer(palette = "Paired") +
+  labs(
+    title = "GDP Per Capita in Selected European Countries",
+    y = "GDP Per Capita (1990 USD)",
+    x = NULL,
+    colour = "Country",
+    caption = "Source: Fouquet and Broadberry (2011)"
   )
 ```
+
+## Recreating published figures
+
+<br>
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/TVCFedRgg5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## You pay a heavy price
+
+<iframe width="1300" height="700" src="https://www.youtube.com/embed/5Zg-C8AAIGg?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Thank you
 

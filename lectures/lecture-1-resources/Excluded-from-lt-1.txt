@@ -1,0 +1,145 @@
+---
+title: "Untitled"
+---
+
+
+
+## Dataset:
+
+Daily hours between sunrise and sunset for various locations in 2022
+
+```{r}
+#| echo: false
+sun_hours <- read_rds(here::here("lectures", "lecture-1-resources", "sun_hours.rds"))
+
+sun_hours %>%
+  select(-sun_hours_period) %>%
+  head(10) %>%
+  gt() %>%
+  tab_header(title = "Sunrise and sunset time") %>%
+  cols_label(
+    city = "City",
+    date = "Date",
+    sun_hours = "Hours between sunrise and sunset"
+  ) %>%
+  tab_source_note(md("Source: [Schools observatory](https://www.schoolsobservatory.org/learn/astro/nightsky/sunrs_set/sunrs_world)")) %>%
+  tab_options(
+    heading.title.font.size = 32,
+    table.font.size = 26,
+    source_notes.font.size = 20
+  ) %>%
+  as_raw_html(inline_css = TRUE)
+
+```
+
+## Dataset:
+
+Locations of cities on a map
+
+```{r}
+#| fig-align: center
+
+# library(tidygeocoder)
+# locations <- sun_hours %>%
+#   count(city) %>%
+#   geocode(city, method = "osm")
+# locations %>%
+#   write_rds(here::here("lectures", "lecture-1-resources", "sun_hours_coords.rds"))
+
+locations <- read_rds(here::here("lectures", "lecture-1-resources", "sun_hours_coords.rds"))
+
+library(leaflet)
+
+m <- leaflet(locations)
+m %>%
+  addProviderTiles(providers$CartoDB.Positron) %>%
+  addCircleMarkers(~long, ~lat) %>%
+  addPopups(~long, ~lat, popup = ~city)
+
+```
+
+## Sun hours in a table
+
+```{r}
+months <- c("City",
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec")
+
+sun_hours_tab <- sun_hours %>%
+  mutate(month = lubridate::month(date)) %>%
+  group_by(city, month) %>%
+  summarise(mean_sun_hour = mean(sun_hours)) %>%
+  ungroup() %>%
+  pivot_wider(names_from = month, values_from = mean_sun_hour)
+
+colnames(sun_hours_tab) <- months
+
+sun_hours_tab %>%
+  gt() %>%
+  fmt_number(columns = -City, decimals = 1) %>%
+  cols_align_decimal(columns = -City) %>%
+  cols_align(columns = City, align = "left") %>%
+  tab_options(
+    table.font.size = 26,
+  ) %>%
+  as_raw_html(inline_css = TRUE)
+```
+
+## Sun hours mapped onto y position
+
+```{r}
+#| fig-align: center
+#| fig-width: 10
+#| fig-height: 8
+
+sun_hours %>%
+  ggplot(aes(x = date, y = sun_hours, color = city)) +
+  geom_line(linewidth = 1) +
+  scale_y_continuous(labels = scales::number_format(accuracy = 1)) +
+  scale_color_manual(
+    name = NULL,
+    values = c("#E69F00", "#56B4E9", "#009E73", "#CC79A7")
+  ) +
+  theme_minimal_grid(16) +
+  labs(x = NULL, y = "Hours between sunrise and sunet")
+```
+
+## Sun hours mapped onto colour
+
+```{r}
+#| fig-align: center
+#| fig-width: 10
+#| fig-height: 8
+sun_hours %>%
+  mutate(
+    month = month(date, label = T)
+  ) %>%
+  group_by(city, month) %>%
+  summarise(mean_sun_hours = mean(sun_hours)) %>%
+  ggplot(aes(x = month, y = city, fill = mean_sun_hours)) +
+  geom_tile(width = .95, height = 0.95) +
+  scale_fill_viridis_c(
+    option = "B", begin = 0.15, end = 0.98,
+    name = "Hours of sunlight"
+  ) +
+  scale_x_discrete(name = "Month") +
+  scale_y_discrete(name = NULL) +
+  coord_fixed(expand = FALSE) +
+  theme_half_open(16) +
+  theme(
+    axis.line = element_blank(),
+    axis.ticks = element_blank(),
+    legend.title = element_text(size = 14)
+  )
+```
+
