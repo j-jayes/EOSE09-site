@@ -22,6 +22,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -103,7 +166,33 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a>
+  <ul class="collapse">
+  <li><a href="#set-up" id="toc-set-up" class="nav-link" data-scroll-target="#set-up">Set up</a></li>
+  </ul></li>
+  <li><a href="#comparing-maps-over-time" id="toc-comparing-maps-over-time" class="nav-link" data-scroll-target="#comparing-maps-over-time">Comparing maps over time</a>
+  <ul class="collapse">
+  <li><a href="#letting-stata-select-breaks" id="toc-letting-stata-select-breaks" class="nav-link" data-scroll-target="#letting-stata-select-breaks">Letting Stata select breaks</a></li>
+  <li><a href="#specifying-quantile-breaks" id="toc-specifying-quantile-breaks" class="nav-link" data-scroll-target="#specifying-quantile-breaks">Specifying quantile breaks</a></li>
+  </ul></li>
+  <li><a href="#looking-at-one-country" id="toc-looking-at-one-country" class="nav-link" data-scroll-target="#looking-at-one-country">Looking at one country</a></li>
+  <li><a href="#experimenting-with-colours" id="toc-experimenting-with-colours" class="nav-link" data-scroll-target="#experimenting-with-colours">Experimenting with colours</a></li>
+  <li><a href="#globals-and-locals" id="toc-globals-and-locals" class="nav-link" data-scroll-target="#globals-and-locals">Globals and locals</a>
+  <ul class="collapse">
+  <li><a href="#why-use-them" id="toc-why-use-them" class="nav-link" data-scroll-target="#why-use-them">Why use them?</a></li>
+  <li><a href="#how-to-use-them" id="toc-how-to-use-them" class="nav-link" data-scroll-target="#how-to-use-them">How to use them</a></li>
+  <li><a href="#example-of-an-output" id="toc-example-of-an-output" class="nav-link" data-scroll-target="#example-of-an-output">Example of an output</a></li>
+  <li><a href="#macros-treat-strings-and-numbers-differently" id="toc-macros-treat-strings-and-numbers-differently" class="nav-link" data-scroll-target="#macros-treat-strings-and-numbers-differently">Macros treat strings and numbers differently</a></li>
+  </ul></li>
+  <li><a href="#graph-themes" id="toc-graph-themes" class="nav-link" data-scroll-target="#graph-themes">Graph themes</a></li>
+  <li><a href="#labelling" id="toc-labelling" class="nav-link" data-scroll-target="#labelling">Labelling</a></li>
+  <li><a href="#extra-material" id="toc-extra-material" class="nav-link" data-scroll-target="#extra-material">Extra material</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -137,9 +226,447 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>To be added.</p>
+<section id="purpose" class="level2">
+<h2 class="anchored" data-anchor-id="purpose">Purpose</h2>
+<p>In this lab we will look at comparing maps across time, dealing with breaks, experimenting with colours, loops, and labels.</p>
+<section id="set-up" class="level3">
+<h3 class="anchored" data-anchor-id="set-up">Set up</h3>
+<p>As before we will use the regional dataset. Be sure to save this do-file in the same directory as the dataset, and so set your working directory correctly.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>clear all</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>set more off</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>use regional_dataset, clear</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="comparing-maps-over-time" class="level2">
+<h2 class="anchored" data-anchor-id="comparing-maps-over-time">Comparing maps over time</h2>
+<p>Making breaks in the right place is difficult! In the first plot we show regional GDP per capita from 1950. In the second, the same series is shown but for the year 2010. As you can see, because we have set the top level of the breaks too low, only Calabria in Southern Italy shows up on our map!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>spmap regional_gdp_cap_1990 using <span class="st">"nutscoord.dta"</span> <span class="cf">if</span> year <span class="sc">==</span> <span class="dv">1950</span>, <span class="fu">id</span>(_ID) <span class="fu">fcolor</span>(Blues2) <span class="fu">legend</span>(<span class="fu">pos</span>(<span class="dv">9</span>)) <span class="fu">legstyle</span>(<span class="dv">2</span>) </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">title</span>(<span class="st">"Regional GDP per Capita - 1950"</span>, <span class="fu">size</span>(medium)) </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">osize</span>(<span class="fl">0.02</span> ..) <span class="fu">ocolor</span>(white ..) </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clmethod</span>(custom) <span class="fu">clbreaks</span>(<span class="dv">0</span> (<span class="dv">2000</span>) <span class="dv">12000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>spmap regional_gdp_cap_1990 using <span class="st">"nutscoord.dta"</span> <span class="cf">if</span> year <span class="sc">==</span> <span class="dv">2010</span>, <span class="fu">id</span>(_ID) <span class="fu">fcolor</span>(Blues2) <span class="fu">legend</span>(<span class="fu">pos</span>(<span class="dv">9</span>)) <span class="fu">legstyle</span>(<span class="dv">2</span>) </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">title</span>(<span class="st">"Regional GDP per Capita - 2010"</span>, <span class="fu">size</span>(medium)) </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">osize</span>(<span class="fl">0.02</span> ..) <span class="fu">ocolor</span>(white ..) </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clmethod</span>(custom) <span class="fu">clbreaks</span>(<span class="dv">0</span> (<span class="dv">2000</span>) <span class="dv">12000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Lab-2-resources/stata_1.png" class="img-fluid figure-img" width="448"></p>
+<p></p><figcaption class="figure-caption">Region GDP per capita in 1950 and 2010 - same legend breaks</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Lab-2-resources/stata_2.png" class="img-fluid figure-img" width="448"></p>
+<p></p><figcaption class="figure-caption">Region GDP per capita in 1950 and 2010 - same legend breaks</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>In our side-by-side figure above we encounter a challenge in comparing maps over time - we have both an evolving metric on aggregate (regional GDP per capita increases in real terms from 1950 to 2010) and within regions (with regions containing large cities seeing faster growth than rural areas, for example). As such, choosing the same breaks on both maps is inappropriate.</p>
+<p>We can show the evolution of the distribution with two density plots drawn on the same axes.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>range atx <span class="dv">0</span> <span class="dv">40000</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>kdensity regional_gdp_cap_1990 <span class="cf">if</span> year <span class="sc">==</span> <span class="dv">1950</span>, <span class="fu">gen</span>(xp densityp) <span class="fu">at</span>(atx) nograph </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>kdensity regional_gdp_cap_1990 <span class="cf">if</span> year <span class="sc">==</span> <span class="dv">2010</span> , <span class="fu">gen</span>(xm densitym) <span class="fu">at</span>(atx) nograph </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>line densityp xp   </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="sc">||</span> line densitym xm,  <span class="fu">yaxis</span>(<span class="dv">2</span>)    </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="sc">||</span>,  <span class="fu">xtitle</span>(<span class="st">""</span>) <span class="fu">legend</span>(<span class="fu">pos</span>(<span class="dv">6</span>) <span class="fu">row</span>(<span class="dv">1</span>)) <span class="fu">ytitle</span>(<span class="st">""</span>) <span class="fu">ytitle</span>(<span class="st">""</span>, <span class="fu">axis</span>(<span class="dv">2</span>)) </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">legend</span>(<span class="fu">order</span>(<span class="dv">1</span> <span class="st">"1950"</span> <span class="dv">2</span> <span class="st">"2010"</span>)) <span class="fu">title</span>(<span class="st">"Distributions of regional GDP per capita"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="Lab-2-resources/stata_4.png" class="img-fluid" width="786"></p>
+</div>
+</div>
+<section id="letting-stata-select-breaks" class="level3">
+<h3 class="anchored" data-anchor-id="letting-stata-select-breaks">Letting Stata select breaks</h3>
+<p>Instead of setting bounds based on thresholds that we choose, in the map below, we allow Stata to select the breaks based on the data that we are mapping.</p>
+<p>In this case, Stata breaks the distribution up into <strong>four</strong> brackets, with the lowest containing the observations from the first to 25th percentile, the second from the 26th percentile to the median, and so on. Because clmethod(quantile) is actually the default classification method, we don’t need to specify it in our command.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>spmap regional_gdp_cap_1990 using <span class="st">"nutscoord.dta"</span> <span class="cf">if</span> year <span class="sc">==</span> <span class="dv">1950</span>, <span class="fu">id</span>(_ID) <span class="fu">fcolor</span>(Blues2) <span class="fu">legend</span>(<span class="fu">pos</span>(<span class="dv">9</span>)) <span class="fu">legstyle</span>(<span class="dv">2</span>) </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">title</span>(<span class="st">"Regional GDP per Capita - 1950"</span>, <span class="fu">size</span>(medium)) </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">osize</span>(<span class="fl">0.02</span> ..) <span class="fu">ocolor</span>(white ..)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="Lab-2-resources/stata_3.png" class="img-fluid" width="448"></p>
+</div>
+</div>
+<p>When we do this for two maps showing the same variable in two time periods, we can use quantile breaks to highlight the change between the periods - which regions have seen growth and which have dallied behind.</p>
+<p>In the code below, we produce two maps with Stata’s default four bins based on the distribution of regional GDP per capita and compare them.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>spmap regional_gdp_cap_1990 using <span class="st">"nutscoord.dta"</span> <span class="cf">if</span> year <span class="sc">==</span> <span class="dv">1950</span>, <span class="fu">id</span>(_ID) <span class="fu">fcolor</span>(YlGnBu) <span class="fu">legend</span>(<span class="fu">pos</span>(<span class="dv">9</span>)) <span class="fu">legstyle</span>(<span class="dv">2</span>) </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">title</span>(<span class="st">"Regional GDP per Capita - 1950"</span>, <span class="fu">size</span>(medium)) </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">osize</span>(<span class="fl">0.02</span> ..) <span class="fu">ocolor</span>(white ..) </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clmethod</span>(quantile) <span class="fu">name</span>(graph_1950, replace)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>spmap regional_gdp_cap_1990 using <span class="st">"nutscoord.dta"</span> <span class="cf">if</span> year <span class="sc">==</span> <span class="dv">2010</span>, <span class="fu">id</span>(_ID) <span class="fu">fcolor</span>(YlGnBu) <span class="fu">legend</span>(<span class="fu">pos</span>(<span class="dv">9</span>)) <span class="fu">legstyle</span>(<span class="dv">2</span>) </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">title</span>(<span class="st">"Regional GDP per Capita - 2010"</span>, <span class="fu">size</span>(medium)) </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">osize</span>(<span class="fl">0.02</span> ..) <span class="fu">ocolor</span>(white ..) </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clmethod</span>(quantile) <span class="fu">name</span>(graph_2010, replace)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>graph combine graph_1950 graph_2010</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="Lab-2-resources/stata_5.png" class="img-fluid" width="786"></p>
+</div>
+</div>
+</section>
+<section id="specifying-quantile-breaks" class="level3">
+<h3 class="anchored" data-anchor-id="specifying-quantile-breaks">Specifying quantile breaks</h3>
+<p>We can also increase the number of breaks by specifying the method and number of breaks: <strong>clmethod(quantile) clnumber(8)</strong>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>spmap regional_gdp_cap_1990 using <span class="st">"nutscoord.dta"</span> <span class="cf">if</span> year <span class="sc">==</span> <span class="dv">1950</span>, <span class="fu">id</span>(_ID) <span class="fu">fcolor</span>(YlOrRd) <span class="fu">legend</span>(<span class="fu">pos</span>(<span class="dv">9</span>)) <span class="fu">legstyle</span>(<span class="dv">2</span>) </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">title</span>(<span class="st">"Regional GDP per Capita - 1950"</span>, <span class="fu">size</span>(medium)) </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">osize</span>(<span class="fl">0.02</span> ..) <span class="fu">ocolor</span>(white ..) </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clmethod</span>(quantile) <span class="fu">clnumber</span>(<span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="Lab-2-resources/stata_6.png" class="img-fluid" width="448"></p>
+</div>
+</div>
+<p>Further, we can specify the exact breaks - in this case showing the regional GDP per capita relative to the average for the countries in our dataset.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can compare with maps 2.4a and 2.4b in the course book.</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>spmap relative_gdp_cap_eu using <span class="st">"nutscoord.dta"</span> <span class="cf">if</span> year <span class="sc">==</span> <span class="dv">1900</span>, <span class="fu">id</span>(_ID) <span class="fu">fcolor</span>(YlOrRd) <span class="fu">legend</span>(<span class="fu">pos</span>(<span class="dv">9</span>)) <span class="fu">legstyle</span>(<span class="dv">2</span>) </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">osize</span>(<span class="fl">0.02</span> ..) <span class="fu">ocolor</span>(white ..) <span class="fu">title</span>(<span class="dv">1900</span>) </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clmethod</span>(custom) <span class="fu">clbreaks</span>(<span class="dv">0</span> <span class="fl">0.8</span> <span class="dv">1</span> <span class="fl">1.2</span> <span class="dv">3</span>) </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">name</span>(graph_1900, replace)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>spmap relative_gdp_cap_eu using <span class="st">"nutscoord.dta"</span> <span class="cf">if</span> year <span class="sc">==</span> <span class="dv">2010</span>, <span class="fu">id</span>(_ID) <span class="fu">fcolor</span>(YlOrRd) <span class="fu">legend</span>(<span class="fu">pos</span>(<span class="dv">9</span>)) <span class="fu">legstyle</span>(<span class="dv">2</span>) </span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">osize</span>(<span class="fl">0.02</span> ..) <span class="fu">ocolor</span>(white ..) <span class="fu">title</span>(<span class="dv">2010</span>) </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clmethod</span>(custom) <span class="fu">clbreaks</span>(<span class="dv">0</span> <span class="fl">0.8</span> <span class="dv">1</span> <span class="fl">1.2</span> <span class="dv">3</span>) </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">name</span>(graph_2010, replace)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>graph combine graph_1900 graph_2010</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Lab-2-resources/stata_7.png" class="img-fluid figure-img" width="786"></p>
+<p></p><figcaption class="figure-caption">Relative regional GDP per capita</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="looking-at-one-country" class="level2">
+<h2 class="anchored" data-anchor-id="looking-at-one-country">Looking at one country</h2>
+<p>We can highlight one country by using the <code>if</code> as well as the <code>&amp;</code> operators:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>spmap employment_share_industry using <span class="st">"nutscoord.dta"</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> year <span class="sc">==</span> <span class="dv">1950</span> <span class="sc">&amp;</span> country <span class="sc">==</span> <span class="st">"Sweden"</span>, <span class="fu">id</span>(_ID)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Lab-2-resources/stata_8.png" class="img-fluid figure-img" width="200"></p>
+<p></p><figcaption class="figure-caption">highlighting Sweden</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We can generate groups using the <code>|</code> (pronounced OR) operator:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>gen group_1 <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>replace group_1 <span class="ot">=</span> <span class="dv">1</span> <span class="cf">if</span> country <span class="sc">==</span> <span class="st">"Sweden"</span> <span class="sc">|</span> country <span class="sc">==</span> <span class="st">"Denmark"</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>spmap employment_share_industry using <span class="st">"nutscoord.dta"</span> <span class="cf">if</span> year <span class="sc">==</span> <span class="dv">1950</span> <span class="sc">&amp;</span> group_1 <span class="sc">==</span> <span class="dv">1</span>, <span class="fu">id</span>(_ID) </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fcolor</span>(Blues2) <span class="fu">legend</span>(<span class="fu">pos</span>(<span class="dv">5</span>) <span class="fu">size</span>(<span class="fl">3.5</span>)) <span class="fu">legstyle</span>(<span class="dv">2</span>) </span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">title</span>(<span class="st">"Employment Share Industry - 1950"</span>, <span class="fu">size</span>(<span class="dv">6</span>)) </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">osize</span>(<span class="fl">0.02</span> ..) <span class="fu">ocolor</span>(white ..) </span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ndfcolor</span>(gray) <span class="fu">ndocolor</span>(none ..) <span class="fu">ndsize</span>(<span class="fl">0.02</span> ..)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Lab-2-resources/stata_10.png" class="img-fluid figure-img" width="244"></p>
+<p></p><figcaption class="figure-caption">highlighting Sweden and Denmark</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="experimenting-with-colours" class="level2">
+<h2 class="anchored" data-anchor-id="experimenting-with-colours">Experimenting with colours</h2>
+<p>We can choose from a large selection of the <strong>spmap</strong> colour palettes depending on the context.</p>
+<p>Here is the list that you get if you navigate to <strong>fcolor</strong> after typing</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>help spmap</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Lab-2-resources/stata_11.png" class="img-fluid figure-img" width="210"></p>
+<p></p><figcaption class="figure-caption">Stata’s fill colour palettes</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Here is an example of the <strong>Heat</strong> colour palette, showing national GDP per capita in 1950.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>spmap national_gdp_cap_1990 using <span class="st">"nutscoord.dta"</span> <span class="cf">if</span> year <span class="sc">==</span> <span class="dv">1950</span>, <span class="fu">id</span>(_ID) <span class="fu">fcolor</span>(Heat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Lab-2-resources/stata_12.png" class="img-fluid figure-img" width="448"></p>
+<p></p><figcaption class="figure-caption">Example of Heat colour palette</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The <strong>viridis</strong> colour palette is a fantastic sequential palette, here is is used to show the share of employment in industry in 1950.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>colorpalette viridis, <span class="fu">n</span>(<span class="dv">8</span>) nograph</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>local colors <span class="st">`</span><span class="at">r(p)''</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="at">spmap employment_share_industry using "nutscoord.dta" if year == 1950, </span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="at">  id(_ID) fcolor("</span><span class="st">`</span>colors<span class="st">'") legstyle(2) </span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="st">    title("1950", size(large)) </span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="st">    osize(0.02 ..) ocolor(white ..) </span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="st">    clmethod(custom) clbreaks(0 (0.1) 0.8) </span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="st">    legend(pos(9) region(fcolor(gs15)) size(2.5)) legtitle("1 = 100%") </span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="st">    ndfcolor(gray) ndocolor(white ..) ndsize(0.02 ..) </span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="st">    title("Employment share in industry in 1950")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Lab-2-resources/stata_13.png" class="img-fluid figure-img" width="448"></p>
+<p></p><figcaption class="figure-caption">Example of viridis colour palette</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We can also reverse the palette so that high is <span style="color: #0000FF;">blue</span> and low is <span style="color: #E4CD05;">yellow</span>. Finally we can customize the background with the command <strong>graphregion(color(navy))</strong> which makes the graph background <span style="color: #000080;">navy</span>.</p>
+<p>Personally I don’t think this adds anything to our understanding - I would stay far away from supurfluous colour but you <em>can</em> do this in Stata.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>colorpalette viridis, <span class="fu">n</span>(<span class="dv">8</span>) nograph reverse</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>local colors <span class="st">`</span><span class="at">r(p)''</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="at">spmap employment_share_industry using "nutscoord.dta" if year == 1950, id(_ID) fcolor("</span><span class="st">`</span>colors<span class="st">'") legstyle(2) </span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="st">    title("1950", size(large) color(white)) </span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="st">    osize(0.02 ..) ocolor(white ..) </span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="st">    clmethod(custom) clbreaks(0 (0.1) 0.8) </span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="st">    legend(pos(9) region(fcolor(navy)) color(white) size(2.5)) legtitle("1 = 100%") </span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="st">    ndfcolor(gray) ndocolor(white ..) ndsize(0.02 ..) graphregion(color(navy))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Lab-2-resources/stata_14.png" class="img-fluid figure-img" width="448"></p>
+<p></p><figcaption class="figure-caption">Another example of viridis colour palette</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="globals-and-locals" class="level2">
+<h2 class="anchored" data-anchor-id="globals-and-locals">Globals and locals</h2>
+<section id="why-use-them" class="level3">
+<h3 class="anchored" data-anchor-id="why-use-them">Why use them?</h3>
+<p>In Stata, <code>locals</code> and <code>globals</code> are used to create and store values that can be reused in different parts of the program.</p>
+<p><code>locals</code> are temporary variables that are only stored in memory while the program or do-file is running. They can be used to define values that are specific to a certain block of code or section of the program. Once the program or do-file is finished running, the locals are deleted from memory.</p>
+<p><code>globals</code>, on the other hand, are stored in memory until you exit Stata, and can be accessed from any part of the program or do-file. They can be used to define values that need to persist throughout the entire analysis or across different datasets.</p>
+<p>These macros are useful to shorten code and to iterate through a loop multiple times.</p>
+</section>
+<section id="how-to-use-them" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-use-them">How to use them</h3>
+<p>In the code below we make use of locals twice:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>foreach var of varlist employment_share_industry employment_share_services {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    foreach i of numlist <span class="dv">1950</span> (<span class="dv">10</span>) <span class="dv">1970</span> {</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>        spmap <span class="st">`</span><span class="at">var' using "nutscoord.dta" if year == </span><span class="st">`</span>i<span class="st">', id(_ID)</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="st">    }</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="st">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This Stata code creates a series of maps using the <strong>spmap</strong> command.</p>
+<p>The <code>foreach</code> loop iterates over two variables, <code>employment_share_industry</code> and <code>employment_share_services</code>. For each of these variables, the loop creates a map for three years between 1950 and 1970. Specifically, it creates maps for the years 1950, 1960, and 1970, using a step size of 10.</p>
+<p>The <code>spmap</code> command is used to create the maps. The first argument of <code>spmap</code> is the variable to be mapped, which is specified using the <code>varlist</code> option and the local macro <code>var</code>. The second argument is the data file containing the spatial coordinates of the regions, specified as “nutscoord.dta”. The third argument specifies the condition for which the map is created, in this case <code>year</code> == `<code>i'</code>, which ensures that only the observations corresponding to the current year of the loop are included. The <code>id(_ID)</code> option tells spmap to use the <code>_ID</code> variable in the dataset as the unique identifier for the regions being mapped.</p>
+</section>
+<section id="example-of-an-output" class="level3">
+<h3 class="anchored" data-anchor-id="example-of-an-output">Example of an output</h3>
+<p>Here we make a global macro with a variable list of two variables.</p>
+<p>Then we loop through the list of variables to make a map for each, and name the map with the variable and the year. Finally we combine them in a single image.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>global varlist employment_share_industry employment_share_services</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>foreach var of varlist <span class="sc">$</span>varlist {</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    foreach i of numlist <span class="dv">1950</span> (<span class="dv">10</span>) <span class="dv">1970</span> {</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>        spmap <span class="st">`</span><span class="at">var' using "nutscoord.dta" if year == </span><span class="st">`</span>i<span class="st">', id(_ID) name(`var'</span>_<span class="st">`</span><span class="at">i', replace)</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="at">    }</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="at">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>graph combine employment_share_industry_1960 employment_share_industry_1970 employment_share_industry_1980 employment_share_industry_1990</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Lab-2-resources/stata_15.png" class="img-fluid figure-img" width="786"></p>
+<p></p><figcaption class="figure-caption">Example of <strong>graph combine</strong> used in conjunction with global and local macros</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="macros-treat-strings-and-numbers-differently" class="level3">
+<h3 class="anchored" data-anchor-id="macros-treat-strings-and-numbers-differently">Macros treat strings and numbers differently</h3>
+<p>Strings need quotes and displaying them works just like other locals.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>local a <span class="st">"Hello"</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>local b <span class="st">"World"</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>di <span class="st">"`a' `b'"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Hello World</strong></p>
+<p>Numbers don’t need quotes and you can operate on them with operators, for example, the plus opertor.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>local x <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>local y <span class="ot">=</span> <span class="dv">2</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>di <span class="st">`</span><span class="at">x' + </span><span class="st">`</span>y<span class="st">'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>3</strong></p>
+</section>
+</section>
+<section id="graph-themes" class="level2">
+<h2 class="anchored" data-anchor-id="graph-themes">Graph themes</h2>
+<p>You can make your graphs more visually appealing by choosing some nice schemes. Have a look online and don’t be afraid to download some using the <code>ssc install</code> command.</p>
+<p>Here we show the <strong>burd</strong> and <strong>swift_red</strong> schemes.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prep</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>replace employment_share_industry <span class="ot">=</span> employment_share_industry <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>replace employment_share_services <span class="ot">=</span> employment_share_services <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>twoway line employment_share_industry employment_share_services year <span class="cf">if</span> country <span class="sc">==</span> <span class="st">"Sweden"</span>, </span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">by</span>(region, <span class="fu">note</span>(<span class="st">""</span>)) <span class="fu">subtitle</span>(, <span class="fu">lstyle</span>(none) <span class="fu">size</span>(small)) </span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlabel</span>(<span class="dv">1900</span> (<span class="dv">50</span>) <span class="dv">2000</span>) <span class="fu">ylabel</span>(<span class="dv">0</span> (<span class="dv">40</span>) <span class="dv">80</span>) <span class="fu">ytitle</span>(Share <span class="cf">in</span> %) </span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">legend</span>(<span class="fu">size</span>(vsmall)) <span class="fu">scheme</span>(burd)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>twoway line employment_share_industry employment_share_services year <span class="cf">if</span> country <span class="sc">==</span> <span class="st">"Sweden"</span>, </span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">by</span>(region, <span class="fu">note</span>(<span class="st">""</span>)) <span class="fu">subtitle</span>(, <span class="fu">lstyle</span>(none) <span class="fu">size</span>(small)) </span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlabel</span>(<span class="dv">1900</span> (<span class="dv">50</span>) <span class="dv">2000</span>) <span class="fu">ylabel</span>(<span class="dv">0</span> (<span class="dv">40</span>) <span class="dv">80</span>) <span class="fu">ytitle</span>(Share <span class="cf">in</span> %) </span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">legend</span>(<span class="fu">size</span>(vsmall)) <span class="fu">scheme</span>(swift_red)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 47.8%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Lab-2-resources/stata_16.png" class="img-fluid figure-img" width="720"></p>
+<p></p><figcaption class="figure-caption">Region GDP per capita in 1950 and 2010 - same legend breaks</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 52.2%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Lab-2-resources/stata_17.png" class="img-fluid figure-img" width="786"></p>
+<p></p><figcaption class="figure-caption">Region GDP per capita in 1950 and 2010 - same legend breaks</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="labelling" class="level2">
+<h2 class="anchored" data-anchor-id="labelling">Labelling</h2>
+<p>We can label regions with a little bit of effort. I would do this maybe just once in your lab reports so that the reader is familiar with the context of your chosen regions.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>use nutscoord, clear <span class="co"># by request: to label the regions</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>bysort _ID<span class="sc">:</span> egen mean_x <span class="ot">=</span> <span class="fu">mean</span>(_X)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>bysort _ID<span class="sc">:</span> egen mean_y <span class="ot">=</span> <span class="fu">mean</span>(_Y)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>keep _ID mean_x mean_y</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>duplicates drop</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>merge <span class="dv">1</span><span class="sc">:</span>m _ID using regional_dataset</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>keep <span class="cf">if</span> _merge <span class="sc">==</span> <span class="dv">3</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>keep <span class="cf">if</span> country <span class="sc">==</span> <span class="st">"France"</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>keep _ID mean_x mean_y region</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>duplicates drop</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>save labels_regions, replace</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>use regional_dataset, clear</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>keep <span class="cf">if</span> country <span class="sc">==</span> <span class="st">"France"</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>spmap regional_gdp_cap_1990 using <span class="st">"nutscoord.dta"</span> <span class="cf">if</span> year <span class="sc">==</span> <span class="dv">1950</span>, </span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">id</span>(_ID) <span class="fu">fcolor</span>(Oranges) <span class="fu">ndfcolor</span>(gray) </span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">osize</span>(<span class="fl">0.02</span> ..) <span class="fu">ocolor</span>(gs8 ..) <span class="fu">legend</span>(<span class="fu">color</span>(white) <span class="fu">pos</span>(<span class="dv">7</span>)) <span class="fu">legstyle</span>(<span class="dv">2</span>) </span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">label</span>(<span class="fu">data</span>(labels_regions) <span class="fu">xcoord</span>(mean_x) <span class="fu">ycoord</span>(mean_y) </span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">label</span>(region) <span class="fu">size</span>(<span class="sc">*</span><span class="fl">0.5</span>) <span class="fu">length</span>(<span class="dv">50</span>) <span class="fu">color</span>(grey)) <span class="fu">graphregion</span>(<span class="fu">color</span>(navy))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To have multiple lines of labels see <a href="https://www.statalist.org/forums/forum/general-stata-discussion/general/1395567-how-to-add-state-names-and-labels-using-spmap">this Statalist link</a></p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="Lab-2-resources/stata_18.png" class="img-fluid" width="480"></p>
+</div>
+</div>
+</section>
+<section id="extra-material" class="level2">
+<h2 class="anchored" data-anchor-id="extra-material">Extra material</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>bysort country year<span class="sc">:</span> egen test_1 <span class="ot">=</span> <span class="fu">total</span>(regional_gdp_1990) <span class="co"># pay attention to the sorting when calculating totals</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>bysort <span class="fu">country</span> (year)<span class="sc">:</span> egen test_2 <span class="ot">=</span> <span class="fu">total</span>(regional_gdp_1990)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>br country region year regional_gdp_1990 national_gdp_1990 test_1 test_2</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>assert test_1 <span class="sc">!=</span> test_2 <span class="co"># useful to test whether a condition holds (or not)</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>assert test_1 <span class="sc">==</span> national_gdp_1990</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>replace employment_share_agriculture <span class="ot">=</span> employment_share_agriculture <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>bysort country <span class="fu">region</span> (year)<span class="sc">:</span> gen change_share_agriculture_1 <span class="ot">=</span> employment_share_agriculture[_n] <span class="sc">-</span> employment_share_agriculture[_n<span class="dv">-1</span>] <span class="co"># cf. also the time operators l., f. and d. as well as xtset and tsset</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><a href="https://datacatalog.worldbank.org/search/dataset/0038272">link to world maps</a>; can be converted into Stata format; use e.g.&nbsp;“World Country Polygons - Very High Definition”; already contains some data</li>
+<li><a href="https://data.worldbank.org/">Other World Bank data</a>; can e.g.&nbsp;be matched to the maps</li>
+<li>read these articles (<a href="https://www.bloomberg.com/news/articles/2015-06-25/how-to-avoid-being-fooled-by-bad-maps">bloomberg</a> and <a href="https://mgimond.github.io/Spatial/good-map-making-tips.html">Manuel Gimond</a>) on how to make good maps and discuss.</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
