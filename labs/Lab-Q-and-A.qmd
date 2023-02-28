@@ -20,6 +20,8 @@ format:
 library(tidyverse)
 ```
 
+## Purpose
+
 In the article below I share the help that I provided to students who asked about manual colour palettes in Stata and how to calculate Moran's I in Stata, a measure of spatial autocorrelation.
 
 ## Choose specific colours for choropleth
