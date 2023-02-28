@@ -260,3 +260,18 @@ plot_scatter("Total fertility rate (live births per woman)", "early")
 
 :::
 ::::
+
+```{r}
+#| include: false
+# prep for moran's I
+library(tidyverse)
+library(haven)
+
+nuts <- read_dta(here::here("resources", "stata", "nutscoord.dta"))
+
+nuts %>% 
+  group_by(`_ID`) %>% 
+  summarise(across(everything(), ~ mean(.x, na.rm = T))) %>% 
+  write_dta(here::here("resources", "stata", "nutscoord_centers.dta"))
+```
+
