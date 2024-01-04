@@ -74,9 +74,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -102,9 +102,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author"],
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -130,9 +130,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -174,8 +174,16 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
- <span class="menu-text">EOSE09 - Economy and Society: Regional Development and Growth</span></a>
+    <a class="nav-link" href="./lectures/lecture-1.html" rel="" target="">
+ <span class="menu-text">Lecture 1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./labs/Lab-1.html" rel="" target="">
+ <span class="menu-text">Lab 1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./labs/Lab-2.html" rel="" target="">
+ <span class="menu-text">Lab 2</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
@@ -222,64 +230,116 @@ ul.task-list li input[type="checkbox"] {
 <p>This site holds the Stata labs and one lecture for the course <a href="https://kursplaner.lu.se/pdf/kurs/en/EOSE09">EOSE09 - Economy and Society: Regional Development and Growth</a>, offered at Lund University in Sweden.</p>
 <section id="labs" class="level2">
 <h2 class="anchored" data-anchor-id="labs">Labs</h2>
-<div id="lab-reports">
-
+<div id="listing-labs" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-listing-date-sort="1675029600000" data-listing-file-modified-sort="1704359613342" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21">
+<a href="./labs/Lab-1.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./labs/Lab-1-resources/preview.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Stata Lab 1 Mapping Growth: Basic Maps
+</h5>
+<div class="card-text listing-description">
+🗺️ One goal of this course is to teach…
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Vinzent Ostermeyer, adapted Jonathan Jayes
+</div>
+<div class="listing-date">
+Jan 30, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-listing-date-sort="1675634400000" data-listing-file-modified-sort="1704361609967" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<a href="./labs/Lab-hints-graphs.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./labs/Lab-hints-resources/preview.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Stata Lab Hints: Basic Graphs
+</h5>
+<div class="card-text listing-description">
+For your projects (📅 due March 1st), you can use any kind of plots in addition to the maps we have learned to draw in the first lab.
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jonathan Jayes
+</div>
+<div class="listing-date">
+Feb 6, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-listing-date-sort="1676584800000" data-listing-file-modified-sort="1704358966825" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
+<a href="./labs/Lab-2.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./labs/Lab-2-resources/preview.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Stata Lab 2 Mapping Growth: Across Space and Time
+</h5>
+<div class="card-text listing-description">
+In this lab we will look at comparing maps across time, dealing with breaks, experimenting with colours, loops, and labels.
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Vinzent Ostermeyer, adapted Jonathan Jayes
+</div>
+<div class="listing-date">
+Feb 17, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
 </div>
 </section>
 <section id="lectures" class="level2">
 <h2 class="anchored" data-anchor-id="lectures">Lectures</h2>
-<div id="listing-lectures" class="quarto-listing quarto-listing-container-table">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-lectures-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-lectures'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title-sort" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Author
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
+<div id="listing-lectures" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1704362114546" data-listing-reading-time-sort="35">
+<a href="./lectures/lecture-1.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./lectures/lecture-1-resources/preview.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Data visualization
+</h5>
+<div class="card-text listing-description">
+
 </div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
 
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
-</th>
-<th>
-<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1704358966859" data-listing-reading-time-sort="1" data-listing-title-sort="Ideas" data-listing-filename-sort="ideas.qmd">
-<td>
-<a href="./lectures/ideas.html" class="title listing-title">Ideas</a>
-</td>
-<td>
-<span class="listing-author"></span>
-</td>
-</tr>
-<tr data-index="1" data-listing-file-modified-sort="1704358966896" data-listing-reading-time-sort="35" data-listing-title-sort="Data visualization" data-listing-filename-sort="lecture-1.qmd">
-<td>
-<a href="./lectures/lecture-1.html" class="title listing-title">Data visualization</a>
-</td>
-<td>
-<span class="listing-author"></span>
-</td>
-</tr>
-</tbody>
-
-</table>
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
@@ -287,84 +347,84 @@ No matching items
 </section>
 <section id="resources" class="level2">
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
-<div id="listing-resources" class="quarto-listing quarto-listing-container-table">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-resources-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-resources'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-title-sort" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Author
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
+<div id="listing-resources" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-listing-date-sort="1680040800000" data-listing-file-modified-sort="1704361002047" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<a href="./resources/Additional-map-data.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./resources/resource_logo_2.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Additional Maps and Data
+</h5>
+<div class="card-text listing-description">
+In Lab 2 we will look at mapping growth across space and time.
 </div>
-
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
-</th>
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
-</th>
-<th>
-<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1680040800000" data-listing-file-modified-sort="1704361002047" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-title-sort="Additional Maps and Data" data-listing-filename-sort="Additional-map-data.qmd">
-<td>
-<span class="listing-date">Mar 29, 2023</span>
-</td>
-<td>
-<a href="./resources/Additional-map-data.html" class="title listing-title">Additional Maps and Data</a>
-</td>
-<td>
-<span class="listing-author">Jonathan Jayes</span>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1680127200000" data-listing-file-modified-sort="1704358966962" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Resources" data-listing-filename-sort="resources.qmd">
-<td>
-<span class="listing-date">Mar 30, 2023</span>
-</td>
-<td>
-<a href="./resources/resources.html" class="title listing-title">Resources</a>
-</td>
-<td>
-<span class="listing-author">Jonathan Jayes</span>
-</td>
-</tr>
-<tr data-index="2" data-listing-date-sort="1680300000000" data-listing-file-modified-sort="1704358966896" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="ChatGPT tips" data-listing-filename-sort="ChatGPT-tips.qmd">
-<td>
-<span class="listing-date">Apr 1, 2023</span>
-</td>
-<td>
-<a href="./resources/ChatGPT-tips.html" class="title listing-title">ChatGPT tips</a>
-</td>
-<td>
-<span class="listing-author">Jonathan Jayes</span>
-</td>
-</tr>
-</tbody>
-
-</table>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jonathan Jayes
+</div>
+<div class="listing-date">
+Mar 29, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-listing-date-sort="1680127200000" data-listing-file-modified-sort="1704358966962" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<a href="./resources/resources.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./resources/resource_logo.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Resources
+</h5>
+<div class="card-text listing-description">
+🔥 Welcome to our page of resources for learning Stata, the powerful econometrics software used by researchers and analysts in many fields. 📚 Here you will find a variety…
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jonathan Jayes
+</div>
+<div class="listing-date">
+Mar 30, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-listing-date-sort="1680300000000" data-listing-file-modified-sort="1704358966896" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<a href="./resources/ChatGPT-tips.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./resources/resource_logo_3.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+ChatGPT tips
+</h5>
+<div class="card-text listing-description">
+ChatGPT is very popular. We haven’t decided as LU how to deal with it.
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jonathan Jayes
+</div>
+<div class="listing-date">
+Apr 1, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
@@ -374,110 +434,7 @@ No matching items
 
 </section>
 
-<div class="quarto-listing quarto-listing-container-table" id="listing-labs">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-labs-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-labs'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-title-sort" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Author
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
-</th>
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
-</th>
-<th>
-<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1675029600000" data-listing-file-modified-sort="1704358966803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-title-sort="Lab 1 Exercises" data-listing-filename-sort="Lab-1-exercises.qmd">
-<td>
-<span class="listing-date">Jan 30, 2023</span>
-</td>
-<td>
-<a href="./labs/Lab-1-exercises.html" class="title listing-title">Lab 1 Exercises</a>
-</td>
-<td>
-<span class="listing-author">Jonathan Jayes</span>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1675029600000" data-listing-file-modified-sort="1704359613342" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-title-sort="Stata Lab 1 Mapping Growth: Basic Maps" data-listing-filename-sort="Lab-1.qmd">
-<td>
-<span class="listing-date">Jan 30, 2023</span>
-</td>
-<td>
-<a href="./labs/Lab-1.html" class="title listing-title">Stata Lab 1 Mapping Growth: Basic Maps</a>
-</td>
-<td>
-<span class="listing-author">Vinzent Ostermeyer, adapted Jonathan Jayes</span>
-</td>
-</tr>
-<tr data-index="2" data-listing-date-sort="1675634400000" data-listing-file-modified-sort="1704361609967" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-title-sort="Stata Lab Hints: Basic Graphs" data-listing-filename-sort="Lab-hints-graphs.qmd">
-<td>
-<span class="listing-date">Feb 6, 2023</span>
-</td>
-<td>
-<a href="./labs/Lab-hints-graphs.html" class="title listing-title">Stata Lab Hints: Basic Graphs</a>
-</td>
-<td>
-<span class="listing-author">Jonathan Jayes</span>
-</td>
-</tr>
-<tr data-index="3" data-listing-date-sort="1676584800000" data-listing-file-modified-sort="1704358966825" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-title-sort="Stata Lab 2 Mapping Growth: Across Space and Time" data-listing-filename-sort="Lab-2.qmd">
-<td>
-<span class="listing-date">Feb 17, 2023</span>
-</td>
-<td>
-<a href="./labs/Lab-2.html" class="title listing-title">Stata Lab 2 Mapping Growth: Across Space and Time</a>
-</td>
-<td>
-<span class="listing-author">Vinzent Ostermeyer, adapted Jonathan Jayes</span>
-</td>
-</tr>
-<tr data-index="4" data-listing-date-sort="1677535200000" data-listing-file-modified-sort="1704361162591" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-title-sort="Q and A" data-listing-filename-sort="Lab-Q-and-A.qmd">
-<td>
-<span class="listing-date">Feb 28, 2023</span>
-</td>
-<td>
-<a href="./labs/Lab-Q-and-A.html" class="title listing-title">Q and A</a>
-</td>
-<td>
-<span class="listing-author">Jonathan Jayes</span>
-</td>
-</tr>
-</tbody>
-
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

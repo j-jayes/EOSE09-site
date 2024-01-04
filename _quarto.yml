@@ -7,7 +7,12 @@ website:
   title: "{{< var title >}}"
   navbar:
     left:
-      - href: index.qmd
+      - href: lectures/lecture-1.qmd
+        text: Lecture 1
+      - href: labs/Lab-1.qmd
+        text: Lab 1
+      - href: labs/Lab-2.qmd
+        text: Lab 2
   page-footer:
     center: |
       If you have any questions, please feel free to [contact me here {{< fa paper-plane >}}]({{< var email.contact >}})
