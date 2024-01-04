@@ -1,12 +1,34 @@
 ---
 title: "EOSE09 - Economy and Society: Regional Development and Growth"
-listing:
-  contents:
-    - "labs/*.qmd"
-    - "lectures/*.qmd"
-    - "resources/*.qmd"
-    - "!lectures/ideas.qmd"
-    - "!resoures/adm-resources/ADM-prep.qmd"
-  type: grid
-  sort: "date asc"
+listing: 
+  - id: labs
+    contents: "labs/*.qmd"
+    type: table
+    sort: "date asc"
+  - id: lectures
+    contents: "lectures/*.qmd"
+    type: table
+    sort: "date asc"
+  - id: resources
+    contents: "resources/*.qmd"
+    type: table
+    sort: "date asc" 
+  
 ---
+
+This site holds the Stata labs and one lecture for the course [EOSE09 - Economy and Society: Regional Development and Growth](https://kursplaner.lu.se/pdf/kurs/en/EOSE09), offered at Lund University in Sweden.
+
+## Labs
+
+:::{#lab-reports}
+:::
+
+## Lectures
+
+:::{#lectures}
+:::
+
+## Resources
+
+:::{#resources}
+:::

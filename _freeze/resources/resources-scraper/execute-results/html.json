@@ -1,8 +1,10 @@
 {
-  "hash": "e68f21f2fff84804602cf96d75dc4973",
+  "hash": "76998a0e9eef8fbfadc320593e1e559c",
   "result": {
     "markdown": "---\ntitle: \"Stata-resources\"\nauthor: \"JJayes\"\ndate: \"2023-01-19\"\noutput: html_document\n---\n\n\n\n\n## Purpose\n\nScrape website of Stata for resources and text to make a table.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\nlibrary(rvest)\n\nget_info <- function(url_in) {\n  url <- url_in\n\n  html <- read_html(url)\n\n  message(\"Getting info\")\n  titles <- html %>%\n    html_nodes(\"dt\") %>%\n    html_nodes(\"a\") %>%\n    html_text() %>%\n    str_squish() %>%\n    as_tibble() %>%\n    rename(title = value) %>%\n    mutate(rn = row_number())\n\n  links <- html %>%\n    html_nodes(\"dt\") %>%\n    html_nodes(\"a\") %>%\n    html_attr(\"href\") %>%\n    as_tibble() %>%\n    rename(link = value) %>%\n    mutate(rn = row_number())\n\n  descs <- html %>%\n    html_nodes(\"dd\") %>%\n    # html_nodes(\"a\") %>%\n    html_text() %>%\n    str_squish() %>%\n    as_tibble() %>%\n    rename(desc = value) %>%\n    filter(!str_detect(desc, \"[0-9]+ Users\")) %>%\n    mutate(rn = row_number())\n\n  df <- titles %>%\n    inner_join(links) %>%\n    inner_join(descs) %>%\n    select(-rn)\n\n  return(df)\n}\n\nresources <- get_info(\"https://www.stata.com/links/resources-for-learning-stata/\")\n\nresources %>% write_rds(\"resources/stata-resources.rds\")\n```\n:::\n",
-    "supporting": [],
+    "supporting": [
+      "resources-scraper_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

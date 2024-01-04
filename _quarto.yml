@@ -8,8 +8,6 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
   page-footer:
     center: |
       If you have any questions, please feel free to [contact me here {{< fa paper-plane >}}]({{< var email.contact >}})

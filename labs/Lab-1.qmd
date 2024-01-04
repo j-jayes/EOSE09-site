@@ -18,7 +18,7 @@ image: "Lab-1-resources/preview.png"
 
 🗺️ One goal of this course is to teach students how to identify a good map -- one which is clear, informative and attractive -- and familiarise students with the commands which allow the creation of these maps in Stata.📈
 
-In addition, your lab paper (📅 due March 3rd) requires that you include at least 6 maps, so it is worth concentrating in the labs and making use of these resources.📝
+In addition, your lab paper (📅 due March 1st) requires that you include at least 6 maps, so it is worth concentrating in the labs and making use of these resources.📝
 
 📚 This document is intended to allow you to keep up with the Stata Lab 1 that we will work through in class.📊
 
