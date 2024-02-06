@@ -1,0 +1,212 @@
+---
+title: "Prepare DOSE data for Stata"
+format: html
+execute: 
+  eval: false
+---
+
+
+## We need to join up the shapefiles with the data from DOSE
+
+The shapefiles are huge. We need to reduce the size of the shapefiles to make them more manageable.
+
+Read in the big file and select the right layer, downloaded from [here](https://gadm.org/download_world.html)
+
+```{r}
+library(tidyverse)
+library(sf)
+
+world_layers <- st_layers("data/gadm_410-levels.gpkg")
+
+world_layers
+
+# select AMD_1
+
+world <- st_read("data/gadm_410-levels.gpkg", layer = "ADM_1")
+
+world
+```
+
+Read in the data from DOSE
+
+```{r}
+df <- readxl::read_excel("data/DOSE_V2.xlsx")
+
+dose_countries <- df %>% 
+distinct(country, GID_0)
+```
+
+
+Select the parts of the world that we need
+
+```{r}
+world_filtered <- world %>%
+filter(GID_0 %in% dose_countries$GID_0)
+
+world_filtered
+```
+
+Now we want to drop the regions that are incorrect
+
+```{r}
+
+world_non_GADM <- st_read("data/DOSE_shapefiles.gpkg", layer = "all_non_GADM_regions")
+
+```
+
+
+
+```{r}
+world_filtered <- world_filtered %>%
+filter(!GID_1 %in% world_non_GADM$GID_1)
+```
+
+
+
+```{r}
+# get the names of the columns in world_filtered
+names(world_filtered)
+
+# drop ISO_1 from world_filtered
+world_filtered <- world_filtered %>%
+select(-ISO_1)
+names(world_filtered)
+
+# rename COUNTRY to NAME_0 in world_filtered
+world_filtered <- world_filtered %>%
+rename(NAME_0 = COUNTRY)
+
+names(world_non_GADM)
+
+# join the two datasets by binding rows
+world_filtered <- rbind(world_filtered, world_non_GADM)
+```
+
+
+
+
+```{r}
+# draw world filtered on a map but only of Sweden
+world_filtered %>% 
+  filter(GID_0 == "SWE") %>%
+  ggplot() +
+  geom_sf()
+
+```
+
+Make a map after joining the data to the map
+
+```{r}
+char_columns <- df %>% 
+select(where(is.character)) %>% 
+colnames()
+
+# remove country, region, GID_0, GID_1 from char_columns
+char_columns <- char_columns[!char_columns %in% c("country", "region", "GID_0", "GID_1")]
+
+df <- df %>% 
+mutate(across(all_of(char_columns), parse_number))
+
+df
+```
+
+```{r}
+
+df %>% 
+filter(country == "Sweden",
+year == 2000) %>%
+inner_join(world_filtered, by = "GID_1") %>% 
+ggplot() +
+geom_sf(aes(fill = grp_lcu, geometry = geom)) +
+theme_minimal()
+
+```
+
+
+
+Let's make world_filtered a simpler shape so that it is smaller
+
+
+```{r}
+# set use s2 to FALSE
+sf_use_s2(FALSE)
+
+# here we want to avoid a warning about the coordinate reference system
+world_filtered <- st_transform(world_filtered, 54032)
+
+world_filtered_simplified <- world_filtered %>%
+st_simplify(dTolerance = 0.02, preserveTopology = FALSE)
+
+world_filtered_simplified <- world_filtered_simplified %>%
+st_transform(4326)
+
+sf_use_s2(TRUE)
+
+```
+
+
+```{r}
+df %>% 
+filter(country == "Sweden",
+year == 2000) %>%
+inner_join(world_filtered_simplified, by = "GID_1") %>% 
+ggplot() +
+geom_sf(aes(fill = grp_lcu, geometry = geom)) +
+coord_sf(crs = 4326) 
+```
+
+
+### Create unique ID and save out data
+
+```{r}
+GID_index <- df %>% 
+select(GID_1) %>% 
+distinct() %>% 
+# arrange(GID_1) %>% 
+mutate(id = row_number())
+
+df_with_id <- df %>% 
+inner_join(GID_index, by = "GID_1") 
+
+df_with_id  %>% write_csv("data/DOSE_V2_with_id.csv")
+
+library(haven)
+
+df_with_id %>% write_dta("data/DOSE_V2_with_id.dta")
+GID_index %>% write_dta("data/DOSE_V2_IDs.dta")
+
+```
+
+# Write out world_filtered_simplified to a shapefile
+
+```{r}
+world_filtered_simplified <- world_filtered_simplified %>% 
+inner_join(GID_index, by = "GID_1") 
+
+world_filtered_simplified %>% 
+st_write("data/dose_v2_map_file.shp", append=FALSE)
+
+
+```
+
+
+
+
+
+```{r}
+# read in the data and create the mapping from id to _ID
+stata_id_mapping <- read_dta("data/DOSE_V2_IDs.dta")
+
+stata_id_mapping <- stata_id_mapping %>% 
+select(id, "_ID")
+
+df_with_id<- df_with_id %>% 
+inner_join(stata_id_mapping, by = "id")
+
+
+df_with_id %>% write_dta("data/DOSE_V2_with_id_from_stata.dta")
+```
+
+
+
+

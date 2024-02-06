@@ -4,7 +4,7 @@ listing:
   - id: labs
     contents: 
       - "labs/*.qmd"
-      - "!labs/Lab-1-exercises.qmd"
+      - "labs/Lab-1-exercises.qmd"
       - "!labs/Lab-Q-and-A.qmd"
     type: grid
     sort: "date asc"

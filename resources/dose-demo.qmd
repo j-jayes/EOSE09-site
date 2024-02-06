@@ -1,0 +1,132 @@
+---
+title: "Additional data: DOSE"
+format: html
+execute: 
+  eval: true
+  echo: false
+---
+
+The data that you should use in your project is an amazing compilation of sub-national economic data all the way from 1900 to 2015. It covers all of Europe. 
+
+In your project, you may want to add some colour to your story by comparing the economic development of your country to other countries outside of the dataset, be it in the Americas or Asia. 
+
+The [DOSE – Global data set of reported sub-national economic output](https://www.nature.com/articles/s41597-023-02323-8#Abs1) dataset is a great resource for this. It contains data on regional economic development for 83 countries in the world, at varying times from 1960 to today.
+
+I have formatted it into Stata format and saved a shapefile that you can use to create maps to supplement your analysis, if you wish.
+
+You can download the Stata data file [here](assets/DOSE_V2_with_id_from_stata.dta)
+
+You can download the coordinates file [here](assets/DOSE_V2_coords.dta)
+
+You can download a dofile to create maps [here](assets/DOSE_V2_map_file.do)
+
+
+```{r}
+library(tidyverse)
+theme_set(theme_light())
+
+df <- readxl::read_excel("data/DOSE_V2_with_id.xlsx")
+
+char_columns <- df %>% 
+select(where(is.character)) %>% 
+colnames()
+
+# remove country, region, GID_0, GID_1 from char_columns
+char_columns <- char_columns[!char_columns %in% c("country", "region", "GID_0", "GID_1")]
+
+df <- df %>% 
+mutate(across(all_of(char_columns), parse_number))
+
+```
+
+### Variables
+
+There are several variables in the dataset. Here are the labels for each of them, as you can use in Stata.
+
+```{r}
+#| eval: false
+#| echo: true
+
+label variable country "Full-length country name"
+label variable GID_0 "3-digits ISO-Code"
+label variable region "Primary region name"
+label variable GID_1 "GADM-identifier for level-1 administrative unit, or customly created identifier"
+label variable year "Calendar year"
+label variable grp_lcu "Gross regional product in local currency and current prices"
+label variable pop "Regional population estimate"
+label variable grp_pc_lcu "Gross regional product per capita in local currency and current prices"
+label variable grp_pc_usd "Gross regional product per capita in US dollar and current prices"
+label variable grp_pc_lcu_2015 "Gross regional product per capita in local currency and 2015 prices"
+label variable grp_pc_usd_2015 "Gross regional product per capita in US dollar and US 2015 prices"
+label variable grp_pc_lcu2015_usd "Gross regional product per capita in local 2015 prices and converted to US dollar using the 2015 exchange rate"
+label variable cpi_2015 "Worldbank Consumer Price Index with base year 2015"
+label variable deflator_2015 "Worldbank national GDP deflator with base year 2015"
+label variable fx "FRED market exchange rate (local currency to one USD)"
+label variable PPP "Purchasing Power Parity exchange rate (local currency to one international dollar)"
+label variable StructChange "Categorical variable indicating the start of a new data source, changes in administrative boundaries, and when regional time series were extended to a previous version of DOSE"
+label variable T_a "Area-weighted annual mean temperature"
+label variable P_a "Area-weighted annual total precipitation"
+```
+
+### Data coverage
+
+Not every country has data for every year. Here is a plot showing the data coverage for a selection of half of the countries in the dataset.
+
+```{r}
+set.seed(2024)
+sample_countries <- df %>% 
+distinct(country) %>%
+sample_n(40) 
+
+df %>% 
+select(country, year, grp_pc_usd_2015) %>% 
+mutate(has_data = case_when(
+    is.na(grp_pc_usd_2015) ~ "No",
+    TRUE ~ "Yes"
+)) %>% select(-grp_pc_usd_2015) %>%
+distinct() %>% 
+filter(country %in% sample_countries$country) %>%
+mutate(country = fct_reorder(country, year)) %>%
+ggplot(aes(x = year, y = country)) +
+geom_tile(fill = "midnightblue", alpha = .8) +
+labs(x = "Year", y = "Country") 
+
+```
+
+### Example: GDP per capita
+
+We might want to plot the evolution of gross regional product per capita in South African and Mozambique to contrast with Sweden and Finland. 
+
+We want to know what the names of the regions are first:
+
+```{r}
+library(sf)
+map <- st_read("data/dose_v2_map_file.shp")
+
+df %>% 
+filter(country %in% c("South Africa", "Mozambique"),
+year %in% c(2000, 2004, 2008, 2012, 2016))  %>% 
+inner_join(map, by = c("GID_1" = "GID_1"))  %>% 
+ggplot(aes(geometry = geometry)) +
+geom_sf(fill = "lightblue") +
+geom_sf_text(aes(label = region), size = 2) 
+```
+
+Next we can create a facet plot and fill the polygons with the GRP per capita in 2000, 2004, 2008, 2012, and 2016.
+
+```{r}
+
+df %>% 
+filter(country %in% c("South Africa", "Mozambique"),
+year %in% c(2000, 2004, 2008, 2012, 2016))  %>% 
+inner_join(map, by = c("GID_1" = "GID_1"))  %>% 
+ggplot(aes(fill = grp_pc_usd_2015, geometry = geometry)) +
+geom_sf() + 
+facet_wrap(vars(year)) +
+scale_fill_distiller(, direction = -1, palette = "Spectral") +
+theme(legend.position = "bottom") +
+guides(fill = guide_colorbar(barwidth = 20, barheight = 1, title.position = "top")) +
+labs(fill = "Gross Regional Product (GRP) per capita (USD 2015)", title = "GRP per capita in South Africa and Mozambique")
+
+
+```
