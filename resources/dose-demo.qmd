@@ -25,7 +25,7 @@ You can download a dofile to create maps [here](assets/DOSE_V2_map_file.do)
 library(tidyverse)
 theme_set(theme_light())
 
-df <- readxl::read_excel("data/DOSE_V2_with_id.xlsx")
+df <- readxl::read_excel(here::here("data/DOSE_V2_with_id.xlsx"))
 
 char_columns <- df %>% 
 select(where(is.character)) %>% 
@@ -101,7 +101,7 @@ We want to know what the names of the regions are first:
 
 ```{r}
 library(sf)
-map <- st_read("data/dose_v2_map_file.shp")
+map <- st_read(here::here("data/dose_v2_map_file.shp"))
 
 df %>% 
 filter(country %in% c("South Africa", "Mozambique"),

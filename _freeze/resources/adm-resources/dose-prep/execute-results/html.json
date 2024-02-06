@@ -1,0 +1,14 @@
+{
+  "hash": "943d7d994be0892fa246a39f0fb1459d",
+  "result": {
+    "markdown": "---\ntitle: \"Prepare DOSE data for Stata\"\nformat: html\nexecute: \n  eval: false\n---\n\n\n\n## We need to join up the shapefiles with the data from DOSE\n\nThe shapefiles are huge. We need to reduce the size of the shapefiles to make them more manageable.\n\nRead in the big file and select the right layer, downloaded from [here](https://gadm.org/download_world.html)\n\n\n::: {.cell}\n\n:::\n\n\nRead in the data from DOSE\n\n\n::: {.cell}\n\n:::\n\n\n\nSelect the parts of the world that we need\n\n\n::: {.cell}\n\n:::\n\n\nNow we want to drop the regions that are incorrect\n\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n\nMake a map after joining the data to the map\n\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n\n\n\nLet's make world_filtered a simpler shape so that it is smaller\n\n\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n\n\n### Create unique ID and save out data\n\n\n::: {.cell}\n\n:::\n\n\n# Write out world_filtered_simplified to a shapefile\n\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
