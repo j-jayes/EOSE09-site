@@ -14,11 +14,11 @@ The [DOSE – Global data set of reported sub-national economic output](https://
 
 I have formatted it into Stata format and saved a shapefile that you can use to create maps to supplement your analysis, if you wish.
 
-You can download the Stata data file [here](assets/DOSE_V2_with_id_from_stata.dta)
+You can download the Stata data file [here](https://github.com/j-jayes/EOSE09-site/blob/main/assets/DOSE_V2_with_id_from_stata.dta)
 
-You can download the coordinates file [here](assets/DOSE_V2_coords.dta)
+You can download the coordinates file [here](https://github.com/j-jayes/EOSE09-site/blob/main/assets/DOSE_V2_coords.dta)
 
-You can download a dofile to create maps [here](assets/DOSE_V2_map_file.do)
+You can download a dofile to create maps [here](https://github.com/j-jayes/EOSE09-site/blob/main/assets/DOSE_V2_map_file.do)
 
 
 ```{r}
