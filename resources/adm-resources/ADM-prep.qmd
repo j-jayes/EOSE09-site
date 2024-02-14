@@ -70,6 +70,8 @@ list_of_files <- list.files(here::here("resources", "adm-resources"), pattern = 
 
 tbl_of_files <- list_of_files %>% 
   as_tibble() %>% 
+  filter(!str_detect(value, "regions_illustrated_excel.xlsx"),
+  !str_detect(value, "urbanization.xlsx")) %>% 
   mutate(file_path = here::here("resources/adm-resources/", value),
          value = str_remove(value, "\\.xlsx")) %>% 
   rename(sheet = value)
@@ -121,7 +123,6 @@ df <- df %>%
   arrange(code, stat_domain, indicator, period)
 
 
-
 df %>% write_rds(here::here("resources/adm-resources/regions_illustrated.rds"), compress = "gz")
 df %>% 
   write_excel_csv(here::here("resources/adm-resources/regions_illustrated.csv"))
@@ -132,6 +133,92 @@ df %>%
   write_excel_csv2("resources/adm-resources/regions_illustrated_excel.csv")
 ```
 
+Make uniform with Roses and Wolf data
+
+```{r}
+#| eval: false
+
+
+
+df_wide = df %>% 
+rename(nuts_code = code)  %>% 
+select(-c(stat_domain, year)) %>%
+distinct() %>%
+group_by(region, NUTS_CODE, country, indicator, period) %>%
+slice(1) %>% 
+ungroup() %>%
+pivot_wider(names_from = indicator, values_from = value)  %>% janitor::clean_names()  %>% 
+filter(!is.na(nuts_code)) 
+
+df_wide %>% 
+count(nuts_code, country)
+
+
+shorten_var_names <- function(df, max_length = 32) {
+  # Get the column names
+  names <- colnames(df)
+  
+  # Abbreviate the names to the max_length
+  short_names <- abbreviate(names, minlength = max_length)
+  
+  # Replace spaces with underscores
+  short_names <- gsub(" ", "_", short_names)
+  
+  # Remove consecutive underscores
+  short_names <- gsub("_+", "_", short_names)
+  
+  # If the name ends with an underscore, remove it
+  short_names <- sub("_$", "", short_names)
+  
+  # Manually truncate the names if they are still too long
+  short_names <- substr(short_names, 1, max_length)
+  
+  # Rename the columns in the data frame
+  colnames(df) <- short_names
+  
+  return(df)
+}
+
+# Apply the function to your data frame
+df_wide <- shorten_var_names(df_wide)
+
+df_wide %>%
+write_dta(here::here("resources", "stata", "eurostat_data_wide.dta"), version = 14)
+```
+
+
+```{r}
+
+shorten_var_names <- function(names, max_length = 32) {
+  # Abbreviate the names to the max_length
+  short_names <- abbreviate(names, minlength = max_length)
+  
+  # Replace spaces with underscores
+  short_names <- gsub(" ", "_", short_names)
+  
+  # Remove consecutive underscores
+  short_names <- gsub("_+", "_", short_names)
+  
+  # If the name ends with an underscore, remove it
+  short_names <- sub("_$", "", short_names)
+  
+  return(short_names)
+}
+
+# Your variable names
+var_names <- c("region", "nuts_code", "country", "period", 
+               "adult_participation_in_education_and_training_percent_of_population_aged_25_64", 
+               "air_transport_of_freight_1_000_tonnes_loaded_and_unloaded", 
+               "air_transport_of_passengers_1_000_passengers_arrivals_and_depatures")
+
+# Apply the function
+short_var_names <- shorten_var_names(var_names)
+
+# Print the shortened variable names
+print(short_var_names)
+
+
+```
 
 ```{r}
 library(haven)
@@ -168,5 +255,30 @@ stata %>%
     "adm-resources",
     "RosesWolf_Regional_Added_pop_densiy.dta"
   ))
+```
+
+
+
+
+
+Check the shapefile
+
+```{r}
+library(sf)
+
+shapefile <- st_read(here::here("resources", "stata", "NUTS_RG_20M_2021_4326.shp"))
+
+shapefile  %>% 
+filter(LEVL_CODE == 2) %>%
+rename(nuts_code = NUTS_ID) %>%
+st_write(here::here("resources", "stata", "NUTS_RG_20M_2021_4326_LEVL_CODE_2.shp"), append = F)
+
+shapefile %>% 
+count(LEVL_CODE)
+
+shapefile %>% 
+filter(LEVL_CODE == 2) %>%
+ggplot(aes(geometry = geometry)) + 
+  geom_sf()
 ```
 
