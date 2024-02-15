@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jonathan Jayes">
-<meta name="dcterms.date" content="2024-02-14">
+<meta name="dcterms.date" content="2024-02-15">
 
 <title> - Additional Maps: Eurostat</title>
 <style>
@@ -148,7 +148,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#series" id="toc-series" class="nav-link active" data-scroll-target="#series">Series</a></li>
+  <li><a href="#using-this-data-in-stata" id="toc-using-this-data-in-stata" class="nav-link active" data-scroll-target="#using-this-data-in-stata">Using this data in Stata</a></li>
+  <li><a href="#series" id="toc-series" class="nav-link" data-scroll-target="#series">Series</a></li>
   <li><a href="#plots" id="toc-plots" class="nav-link" data-scroll-target="#plots">Plots</a></li>
   </ul>
 </nav>
@@ -175,7 +176,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 14, 2024</p>
+      <p class="date">February 15, 2024</p>
     </div>
   </div>
   
@@ -186,35 +187,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <p>In addition to the database that we have used so far, we can introduce more data from Eurostat.</p>
-<p>You can have a look at their nice interactive web-based tool <a href="https://ec.europa.eu/eurostat/cache/RCI/#?vis=nuts2.scitech&amp;lang=en">here or in the iframe below</a> and download the data in excel format from my Github <a href="https://github.com/j-jayes/EOSE09-site/raw/main/resources/adm-resources/regions_illustrated.csv">here</a>.</p>
+<p>You can have a look at their nice interactive web-based tool <a href="https://ec.europa.eu/eurostat/cache/RCI/#?vis=nuts2.scitech&amp;lang=en">here or in the iframe below</a>.</p>
 <div class="cell column-page">
 <iframe src="https://ec.europa.eu/eurostat/cache/RCI/#?vis=nuts2.economy&amp;lang=en" width="100%" height="800" data-external="1">
 </iframe>
 </div>
-<p>I will download the earliest values from each series and put it up later this week (before January 27), until then, you can get an idea of the data from the link above.</p>
-<p>This is what the data looks like:</p>
+<section id="using-this-data-in-stata" class="level2">
+<h2 class="anchored" data-anchor-id="using-this-data-in-stata">Using this data in Stata</h2>
+<p>To use this data in Stata, you must download the dofile, datafile and coordinates file here:</p>
+<ul>
+<li><a href="eurostat_stata/eurostat_data_mapping.do">Dofile</a></li>
+<li><a href="eurostat_stata/eurostat_data_for_mapping.dta">Datafile</a></li>
+<li><a href="eurostat_stata/eurostat_nutscoord_stata.dta">Coordinates file</a></li>
+</ul>
+</section>
 <section id="series" class="level2">
 <h2 class="anchored" data-anchor-id="series">Series</h2>
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="qwwsrfwxyw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qwwsrfwxyw table {
+<div id="cprseerqwz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#cprseerqwz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qwwsrfwxyw thead, #qwwsrfwxyw tbody, #qwwsrfwxyw tfoot, #qwwsrfwxyw tr, #qwwsrfwxyw td, #qwwsrfwxyw th {
+#cprseerqwz thead, #cprseerqwz tbody, #cprseerqwz tfoot, #cprseerqwz tr, #cprseerqwz td, #cprseerqwz th {
   border-style: none;
 }
 
-#qwwsrfwxyw p {
+#cprseerqwz p {
   margin: 0;
   padding: 0;
 }
 
-#qwwsrfwxyw .gt_table {
+#cprseerqwz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -240,12 +248,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#qwwsrfwxyw .gt_caption {
+#cprseerqwz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qwwsrfwxyw .gt_title {
+#cprseerqwz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -257,7 +265,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#qwwsrfwxyw .gt_subtitle {
+#cprseerqwz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -269,7 +277,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#qwwsrfwxyw .gt_heading {
+#cprseerqwz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -281,13 +289,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#qwwsrfwxyw .gt_bottom_border {
+#cprseerqwz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qwwsrfwxyw .gt_col_headings {
+#cprseerqwz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -302,7 +310,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#qwwsrfwxyw .gt_col_heading {
+#cprseerqwz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -322,7 +330,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#qwwsrfwxyw .gt_column_spanner_outer {
+#cprseerqwz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -334,15 +342,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#qwwsrfwxyw .gt_column_spanner_outer:first-child {
+#cprseerqwz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qwwsrfwxyw .gt_column_spanner_outer:last-child {
+#cprseerqwz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qwwsrfwxyw .gt_column_spanner {
+#cprseerqwz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -354,11 +362,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#qwwsrfwxyw .gt_spanner_row {
+#cprseerqwz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qwwsrfwxyw .gt_group_heading {
+#cprseerqwz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -384,7 +392,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#qwwsrfwxyw .gt_empty_group_heading {
+#cprseerqwz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -399,15 +407,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#qwwsrfwxyw .gt_from_md > :first-child {
+#cprseerqwz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qwwsrfwxyw .gt_from_md > :last-child {
+#cprseerqwz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qwwsrfwxyw .gt_row {
+#cprseerqwz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -426,7 +434,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#qwwsrfwxyw .gt_stub {
+#cprseerqwz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -439,7 +447,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#qwwsrfwxyw .gt_stub_row_group {
+#cprseerqwz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -453,15 +461,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#qwwsrfwxyw .gt_row_group_first td {
+#cprseerqwz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qwwsrfwxyw .gt_row_group_first th {
+#cprseerqwz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qwwsrfwxyw .gt_summary_row {
+#cprseerqwz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -471,16 +479,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#qwwsrfwxyw .gt_first_summary_row {
+#cprseerqwz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qwwsrfwxyw .gt_first_summary_row.thick {
+#cprseerqwz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qwwsrfwxyw .gt_last_summary_row {
+#cprseerqwz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -490,7 +498,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#qwwsrfwxyw .gt_grand_summary_row {
+#cprseerqwz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -500,7 +508,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#qwwsrfwxyw .gt_first_grand_summary_row {
+#cprseerqwz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -510,7 +518,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#qwwsrfwxyw .gt_last_grand_summary_row_top {
+#cprseerqwz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -520,11 +528,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#qwwsrfwxyw .gt_striped {
+#cprseerqwz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qwwsrfwxyw .gt_table_body {
+#cprseerqwz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -533,7 +541,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#qwwsrfwxyw .gt_footnotes {
+#cprseerqwz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -547,7 +555,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#qwwsrfwxyw .gt_footnote {
+#cprseerqwz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -556,7 +564,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#qwwsrfwxyw .gt_sourcenotes {
+#cprseerqwz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -570,7 +578,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#qwwsrfwxyw .gt_sourcenote {
+#cprseerqwz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -578,63 +586,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#qwwsrfwxyw .gt_left {
+#cprseerqwz .gt_left {
   text-align: left;
 }
 
-#qwwsrfwxyw .gt_center {
+#cprseerqwz .gt_center {
   text-align: center;
 }
 
-#qwwsrfwxyw .gt_right {
+#cprseerqwz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qwwsrfwxyw .gt_font_normal {
+#cprseerqwz .gt_font_normal {
   font-weight: normal;
 }
 
-#qwwsrfwxyw .gt_font_bold {
+#cprseerqwz .gt_font_bold {
   font-weight: bold;
 }
 
-#qwwsrfwxyw .gt_font_italic {
+#cprseerqwz .gt_font_italic {
   font-style: italic;
 }
 
-#qwwsrfwxyw .gt_super {
+#cprseerqwz .gt_super {
   font-size: 65%;
 }
 
-#qwwsrfwxyw .gt_footnote_marks {
+#cprseerqwz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qwwsrfwxyw .gt_asterisk {
+#cprseerqwz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qwwsrfwxyw .gt_indent_1 {
+#cprseerqwz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qwwsrfwxyw .gt_indent_2 {
+#cprseerqwz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qwwsrfwxyw .gt_indent_3 {
+#cprseerqwz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qwwsrfwxyw .gt_indent_4 {
+#cprseerqwz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qwwsrfwxyw .gt_indent_5 {
+#cprseerqwz .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -885,19 +893,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>What can we say about milk production? Look at Switzerland go!</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="768"></p>
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 <p>How about sheep farming? Sheesh have a look at Crete!</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="768"></p>
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 <p>There isn’t a super clear relationship between number of cows and GDP per capita. Good news that you can farm in a rich country still!</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="768"></p>
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 </div>
@@ -905,19 +913,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Why does Turkey have such a low level of employment among women?</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="768"></p>
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 <p>It seems that there is a strong relationship between GDP per capita and the economic activity rate. Can you guess about the direction of causality?</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="768"></p>
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 <p>Do we see agglomeration effects with higher GDP per capita in areas with higher population density? Note the logged y axis.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="768"></p>
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 </div>
@@ -926,19 +934,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>(I don’t know why France is mising…)</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="768"></p>
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 <p>Who leaves school early? Maybe people in places where formal education is not that enticing?</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="768"></p>
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 <p>Look at how the countries separate here - wow!</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="768"></p>
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 </div>
@@ -946,37 +954,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>See how few hospital beds Sweden has compared to Norway.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="768"></p>
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 <p>Seems like you have to be a rich country in order to live long enough to die from cancer :(</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="768"></p>
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 <p>Look at how the countries separate here - wow!</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="768"></p>
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 </div>
 <div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="768"></p>
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="768"></p>
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 <p>Interesting demographic trends! You have to be rich enough to have children in a rich country!</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="768"></p>
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 </div>
