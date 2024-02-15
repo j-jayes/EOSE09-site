@@ -2063,5 +2063,22 @@ df %>%
 
 <iframe width="1300" height="700" src="https://www.youtube.com/embed/5Zg-C8AAIGg?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Thank you
+## Additional data demo
 
+<br>
+
+::: {.columns}
+::: {.column}
+
+```{r}
+knitr::include_url("https://j-jayes.github.io/EOSE09-site/resources/Additional-map-data.html")
+```
+
+:::
+::: {.column}
+
+```{r}
+knitr::include_url("https://j-jayes.github.io/EOSE09-site/resources/dose-demo.html")
+```
+:::
+:::

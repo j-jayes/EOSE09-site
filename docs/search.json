@@ -434,6 +434,27 @@
     "text": "Now let’s make breaks based on this information\n\n\n\n\n\n\n\n\n\n\nspmap employment_share_industry using \"nutscoord.dta\" \n  if year == 2010, id(_ID) fcolor(Spectral) legstyle(2) \n    title(\"Employment Share Industry - 2010\", size(large)) \n    osize(0.02 ..) ocolor(white ..) \n    clmethod(custom) clbreaks(0 (0.075) 0.5) \n    legend(pos(9) size(medium) rowgap(1.5) \n    label(7 \"37-45 %\") label(6 \"30-37 %\") \n    label(5 \"23-30 %\") label(4 \"15-23 %\") \n    label(3 \"8-15 %\") label(2 \"0-8 %\") \n    label(1 \"No Data\")) \n    ndfcolor(gray) ndocolor(white ..) ndsize(0.02 ..)"
   },
   {
+    "objectID": "lectures/lecture-1.html#using-density-plots-to-set-your-legend-breaks",
+    "href": "lectures/lecture-1.html#using-density-plots-to-set-your-legend-breaks",
+    "title": "Data visualization",
+    "section": "Using density plots to set your legend breaks",
+    "text": "Using density plots to set your legend breaks\nDataset: Solar panels in Sweden\n\n\n\n\n  \n  \n  \n    \n      Installed solar capacity in Sweden\n    \n    \n      Year: 2021\n    \n    \n      Swedish county\n      Installed solar capacity (megawatts)\n    \n  \n  \n    Västra Götalands län\n266.21\n    Skåne län\n256.25\n    Stockholms län\n182.25\n    Östergötlands län\n106.81\n    Hallands län\n94.31\n    Jönköpings län\n88.53\n    Södermanlands län\n79.71\n    Uppsala län\n79.11\n    Kalmar län\n59.01\n    Västmanlands län\n49.45\n  \n  \n    \n      Source: Energimyndigheten"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#how-to-decide-on-values-for-the-bins",
+    "href": "lectures/lecture-1.html#how-to-decide-on-values-for-the-bins",
+    "title": "Data visualization",
+    "section": "How to decide on values for the bins?",
+    "text": "How to decide on values for the bins?\nUse a histogram or a density plot to see where the weight of the distribution is."
+  },
+  {
+    "objectID": "lectures/lecture-1.html#map-with-appropriate-breaks",
+    "href": "lectures/lecture-1.html#map-with-appropriate-breaks",
+    "title": "Data visualization",
+    "section": "Map with appropriate breaks",
+    "text": "Map with appropriate breaks\nAsk your neighbour:\n\nwhat kind of palette is this?\nIs it appropriate to use with this data?\n\n\n\n\n−+\n01:00"
+  },
+  {
     "objectID": "lectures/lecture-1.html#colour-scales",
     "href": "lectures/lecture-1.html#colour-scales",
     "title": "Data visualization",
@@ -509,27 +530,6 @@
     "title": "Data visualization",
     "section": "Highlight example",
     "text": "Highlight example"
-  },
-  {
-    "objectID": "lectures/lecture-1.html#using-density-plots-to-set-your-legend-breaks",
-    "href": "lectures/lecture-1.html#using-density-plots-to-set-your-legend-breaks",
-    "title": "Data visualization",
-    "section": "Using density plots to set your legend breaks",
-    "text": "Using density plots to set your legend breaks\nDataset: Solar panels in Sweden\n\n\n\n\n  \n  \n  \n    \n      Installed solar capacity in Sweden\n    \n    \n      Year: 2021\n    \n    \n      Swedish county\n      Installed solar capacity (megawatts)\n    \n  \n  \n    Västra Götalands län\n266.21\n    Skåne län\n256.25\n    Stockholms län\n182.25\n    Östergötlands län\n106.81\n    Hallands län\n94.31\n    Jönköpings län\n88.53\n    Södermanlands län\n79.71\n    Uppsala län\n79.11\n    Kalmar län\n59.01\n    Västmanlands län\n49.45\n  \n  \n    \n      Source: Energimyndigheten"
-  },
-  {
-    "objectID": "lectures/lecture-1.html#how-to-decide-on-values-for-the-bins",
-    "href": "lectures/lecture-1.html#how-to-decide-on-values-for-the-bins",
-    "title": "Data visualization",
-    "section": "How to decide on values for the bins?",
-    "text": "How to decide on values for the bins?\nUse a histogram or a density plot to see where the weight of the distribution is."
-  },
-  {
-    "objectID": "lectures/lecture-1.html#map-with-appropriate-breaks",
-    "href": "lectures/lecture-1.html#map-with-appropriate-breaks",
-    "title": "Data visualization",
-    "section": "Map with appropriate breaks",
-    "text": "Map with appropriate breaks\nAsk your neighbour:\n\nwhat kind of palette is this?\nIs it appropriate to use with this data?\n\n\n\n\n−+\n01:00"
   },
   {
     "objectID": "lectures/lecture-1.html#section-1",
@@ -889,10 +889,10 @@
     "text": "You pay a heavy price"
   },
   {
-    "objectID": "lectures/lecture-1.html#thank-you",
-    "href": "lectures/lecture-1.html#thank-you",
+    "objectID": "lectures/lecture-1.html#additional-data-demo",
+    "href": "lectures/lecture-1.html#additional-data-demo",
     "title": "Data visualization",
-    "section": "Thank you",
-    "text": "Thank you"
+    "section": "Additional data demo",
+    "text": "Additional data demo"
   }
 ]
