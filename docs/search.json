@@ -522,7 +522,7 @@
     "href": "lectures/lecture-1.html#how-to-decide-on-values-for-the-bins",
     "title": "Data visualization",
     "section": "How to decide on values for the bins?",
-    "text": "How to decide on values for the bins?\nUse a histogram or a density plot to see where the weight of the distribution is.\n\n\n\nReading layer `sverige-lan-counties-of-sweden' from data source \n  `/Users/jonathanjayes/Documents/Teaching/EOSE09-site/lectures/lecture-1-resources/maps/sverige-lan-counties-of-sweden.shp' \n  using driver `ESRI Shapefile'\nSimple feature collection with 21 features and 2 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: 10.95051 ymin: 55.32758 xmax: 24.17761 ymax: 69.05997\nGeodetic CRS:  WGS 84"
+    "text": "How to decide on values for the bins?\nUse a histogram or a density plot to see where the weight of the distribution is."
   },
   {
     "objectID": "lectures/lecture-1.html#map-with-appropriate-breaks",
