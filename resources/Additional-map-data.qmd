@@ -15,7 +15,7 @@ format:
 
 In addition to the database that we have used so far, we can introduce more data from Eurostat.
 
-You can have a look at their nice interactive web-based tool [here or in the iframe below](https://ec.europa.eu/eurostat/cache/RCI/#?vis=nuts2.scitech&lang=en) and download the data in excel format from my Github [here](https://github.com/j-jayes/EOSE09-site/raw/main/resources/adm-resources/regions_illustrated.csv).
+You can have a look at their nice interactive web-based tool [here or in the iframe below](https://ec.europa.eu/eurostat/cache/RCI/#?vis=nuts2.scitech&lang=en).
 
 ```{r}
 #| column: page
@@ -23,9 +23,14 @@ You can have a look at their nice interactive web-based tool [here or in the ifr
 knitr::include_url("https://ec.europa.eu/eurostat/cache/RCI/#?vis=nuts2.economy&lang=en", height = 800)
 ```
 
-I will download the earliest values from each series and put it up later this week (before January 27), until then, you can get an idea of the data from the link above.
 
-This is what the data looks like:
+## Using this data in Stata
+
+To use this data in Stata, you must download the dofile, datafile and coordinates file here:
+
+- [Dofile](eurostat_stata/eurostat_data_mapping.do)
+- [Datafile](eurostat_stata/eurostat_data_for_mapping.dta)
+- [Coordinates file](eurostat_stata/eurostat_nutscoord_stata.dta)
 
 ```{r}
 library(tidyverse)
