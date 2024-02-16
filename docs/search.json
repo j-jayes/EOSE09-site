@@ -32,7 +32,7 @@
     "href": "index.html#resources",
     "title": "EOSE09 - Economy and Society: Regional Development and Growth",
     "section": "Resources",
-    "text": "Resources\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nJonathan Jayes\n\n\nMar 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChatGPT tips\n\n\n\n\n\n\nJonathan Jayes\n\n\nApr 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdditional Maps: Eurostat\n\n\n\n\n\n\nJonathan Jayes\n\n\nFeb 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nAdditional data: DOSE\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Resources\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nJonathan Jayes\n\n\nMar 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChatGPT tips\n\n\n\n\n\n\nJonathan Jayes\n\n\nApr 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdditional Maps: Eurostat\n\n\n\n\n\n\nJonathan Jayes\n\n\nFeb 16, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nAdditional data: DOSE\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "resources/resources.html",
@@ -894,5 +894,12 @@
     "title": "Data visualization",
     "section": "Additional data demo",
     "text": "Additional data demo"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#using-density-plots-to-set-your-legend-breaks-quick-example",
+    "href": "lectures/lecture-1.html#using-density-plots-to-set-your-legend-breaks-quick-example",
+    "title": "Data visualization",
+    "section": "Using density plots to set your legend breaks: quick example",
+    "text": "Using density plots to set your legend breaks: quick example\nDataset: Solar panels in Sweden\n\n\n\n\n  \n  \n  \n    \n      Installed solar capacity in Sweden\n    \n    \n      Year: 2021\n    \n    \n      Swedish county\n      Installed solar capacity (megawatts)\n    \n  \n  \n    Västra Götalands län\n266.21\n    Skåne län\n256.25\n    Stockholms län\n182.25\n    Östergötlands län\n106.81\n    Hallands län\n94.31\n    Jönköpings län\n88.53\n    Södermanlands län\n79.71\n    Uppsala län\n79.11\n    Kalmar län\n59.01\n    Västmanlands län\n49.45\n  \n  \n    \n      Source: Energimyndigheten"
   }
 ]

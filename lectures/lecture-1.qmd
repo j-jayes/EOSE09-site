@@ -294,114 +294,6 @@ spmap employment_share_industry using "nutscoord.dta"
 :::
 ::::
 
-
-
-## Using density plots to set your legend breaks
-
-Dataset: Solar panels in Sweden
-
-```{r}
-df <- read_rds(here::here("lectures", "lecture-1-resources", "solar_panels_se.rds"))
-
-df_lan <- df %>%
-  filter(
-    power_class == "Total",
-    nchar(region_code) == 2,
-    year == 2021,
-    region != "Riket"
-  ) %>%
-  rename(lan_name = region)
-
-df_lan %>%
-  select(lan_name, installed_capacity_mw) %>%
-  slice_max(installed_capacity_mw, n = 10) %>%
-  gt() %>%
-  cols_label(
-    lan_name = "Swedish county",
-    installed_capacity_mw = "Installed solar capacity (megawatts)"
-  ) %>%
-  tab_header(
-    title = md("**Installed solar capacity in Sweden**"),
-    subtitle = "Year: 2021"
-  ) %>%
-  tab_source_note(md("Source: [Energimyndigheten](https://www.energimyndigheten.se/)")) %>%
-  tab_options(
-    heading.title.font.size = 32,
-    table.font.size = 26,
-    source_notes.font.size = 20
-  ) %>%
-  as_raw_html(inline_css = TRUE)
-```
-
-## How to decide on values for the bins?
-
-Use a histogram or a density plot to see where the weight of the distribution is.
-
-```{r}
-#| fig-align: center
-
-df_lan %>%
-  ggplot(aes(installed_capacity_mw)) +
-  geom_histogram(bins = 8, fill = "midnightblue", alpha = .8) +
-  scale_y_continuous(labels = scales::number_format(accuracy = 1)) +
-  labs(
-    y = "Number of counties",
-    x = "Installed solar capacity (megawatts)"
-  )
-```
-
-```{r}
-#| warning: false
-#| message: false
-#| echo: false
-#| fig-align: center
-
-library(sf)
-
-map <- st_read(here::here("lectures", "lecture-1-resources", "maps", "sverige-lan-counties-of-sweden.shp"), quiet = TRUE) %>%
-  st_transform(crs = 4326) %>%
-  as_tibble() %>%
-  rename(lan_name = lan_namn)
-```
-
-## Map with appropriate breaks
-
-Ask your neighbour: 
-
-1. what kind of palette is this? 
-
-2. Is it appropriate to use with this data?
-
-```{r}
-#| fig-align: center
-countdown(minutes = 1, seconds = 0, play_sound = TRUE)
-
-
-df_map <- df_lan %>%
-  inner_join(map)
-
-df_map %>%
-  ggplot() +
-  geom_sf(aes(fill = installed_capacity_mw, geometry = geometry)) +
-  coord_sf() +
-  theme_map() +
-  # scale_fill_gradient2(
-  #   high = muted("red"),
-  #   mid = "pink",
-  #   low = muted("blue"),
-  #   midpoint = 100,
-  #   guide = "colourbar", aesthetics = "fill"
-  # ) +
-  scale_fill_binned(type = "viridis", labels = scales::number_format()) +
-  # theme_void() +
-  labs(
-    title = "Installed solar capacity in Sweden",
-    fill = "Installed capacity in megawatts"
-  )
-```
-
-
-
 ## Colour scales
 
 Uses of color in data visualization
@@ -761,6 +653,115 @@ df %>%
     colour = "Country"
   )
 ```
+
+
+
+## Using density plots to set your legend breaks: quick example
+
+Dataset: Solar panels in Sweden
+
+```{r}
+df <- read_rds(here::here("lectures", "lecture-1-resources", "solar_panels_se.rds"))
+
+df_lan <- df %>%
+  filter(
+    power_class == "Total",
+    nchar(region_code) == 2,
+    year == 2021,
+    region != "Riket"
+  ) %>%
+  rename(lan_name = region)
+
+df_lan %>%
+  select(lan_name, installed_capacity_mw) %>%
+  slice_max(installed_capacity_mw, n = 10) %>%
+  gt() %>%
+  cols_label(
+    lan_name = "Swedish county",
+    installed_capacity_mw = "Installed solar capacity (megawatts)"
+  ) %>%
+  tab_header(
+    title = md("**Installed solar capacity in Sweden**"),
+    subtitle = "Year: 2021"
+  ) %>%
+  tab_source_note(md("Source: [Energimyndigheten](https://www.energimyndigheten.se/)")) %>%
+  tab_options(
+    heading.title.font.size = 32,
+    table.font.size = 26,
+    source_notes.font.size = 20
+  ) %>%
+  as_raw_html(inline_css = TRUE)
+```
+
+## How to decide on values for the bins?
+
+Use a histogram or a density plot to see where the weight of the distribution is.
+
+```{r}
+#| fig-align: center
+
+df_lan %>%
+  ggplot(aes(installed_capacity_mw)) +
+  geom_histogram(bins = 8, fill = "midnightblue", alpha = .8) +
+  scale_y_continuous(labels = scales::number_format(accuracy = 1)) +
+  labs(
+    y = "Number of counties",
+    x = "Installed solar capacity (megawatts)"
+  )
+```
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+#| fig-align: center
+
+library(sf)
+
+map <- st_read(here::here("lectures", "lecture-1-resources", "maps", "sverige-lan-counties-of-sweden.shp"), quiet = TRUE) %>%
+  st_transform(crs = 4326) %>%
+  as_tibble() %>%
+  rename(lan_name = lan_namn)
+```
+
+## Map with appropriate breaks
+
+Ask your neighbour: 
+
+1. what kind of palette is this? 
+
+2. Is it appropriate to use with this data?
+
+```{r}
+#| fig-align: center
+countdown(minutes = 1, seconds = 0, play_sound = TRUE)
+
+
+df_map <- df_lan %>%
+  inner_join(map)
+
+df_map %>%
+  ggplot() +
+  geom_sf(aes(fill = installed_capacity_mw, geometry = geometry)) +
+  coord_sf() +
+  theme_map() +
+  # scale_fill_gradient2(
+  #   high = muted("red"),
+  #   mid = "pink",
+  #   low = muted("blue"),
+  #   midpoint = 100,
+  #   guide = "colourbar", aesthetics = "fill"
+  # ) +
+  scale_fill_binned(type = "viridis", labels = scales::number_format()) +
+  # theme_void() +
+  labs(
+    title = "Installed solar capacity in Sweden",
+    fill = "Installed capacity in megawatts"
+  )
+```
+
+
+
 
 ## {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
 
