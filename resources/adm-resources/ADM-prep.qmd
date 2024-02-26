@@ -11,6 +11,7 @@ Ingest and collect together the data from [here](https://ec.europa.eu/eurostat/c
 
 ```{r}
 library(tidyverse)
+library(readxl)
 ```
 
 Prep: these are the years for each series.
@@ -42,7 +43,7 @@ Function to get data.
 get_data <- function(f_name, sheet_name) {
   message("Getting data from ", f_name)
   
-  df <- readxl::read_excel(f_name)
+  df <- readxl::read_excel(f_name, range = cell_rows(1:333))
   
   df %>%
     select(-sortOrder) %>%
@@ -133,26 +134,35 @@ df %>%
   write_excel_csv2("resources/adm-resources/regions_illustrated_excel.csv")
 ```
 
+
+Fix Norway names
+
+```{r}
+df = df %>% 
+mutate(region = case_when(
+  str_detect(region, "2 016") ~ str_replace(region, "2 016", "2016"),
+  TRUE ~ region
+)) 
+```
+
+
 Make uniform with Roses and Wolf data
 
 ```{r}
 #| eval: false
 
-
-
 df_wide = df %>% 
 rename(nuts_code = code)  %>% 
 select(-c(stat_domain, year)) %>%
 distinct() %>%
-group_by(region, NUTS_CODE, country, indicator, period) %>%
+group_by(region, nuts_code, country, indicator, period) %>%
 slice(1) %>% 
 ungroup() %>%
 pivot_wider(names_from = indicator, values_from = value)  %>% janitor::clean_names()  %>% 
 filter(!is.na(nuts_code)) 
 
 df_wide %>% 
-count(nuts_code, country)
-
+count(nuts_code, country, sort = T)
 
 shorten_var_names <- function(df, max_length = 32) {
   # Get the column names

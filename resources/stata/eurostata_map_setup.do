@@ -11,7 +11,10 @@ use eurostat_data_wide, clear
 
 merge m:1 nuts_code using eurostat_regions
 
-spmap population_persons using "eurostat_nutscoord_stata.dta" if period == "late", id(_ID)
+drop if _ID == .
 
+drop if _merge != 3
+
+spmap population_persons using "eurostat_nutscoord_stata.dta" if period == "late", id(_ID)
 
 save eurostat_data_for_mapping, replace
