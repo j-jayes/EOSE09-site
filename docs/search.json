@@ -32,7 +32,7 @@
     "href": "index.html#resources",
     "title": "EOSE09 - Economy and Society: Regional Development and Growth",
     "section": "Resources",
-    "text": "Resources\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nJonathan Jayes\n\n\nMar 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChatGPT tips\n\n\n\n\n\n\nJonathan Jayes\n\n\nApr 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdditional Maps: Eurostat\n\n\n\n\n\n\nJonathan Jayes\n\n\nFeb 16, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nAdditional data: DOSE\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Resources\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nJonathan Jayes\n\n\nMar 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChatGPT tips\n\n\n\n\n\n\nJonathan Jayes\n\n\nApr 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdditional Maps: Eurostat\n\n\n\n\n\n\nJonathan Jayes\n\n\nFeb 26, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nAdditional data: DOSE\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBy request: dotted lines to indicate a region of interest\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "resources/resources.html",
@@ -901,5 +901,26 @@
     "title": "Data visualization",
     "section": "Using density plots to set your legend breaks: quick example",
     "text": "Using density plots to set your legend breaks: quick example\nDataset: Solar panels in Sweden\n\n\n\n\n  \n  \n  \n    \n      Installed solar capacity in Sweden\n    \n    \n      Year: 2021\n    \n    \n      Swedish county\n      Installed solar capacity (megawatts)\n    \n  \n  \n    Västra Götalands län\n266.21\n    Skåne län\n256.25\n    Stockholms län\n182.25\n    Östergötlands län\n106.81\n    Hallands län\n94.31\n    Jönköpings län\n88.53\n    Södermanlands län\n79.71\n    Uppsala län\n79.11\n    Kalmar län\n59.01\n    Västmanlands län\n49.45\n  \n  \n    \n      Source: Energimyndigheten"
+  },
+  {
+    "objectID": "resources/regions-dotted-line.html",
+    "href": "resources/regions-dotted-line.html",
+    "title": "By request: dotted lines to indicate a region of interest",
+    "section": "",
+    "text": "I have been asked to show how we can add a dotted line to a map to indicate a particular region of interest.\nYou can download the do file that goes along with this example here."
+  },
+  {
+    "objectID": "resources/regions-dotted-line.html#setup",
+    "href": "resources/regions-dotted-line.html#setup",
+    "title": "By request: dotted lines to indicate a region of interest",
+    "section": "Setup",
+    "text": "Setup\nFirst we need to set our working directory and load the data we will be using. We will be using the Roses and Wolf dataset and the NUTS coordinates dataset. These are the same ones that are in the lab 1 folder.\n\nclear all\nset more off\n\n# Set your own directory here\ncd \"/Users/jonathanjayes/Downloads/Lab-1/\"\n\n## Dotted lines around one region\nIf we want to indicate one region that we are interested in on the map, we can use the line option in the spmap command. This will allow us to draw a line around the region we are interested in, and we can customize it to be a dotted line.\nIn order to save the coordinates of a specific region, we read in the coordinates file, and then use the keep command to keep only the coordinates of the region we are interested in. We then save this as a new file.\nThen, we read in the original dataset again, and draw a choropleth map as we did in the previous examples. We then add a line with the line command, and customize it somewhat. We also add a caption to explain it. Sadly it is difficult to make another legend in Stata, so we cannot add a coloured legend for the line.\n\n# First we want to keep the coordinates of a region we are interested in\nuse \"nutscoord.dta\", clear\n\n# Here 183 is the ID for Sydsverige, we can find this with the browse command\nkeep if _ID == 183\n\n# Save these coordinates as another file\nsave nutscoord_sydsverige, replace\n\n\n# Using the original dataset again\nuse regional_dataset, clear\n\n# We add a line with the \"line\" command and customize it somewhat\n# We also add a caption to explain it. Sadly it is difficult to make another legend\nspmap regional_gdp_cap_1990 using \"nutscoord.dta\" if year == 1950 ///\n    & country == \"Sweden\", id(_ID) ///\n    line(data(\"nutscoord_sydsverige.dta\") size(2) color(red) pattern(shortdash)) ///\n    fcolor(Blues2) legend(pos(9)) legstyle(2) ///\n    title(\"Regional GDP per capita in Sweden - 1950\", size(medium)) ///\n    caption(\"Red dotted line indicates Sydsverige\") ///\n    osize(0.02 ..) ocolor(white ..) ///\n    clmethod(custom) clbreaks(5000 (1000) 9000)\n\nThis is what the map looks like:"
+  },
+  {
+    "objectID": "resources/regions-dotted-line.html#dotted-lines-around-multiple-regions",
+    "href": "resources/regions-dotted-line.html#dotted-lines-around-multiple-regions",
+    "title": "By request: dotted lines to indicate a region of interest",
+    "section": "Dotted lines around multiple regions",
+    "text": "Dotted lines around multiple regions\nSimilarly, we can add a dotted line around multiple regions. We can do this by keeping the coordinates of multiple regions, and then adding a line for each of them. We can also add a caption to explain it.\n\n# Read in the coordinated file\nuse \"nutscoord.dta\", clear\n\n# Here we keep two regions\nkeep if _ID == 161 | _ID == 183\n\n# Save it as another file\nsave nutscoord_stockholm_sydsverige, replace\n\n# Going back to original dataset\nuse regional_dataset, clear\n\nspmap regional_gdp_cap_1990 using \"nutscoord.dta\" if year == 1950 ///\n    & country == \"Sweden\", id(_ID) ///\n    line(data(\"nutscoord_stockholm_sydsverige.dta\") size(2) color(green) pattern(shortdash)) ///\n    fcolor(Blues2) legend(pos(9)) legstyle(2) ///\n    title(\"Regional GDP per capita in Sweden - 1950\", size(medium)) ///\n    caption(\"Green dotted line indicates Stockholm and Sydsverige\") ///\n    osize(0.02 ..) ocolor(white ..) ///\n    clmethod(custom) clbreaks(5000 (1000) 9000)"
   }
 ]
