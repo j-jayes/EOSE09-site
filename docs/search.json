@@ -32,7 +32,7 @@
     "href": "index.html#resources",
     "title": "EOSE09 - Economy and Society: Regional Development and Growth",
     "section": "Resources",
-    "text": "Resources\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nJonathan Jayes\n\n\nMar 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChatGPT tips\n\n\n\n\n\n\nJonathan Jayes\n\n\nApr 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdditional Maps: Eurostat\n\n\n\n\n\n\nJonathan Jayes\n\n\nFeb 26, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nAdditional data: DOSE\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBy request: dotted lines to indicate a region of interest\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Resources\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nJonathan Jayes\n\n\nMar 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChatGPT tips\n\n\n\n\n\n\nJonathan Jayes\n\n\nApr 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdditional Maps: Eurostat\n\n\n\n\n\n\nJonathan Jayes\n\n\nFeb 26, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nBeta-convergence\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdditional data: DOSE\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBy request: dotted lines to indicate a region of interest\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "resources/resources.html",
@@ -922,5 +922,61 @@
     "title": "By request: dotted lines to indicate a region of interest",
     "section": "Dotted lines around multiple regions",
     "text": "Dotted lines around multiple regions\nSimilarly, we can add a dotted line around multiple regions. We can do this by keeping the coordinates of multiple regions, and then adding a line for each of them. We can also add a caption to explain it.\n\n# Read in the coordinated file\nuse \"nutscoord.dta\", clear\n\n# Here we keep two regions\nkeep if _ID == 161 | _ID == 183\n\n# Save it as another file\nsave nutscoord_stockholm_sydsverige, replace\n\n# Going back to original dataset\nuse regional_dataset, clear\n\nspmap regional_gdp_cap_1990 using \"nutscoord.dta\" if year == 1950 ///\n    & country == \"Sweden\", id(_ID) ///\n    line(data(\"nutscoord_stockholm_sydsverige.dta\") size(2) color(green) pattern(shortdash)) ///\n    fcolor(Blues2) legend(pos(9)) legstyle(2) ///\n    title(\"Regional GDP per capita in Sweden - 1950\", size(medium)) ///\n    caption(\"Green dotted line indicates Stockholm and Sydsverige\") ///\n    osize(0.02 ..) ocolor(white ..) ///\n    clmethod(custom) clbreaks(5000 (1000) 9000)"
+  },
+  {
+    "objectID": "resources/beta-convergence.html",
+    "href": "resources/beta-convergence.html",
+    "title": "Beta-convergence",
+    "section": "",
+    "text": "In your lectures you have seen that within a country, the poorer regions tend to grow faster than the richer regions. This is known as beta-convergence, or sometimes the “catch-up effect”.\nIn this exercise, we will look at the data and see if we can find evidence of beta-convergence Germany since 1950. (Technically, we are looking at unconditional beta-convergence, as distinct from conditional beta-convergence, which holds the investment rate and the population growth rate constant).\nYou can download the do-file for this exercise here."
+  },
+  {
+    "objectID": "resources/beta-convergence.html#setup",
+    "href": "resources/beta-convergence.html#setup",
+    "title": "Beta-convergence",
+    "section": "Setup",
+    "text": "Setup\nFirst we need to set our working directory and load the data we will be using. We will use the Roses and Wolf dataset that you have used in the previous labs and exercises.\n\nclear all\nset more off\n\n# Set your own directory here\ncd \"/Users/jonathanjayes/Downloads/Lab-1/\"\n\n# Read in the data\nuse regional_dataset, clear"
+  },
+  {
+    "objectID": "resources/beta-convergence.html#beta-convergence-graph-with-labels",
+    "href": "resources/beta-convergence.html#beta-convergence-graph-with-labels",
+    "title": "Beta-convergence",
+    "section": "Beta-convergence graph with labels",
+    "text": "Beta-convergence graph with labels\nWe can also add labels to the points in the graph. We do this by adding the mlabel option to the scatter command. This can help us identify which regions of interest are which.\n\ngen region_labels = region if region == \"Berlin\" | region == \"Schleswig-Holstein\" | region == \"Hamburg\"\n\n# Then draw the graph with two lines through out scatter points. Label the points\ntwoway (scatter mean_growth_rate log_gdp_pc, mlabel(region_labels)) ///\n (lfit mean_growth_rate log_gdp_pc, legend(label(1 \"NUTS2 Regions\") label(2 \"Linear regression line\"))) ///\n, title(\"Beta-convergence plot\") subtitle(\"Germany 1950 - 2015\") ytitle(\"Average growth rate since 1950\") ///\nxtitle(\"Initial GDP per capita (logged)\")"
+  },
+  {
+    "objectID": "resources/beta-convergence.html#calculating-growth-rates",
+    "href": "resources/beta-convergence.html#calculating-growth-rates",
+    "title": "Beta-convergence",
+    "section": "Calculating growth rates",
+    "text": "Calculating growth rates\nWe will start by calculating the growth rates of the GDP per capita (in levels) for each region in Germany for each time period in our dataset.\nThere are a few ways to calculate growth rates. I choose to show two: the method suggested in Roses and Wolf (2018) - the average growth rate method - and the compound annual growth rate (CAGR) method.\nIn Chapter 2: Regional Economic Development in Europe, 1900-2010, A description of the patterns your textbook reads: “The general approach is to regress the average annual growth rate in GDP per capita of a region over some period on the level of GDP per capita at the beginning of the period (in logs)” (p. 22).\nWe do this by taking the variable GDP per capita in 1990 dollars and then calculating the growth rate by taking the difference between GDP per capita in year t and GDP per capita in year t-1, dividing by GDP per capita in year t-1, and then multiplying by the difference in years to get an annual growth rate in each period.\nWe will then calculate the average growth rate by taking the mean of the growth rates for each region.\n\n# Step 1: generate log GDP per capita variable for use later\ngen log_gdp_pc = log(regional_gdp_cap_1990)\n \nkeep if country == \"Germany\"\n\n# Step 2: calculate the growth in GDP per capita from 1950 onwards\nkeep if year &gt;= 1950\n\n# xtset tells Stata we will do time series operations\nxtset _ID year\n\n# Generate the growth rate by taking the difference between GDP per capita in year t and GDP per capita in year t-1, dividing by GDP per capita in year t-1, and then multiplying by the difference in years to get an annual growth rate in each period.\nbysort _ID (year): gen growth_regional_gdp_cap_1990 = (regional_gdp_cap_1990[_n]-regional_gdp_cap_1990[_n-1]) / (regional_gdp_cap_1990[_n-1] * (year - year[_n-1]))\n\n# Take the mean of the growth rates for each region\nbysort _ID: egen mean_growth_rate = mean(growth_regional_gdp_cap_1990)\n\n# Step 3: save the GDP per capita from 1950\nkeep if year == 1950"
+  },
+  {
+    "objectID": "resources/beta-convergence.html#beta-convergence-plot",
+    "href": "resources/beta-convergence.html#beta-convergence-plot",
+    "title": "Beta-convergence",
+    "section": "Beta-convergence plot",
+    "text": "Beta-convergence plot\nHere we draw a scatterplot with the mean growth rate on the y-axis and the initial GDP per capita (logged) on the x-axis. We also add a linear regression line to the graph.\nWe use the twoway command to draw the graph. The scatter option tells Stata to draw a scatter plot, and the lfit option tells Stata to draw a linear regression line. We also add a title and subtitle to the graph, and label the axes.\n\n# Then draw the graph with a scatter plot and a linear regression line.\ntwoway (scatter mean_growth_rate log_gdp_pc) ///\n (lfit mean_growth_rate log_gdp_pc, legend(label(1 \"NUTS2 Regions\") label(2 \"Linear regression line\"))) ///\n, title(\"Beta-convergence plot\") subtitle(\"Germany 1950 - 2015\") ytitle(\"Average growth rate since 1950\") ///\nxtitle(\"Initial GDP per capita (logged)\")"
+  },
+  {
+    "objectID": "resources/beta-convergence.html#compound-annual-growth-rate-method",
+    "href": "resources/beta-convergence.html#compound-annual-growth-rate-method",
+    "title": "Beta-convergence",
+    "section": "Compound annual growth rate method",
+    "text": "Compound annual growth rate method\nWe can also calculate the growth rates using the compound annual growth rate (CAGR) method. This is a common method for calculating growth rates.\nThe formula for the compound annual growth rate is:\n\\[CAGR = \\left(\\frac{V_f}{V_i}\\right)^{\\frac{1}{n}} - 1\\]\nWhere \\(V_f\\) is the final value, \\(V_i\\) is the initial value, and \\(n\\) is the number of periods.\nHere we calculate the CAGR for each region in Germany:\nWe start by keeping only the data for Germany and the years 1950 and 2015. We then reshape the data to make it wide. This creates two new variables, log_gdp_pc1950 and log_gdp_pc2015, which we use to calculate the CAGR for each region. We then calculate the CAGR for each region and scale it to percentage for a more sensible y-axis in the plot below.\n\n# Read in the data\nuse regional_dataset, clear\n\n\n# Step 1: generate log GDP per capita variable\ngen log_gdp_pc = log(regional_gdp_cap_1990)\n \n# Step 2: calculate the growth in GDP per capita from 1950 onwards\nkeep if country == \"Germany\"\n\nkeep if year == 1950 | year == 2015\n\nkeep region year log_gdp_pc _ID\n\n# Make data wide so that we can \nreshape wide log_gdp_pc, i(_ID) j(year)\n\ngenerate cagr = (exp(log(log_gdp_pc2015/log_gdp_pc1950)/65)) - 1\n\n# Step 3: scale to percentage for a more sensible y-axis in plot below\nreplace cagr = cagr * 100"
+  },
+  {
+    "objectID": "resources/beta-convergence.html#beta-convergence-plot-with-cagr",
+    "href": "resources/beta-convergence.html#beta-convergence-plot-with-cagr",
+    "title": "Beta-convergence",
+    "section": "Beta-convergence plot with CAGR",
+    "text": "Beta-convergence plot with CAGR\nWe can now draw a scatterplot with the CAGR on the y-axis and the initial GDP per capita (logged) on the x-axis. We also add a linear regression line to the graph.\n\nAgain we can add labels to the points in the graph. We do this by adding the mlabel option to the scatter command. This can help us identify which regions of interest are which."
+  },
+  {
+    "objectID": "resources/beta-convergence.html#which-method-to-use-to-calculate-growth-rates",
+    "href": "resources/beta-convergence.html#which-method-to-use-to-calculate-growth-rates",
+    "title": "Beta-convergence",
+    "section": "Which method to use to calculate growth rates?",
+    "text": "Which method to use to calculate growth rates?\nThe two methods give us slightly different results, but the overall pattern is the same. The CAGR method is more commonly used, but the average growth rate method is also valid. The CAGR method is more sensitive to the start and end years, so it is important to choose the start and end years carefully."
   }
 ]
