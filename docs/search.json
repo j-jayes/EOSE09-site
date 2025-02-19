@@ -32,7 +32,7 @@
     "href": "index.html#resources",
     "title": "EOSE09 - Economy and Society: Regional Development and Growth",
     "section": "Resources",
-    "text": "Resources\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nJonathan Jayes\n\n\nMar 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdditional Data: Eurostat\n\n\n\n\n\n\nJonathan Jayes\n\n\nFeb 19, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nHow to install Stata on your personal computers\n\n\n\n\n\n\n\n\n\nFeb 19, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nBeta-convergence\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdditional Data: DOSE\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBy request: dotted lines to indicate a region of interest\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Resources\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nJonathan Jayes\n\n\nMar 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdditional Data: Eurostat\n\n\n\n\n\n\nJonathan Jayes\n\n\nFeb 19, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nHow to install Stata on your personal computers\n\n\n\n\n\n\n\n\n\nFeb 19, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nLab 1: Slides on Lab Paper\n\n\n\n\n\n\n\n\n\nFeb 19, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nBeta-convergence\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdditional Data: DOSE\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBy request: dotted lines to indicate a region of interest\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "resources/resources.html",
@@ -437,15 +437,15 @@
     "objectID": "lectures/lecture-1.html#purpose",
     "href": "lectures/lecture-1.html#purpose",
     "title": "Data visualization",
-    "section": "Purpose",
-    "text": "Purpose\n\n\n\nGet you excited about storytelling with data\nShow some tips and tricks to make your maps and charts pop\n\n\n\n\n\n\nHans Rosling’s the best stats you’ve ever seen\n\n\n\nThis is not about the software. Rather, it is about the theory behind communicating well with data"
+    "section": "",
+    "text": "Get you excited about storytelling with data\nShow some tips and tricks to make your maps and charts pop\n\n\n\n\n\n\nHans Rosling’s the best stats you’ve ever seen\n\n\n\n\nThis is not about the software. Rather, it is about the theory behind communicating well with data"
   },
   {
     "objectID": "lectures/lecture-1.html#structure",
     "href": "lectures/lecture-1.html#structure",
     "title": "Data visualization",
     "section": "Structure",
-    "text": "Structure\n\n\n\nImproving your maps\nOvercoming Excel\nTelling a story with data\nReproducing figures for publication\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA cartoon in the style of Aardman Animations depicting an animatronic computer fighting with a spreadsheet, vibrant green lighting"
+    "text": "Structure\n\n\n\nImproving your maps\nOvercoming Excel\nTelling a story with data\nReproducing figures for publication\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA cartoon in the style of Aardman Animations depicting an animatronic computer fighting with a spreadsheet, vibrant green lighting"
   },
   {
     "objectID": "lectures/lecture-1.html#everything-is-a-story",
@@ -466,7 +466,7 @@
     "href": "lectures/lecture-1.html#our-story-circle",
     "title": "Data visualization",
     "section": "Our Story Circle",
-    "text": "Our Story Circle\n\n\nZone of comfort: Data in excel\nWant something: to be better at communicating with your data\nEnter an unfamiliar situation: Looking closely at maps and charts\nAdapt to it: Practice discussing the differences\nGet what they wanted: Banging chart skills\nPay a heavy price: Hard to concentrate - relax with an inspiring video\nReturn to familiar situation: your projects\nHaving changed: I hope you learn something."
+    "text": "Our Story Circle\n\n\n\n\n\n\n\n\n\n\nZone of comfort: Data in excel\nWant something: to be better at communicating with your data\nEnter an unfamiliar situation: Looking closely at maps and charts\nAdapt to it: Practice discussing the differences\nGet what they wanted: Banging chart skills\nPay a heavy price: Hard to concentrate - relax with an inspiring video\nReturn to familiar situation: your projects\nHaving changed: I hope you learn something."
   },
   {
     "objectID": "lectures/lecture-1.html#section",
@@ -487,7 +487,7 @@
     "href": "lectures/lecture-1.html#recap-from-lab-1-exercies-1",
     "title": "Data visualization",
     "section": "Recap from Lab 1 exercies",
-    "text": "Recap from Lab 1 exercies\n\nWhat is wrong with this map? 🗺️"
+    "text": "Recap from Lab 1 exercies\n\n\nWhat is wrong with this map? 🗺️"
   },
   {
     "objectID": "lectures/lecture-1.html#recap-from-lab-1-exercies-2",
@@ -522,28 +522,28 @@
     "href": "lectures/lecture-1.html#colour-scales",
     "title": "Data visualization",
     "section": "Colour scales",
-    "text": "Colour scales\nUses of color in data visualization\n\n\n\n\n\nDistinguish categories (qualitative)"
+    "text": "Colour scales\nUses of color in data visualization\n. . .\n\n\n\n\nDistinguish categories (qualitative)"
   },
   {
     "objectID": "lectures/lecture-1.html#qualitative-scale-example",
     "href": "lectures/lecture-1.html#qualitative-scale-example",
     "title": "Data visualization",
     "section": "Qualitative scale example",
-    "text": "Qualitative scale example\n\nPalette name: Okabe-Ito"
+    "text": "Qualitative scale example\n\n\n\n\n\n\n\n\n\nPalette name: Okabe-Ito"
   },
   {
     "objectID": "lectures/lecture-1.html#qualitative-scale-example-1",
     "href": "lectures/lecture-1.html#qualitative-scale-example-1",
     "title": "Data visualization",
     "section": "Qualitative scale example",
-    "text": "Qualitative scale example\n\nPalette name: Brewer Set1"
+    "text": "Qualitative scale example\n\n\n\n\n\n\n\n\n\nPalette name: Brewer Set1"
   },
   {
     "objectID": "lectures/lecture-1.html#qualitative-scale-example-2",
     "href": "lectures/lecture-1.html#qualitative-scale-example-2",
     "title": "Data visualization",
     "section": "Qualitative scale example",
-    "text": "Qualitative scale example\n\nPalette name: Brewer Dark2"
+    "text": "Qualitative scale example\n\n\n\n\n\n\n\n\n\nPalette name: Brewer Dark2"
   },
   {
     "objectID": "lectures/lecture-1.html#uses-of-color-in-data-visualization",
@@ -557,14 +557,14 @@
     "href": "lectures/lecture-1.html#sequential-scale-example",
     "title": "Data visualization",
     "section": "Sequential scale example",
-    "text": "Sequential scale example\n\nPalette name: inferno"
+    "text": "Sequential scale example\n\n\n\n\n\n\n\n\n\nPalette name: inferno"
   },
   {
     "objectID": "lectures/lecture-1.html#sequential-scale-example-1",
     "href": "lectures/lecture-1.html#sequential-scale-example-1",
     "title": "Data visualization",
     "section": "Sequential scale example",
-    "text": "Sequential scale example\n\nPalette name: viridis"
+    "text": "Sequential scale example\n\n\n\n\n\n\n\n\n\nPalette name: viridis"
   },
   {
     "objectID": "lectures/lecture-1.html#uses-of-color-in-data-visualization-1",
@@ -627,14 +627,14 @@
     "href": "lectures/lecture-1.html#examples-of-great-maps",
     "title": "Data visualization",
     "section": "Examples of great maps",
-    "text": "Examples of great maps\nFinancial Times analysis of Italian election results in 2018\n\n\nMaps work best when they show an emerging spatial pattern, as was the case with this map from the recent Italian elections.\nShowing the winner at municipality level clearly shows the political divisions in the country. In the north, the Northern League party triumphed largely on the back of an anti-immigration and anti-EU agenda. In the south, the anti-establishment Five Star Movement was even more successful, gaining a majority of votes in many areas"
+    "text": "Examples of great maps\nFinancial Times analysis of Italian election results in 2018\n\n\n\n\n\n\n\n\n\n\nMaps work best when they show an emerging spatial pattern, as was the case with this map from the recent Italian elections.\nShowing the winner at municipality level clearly shows the political divisions in the country. In the north, the Northern League party triumphed largely on the back of an anti-immigration and anti-EU agenda. In the south, the anti-establishment Five Star Movement was even more successful, gaining a majority of votes in many areas"
   },
   {
     "objectID": "lectures/lecture-1.html#examples-of-great-maps-1",
     "href": "lectures/lecture-1.html#examples-of-great-maps-1",
     "title": "Data visualization",
     "section": "Examples of great maps",
-    "text": "Examples of great maps\nFinancial Times analysis of Italian election results in 2018\n\n\nAnother interesting take on the results was to show the per cent share of vote. This helped to emphasise just how strong the support was for the two parties."
+    "text": "Examples of great maps\nFinancial Times analysis of Italian election results in 2018\n\n\n\n\n\n\n\n\n\n\nAnother interesting take on the results was to show the per cent share of vote. This helped to emphasise just how strong the support was for the two parties."
   },
   {
     "objectID": "lectures/lecture-1.html#examples-of-great-maps-2",
@@ -662,21 +662,21 @@
     "href": "lectures/lecture-1.html#overcoming-excel",
     "title": "Data visualization",
     "section": "Overcoming Excel",
-    "text": "Overcoming Excel\n\n\n\nExcel itself is not a bad tool.\nIt is very popular! See the info on jobs that require it."
+    "text": "Overcoming Excel\n\n\n\n\n\n\n\n\n\n\n\nExcel itself is not a bad tool.\nIt is very popular! See the info on jobs that require it."
   },
   {
     "objectID": "lectures/lecture-1.html#overcoming-excel-1",
     "href": "lectures/lecture-1.html#overcoming-excel-1",
     "title": "Data visualization",
     "section": "Overcoming Excel",
-    "text": "Overcoming Excel\n\n\nFormby et al (2017) Microsoft Excel: Is It An Important Job Skill for College Graduates?"
+    "text": "Overcoming Excel\n\n\n\n\n\n\n\n\n\n\nFormby et al (2017) Microsoft Excel: Is It An Important Job Skill for College Graduates?"
   },
   {
     "objectID": "lectures/lecture-1.html#overcoming-excel-2",
     "href": "lectures/lecture-1.html#overcoming-excel-2",
     "title": "Data visualization",
     "section": "Overcoming Excel",
-    "text": "Overcoming Excel\n\nTakeaways:\n\n\n\nYou will likely use Excel in the future 📊\nExcel’s default plots and tables can be improved upon 📈\nSimple rules can help you make your message clear 💎"
+    "text": "Overcoming Excel\n\n\nTakeaways:\n\n\n\nYou will likely use Excel in the future 📊\nExcel’s default plots and tables can be improved upon 📈\nSimple rules can help you make your message clear 💎"
   },
   {
     "objectID": "lectures/lecture-1.html#section-3",
@@ -697,56 +697,56 @@
     "href": "lectures/lecture-1.html#your-turn",
     "title": "Data visualization",
     "section": "Your turn",
-    "text": "Your turn\n\n\n\n−+\n02:30\n\n\n\n\nDiscuss with your neighbour:\n\nWhat do we like?\nWhat is confusing?"
+    "text": "Your turn\n\n\n\n−+\n02:30\n\n\n\n\n\n\n\n\n\n\n\n\nDiscuss with your neighbour:\n\nWhat do we like?\nWhat is confusing?"
   },
   {
     "objectID": "lectures/lecture-1.html#tip-1-avoid-rotated-axis-labels",
     "href": "lectures/lecture-1.html#tip-1-avoid-rotated-axis-labels",
     "title": "Data visualization",
     "section": "Tip 1: Avoid rotated axis labels",
-    "text": "Tip 1: Avoid rotated axis labels\nUgly 🤢"
+    "text": "Tip 1: Avoid rotated axis labels\n\nUgly 🤢"
   },
   {
     "objectID": "lectures/lecture-1.html#tip-1-avoid-rotated-axis-labels-1",
     "href": "lectures/lecture-1.html#tip-1-avoid-rotated-axis-labels-1",
     "title": "Data visualization",
     "section": "Tip 1: Avoid rotated axis labels",
-    "text": "Tip 1: Avoid rotated axis labels\nFlip axes so that the text is easier to read 👓"
+    "text": "Tip 1: Avoid rotated axis labels\n\nFlip axes so that the text is easier to read 👓"
   },
   {
     "objectID": "lectures/lecture-1.html#tip-2-pay-attention-to-the-order-of-the-bars",
     "href": "lectures/lecture-1.html#tip-2-pay-attention-to-the-order-of-the-bars",
     "title": "Data visualization",
     "section": "Tip 2: Pay attention to the order of the bars",
-    "text": "Tip 2: Pay attention to the order of the bars\nBad 👎"
+    "text": "Tip 2: Pay attention to the order of the bars\n\nBad 👎"
   },
   {
     "objectID": "lectures/lecture-1.html#tip-2-pay-attention-to-the-order-of-the-bars-1",
     "href": "lectures/lecture-1.html#tip-2-pay-attention-to-the-order-of-the-bars-1",
     "title": "Data visualization",
     "section": "Tip 2: Pay attention to the order of the bars",
-    "text": "Tip 2: Pay attention to the order of the bars\nIt is clear that José González recieves more streams than Robyn"
+    "text": "Tip 2: Pay attention to the order of the bars\n\nIt is clear that José González recieves more streams than Robyn"
   },
   {
     "objectID": "lectures/lecture-1.html#tip-3-consider-your-titles-labels-and-axes",
     "href": "lectures/lecture-1.html#tip-3-consider-your-titles-labels-and-axes",
     "title": "Data visualization",
     "section": "Tip 3: Consider your titles, labels and axes",
-    "text": "Tip 3: Consider your titles, labels and axes\nUninformative️ ❗"
+    "text": "Tip 3: Consider your titles, labels and axes\n\nUninformative️ ❗"
   },
   {
     "objectID": "lectures/lecture-1.html#tip-3-consider-your-titles-labels-and-axes-1",
     "href": "lectures/lecture-1.html#tip-3-consider-your-titles-labels-and-axes-1",
     "title": "Data visualization",
     "section": "Tip 3: Consider your titles, labels and axes",
-    "text": "Tip 3: Consider your titles, labels and axes\nNote the title, x-axis title, x-axis labels 📙"
+    "text": "Tip 3: Consider your titles, labels and axes\n\nNote the title, x-axis title, x-axis labels 📙"
   },
   {
     "objectID": "lectures/lecture-1.html#tip-3-consider-your-titles-labels-and-axes-2",
     "href": "lectures/lecture-1.html#tip-3-consider-your-titles-labels-and-axes-2",
     "title": "Data visualization",
     "section": "Tip 3: Consider your titles, labels and axes",
-    "text": "Tip 3: Consider your titles, labels and axes\nTitles and captions have different application areas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Monthly streams for Swedish musical artists. Data sources: Spotify charts in November 2022"
+    "text": "Tip 3: Consider your titles, labels and axes\n\nTitles and captions have different application areas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Monthly streams for Swedish musical artists. Data sources: Spotify charts in November 2022"
   },
   {
     "objectID": "lectures/lecture-1.html#we-can-use-dots-instead-of-bars",
@@ -774,14 +774,14 @@
     "href": "lectures/lecture-1.html#dots-are-preferable-if-we-want-to-truncate-the-axes-1",
     "title": "Data visualization",
     "section": "Dots are preferable if we want to truncate the axes",
-    "text": "Dots are preferable if we want to truncate the axes\n\n\nBar lengths donot accuratelyrepresent thedata values"
+    "text": "Dots are preferable if we want to truncate the axes\n\n\n\n\n\n\n\n\n\n\nBar lengths donot accuratelyrepresent thedata values"
   },
   {
     "objectID": "lectures/lecture-1.html#dots-are-preferable-if-we-want-to-truncate-the-axes-2",
     "href": "lectures/lecture-1.html#dots-are-preferable-if-we-want-to-truncate-the-axes-2",
     "title": "Data visualization",
     "section": "Dots are preferable if we want to truncate the axes",
-    "text": "Dots are preferable if we want to truncate the axes\n\n\nKey featuresof the dataare obscured"
+    "text": "Dots are preferable if we want to truncate the axes\n\n\n\n\n\n\n\n\n\n\nKey featuresof the dataare obscured"
   },
   {
     "objectID": "lectures/lecture-1.html#dots-are-preferable-if-we-want-to-truncate-the-axes-3",
@@ -809,7 +809,7 @@
     "href": "lectures/lecture-1.html#your-turn-again",
     "title": "Data visualization",
     "section": "Your turn again",
-    "text": "Your turn again\n\n\n\n−+\n02:30\n\n\n\n\nDiscuss with your neighbour:\n\nWhat do we like?\nWhat is confusing?"
+    "text": "Your turn again\n\n\n\n−+\n02:30\n\n\n\n\n\n\n\n\n\n\n\n\nDiscuss with your neighbour:\n\nWhat do we like?\nWhat is confusing?"
   },
   {
     "objectID": "lectures/lecture-1.html#section-5",
@@ -851,7 +851,7 @@
     "href": "lectures/lecture-1.html#plotting-related-time-series-1",
     "title": "Data visualization",
     "section": "Plotting related time series",
-    "text": "Plotting related time series\n\n\n\n\n\n\n\n\n\n\n\n\n\nPros 👍\n\nFamiliar\n\nCons 👎\n\nHard to keep track of each series\nDifficult to compare movements across short periods"
+    "text": "Plotting related time series\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPros 👍\n\nFamiliar\n\n\n\nCons 👎\n\nHard to keep track of each series\nDifficult to compare movements across short periods"
   },
   {
     "objectID": "lectures/lecture-1.html#an-alternative-time-on-a-third-axis",
@@ -949,7 +949,7 @@
     "href": "lectures/lecture-1.html#recreating-published-figures",
     "title": "Data visualization",
     "section": "Recreating published figures",
-    "text": "Recreating published figures\n\nA FT chart published without the underlying data"
+    "text": "Recreating published figures\n\n\n\n\n\nA FT chart published without the underlying data"
   },
   {
     "objectID": "lectures/lecture-1.html#recreating-published-figures-1",
@@ -978,5 +978,19 @@
     "title": "Data visualization",
     "section": "Additional data demo",
     "text": "Additional data demo"
+  },
+  {
+    "objectID": "resources/lab-1-slides.html",
+    "href": "resources/lab-1-slides.html",
+    "title": "Lab 1: Slides on Lab Paper",
+    "section": "",
+    "text": "Here is a link to the slides that we spoke through in the lab session today, detailing what is expected for the lab paper.\nDownload them at the link below the image.\n\n\n\nLab 1 Slides"
+  },
+  {
+    "objectID": "lectures/lecture-1.html",
+    "href": "lectures/lecture-1.html",
+    "title": "Data visualization",
+    "section": "",
+    "text": "Get you excited about storytelling with data\nShow some tips and tricks to make your maps and charts pop\n\n\n\n\n\n\nHans Rosling’s the best stats you’ve ever seen\n\n\n\n\nThis is not about the software. Rather, it is about the theory behind communicating well with data"
   }
 ]

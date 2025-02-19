@@ -1,0 +1,11 @@
+---
+title: "Lab 1: Slides on Lab Paper"
+format: html
+date: today
+---
+
+Here is a link to the slides that we spoke through in the lab session today, detailing what is expected for the lab paper.
+
+Download them at the link below the image.
+
+![[Lab 1 Slides](../labs/Lab-1-slides.pdf)](slides-image.png)
