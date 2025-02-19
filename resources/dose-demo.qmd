@@ -1,5 +1,5 @@
 ---
-title: "Additional data: DOSE"
+title: "Additional Data: DOSE"
 format: html
 execute: 
   eval: true

@@ -1,5 +1,5 @@
 ---
-title: "Additional Maps: Eurostat"
+title: "Additional Data: Eurostat"
 image: "resource_logo_2.png"
 author: "Jonathan Jayes"
 date: today
