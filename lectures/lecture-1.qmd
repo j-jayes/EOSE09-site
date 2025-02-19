@@ -776,7 +776,7 @@ df_map %>%
 
 ## Examples of great maps
 
-[Financial Times analysis of Italian election results](https://www.ft.com/content/35188c6a-4870-11e8-8ee8-cae73aab7ccb)
+[Financial Times analysis of Italian election results in 2018](https://www.ft.com/content/35188c6a-4870-11e8-8ee8-cae73aab7ccb)
 
 ```{r}
 #| fig-align: center
@@ -792,7 +792,7 @@ Showing the winner at municipality level clearly shows the political divisions i
 
 ## Examples of great maps
 
-[Financial Times analysis of Italian election results](https://www.ft.com/content/35188c6a-4870-11e8-8ee8-cae73aab7ccb)
+[Financial Times analysis of Italian election results in 2018](https://www.ft.com/content/35188c6a-4870-11e8-8ee8-cae73aab7ccb)
 
 ```{r}
 #| fig-align: center

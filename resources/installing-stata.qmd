@@ -1,0 +1,41 @@
+---
+title: "How to install Stata on your personal computers"
+format: html
+date: today
+---
+
+This is a guide for downloading and installing Stata on your personal computer.
+
+## Step 1: Go to LU software downloads page
+
+The page can be found [here](https://www.lunduniversity.lu.se/current-students/student-services-and-support/it-resources-and-assistance/software).
+
+It looks like this (in English):
+
+![Software downloads page](installing-stata/01-lu-software.png)
+
+## Step 2: Log in to the LU service desk programme portal at the bottom of the page
+
+You need to be connected to the LU network to access this page, or the LU VPN I believe. Here is the link to the [LU service desk programme portal](https://program.ldc.lu.se/).
+
+![Service desk portal](installing-stata/02-stata-link.png)
+
+## Step 3: Log in with your LU credentials
+
+You will be asked to log in with your student account.
+
+![Log in](installing-stata/03-log-in.png)
+
+## Step 4: Download Stata and the license file (.pdf)
+
+You will be able to download Stata and the license file from the page that opens after you log in and select your operating system.
+
+![Download Stata and the license file](installing-stata/04-download-stata.png)
+
+## Step 5: Install Stata
+
+Run the installer and follow the instructions. You will be asked to enter the license and authorization code from the license file you downloaded.
+
+When installed correctly, it should look like this, noting when the license expires:
+
+![Stata installed correctly](installing-stata/05-license.png)

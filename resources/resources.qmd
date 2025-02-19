@@ -5,7 +5,7 @@ author: "Jonathan Jayes"
 date: 2023-03-30
 ---
 
-🔥 Welcome to our page of resources for learning Stata, the powerful econometrics software used by researchers and analysts in many fields. 📚 Here you will find a variety of materials to help you get started and become proficient in using Stata, including tutorials, documentation, and examples.🤓 Whether you're a beginner or an experienced user, these resources will help you make the most of this powerful tool💻📊.
+📚 Here you will find a variety of materials to help you get started and become proficient in using Stata, including tutorials, documentation, and examples.🤓💻📊.
 
 ### Stata commands
 

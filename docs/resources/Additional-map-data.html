@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jonathan Jayes">
-<meta name="dcterms.date" content="2024-02-26">
+<meta name="dcterms.date" content="2025-02-19">
 
-<title> - Additional Maps: Eurostat</title>
+<title>Additional Maps: Eurostat – </title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,7 +24,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -84,7 +84,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -93,6 +99,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -107,35 +114,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title"><i class="fa-solid fa-map" aria-label="map"></i></span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../lectures/lecture-1.html" rel="" target="">
- <span class="menu-text">Lecture 1</span></a>
+    <a class="nav-link" href="../lectures/lecture-1.html"> 
+<span class="menu-text">Lecture 1</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../labs/Lab-1.html" rel="" target="">
- <span class="menu-text">Lab 1</span></a>
+    <a class="nav-link" href="../labs/Lab-1.html"> 
+<span class="menu-text">Lab 1</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../labs/Lab-2.html" rel="" target="">
- <span class="menu-text">Lab 2</span></a>
+    <a class="nav-link" href="../labs/Lab-2.html"> 
+<span class="menu-text">Lab 2</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -176,7 +183,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 26, 2024</p>
+      <p class="date">February 19, 2025</p>
     </div>
   </div>
   
@@ -184,7 +191,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <p>In addition to the database that we have used so far, we can introduce more data from Eurostat.</p>
 <p>You can have a look at their nice interactive web-based tool <a href="https://ec.europa.eu/eurostat/cache/RCI/#?vis=nuts2.scitech&amp;lang=en">here or in the iframe below</a>.</p>
@@ -205,7 +214,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="series">Series</h2>
 <div class="cell">
 <div class="cell-output-display">
-
 <div id="kygshceqtn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#kygshceqtn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -646,169 +654,413 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="1" class="gt_heading gt_title gt_font_normal gt_bottom_border" style=""><strong>List of indicators</strong></td>
-    </tr>
-    
-    
-  </thead>
-  <tbody class="gt_table_body">
-    <tr class="gt_group_heading_row">
-      <th colspan="1" class="gt_group_heading" style="background-color: #191970; color: #FFFFFF;" scope="col" id="Agriculture">Agriculture</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Agriculture  indicator" class="gt_row gt_left">Employment rate (% of population aged 20-64)</td></tr>
-    <tr><td headers="Agriculture  indicator" class="gt_row gt_left">Gross domestic product (PPS per inhabitant in % of the EU-27 average)</td></tr>
-    <tr><td headers="Agriculture  indicator" class="gt_row gt_left">Gross domestic product (PPS per inhabitant)</td></tr>
-    <tr><td headers="Agriculture  indicator" class="gt_row gt_left">Livestock farming, Dairy cows</td></tr>
-    <tr><td headers="Agriculture  indicator" class="gt_row gt_left">Livestock farming, Live goats</td></tr>
-    <tr><td headers="Agriculture  indicator" class="gt_row gt_left">Livestock farming, Live sheep</td></tr>
-    <tr><td headers="Agriculture  indicator" class="gt_row gt_left">Livestock farming, Live swine, domestic species</td></tr>
-    <tr><td headers="Agriculture  indicator" class="gt_row gt_left">Livestock farming, bovine animals (1 000 heads of livestock)</td></tr>
-    <tr><td headers="Agriculture  indicator" class="gt_row gt_left">Population (persons)</td></tr>
-    <tr><td headers="Agriculture  indicator" class="gt_row gt_left">Population density (persons per square kilometre)</td></tr>
-    <tr><td headers="Agriculture  indicator" class="gt_row gt_left">Production of cow milk on farms (1 000 tonnes)</td></tr>
-    <tr><td headers="Agriculture  indicator" class="gt_row gt_left">Unemployment rate (% of labour force aged 15-74)</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="1" class="gt_group_heading" style="background-color: #191970; color: #FFFFFF;" scope="col" id="Economy">Economy</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Economy  indicator" class="gt_row gt_left">Employment rate, Females (% of population aged 20-64)</td></tr>
-    <tr><td headers="Economy  indicator" class="gt_row gt_left">Employment rate, Males (% of population aged 20-64)</td></tr>
-    <tr><td headers="Economy  indicator" class="gt_row gt_left">Employment rate, Total (% of population aged 20-64)</td></tr>
-    <tr><td headers="Economy  indicator" class="gt_row gt_left">Gross domestic product (Euro per inhabitant in % of the EU-27 average)</td></tr>
-    <tr><td headers="Economy  indicator" class="gt_row gt_left">Gross domestic product (Euro per inhabitant)</td></tr>
-    <tr><td headers="Economy  indicator" class="gt_row gt_left">Gross domestic product (PPS per inhabitant in % of the EU-27 average)</td></tr>
-    <tr><td headers="Economy  indicator" class="gt_row gt_left">Gross domestic product (PPS per inhabitant)</td></tr>
-    <tr><td headers="Economy  indicator" class="gt_row gt_left">Gross value added at basic prices (million EUR)</td></tr>
-    <tr><td headers="Economy  indicator" class="gt_row gt_left">Income of private households, Balance of primary incomes/National income, net (PPS per inhabitant, based on final consumption)</td></tr>
-    <tr><td headers="Economy  indicator" class="gt_row gt_left">Income of private households, Disposable income, net (PPS per inhabitant, based on final consumption)</td></tr>
-    <tr><td headers="Economy  indicator" class="gt_row gt_left">Population (persons)</td></tr>
-    <tr><td headers="Economy  indicator" class="gt_row gt_left">Population density (persons per square kilometre)</td></tr>
-    <tr><td headers="Economy  indicator" class="gt_row gt_left">Real growth rate of regional gross value added, Index, 2015=100 (% change on previous year)</td></tr>
-    <tr><td headers="Economy  indicator" class="gt_row gt_left">Real growth rate of regional gross value added, Percentage change on previous period (% change on previous year)</td></tr>
-    <tr><td headers="Economy  indicator" class="gt_row gt_left">Unemployment rate (% of labour force aged 15-74)</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="1" class="gt_group_heading" style="background-color: #191970; color: #FFFFFF;" scope="col" id="Education">Education</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Education  indicator" class="gt_row gt_left">Adult participation in education and training (% of population aged 25-64)</td></tr>
-    <tr><td headers="Education  indicator" class="gt_row gt_left">Early leavers from education and training (% of population aged 18-24)</td></tr>
-    <tr><td headers="Education  indicator" class="gt_row gt_left">Employment rate (% of population aged 20-64)</td></tr>
-    <tr><td headers="Education  indicator" class="gt_row gt_left">Employment rate of recent graduates (% of population aged 20-34)</td></tr>
-    <tr><td headers="Education  indicator" class="gt_row gt_left">Gross domestic product (PPS per inhabitant in % of the EU-27 average)</td></tr>
-    <tr><td headers="Education  indicator" class="gt_row gt_left">Gross domestic product (PPS per inhabitant)</td></tr>
-    <tr><td headers="Education  indicator" class="gt_row gt_left">Participation in early childhood education (% of 4 year-olds)</td></tr>
-    <tr><td headers="Education  indicator" class="gt_row gt_left">Participation in education, Primary and lower secondary education (levels 1 and 2) (%)</td></tr>
-    <tr><td headers="Education  indicator" class="gt_row gt_left">Participation in education, Tertiary education (levels 5-8) (%)</td></tr>
-    <tr><td headers="Education  indicator" class="gt_row gt_left">Population (persons)</td></tr>
-    <tr><td headers="Education  indicator" class="gt_row gt_left">Population density (persons per square kilometre)</td></tr>
-    <tr><td headers="Education  indicator" class="gt_row gt_left">Students in upper secondary education, Upper secondary education - general (%)</td></tr>
-    <tr><td headers="Education  indicator" class="gt_row gt_left">Students in upper secondary education, Upper secondary education - vocational (%)</td></tr>
-    <tr><td headers="Education  indicator" class="gt_row gt_left">Tertiary educational attainment, Females (% of population aged 25-64)</td></tr>
-    <tr><td headers="Education  indicator" class="gt_row gt_left">Tertiary educational attainment, Females (% of population aged 30-34)</td></tr>
-    <tr><td headers="Education  indicator" class="gt_row gt_left">Tertiary educational attainment, Males (% of population aged 25-64)</td></tr>
-    <tr><td headers="Education  indicator" class="gt_row gt_left">Tertiary educational attainment, Males (% of population aged 30-34)</td></tr>
-    <tr><td headers="Education  indicator" class="gt_row gt_left">Tertiary educational attainment, Total (% of population aged 25-64)</td></tr>
-    <tr><td headers="Education  indicator" class="gt_row gt_left">Tertiary educational attainment, Total (% of population aged 30-34)</td></tr>
-    <tr><td headers="Education  indicator" class="gt_row gt_left">Unemployment rate (% of labour force aged 15-74)</td></tr>
-    <tr><td headers="Education  indicator" class="gt_row gt_left">Young people neither in employment nor in education and training (% of population aged 15-24)</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="1" class="gt_group_heading" style="background-color: #191970; color: #FFFFFF;" scope="col" id="Health">Health</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Health  indicator" class="gt_row gt_left">All causes of death (crude death rate)</td></tr>
-    <tr><td headers="Health  indicator" class="gt_row gt_left">Death due to cancer (crude death rate)</td></tr>
-    <tr><td headers="Health  indicator" class="gt_row gt_left">Death due to diseases of the circulatory system (crude death rate)</td></tr>
-    <tr><td headers="Health  indicator" class="gt_row gt_left">Death due to diseases of the respiratory system (crude death rate)</td></tr>
-    <tr><td headers="Health  indicator" class="gt_row gt_left">Employment rate (% of population aged 20-64)</td></tr>
-    <tr><td headers="Health  indicator" class="gt_row gt_left">Gross domestic product (PPS per inhabitant in % of the EU-27 average)</td></tr>
-    <tr><td headers="Health  indicator" class="gt_row gt_left">Gross domestic product (PPS per inhabitant)</td></tr>
-    <tr><td headers="Health  indicator" class="gt_row gt_left">Hospital beds (per 100 000 inhabitants)</td></tr>
-    <tr><td headers="Health  indicator" class="gt_row gt_left">Medical doctors (per 100 000 inhabitants)</td></tr>
-    <tr><td headers="Health  indicator" class="gt_row gt_left">Population (persons)</td></tr>
-    <tr><td headers="Health  indicator" class="gt_row gt_left">Population density (persons per square kilometre)</td></tr>
-    <tr><td headers="Health  indicator" class="gt_row gt_left">Unemployment rate (% of labour force aged 15-74)</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="1" class="gt_group_heading" style="background-color: #191970; color: #FFFFFF;" scope="col" id="Labour Market">Labour Market</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Labour Market  indicator" class="gt_row gt_left">Economic activity rate (% of population aged 15-64)</td></tr>
-    <tr><td headers="Labour Market  indicator" class="gt_row gt_left">Employment rate, From 15 to 24 years</td></tr>
-    <tr><td headers="Labour Market  indicator" class="gt_row gt_left">Employment rate, From 20 to 64 years</td></tr>
-    <tr><td headers="Labour Market  indicator" class="gt_row gt_left">Employment rate, From 55 to 64 years</td></tr>
-    <tr><td headers="Labour Market  indicator" class="gt_row gt_left">Gross domestic product (PPS per inhabitant in % of the EU-27 average)</td></tr>
-    <tr><td headers="Labour Market  indicator" class="gt_row gt_left">Gross domestic product (PPS per inhabitant)</td></tr>
-    <tr><td headers="Labour Market  indicator" class="gt_row gt_left">Long-term unemployment share, Females (% of labour force aged 15-74)</td></tr>
-    <tr><td headers="Labour Market  indicator" class="gt_row gt_left">Long-term unemployment share, Males (% of labour force aged 15-74)</td></tr>
-    <tr><td headers="Labour Market  indicator" class="gt_row gt_left">Long-term unemployment share, Total (% of labour force aged 15-74)</td></tr>
-    <tr><td headers="Labour Market  indicator" class="gt_row gt_left">Population (persons)</td></tr>
-    <tr><td headers="Labour Market  indicator" class="gt_row gt_left">Population density (persons per square kilometre)</td></tr>
-    <tr><td headers="Labour Market  indicator" class="gt_row gt_left">Unemployment rate, Females (% of labour force aged 15-74)</td></tr>
-    <tr><td headers="Labour Market  indicator" class="gt_row gt_left">Unemployment rate, Males (% of labour force aged 15-74)</td></tr>
-    <tr><td headers="Labour Market  indicator" class="gt_row gt_left">Unemployment rate, Total (% of labour force aged 15-74)</td></tr>
-    <tr><td headers="Labour Market  indicator" class="gt_row gt_left">Young people neither in employment nor in education and training (% of population aged 15-24)</td></tr>
-    <tr><td headers="Labour Market  indicator" class="gt_row gt_left">Youth unemployment rate, Females (% of labour force aged 15-24)</td></tr>
-    <tr><td headers="Labour Market  indicator" class="gt_row gt_left">Youth unemployment rate, Males (% of labour force aged 15-24)</td></tr>
-    <tr><td headers="Labour Market  indicator" class="gt_row gt_left">Youth unemployment rate, Total (% of labour force aged 15-24)</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="1" class="gt_group_heading" style="background-color: #191970; color: #FFFFFF;" scope="col" id="Population">Population</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Population  indicator" class="gt_row gt_left">Employment rate (% of population aged 20-64)</td></tr>
-    <tr><td headers="Population  indicator" class="gt_row gt_left">Gross domestic product (PPS per inhabitant in % of the EU-27 average)</td></tr>
-    <tr><td headers="Population  indicator" class="gt_row gt_left">Gross domestic product (PPS per inhabitant)</td></tr>
-    <tr><td headers="Population  indicator" class="gt_row gt_left">Infant mortality rate (deaths per 1 000 live births)</td></tr>
-    <tr><td headers="Population  indicator" class="gt_row gt_left">Life expectancy at birth, Females (years)</td></tr>
-    <tr><td headers="Population  indicator" class="gt_row gt_left">Life expectancy at birth, Males (years)</td></tr>
-    <tr><td headers="Population  indicator" class="gt_row gt_left">Life expectancy at birth, Total (years)</td></tr>
-    <tr><td headers="Population  indicator" class="gt_row gt_left">Population change, Crude rate of natural change of population (per 1 000 persons)</td></tr>
-    <tr><td headers="Population  indicator" class="gt_row gt_left">Population change, Crude rate of net migration plus statistical adjustment (per 1 000 persons)</td></tr>
-    <tr><td headers="Population  indicator" class="gt_row gt_left">Population change, Crude rate of total population change (per 1 000 persons)</td></tr>
-    <tr><td headers="Population  indicator" class="gt_row gt_left">Population density (persons per square kilometre)</td></tr>
-    <tr><td headers="Population  indicator" class="gt_row gt_left">Population, 65 years or over (persons)</td></tr>
-    <tr><td headers="Population  indicator" class="gt_row gt_left">Population, From 15 to 64 years (persons)</td></tr>
-    <tr><td headers="Population  indicator" class="gt_row gt_left">Population, Less than 15 years (persons)</td></tr>
-    <tr><td headers="Population  indicator" class="gt_row gt_left">Population, Total (persons)</td></tr>
-    <tr><td headers="Population  indicator" class="gt_row gt_left">Total fertility rate (live births per woman)</td></tr>
-    <tr><td headers="Population  indicator" class="gt_row gt_left">Unemployment rate (% of labour force aged 15-74)</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="1" class="gt_group_heading" style="background-color: #191970; color: #FFFFFF;" scope="col" id="Science And Technology">Science And Technology</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Science And Technology  indicator" class="gt_row gt_left">Employment in high - tech sectors (% of total employment)</td></tr>
-    <tr><td headers="Science And Technology  indicator" class="gt_row gt_left">Employment rate (% of population aged 20-64)</td></tr>
-    <tr><td headers="Science And Technology  indicator" class="gt_row gt_left">Gross domestic product (PPS per inhabitant in % of the EU-27 average)</td></tr>
-    <tr><td headers="Science And Technology  indicator" class="gt_row gt_left">Gross domestic product (PPS per inhabitant)</td></tr>
-    <tr><td headers="Science And Technology  indicator" class="gt_row gt_left">Human resources in science and technology (% of labour force)</td></tr>
-    <tr><td headers="Science And Technology  indicator" class="gt_row gt_left">Intramural R &amp; D expenditure (% of gross domestic product)</td></tr>
-    <tr><td headers="Science And Technology  indicator" class="gt_row gt_left">Population (persons)</td></tr>
-    <tr><td headers="Science And Technology  indicator" class="gt_row gt_left">Population density (persons per square kilometre)</td></tr>
-    <tr><td headers="Science And Technology  indicator" class="gt_row gt_left">Researchers in all sectors (% of total employment)</td></tr>
-    <tr><td headers="Science And Technology  indicator" class="gt_row gt_left">Unemployment rate (% of labour force aged 15-74)</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="1" class="gt_group_heading" style="background-color: #191970; color: #FFFFFF;" scope="col" id="Tourism">Tourism</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Tourism  indicator" class="gt_row gt_left">Bedroom occupancy rate in hotels and similar establishments</td></tr>
-    <tr><td headers="Tourism  indicator" class="gt_row gt_left">Nights spent in tourist accommodation (per 1 000 inhabitants)</td></tr>
-    <tr><td headers="Tourism  indicator" class="gt_row gt_left">Nights spent in tourist accommodation (per square kilometre)</td></tr>
-    <tr><td headers="Tourism  indicator" class="gt_row gt_left">Population density (persons per square kilometre)</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="1" class="gt_group_heading" style="background-color: #191970; color: #FFFFFF;" scope="col" id="Transport">Transport</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Transport  indicator" class="gt_row gt_left">Air transport of freight (1 000 tonnes, loaded and unloaded)</td></tr>
-    <tr><td headers="Transport  indicator" class="gt_row gt_left">Air transport of passengers (1 000 passengers, arrivals and depatures)</td></tr>
-    <tr><td headers="Transport  indicator" class="gt_row gt_left">Employment rate (% of population aged 20-64)</td></tr>
-    <tr><td headers="Transport  indicator" class="gt_row gt_left">Fatal road accidents (per million inhabitants)</td></tr>
-    <tr><td headers="Transport  indicator" class="gt_row gt_left">Gross domestic product (PPS per inhabitant in % of the EU-27 average)</td></tr>
-    <tr><td headers="Transport  indicator" class="gt_row gt_left">Gross domestic product (PPS per inhabitant)</td></tr>
-    <tr><td headers="Transport  indicator" class="gt_row gt_left">Maritime transport of freight (1 000 tonnes, loaded and unloaded)</td></tr>
-    <tr><td headers="Transport  indicator" class="gt_row gt_left">Maritime transport of passengers (1 000 passengers, embarked and disembarked)</td></tr>
-    <tr><td headers="Transport  indicator" class="gt_row gt_left">Motorisation rate (passenger cars per 1 000 inhabitants)</td></tr>
-    <tr><td headers="Transport  indicator" class="gt_row gt_left">Networks, Motorways (km per 1 000 square km)</td></tr>
-    <tr><td headers="Transport  indicator" class="gt_row gt_left">Networks, Total railway lines (km per 1 000 square km)</td></tr>
-    <tr><td headers="Transport  indicator" class="gt_row gt_left">Population (persons)</td></tr>
-    <tr><td headers="Transport  indicator" class="gt_row gt_left">Population density (persons per square kilometre)</td></tr>
-    <tr><td headers="Transport  indicator" class="gt_row gt_left">Unemployment rate (% of labour force aged 15-74)</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th class="gt_heading gt_title gt_font_normal gt_bottom_border"><strong>List of indicators</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd gt_group_heading_row">
+<td id="Agriculture" class="gt_group_heading" data-quarto-table-cell-role="th" style="background-color: #191970; color: #FFFFFF" scope="col">Agriculture</td>
+</tr>
+<tr class="even gt_row_group_first">
+<td class="gt_row gt_left" headers="Agriculture  indicator">Employment rate (% of population aged 20-64)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Agriculture  indicator">Gross domestic product (PPS per inhabitant in % of the EU-27 average)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Agriculture  indicator">Gross domestic product (PPS per inhabitant)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Agriculture  indicator">Livestock farming, Dairy cows</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Agriculture  indicator">Livestock farming, Live goats</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Agriculture  indicator">Livestock farming, Live sheep</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Agriculture  indicator">Livestock farming, Live swine, domestic species</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Agriculture  indicator">Livestock farming, bovine animals (1 000 heads of livestock)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Agriculture  indicator">Population (persons)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Agriculture  indicator">Population density (persons per square kilometre)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Agriculture  indicator">Production of cow milk on farms (1 000 tonnes)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Agriculture  indicator">Unemployment rate (% of labour force aged 15-74)</td>
+</tr>
+<tr class="even gt_group_heading_row">
+<td id="Economy" class="gt_group_heading" data-quarto-table-cell-role="th" style="background-color: #191970; color: #FFFFFF" scope="col">Economy</td>
+</tr>
+<tr class="odd gt_row_group_first">
+<td class="gt_row gt_left" headers="Economy  indicator">Employment rate, Females (% of population aged 20-64)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Economy  indicator">Employment rate, Males (% of population aged 20-64)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Economy  indicator">Employment rate, Total (% of population aged 20-64)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Economy  indicator">Gross domestic product (Euro per inhabitant in % of the EU-27 average)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Economy  indicator">Gross domestic product (Euro per inhabitant)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Economy  indicator">Gross domestic product (PPS per inhabitant in % of the EU-27 average)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Economy  indicator">Gross domestic product (PPS per inhabitant)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Economy  indicator">Gross value added at basic prices (million EUR)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Economy  indicator">Income of private households, Balance of primary incomes/National income, net (PPS per inhabitant, based on final consumption)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Economy  indicator">Income of private households, Disposable income, net (PPS per inhabitant, based on final consumption)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Economy  indicator">Population (persons)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Economy  indicator">Population density (persons per square kilometre)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Economy  indicator">Real growth rate of regional gross value added, Index, 2015=100 (% change on previous year)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Economy  indicator">Real growth rate of regional gross value added, Percentage change on previous period (% change on previous year)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Economy  indicator">Unemployment rate (% of labour force aged 15-74)</td>
+</tr>
+<tr class="even gt_group_heading_row">
+<td id="Education" class="gt_group_heading" data-quarto-table-cell-role="th" style="background-color: #191970; color: #FFFFFF" scope="col">Education</td>
+</tr>
+<tr class="odd gt_row_group_first">
+<td class="gt_row gt_left" headers="Education  indicator">Adult participation in education and training (% of population aged 25-64)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Education  indicator">Early leavers from education and training (% of population aged 18-24)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Education  indicator">Employment rate (% of population aged 20-64)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Education  indicator">Employment rate of recent graduates (% of population aged 20-34)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Education  indicator">Gross domestic product (PPS per inhabitant in % of the EU-27 average)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Education  indicator">Gross domestic product (PPS per inhabitant)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Education  indicator">Participation in early childhood education (% of 4 year-olds)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Education  indicator">Participation in education, Primary and lower secondary education (levels 1 and 2) (%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Education  indicator">Participation in education, Tertiary education (levels 5-8) (%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Education  indicator">Population (persons)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Education  indicator">Population density (persons per square kilometre)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Education  indicator">Students in upper secondary education, Upper secondary education - general (%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Education  indicator">Students in upper secondary education, Upper secondary education - vocational (%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Education  indicator">Tertiary educational attainment, Females (% of population aged 25-64)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Education  indicator">Tertiary educational attainment, Females (% of population aged 30-34)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Education  indicator">Tertiary educational attainment, Males (% of population aged 25-64)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Education  indicator">Tertiary educational attainment, Males (% of population aged 30-34)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Education  indicator">Tertiary educational attainment, Total (% of population aged 25-64)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Education  indicator">Tertiary educational attainment, Total (% of population aged 30-34)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Education  indicator">Unemployment rate (% of labour force aged 15-74)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Education  indicator">Young people neither in employment nor in education and training (% of population aged 15-24)</td>
+</tr>
+<tr class="even gt_group_heading_row">
+<td id="Health" class="gt_group_heading" data-quarto-table-cell-role="th" style="background-color: #191970; color: #FFFFFF" scope="col">Health</td>
+</tr>
+<tr class="odd gt_row_group_first">
+<td class="gt_row gt_left" headers="Health  indicator">All causes of death (crude death rate)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Health  indicator">Death due to cancer (crude death rate)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Health  indicator">Death due to diseases of the circulatory system (crude death rate)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Health  indicator">Death due to diseases of the respiratory system (crude death rate)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Health  indicator">Employment rate (% of population aged 20-64)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Health  indicator">Gross domestic product (PPS per inhabitant in % of the EU-27 average)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Health  indicator">Gross domestic product (PPS per inhabitant)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Health  indicator">Hospital beds (per 100 000 inhabitants)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Health  indicator">Medical doctors (per 100 000 inhabitants)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Health  indicator">Population (persons)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Health  indicator">Population density (persons per square kilometre)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Health  indicator">Unemployment rate (% of labour force aged 15-74)</td>
+</tr>
+<tr class="odd gt_group_heading_row">
+<td id="Labour Market" class="gt_group_heading" data-quarto-table-cell-role="th" style="background-color: #191970; color: #FFFFFF" scope="col">Labour Market</td>
+</tr>
+<tr class="even gt_row_group_first">
+<td class="gt_row gt_left" headers="Labour Market  indicator">Economic activity rate (% of population aged 15-64)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Labour Market  indicator">Employment rate, From 15 to 24 years</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Labour Market  indicator">Employment rate, From 20 to 64 years</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Labour Market  indicator">Employment rate, From 55 to 64 years</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Labour Market  indicator">Gross domestic product (PPS per inhabitant in % of the EU-27 average)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Labour Market  indicator">Gross domestic product (PPS per inhabitant)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Labour Market  indicator">Long-term unemployment share, Females (% of labour force aged 15-74)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Labour Market  indicator">Long-term unemployment share, Males (% of labour force aged 15-74)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Labour Market  indicator">Long-term unemployment share, Total (% of labour force aged 15-74)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Labour Market  indicator">Population (persons)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Labour Market  indicator">Population density (persons per square kilometre)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Labour Market  indicator">Unemployment rate, Females (% of labour force aged 15-74)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Labour Market  indicator">Unemployment rate, Males (% of labour force aged 15-74)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Labour Market  indicator">Unemployment rate, Total (% of labour force aged 15-74)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Labour Market  indicator">Young people neither in employment nor in education and training (% of population aged 15-24)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Labour Market  indicator">Youth unemployment rate, Females (% of labour force aged 15-24)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Labour Market  indicator">Youth unemployment rate, Males (% of labour force aged 15-24)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Labour Market  indicator">Youth unemployment rate, Total (% of labour force aged 15-24)</td>
+</tr>
+<tr class="even gt_group_heading_row">
+<td id="Population" class="gt_group_heading" data-quarto-table-cell-role="th" style="background-color: #191970; color: #FFFFFF" scope="col">Population</td>
+</tr>
+<tr class="odd gt_row_group_first">
+<td class="gt_row gt_left" headers="Population  indicator">Employment rate (% of population aged 20-64)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Population  indicator">Gross domestic product (PPS per inhabitant in % of the EU-27 average)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Population  indicator">Gross domestic product (PPS per inhabitant)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Population  indicator">Infant mortality rate (deaths per 1 000 live births)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Population  indicator">Life expectancy at birth, Females (years)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Population  indicator">Life expectancy at birth, Males (years)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Population  indicator">Life expectancy at birth, Total (years)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Population  indicator">Population change, Crude rate of natural change of population (per 1 000 persons)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Population  indicator">Population change, Crude rate of net migration plus statistical adjustment (per 1 000 persons)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Population  indicator">Population change, Crude rate of total population change (per 1 000 persons)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Population  indicator">Population density (persons per square kilometre)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Population  indicator">Population, 65 years or over (persons)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Population  indicator">Population, From 15 to 64 years (persons)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Population  indicator">Population, Less than 15 years (persons)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Population  indicator">Population, Total (persons)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Population  indicator">Total fertility rate (live births per woman)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Population  indicator">Unemployment rate (% of labour force aged 15-74)</td>
+</tr>
+<tr class="even gt_group_heading_row">
+<td id="Science And Technology" class="gt_group_heading" data-quarto-table-cell-role="th" style="background-color: #191970; color: #FFFFFF" scope="col">Science And Technology</td>
+</tr>
+<tr class="odd gt_row_group_first">
+<td class="gt_row gt_left" headers="Science And Technology  indicator">Employment in high - tech sectors (% of total employment)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Science And Technology  indicator">Employment rate (% of population aged 20-64)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Science And Technology  indicator">Gross domestic product (PPS per inhabitant in % of the EU-27 average)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Science And Technology  indicator">Gross domestic product (PPS per inhabitant)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Science And Technology  indicator">Human resources in science and technology (% of labour force)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Science And Technology  indicator">Intramural R &amp; D expenditure (% of gross domestic product)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Science And Technology  indicator">Population (persons)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Science And Technology  indicator">Population density (persons per square kilometre)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Science And Technology  indicator">Researchers in all sectors (% of total employment)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Science And Technology  indicator">Unemployment rate (% of labour force aged 15-74)</td>
+</tr>
+<tr class="odd gt_group_heading_row">
+<td id="Tourism" class="gt_group_heading" data-quarto-table-cell-role="th" style="background-color: #191970; color: #FFFFFF" scope="col">Tourism</td>
+</tr>
+<tr class="even gt_row_group_first">
+<td class="gt_row gt_left" headers="Tourism  indicator">Bedroom occupancy rate in hotels and similar establishments</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Tourism  indicator">Nights spent in tourist accommodation (per 1 000 inhabitants)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Tourism  indicator">Nights spent in tourist accommodation (per square kilometre)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Tourism  indicator">Population density (persons per square kilometre)</td>
+</tr>
+<tr class="even gt_group_heading_row">
+<td id="Transport" class="gt_group_heading" data-quarto-table-cell-role="th" style="background-color: #191970; color: #FFFFFF" scope="col">Transport</td>
+</tr>
+<tr class="odd gt_row_group_first">
+<td class="gt_row gt_left" headers="Transport  indicator">Air transport of freight (1 000 tonnes, loaded and unloaded)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Transport  indicator">Air transport of passengers (1 000 passengers, arrivals and depatures)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Transport  indicator">Employment rate (% of population aged 20-64)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Transport  indicator">Fatal road accidents (per million inhabitants)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Transport  indicator">Gross domestic product (PPS per inhabitant in % of the EU-27 average)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Transport  indicator">Gross domestic product (PPS per inhabitant)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Transport  indicator">Maritime transport of freight (1 000 tonnes, loaded and unloaded)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Transport  indicator">Maritime transport of passengers (1 000 passengers, embarked and disembarked)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Transport  indicator">Motorisation rate (passenger cars per 1 000 inhabitants)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Transport  indicator">Networks, Motorways (km per 1 000 square km)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Transport  indicator">Networks, Total railway lines (km per 1 000 square km)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Transport  indicator">Population (persons)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Transport  indicator">Population density (persons per square kilometre)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Transport  indicator">Unemployment rate (% of labour force aged 15-74)</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -816,7 +1068,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="plots" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="plots">Plots</h2>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>plot_levels <span class="ot">&lt;-</span> <span class="cf">function</span>(indicator_in, period_in) {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  df_map <span class="sc">%&gt;%</span></span>
@@ -900,19 +1152,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>What can we say about milk production? Look at Switzerland go!</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="768"></p>
+<div>
+<figure class="figure">
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>How about sheep farming? Sheesh have a look at Crete!</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="768"></p>
+<div>
+<figure class="figure">
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>There isn’t a super clear relationship between number of cows and GDP per capita. Good news that you can farm in a rich country still!</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="768"></p>
+<div>
+<figure class="figure">
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -920,19 +1184,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Why does Turkey have such a low level of employment among women?</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="768"></p>
+<div>
+<figure class="figure">
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>It seems that there is a strong relationship between GDP per capita and the economic activity rate. Can you guess about the direction of causality?</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="768"></p>
+<div>
+<figure class="figure">
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Do we see agglomeration effects with higher GDP per capita in areas with higher population density? Note the logged y axis.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="768"></p>
+<div>
+<figure class="figure">
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -941,19 +1217,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>(I don’t know why France is mising…)</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="768"></p>
+<div>
+<figure class="figure">
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Who leaves school early? Maybe people in places where formal education is not that enticing?</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="768"></p>
+<div>
+<figure class="figure">
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Look at how the countries separate here - wow!</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="768"></p>
+<div>
+<figure class="figure">
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -961,37 +1249,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>See how few hospital beds Sweden has compared to Norway.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="768"></p>
+<div>
+<figure class="figure">
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Seems like you have to be a rich country in order to live long enough to die from cancer :(</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="768"></p>
+<div>
+<figure class="figure">
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Look at how the countries separate here - wow!</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="768"></p>
+<div>
+<figure class="figure">
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 <div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="768"></p>
+<div>
+<figure class="figure">
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="768"></p>
+<div>
+<figure class="figure">
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Interesting demographic trends! You have to be rich enough to have children in a rich country!</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="768"></p>
+<div>
+<figure class="figure">
+<p><img src="Additional-map-data_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -1038,18 +1350,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1081,11 +1382,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1095,8 +1435,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1108,7 +1457,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1152,6 +1624,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1177,6 +1650,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1242,12 +1741,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">If you have any questions, please feel free to <a href="mailto:jonathan.jayes@ekh.lu.se">contact me here <i class="fa-solid fa-paper-plane" aria-label="paper-plane"></i></a></div>
+    <div class="nav-footer-center">
+<p>If you have any questions, please feel free to <a href="mailto:jonathan.jayes@ekh.lu.se">contact me here <i class="fa-solid fa-paper-plane" aria-label="paper-plane"></i></a></p>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 

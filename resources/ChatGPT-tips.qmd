@@ -3,6 +3,7 @@ title: "ChatGPT tips"
 image: "resource_logo_3.png"
 author: "Jonathan Jayes"
 date: 2023-04-01
+draft: true
 ---
 
 ## Intro
