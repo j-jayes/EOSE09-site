@@ -34,7 +34,7 @@ You will be able to download Stata and the license file from the page that opens
 
 ## Step 5: Install Stata
 
-Run the installer and follow the instructions. You will be asked to enter the license and authorization code from the license file you downloaded.
+Run the installer and follow the instructions. You will be asked to enter the license, code and authorization number from the license PDF file you downloaded in step 4.
 
 When installed correctly, it should look like this, noting when the license expires:
 

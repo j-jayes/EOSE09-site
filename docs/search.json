@@ -424,7 +424,7 @@
     "href": "resources/installing-stata.html#step-5-install-stata",
     "title": "How to install Stata on your personal computers",
     "section": "Step 5: Install Stata",
-    "text": "Step 5: Install Stata\nRun the installer and follow the instructions. You will be asked to enter the license and authorization code from the license file you downloaded.\nWhen installed correctly, it should look like this, noting when the license expires:\n\n\n\nStata installed correctly"
+    "text": "Step 5: Install Stata\nRun the installer and follow the instructions. You will be asked to enter the license, code and authorization number from the license PDF file you downloaded in step 4.\nWhen installed correctly, it should look like this, noting when the license expires:\n\n\n\nStata installed correctly"
   },
   {
     "objectID": "resources/dose-demo.html",
