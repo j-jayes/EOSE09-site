@@ -4,7 +4,9 @@ format: html
 date: today
 ---
 
-This is a guide for downloading and installing Stata on your personal computer.
+This is a guide for downloading and installing Stata on your personal computer. 
+
+If your Stata license has expired, you can follow the steps below to renew it, you do not need to download the software again, just the license file (.pdf).
 
 ## Step 1: Go to LU software downloads page
 

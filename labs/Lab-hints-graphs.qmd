@@ -1,7 +1,7 @@
 ---
 title: "Stata Lab Hints: Basic Graphs"
 author: Jonathan Jayes
-date: 2023-02-06
+date: today
 format:
   html:
     code-overflow: wrap
@@ -16,7 +16,7 @@ image: "Lab-hints-resources/preview.png"
 
 ## Intro
 
-For your projects (📅 due March 1st), you can use any kind of plots in addition to the maps we have learned to draw in the first lab.
+For your projects, you can use any kind of plots in addition to the maps we have learned to draw in the first lab.
 
 In this little note, I take you through drawing scatter plots, line plots and bar plots.
 

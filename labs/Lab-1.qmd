@@ -1,7 +1,7 @@
 ---
-title: "Stata Lab 1 Mapping Growth: Basic Maps"
+title: "Stata Lab 1: Mapping Growth - Basic Maps"
 author: Vinzent Ostermeyer, adapted Jonathan Jayes
-date: 2023-01-30
+date: 2025-02-19
 format:
   html:
     code-overflow: wrap

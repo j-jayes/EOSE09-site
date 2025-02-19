@@ -1,7 +1,7 @@
 ---
-title: "Stata Lab 2 Mapping Growth: Across Space and Time"
+title: "Stata Lab 2: Mapping Growth - Across Space and Time"
 author: Vinzent Ostermeyer, adapted Jonathan Jayes
-date: 2023-02-17
+date: 2025-02-27
 format:
   # pdf:
   #   toc: true

@@ -1,7 +1,7 @@
 ---
-title: "Lab 1 Exercises"
+title: "Stata Lab 1: Exercises"
 author: Jonathan Jayes
-date: 2023-01-30
+date: today
 format:
   html:
     code-overflow: wrap

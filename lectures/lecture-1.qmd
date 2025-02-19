@@ -18,6 +18,7 @@ image: "lecture-1-resources/preview.png"
 editor: 
   markdown: 
     wrap: sentence
+date: today
 ---
 
 ```{r}
