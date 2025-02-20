@@ -579,6 +579,8 @@ The inferno sequential palette is a good choice for this data, as it shows the p
 
 For a sequential palette, you want the person looking at your plot to be able to see clearly the progression of the data, as well as which is high and which is low. I think in this case it makes sense to use the brighter end of the scale as high, because we associate it with sunlight - quite neat!!.
 
+:::
+
 ## Sequential scale example
 
 ```{r}
@@ -881,6 +883,8 @@ How do we decide on the values for the bins in our choropleth?
 Let's make a histogram of the installed capacity of solar panels in the different counties in Sweden.
 
 We can see the range goes from zero to about 300. 
+
+:::
 
 ## Map with appropriate breaks
 
