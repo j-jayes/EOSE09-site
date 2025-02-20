@@ -4,7 +4,7 @@ project:
 
 website:
   favicon: assets/favicon.ico
-  title: "{{< var title >}}"
+  title: "EOSE09"
   navbar:
     left:
       - href: lectures/lecture-1.qmd

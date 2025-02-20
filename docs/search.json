@@ -18,21 +18,21 @@
     "href": "index.html#labs",
     "title": "EOSE09 - Economy and Society: Regional Development and Growth",
     "section": "Labs",
-    "text": "Labs\n\n\n\n\n\n\n\n\n\n\nStata Lab 1: Exercises\n\n\n\n\n\n\nJonathan Jayes\n\n\nFeb 19, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStata Lab 1: Mapping Growth - Basic Maps\n\n\n\n\n\n\nVinzent Ostermeyer, adapted Jonathan Jayes\n\n\nFeb 19, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStata Lab Hints: Basic Graphs\n\n\n\n\n\n\nJonathan Jayes\n\n\nFeb 19, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStata Lab 2: Mapping Growth - Across Space and Time\n\n\n\n\n\n\nVinzent Ostermeyer, adapted Jonathan Jayes\n\n\nFeb 27, 2025\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Labs\n\n\n\n\n\n\n\n\n\n\nStata Lab 1: Mapping Growth - Basic Maps\n\n\n\n\n\n\nVinzent Ostermeyer, adapted Jonathan Jayes\n\n\nFeb 19, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStata Lab 1: Exercises\n\n\n\n\n\n\nJonathan Jayes\n\n\nFeb 20, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStata Lab Hints: Basic Graphs\n\n\n\n\n\n\nJonathan Jayes\n\n\nFeb 20, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStata Lab 2: Mapping Growth - Across Space and Time\n\n\n\n\n\n\nVinzent Ostermeyer, adapted Jonathan Jayes\n\n\nFeb 27, 2025\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#lectures",
     "href": "index.html#lectures",
     "title": "EOSE09 - Economy and Society: Regional Development and Growth",
     "section": "Lectures",
-    "text": "Lectures\n\n\n\n\n\n\n\n\n\n\nData visualization\n\n\n\n\n\n\n\n\n\nFeb 19, 2025\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Lectures\n\n\n\n\n\n\n\n\n\n\nData visualization\n\n\n\n\n\n\n\n\n\nFeb 20, 2025\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#resources",
     "href": "index.html#resources",
     "title": "EOSE09 - Economy and Society: Regional Development and Growth",
     "section": "Resources",
-    "text": "Resources\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nJonathan Jayes\n\n\nMar 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdditional Data: Eurostat\n\n\n\n\n\n\nJonathan Jayes\n\n\nFeb 19, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nHow to install Stata on your personal computers\n\n\n\n\n\n\n\n\n\nFeb 19, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nLab 1: Slides on Lab Paper\n\n\n\n\n\n\n\n\n\nFeb 19, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nBeta-convergence\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdditional Data: DOSE\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBy request: dotted lines to indicate a region of interest\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Resources\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nJonathan Jayes\n\n\nMar 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdditional Data: Eurostat\n\n\n\n\n\n\nJonathan Jayes\n\n\nFeb 20, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nHow to install Stata on your personal computers\n\n\n\n\n\n\n\n\n\nFeb 20, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nLab 1: Slides on Lab Paper\n\n\n\n\n\n\n\n\n\nFeb 20, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nBeta-convergence\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdditional Data: DOSE\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBy request: dotted lines to indicate a region of interest\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "resources/resources.html",
@@ -437,36 +437,36 @@
     "objectID": "lectures/lecture-1.html#purpose",
     "href": "lectures/lecture-1.html#purpose",
     "title": "Data visualization",
-    "section": "",
-    "text": "Get you excited about storytelling with data\nShow some tips and tricks to make your maps and charts pop\n\n\n\n\n\n\nHans Rosling’s the best stats you’ve ever seen\n\n\n\n\nThis is not about the software. Rather, it is about the theory behind communicating well with data"
+    "section": "Purpose",
+    "text": "Purpose\n\n\n\nGet you excited about storytelling with data\nShow some tips and tricks to make your maps and charts pop\n\n\n\n\n\n\nHans Rosling’s the best stats you’ve ever seen\n\n\n\nIf you have not seen Hans Rosling’s TED talk, I highly recommend it. It is a great example of how to tell a story with data.\nHans Rosling was a Swedish doctor, who was passionate about using data to tell stories. He was a professor of international health at the Karolinska Institute in Stockholm, and he co-founded the Gapminder Foundation that was great at geting policy makers excited about data based decision making.\n\n\nThis is not about the software. Rather, it is about the theory behind communicating well with data"
   },
   {
     "objectID": "lectures/lecture-1.html#structure",
     "href": "lectures/lecture-1.html#structure",
     "title": "Data visualization",
     "section": "Structure",
-    "text": "Structure\n\n\n\nImproving your maps\nOvercoming Excel\nTelling a story with data\nReproducing figures for publication\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA cartoon in the style of Aardman Animations depicting an animatronic computer fighting with a spreadsheet, vibrant green lighting"
+    "text": "Structure\n\n\n\nImproving your maps\nOvercoming Excel\nTelling a story with data\nReproducing figures for publication\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nToday’s lecture will begin with a little addition to the excercises that we worked on yesterday. Then we will talk about Excel as a software, how to tell a story with your data, and we will end with a little demonstration about how to reproduce figures for your own analysis.\n\n\nA cartoon in the style of Aardman Animations depicting an animatronic computer fighting with a spreadsheet, vibrant green lighting"
   },
   {
     "objectID": "lectures/lecture-1.html#everything-is-a-story",
     "href": "lectures/lecture-1.html#everything-is-a-story",
     "title": "Data visualization",
     "section": "Everything is a story",
-    "text": "Everything is a story"
+    "text": "Everything is a story\n\n\nThis is a line that Abed says to Jeff in one of my favorite TV shows, Comunity.\nCan I get a show of hands, who has seen Community?\nIn any case, Community’s creator Dan Harmon really likes this idea about everything being a story."
   },
   {
     "objectID": "lectures/lecture-1.html#dan-harmons-story-circle",
     "href": "lectures/lecture-1.html#dan-harmons-story-circle",
     "title": "Data visualization",
     "section": "Dan Harmon’s Story Circle",
-    "text": "Dan Harmon’s Story Circle"
+    "text": "Dan Harmon’s Story Circle\n\n\nSo Dan Harmon also wrote Rick and Morty. Can I get a show of hands, who has seen Rick and Morty?\nGreat! So Dan Harmon has this idea of the story circle. It is a way to structure a story, demonstrated here with an eight part pie chart showing an example of a Rick and Morty episode.\nRead the parts of the story circle out loud."
   },
   {
     "objectID": "lectures/lecture-1.html#our-story-circle",
     "href": "lectures/lecture-1.html#our-story-circle",
     "title": "Data visualization",
     "section": "Our Story Circle",
-    "text": "Our Story Circle\n\n\n\n\n\n\n\n\n\n\nZone of comfort: Data in excel\nWant something: to be better at communicating with your data\nEnter an unfamiliar situation: Looking closely at maps and charts\nAdapt to it: Practice discussing the differences\nGet what they wanted: Banging chart skills\nPay a heavy price: Hard to concentrate - relax with an inspiring video\nReturn to familiar situation: your projects\nHaving changed: I hope you learn something."
+    "text": "Our Story Circle\n\n\nZone of comfort: Data in excel\nWant something: to be better at communicating with your data\nEnter an unfamiliar situation: Looking closely at maps and charts\nAdapt to it: Practice discussing the differences\nGet what they wanted: Banging chart skills\nPay a heavy price: Hard to concentrate - relax with an inspiring video\nReturn to familiar situation: your projects\nHaving changed: I hope you learn something."
   },
   {
     "objectID": "lectures/lecture-1.html#section",
@@ -480,14 +480,14 @@
     "href": "lectures/lecture-1.html#recap-from-lab-1-exercies",
     "title": "Data visualization",
     "section": "Recap from Lab 1 exercies",
-    "text": "Recap from Lab 1 exercies\n\nMake a map of the share of employment in industry in the year 2010 across the whole dataset"
+    "text": "Recap from Lab 1 exercies\n\nMake a map of the share of employment in industry in the year 2010 across the whole dataset\n\nWhat is wrong with this map? 🗺️"
   },
   {
     "objectID": "lectures/lecture-1.html#recap-from-lab-1-exercies-1",
     "href": "lectures/lecture-1.html#recap-from-lab-1-exercies-1",
     "title": "Data visualization",
     "section": "Recap from Lab 1 exercies",
-    "text": "Recap from Lab 1 exercies\n\n\nWhat is wrong with this map? 🗺️"
+    "text": "Recap from Lab 1 exercies\n\n\n\n−+\n01:00\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiscuss with your neighbour:\n\nWhat do we like?\nWhat is confusing?\n\n\nspmap employment_share_industry using \"nutscoord.dta\" \n  if year == 2010, \n  id(_ID) fcolor(Spectral) legstyle(2) \n    title(\"Employment Share Industry - 2010\", size(large)) \n    osize(0.02 ..) ocolor(white ..) \n    clmethod(custom) clbreaks(0 (0.2) 1)\n    legend(pos(9) size(medium) rowgap(1.5) \n    label(6 \"80-100 %\") label(5 \"60-80 %\") \n    label(4 \"40-60 %\") label(3 \"20-40 %\") label(2 \"0-20 %\") \n    label(1 \"No Data\")) \n    ndfcolor(gray) ndocolor(white ..) ndsize(0.02 ..)"
   },
   {
     "objectID": "lectures/lecture-1.html#recap-from-lab-1-exercies-2",
@@ -515,105 +515,105 @@
     "href": "lectures/lecture-1.html#now-lets-make-breaks-based-on-this-information",
     "title": "Data visualization",
     "section": "Now let’s make breaks based on this information",
-    "text": "Now let’s make breaks based on this information\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nspmap employment_share_industry using \"nutscoord.dta\" \n  if year == 2010, id(_ID) fcolor(Spectral) legstyle(2) \n    title(\"Employment Share Industry - 2010\", size(large)) \n    osize(0.02 ..) ocolor(white ..) \n    clmethod(custom) clbreaks(0 (0.075) 0.5) \n    legend(pos(9) size(medium) rowgap(1.5) \n    label(7 \"37-45 %\") label(6 \"30-37 %\") \n    label(5 \"23-30 %\") label(4 \"15-23 %\") \n    label(3 \"8-15 %\") label(2 \"0-8 %\") \n    label(1 \"No Data\")) \n    ndfcolor(gray) ndocolor(white ..) ndsize(0.02 ..)"
+    "text": "Now let’s make breaks based on this information\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nspmap employment_share_industry using \"nutscoord.dta\" \n  if year == 2010, id(_ID) fcolor(Spectral) legstyle(2) \n    title(\"Employment Share Industry - 2010\", size(large)) \n    osize(0.02 ..) ocolor(white ..) \n    clmethod(custom) clbreaks(0 (0.075) 0.45) \n    legend(pos(9) size(medium) rowgap(1.5) \n    label(7 \"37-45 %\") label(6 \"30-37 %\") \n    label(5 \"23-30 %\") label(4 \"15-23 %\") \n    label(3 \"8-15 %\") label(2 \"0-8 %\") \n    label(1 \"No Data\")) \n    ndfcolor(gray) ndocolor(white ..) ndsize(0.02 ..)\n\n\n\nHere instead of using the breaks covering all the way from zero to 100 percent, we trim the breaks to cover the range of the data, in this case from zero to 45 percent, which we break up into six bins.\nNow it is much more clear that in Paris, Copenagen, Oslo and Stockholm, there are relatively few people working in industry, (and we know that the majority work in services).\nIn contrast, in Northern Italy, as we spoke about yesterday, there is a strong industrial base. In the Basque country, there is a strong industrial base around Bilbao."
   },
   {
     "objectID": "lectures/lecture-1.html#colour-scales",
     "href": "lectures/lecture-1.html#colour-scales",
     "title": "Data visualization",
     "section": "Colour scales",
-    "text": "Colour scales\nUses of color in data visualization\n. . .\n\n\n\n\nDistinguish categories (qualitative)"
+    "text": "Colour scales\nUses of color in data visualization\n\n\n\n\n\nDistinguish categories (qualitative)\n\n\n\n\n\n\n\n\nNow we are going to talk about the different types of colour scales that we can use in data visualization.\nWe looked yesterday at some sequential palettes, like the Blues2 palette that comes standard in Stata.\nThere are also other type, including qualitative palettes, which are used to distinguish between different categories."
   },
   {
     "objectID": "lectures/lecture-1.html#qualitative-scale-example",
     "href": "lectures/lecture-1.html#qualitative-scale-example",
     "title": "Data visualization",
     "section": "Qualitative scale example",
-    "text": "Qualitative scale example\n\n\n\n\n\n\n\n\n\nPalette name: Okabe-Ito"
+    "text": "Qualitative scale example\n\nPalette name: Okabe-Ito\n\nIn this graph I have chosen to plot some data about the number of solar panels installed in various Swedish towns, and the installed capacity of those solar panels.\nThe data isn’t important in this case, but we can see that there is a strong linear relationship between the number of solar panels installed and the installed capacity of those solar panels.\nIn this case, we might want to distinguish between different counties in Sweden, and so we use a qualitative palette to do so.\nWe can see that there are both the largest number of panels and the largest installed capacity in Gothenburg, followed by Stockholm and Malmö - which makes sense.\nIn this instance, we can choose colours that distingish between the different counties, and we can see that the Okabe-Ito palette is a good choice for this. We aren’t saying that this town is ‘more Skane’ than others, so a sequential palette is not appropriate."
   },
   {
     "objectID": "lectures/lecture-1.html#qualitative-scale-example-1",
     "href": "lectures/lecture-1.html#qualitative-scale-example-1",
     "title": "Data visualization",
     "section": "Qualitative scale example",
-    "text": "Qualitative scale example\n\n\n\n\n\n\n\n\n\nPalette name: Brewer Set1"
+    "text": "Qualitative scale example\n\nPalette name: Brewer Set1"
   },
   {
     "objectID": "lectures/lecture-1.html#qualitative-scale-example-2",
     "href": "lectures/lecture-1.html#qualitative-scale-example-2",
     "title": "Data visualization",
     "section": "Qualitative scale example",
-    "text": "Qualitative scale example\n\n\n\n\n\n\n\n\n\nPalette name: Brewer Dark2"
+    "text": "Qualitative scale example\n\nPalette name: Brewer Dark2"
   },
   {
     "objectID": "lectures/lecture-1.html#uses-of-color-in-data-visualization",
     "href": "lectures/lecture-1.html#uses-of-color-in-data-visualization",
     "title": "Data visualization",
     "section": "Uses of color in data visualization",
-    "text": "Uses of color in data visualization\n\n\n\n\nDistinguish categories (qualitative)\n\n\n\n\n\n\n\n\n\nRepresent numeric values (sequential)"
+    "text": "Uses of color in data visualization\n\n\n\n\nDistinguish categories (qualitative)\n\n\n\n\n\n\n\n\n\nRepresent numeric values (sequential)\n\n\n\n\n\n\n\n\nThe next palette is a sequential palette, which is used to represent numeric values, or numbers that are ordered in some way."
   },
   {
     "objectID": "lectures/lecture-1.html#sequential-scale-example",
     "href": "lectures/lecture-1.html#sequential-scale-example",
     "title": "Data visualization",
     "section": "Sequential scale example",
-    "text": "Sequential scale example\n\n\n\n\n\n\n\n\n\nPalette name: inferno"
+    "text": "Sequential scale example\n\n\n\n\n\n\n\n\n\nPalette name: inferno\n\nHere we are looking at the number of hours of sunlight in different cities around the world.\nWe can see that in Lund, because we are quite far North, we have very few hours of sunlight in the winter, and a lot of hours of sunlight in the summer.\nIn contrast, Panama City has a very consistent number of hours of sunlight throughout the year as it lies near the equator.\nWe can also see that in Cape Town and Livingstone Zambia we have the reverse pattern to Lund - with more hours of sunlight in the winter than in the summer.\nThe inferno sequential palette is a good choice for this data, as it shows the progression of the number of hours of sunlight in a clear way.\nFor a sequential palette, you want the person looking at your plot to be able to see clearly the progression of the data, as well as which is high and which is low. I think in this case it makes sense to use the brighter end of the scale as high, because we associate it with sunlight - quite neat!!.\n\nSequential scale example\n\nPalette name: viridis\n\n\nUses of color in data visualization\n\n\n\n\nDistinguish categories (qualitative)\n\n\n\n\n\n\n\n\n\nRepresent numeric values (sequential)\n\n\n\n\n\n\n\n\n\nRepresent numeric values (diverging)\n\n\n\n\n\n\n\n\nNext we can talk about a diverging palette, which is used to represent numeric values that are ordered in some way, and we want to know how far each point is away from the midpoint or median value.\n\n\n\nDiverging scale example\n\n\nIn this instance, we are looking at the solar panel data that we had before, this time, just in Stockholm county. We want to know how far each point is away from the median value of installed solar capacity in Stockholm county - and we can see that the red values are high, and the blue values are low, while the median is a white colour.\nIn this case we have a log scale on the y-axis because the data is quite skewed, and we want to be able to see the differences between the points more clearly. So Stockholm city has almost 10X the median installed solar capacity in the county.\n\n\n\nUses of color in data visualization\n\n\n\n\nDistinguish categories (qualitative)\n\n\n\n\n\n\n\n\n\nRepresent numeric values (sequential)\n\n\n\n\n\n\n\n\n\nRepresent numeric values (diverging)\n\n\n\n\n\n\n\n\n\nHighlight\n\n\n\n\n\n\n\n\nThe last type of palette that we are going to talk about is a highlight palette, which is used to highlight a particular point or set of points in a plot where you have a lot of information.\n\n\n\nHighlight example\n\n\nIn this example, we have information on the share of children born outside of marriage in Europe.\nWe have a lot of lines, and we are interested in highlighting two countries in order to compare them over time.\nWe can see that in Denmark, the share of children born outside of marriage was higher than Greece in 1960, and then really increased in 1970 to about 1990, before levelling off somewhat at about 50% of children born outside of marriage.\nIn contrast, in Greece, the share of children born outside of marriage was very low in 1960, and because of the importance of the Orthodox church in Greece, it has remained low throughout the period, only increasing to about 12,5% in 2021.\nI did another neat thing here, where I used the markdown in the title to colour the country names in the legend to match the colours of the lines. This way we don’t need to have a legend and a title, and we can save some space on the plot. I also used the colours from the flags of the countries, which is a nice touch, if I do say so myself.\n\n\n\nUsing density plots to set your legend breaks: quick example\nDataset: Solar panels in Sweden\n\n\n\n  \n  \n\n\n\nInstalled solar capacity in Sweden\n\n\nYear: 2021\n\n\nSwedish county\nInstalled solar capacity (megawatts)\n\n\n\n\nVästra Götalands län\n266.21\n\n\nSkåne län\n256.25\n\n\nStockholms län\n182.25\n\n\nÖstergötlands län\n106.81\n\n\nHallands län\n94.31\n\n\nJönköpings län\n88.53\n\n\nSödermanlands län\n79.71\n\n\nUppsala län\n79.11\n\n\nKalmar län\n59.01\n\n\nVästmanlands län\n49.45\n\n\n\nSource: Energimyndigheten\n\n\n\n\n\n\n\n\n\nLet’s recap quickly, we have a dataset of solar panels in Sweden, and we are interested in the installed capacity of solar panels in different counties in Sweden.\nWe want to make a choropleth, or a map that is coloured based on the installed capacity of solar panels in each county.\n\n\n\nHow to decide on values for the bins?\nUse a histogram or a density plot to see where the weight of the distribution is.\n\n\n\n\n\n\n\n\n\n\nHow do we decide on the values for the bins in our choropleth?\nLet’s make a histogram of the installed capacity of solar panels in the different counties in Sweden.\nWe can see the range goes from zero to about 300.\n\nMap with appropriate breaks\nAsk your neighbour:\n\nwhat kind of palette is this?\nIs it appropriate to use with this data?\n\n\n\n\n−+\n01:00\n\n\n\n\n\nSo have a look at this map that we have created - and tell me what kind of palette is this, and is it appropriate to use with this data?\nLet’s take 1 minute to discuss with your neighbour.\n\n\n\n\n\nImproving your maps\n\nGreat Choropleths\n\n\n\nExamples of great maps\nFinancial Times analysis of Italian election results in 2018\n\n\nThis is a map from the FT showing the results of the Italian elections in 2018. You can all get access to the FT through Lund and I think it’s a really great resource for data journalism and data visualization.\nMaps work best when they show an emerging spatial pattern, as was the case with this map from the recent Italian elections.\nShowing the winner at municipality level clearly shows the political divisions in the country. In the north, the Northern League party triumphed largely on the back of an anti-immigration and anti-EU agenda. In the south, the anti-establishment Five Star Movement was even more successful, gaining a majority of votes in many areas.\nWhat is also clever as that they have used a column chart in the map in order to help us understand the aggregate vote share for the main parties.\nWhat kind of palette do you think they have used here? Sequential, qualitative or diverging?\nA: qualitative, because they are showing the winner in each municipality.\n\n\n\nExamples of great maps\nFinancial Times analysis of Italian election results in 2018\n\n\nAnother interesting take on the results was to show the per cent share of vote. This helped to emphasise just how strong the support was for the two parties.\nWhat kind of palette do you think they have used here? Sequential, qualitative or diverging?\nA: Sequential, because they are showing the share of the vote in each municipality for two main parties they want to compare.\nAnother thing I should mention is that they have been quite clever with the legend - you can see here the breaks are in specific places, in oder to best show that the Norhtern League’s support is really concentrated in the North, and the Five Star Movement’s support is really concentrated in the South and Sicily.\n\n\n\nExamples of great maps\nHuman Terrain from The Pudding\n\n\nThe other place I really recommend you have a look for inspiration for good data journalism is a website called “The Pudding”. They have some really great data visualizations and data journalism pieces, inclduing this one that shows where people live in countries.\nHere i have a screenshow of the map showing the Oresund region, and we can see how centered the population is in Copenagenhagen and Malmo, and how the population density drops off as we move away from the cities to smaller towns.\nI will say that this is based on buildings and not people, so it is not a perfect representation of the population, but it is a really interesting way to show where people live in a country. Here you can see the Oresund bridge looks like it has people living on it, but that is not the case in reality.\nLet’s have a look at some other places - who has visited Japan before? Compare population growth…\n\n\n\nExamples of great maps\nThe Coming Crisis: Exploring the U.S. Physician Shortage by Daniel Snow\n\n\n\n\n\nOvercoming Excel\n\nMotivation\n\n\n\nOvercoming Excel\n\n\n\nExcel itself is not a bad tool.\nIt is very popular! See the info on jobs that require it.\n\n\n\nOvercoming Excel\n\n\nFormby et al (2017) Microsoft Excel: Is It An Important Job Skill for College Graduates?\n\n\nOvercoming Excel\n\nTakeaways:\n\n\n\nYou will likely use Excel in the future 📊\nExcel’s default plots and tables can be improved upon 📈\nSimple rules can help you make your message clear 💎\n\n\n\n\n\n\n\n\nOvercoming Excel\n\nCharts\n\n\n\nOvercoming Excel: Column plot\n\n\n\n\nWe often encounter datasets containing simple amounts 🤏\nHere is some data on a sample of Swedish musical artists 🎵\nI put this data into Excel, and asked for a recommended chart 📊\n\n\n\n\n\n\n\n\n  \n  \n\n\n\nSwedish musical artists\n\n\nRank\nArtist\nMonthly listeners (m)\n\n\n\n\n1\nAvicii\n29.47\n\n\n2\nABBA\n23.48\n\n\n3\nJosé González\n 4.07\n\n\n4\nRobyn\n 3.11\n\n\n5\nTimbuktu\n 0.38\n\n\n\nDatasource: Spotify charts Nov 2022\n\n\n\n\n\n\n\n\n\n\n\n\nYour turn\n\n\n\n−+\n02:30\n\n\n\n\nDiscuss with your neighbour:\n\nWhat do we like?\nWhat is confusing?\n\n\n\nTip 1: Avoid rotated axis labels\nUgly 🤢\n\n\n\nTip 1: Avoid rotated axis labels\nFlip axes so that the text is easier to read 👓\n\n\n\nTip 2: Pay attention to the order of the bars\nBad 👎\n\n\n\nTip 2: Pay attention to the order of the bars\nIt is clear that José González recieves more streams than Robyn\n\n\n\nTip 3: Consider your titles, labels and axes\nUninformative️ ❗\n\n\n\nTip 3: Consider your titles, labels and axes\nNote the title, x-axis title, x-axis labels 📙\n\n\n\nTip 3: Consider your titles, labels and axes\nTitles and captions have different application areas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Monthly streams for Swedish musical artists. Data sources: Spotify charts in November 2022\n\n\n\n\n\n\n\nWe can use dots instead of bars\n\n\n\nWe can use dots instead of bars\n\n\n\nDots are preferable if we want to truncate the axes\nDataset: Solar panels in Sweden\n\n\n\nDots are preferable if we want to truncate the axes\n\n\nBar lengths donot accuratelyrepresent thedata values\n\n\nDots are preferable if we want to truncate the axes\n\n\nKey featuresof the dataare obscured\n\n\nDots are preferable if we want to truncate the axes\n\n\n\n\n\n\nOvercoming Excel\n\nTables\n\n\n\nOvercoming Excel: Tables\n\n\n\nWe often encounter datasets containing simple amounts 🤏\nHere is some data on a sample of Swedish musical artists 🎵\nI put this data into Excel, and asked it to insert a table 🗃️\n\n\n\n\n\n\n\n  \n  \n\n\n\nSwedish musical artists\n\n\nRank\nArtist\nMonthly listeners (m)\n\n\n\n\n1\nAvicii\n29.47\n\n\n2\nABBA\n23.48\n\n\n3\nJosé González\n 4.07\n\n\n4\nRobyn\n 3.11\n\n\n5\nTimbuktu\n 0.38\n\n\n\nDatasource: Spotify charts Nov 2022\n\n\n\n\n\n\n\n\n\n\n\nYour turn again\n\n\n\n−+\n02:30\n\n\n\n\nDiscuss with your neighbour:\n\nWhat do we like?\nWhat is confusing?\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n\n\n\nKey rules for table layout\n\n\nNumber\nRule\n\n\n\n\n1\nDo not use vertical lines.\n\n\n2\nDo not use heavy horizontal lines between data rows. (Horizontal lines as separator between the title row and the first data row or as frame for the entire table are fine.)\n\n\n3\nText columns should be left aligned.\n\n\n4\nNumber columns should be right aligned and should use the same number of decimal digits throughout.\n\n\n5\nColumns containing single characters are centred.\n\n\n6\nThe header fields are aligned with their data, i.e., the heading for a text column will be left aligned and the heading for a number column will be right aligned.\n\n\n\nSource: Claus Wilke’s Fundamentals of Data Visualization\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s apply these rules\n\n\n\n\n\n−+\n01:30\n\n\n\n\n  \n  \n\n\n\nKey rules for table layout\n\n\nNumber\nRule\n\n\n\n\n1\nDo not use vertical lines.\n\n\n2\nDo not use heavy horizontal lines between data rows. (Horizontal lines as separator between the title row and the first data row or as frame for the entire table are fine.)\n\n\n3\nText columns should be left aligned.\n\n\n4\nNumber columns should be right aligned and should use the same number of decimal digits throughout.\n\n\n5\nColumns containing single characters are centred.\n\n\n6\nThe header fields are aligned with their data, i.e., the heading for a text column will be left aligned and the heading for a number column will be right aligned.\n\n\n\nSource: Claus Wilke’s Fundamentals of Data Visualization\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable A\n\n\n\n\n\n\n\n\n\nTable B\n\n\n\n\n\n\n\nLet’s apply these rules\n\n\n\n\n\n−+\n01:30\n\n\n\n\n  \n  \n\n\n\nKey rules for table layout\n\n\nNumber\nRule\n\n\n\n\n1\nDo not use vertical lines.\n\n\n2\nDo not use heavy horizontal lines between data rows. (Horizontal lines as separator between the title row and the first data row or as frame for the entire table are fine.)\n\n\n3\nText columns should be left aligned.\n\n\n4\nNumber columns should be right aligned and should use the same number of decimal digits throughout.\n\n\n5\nColumns containing single characters are centred.\n\n\n6\nThe header fields are aligned with their data, i.e., the heading for a text column will be left aligned and the heading for a number column will be right aligned.\n\n\n\nSource: Claus Wilke’s Fundamentals of Data Visualization\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable C\n\n\n\n\n\n\n\n\n\nTable D\n\n\n\n\n\n\n\n\n\nStorytelling with data\n\nRelated time series\n\n\n\nPlotting related time series\nDataset: Fertility and births outside of marriage in Denmark and Greece.\nDefault choice for plotting is two line plots\n\n\n\nPlotting related time series\n\n\n\n\n\n\n\n\n\n\n\n\n\nPros 👍\n\nFamiliar\n\nCons 👎\n\nHard to keep track of each series\nDifficult to compare movements across short periods\n\n\n\n\nAn alternative: time on a third axis\n\n\n\n\nWhat have we learned?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBoth countries saw a large drop in fertility from the 1960s until the 1980s\nIn Denmark, after 1970 we see an increase in the share of children born outside of marriage\nIn contrast, Greek families have relatively few children outside of marriage.\nAfter 1990, Danish fertility increased from 1.3 to 1.8, while Greek fertility remained at ‘lowest-low’ levels, below replacement.\n\n\n\n\nWhat have we changed?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIndicators on the x- and y-axis and then show time with text labels\nLegend is replaced with colour coded title\nColours have meaning (main colour of country flag)\nPercentage labels on the y-axis\n\n\n\n\n\n\nStorytelling with data\n\nGiving context\n\n\n\nGiving context\nSometimes we may want to show a particular series of data in its correct context.\nFor instance, in our line graph above which showed the evolution of the share of births outside of marriage in Denmark and Greece, we might want to know if these two represent the extremes within Europe.\n\n\nGiving context\nDo Denmark and Greece represent the extremes of the share of children born outside of marriage in Europe?\n\n\n\n\nGiving context with an average\nOne way to do this would be to show an average for Europe\n\n\n\nGiving context with an interval ribbon\n\n\n\nGiving context with all of the data\nThis is silly\n\n\n\nGiving context with all of the data\nHere we highlight the series we are interested in and draw in the remaining series in grey\n\n\n\nWhat have we changed?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nShows each of the series\nWe can see that Denmark is a leader in the beginning, but is caught up by other nations\nDoes not hide outliers\nMakes clear the trends in your countries of interest\n\n\n\n\n\n\nStorytelling with data\n\nTips for polished figures\n\n\n\nTips for polishing your figures\nWhere to get great colours from for your plots:\n\n\n\n\n\nhelp spmap # Look for the palettes under fcolor\n\n\n\nRecreating published figures\n\nA FT chart published without the underlying data\n\nRecreating published figures\n\n\n\n\nRecreating published figures\n\n\n\n\n\nYou pay a heavy price\n\n\n\n\nAdditional data demo"
   },
   {
     "objectID": "lectures/lecture-1.html#sequential-scale-example-1",
     "href": "lectures/lecture-1.html#sequential-scale-example-1",
     "title": "Data visualization",
     "section": "Sequential scale example",
-    "text": "Sequential scale example\n\n\n\n\n\n\n\n\n\nPalette name: viridis"
+    "text": "Sequential scale example\n\nPalette name: viridis"
   },
   {
     "objectID": "lectures/lecture-1.html#uses-of-color-in-data-visualization-1",
     "href": "lectures/lecture-1.html#uses-of-color-in-data-visualization-1",
     "title": "Data visualization",
     "section": "Uses of color in data visualization",
-    "text": "Uses of color in data visualization\n\n\n\n\nDistinguish categories (qualitative)\n\n\n\n\n\n\n\n\n\nRepresent numeric values (sequential)\n\n\n\n\n\n\n\n\n\nRepresent numeric values (diverging)"
+    "text": "Uses of color in data visualization\n\n\n\n\nDistinguish categories (qualitative)\n\n\n\n\n\n\n\n\n\nRepresent numeric values (sequential)\n\n\n\n\n\n\n\n\n\nRepresent numeric values (diverging)\n\n\n\n\n\n\n\n\nNext we can talk about a diverging palette, which is used to represent numeric values that are ordered in some way, and we want to know how far each point is away from the midpoint or median value."
   },
   {
     "objectID": "lectures/lecture-1.html#diverging-scale-example",
     "href": "lectures/lecture-1.html#diverging-scale-example",
     "title": "Data visualization",
     "section": "Diverging scale example",
-    "text": "Diverging scale example"
+    "text": "Diverging scale example\n\n\nIn this instance, we are looking at the solar panel data that we had before, this time, just in Stockholm county. We want to know how far each point is away from the median value of installed solar capacity in Stockholm county - and we can see that the red values are high, and the blue values are low, while the median is a white colour.\nIn this case we have a log scale on the y-axis because the data is quite skewed, and we want to be able to see the differences between the points more clearly. So Stockholm city has almost 10X the median installed solar capacity in the county."
   },
   {
     "objectID": "lectures/lecture-1.html#uses-of-color-in-data-visualization-2",
     "href": "lectures/lecture-1.html#uses-of-color-in-data-visualization-2",
     "title": "Data visualization",
     "section": "Uses of color in data visualization",
-    "text": "Uses of color in data visualization\n\n\n\n\nDistinguish categories (qualitative)\n\n\n\n\n\n\n\n\n\nRepresent numeric values (sequential)\n\n\n\n\n\n\n\n\n\nRepresent numeric values (diverging)\n\n\n\n\n\n\n\n\n\nHighlight"
+    "text": "Uses of color in data visualization\n\n\n\n\nDistinguish categories (qualitative)\n\n\n\n\n\n\n\n\n\nRepresent numeric values (sequential)\n\n\n\n\n\n\n\n\n\nRepresent numeric values (diverging)\n\n\n\n\n\n\n\n\n\nHighlight\n\n\n\n\n\n\n\n\nThe last type of palette that we are going to talk about is a highlight palette, which is used to highlight a particular point or set of points in a plot where you have a lot of information."
   },
   {
     "objectID": "lectures/lecture-1.html#highlight-example",
     "href": "lectures/lecture-1.html#highlight-example",
     "title": "Data visualization",
     "section": "Highlight example",
-    "text": "Highlight example"
+    "text": "Highlight example\n\n\nIn this example, we have information on the share of children born outside of marriage in Europe.\nWe have a lot of lines, and we are interested in highlighting two countries in order to compare them over time.\nWe can see that in Denmark, the share of children born outside of marriage was higher than Greece in 1960, and then really increased in 1970 to about 1990, before levelling off somewhat at about 50% of children born outside of marriage.\nIn contrast, in Greece, the share of children born outside of marriage was very low in 1960, and because of the importance of the Orthodox church in Greece, it has remained low throughout the period, only increasing to about 12,5% in 2021.\nI did another neat thing here, where I used the markdown in the title to colour the country names in the legend to match the colours of the lines. This way we don’t need to have a legend and a title, and we can save some space on the plot. I also used the colours from the flags of the countries, which is a nice touch, if I do say so myself."
   },
   {
     "objectID": "lectures/lecture-1.html#using-density-plots-to-set-your-legend-breaks-quick-example",
     "href": "lectures/lecture-1.html#using-density-plots-to-set-your-legend-breaks-quick-example",
     "title": "Data visualization",
     "section": "Using density plots to set your legend breaks: quick example",
-    "text": "Using density plots to set your legend breaks: quick example\nDataset: Solar panels in Sweden\n\n\n\n  \n  \n\n\n\nInstalled solar capacity in Sweden\n\n\nYear: 2021\n\n\nSwedish county\nInstalled solar capacity (megawatts)\n\n\n\n\nVästra Götalands län\n266.21\n\n\nSkåne län\n256.25\n\n\nStockholms län\n182.25\n\n\nÖstergötlands län\n106.81\n\n\nHallands län\n94.31\n\n\nJönköpings län\n88.53\n\n\nSödermanlands län\n79.71\n\n\nUppsala län\n79.11\n\n\nKalmar län\n59.01\n\n\nVästmanlands län\n49.45\n\n\n\nSource: Energimyndigheten"
+    "text": "Using density plots to set your legend breaks: quick example\nDataset: Solar panels in Sweden\n\n\n\n  \n  \n\n\n\nInstalled solar capacity in Sweden\n\n\nYear: 2021\n\n\nSwedish county\nInstalled solar capacity (megawatts)\n\n\n\n\nVästra Götalands län\n266.21\n\n\nSkåne län\n256.25\n\n\nStockholms län\n182.25\n\n\nÖstergötlands län\n106.81\n\n\nHallands län\n94.31\n\n\nJönköpings län\n88.53\n\n\nSödermanlands län\n79.71\n\n\nUppsala län\n79.11\n\n\nKalmar län\n59.01\n\n\nVästmanlands län\n49.45\n\n\n\nSource: Energimyndigheten\n\n\n\n\n\n\n\n\n\nLet’s recap quickly, we have a dataset of solar panels in Sweden, and we are interested in the installed capacity of solar panels in different counties in Sweden.\nWe want to make a choropleth, or a map that is coloured based on the installed capacity of solar panels in each county."
   },
   {
     "objectID": "lectures/lecture-1.html#how-to-decide-on-values-for-the-bins",
     "href": "lectures/lecture-1.html#how-to-decide-on-values-for-the-bins",
     "title": "Data visualization",
     "section": "How to decide on values for the bins?",
-    "text": "How to decide on values for the bins?\nUse a histogram or a density plot to see where the weight of the distribution is."
+    "text": "How to decide on values for the bins?\nUse a histogram or a density plot to see where the weight of the distribution is.\n\n\n\n\n\n\n\n\n\n\nHow do we decide on the values for the bins in our choropleth?\nLet’s make a histogram of the installed capacity of solar panels in the different counties in Sweden.\nWe can see the range goes from zero to about 300.\n\nMap with appropriate breaks\nAsk your neighbour:\n\nwhat kind of palette is this?\nIs it appropriate to use with this data?\n\n\n\n\n−+\n01:00\n\n\n\n\n\nSo have a look at this map that we have created - and tell me what kind of palette is this, and is it appropriate to use with this data?\nLet’s take 1 minute to discuss with your neighbour.\n\n\n\n\n\nImproving your maps\n\nGreat Choropleths\n\n\n\nExamples of great maps\nFinancial Times analysis of Italian election results in 2018\n\n\nThis is a map from the FT showing the results of the Italian elections in 2018. You can all get access to the FT through Lund and I think it’s a really great resource for data journalism and data visualization.\nMaps work best when they show an emerging spatial pattern, as was the case with this map from the recent Italian elections.\nShowing the winner at municipality level clearly shows the political divisions in the country. In the north, the Northern League party triumphed largely on the back of an anti-immigration and anti-EU agenda. In the south, the anti-establishment Five Star Movement was even more successful, gaining a majority of votes in many areas.\nWhat is also clever as that they have used a column chart in the map in order to help us understand the aggregate vote share for the main parties.\nWhat kind of palette do you think they have used here? Sequential, qualitative or diverging?\nA: qualitative, because they are showing the winner in each municipality.\n\n\n\nExamples of great maps\nFinancial Times analysis of Italian election results in 2018\n\n\nAnother interesting take on the results was to show the per cent share of vote. This helped to emphasise just how strong the support was for the two parties.\nWhat kind of palette do you think they have used here? Sequential, qualitative or diverging?\nA: Sequential, because they are showing the share of the vote in each municipality for two main parties they want to compare.\nAnother thing I should mention is that they have been quite clever with the legend - you can see here the breaks are in specific places, in oder to best show that the Norhtern League’s support is really concentrated in the North, and the Five Star Movement’s support is really concentrated in the South and Sicily.\n\n\n\nExamples of great maps\nHuman Terrain from The Pudding\n\n\nThe other place I really recommend you have a look for inspiration for good data journalism is a website called “The Pudding”. They have some really great data visualizations and data journalism pieces, inclduing this one that shows where people live in countries.\nHere i have a screenshow of the map showing the Oresund region, and we can see how centered the population is in Copenagenhagen and Malmo, and how the population density drops off as we move away from the cities to smaller towns.\nI will say that this is based on buildings and not people, so it is not a perfect representation of the population, but it is a really interesting way to show where people live in a country. Here you can see the Oresund bridge looks like it has people living on it, but that is not the case in reality.\nLet’s have a look at some other places - who has visited Japan before? Compare population growth…\n\n\n\nExamples of great maps\nThe Coming Crisis: Exploring the U.S. Physician Shortage by Daniel Snow\n\n\n\n\n\nOvercoming Excel\n\nMotivation\n\n\n\nOvercoming Excel\n\n\n\nExcel itself is not a bad tool.\nIt is very popular! See the info on jobs that require it.\n\n\n\nOvercoming Excel\n\n\nFormby et al (2017) Microsoft Excel: Is It An Important Job Skill for College Graduates?\n\n\nOvercoming Excel\n\nTakeaways:\n\n\n\nYou will likely use Excel in the future 📊\nExcel’s default plots and tables can be improved upon 📈\nSimple rules can help you make your message clear 💎\n\n\n\n\n\n\n\n\nOvercoming Excel\n\nCharts\n\n\n\nOvercoming Excel: Column plot\n\n\n\n\nWe often encounter datasets containing simple amounts 🤏\nHere is some data on a sample of Swedish musical artists 🎵\nI put this data into Excel, and asked for a recommended chart 📊\n\n\n\n\n\n\n\n\n  \n  \n\n\n\nSwedish musical artists\n\n\nRank\nArtist\nMonthly listeners (m)\n\n\n\n\n1\nAvicii\n29.47\n\n\n2\nABBA\n23.48\n\n\n3\nJosé González\n 4.07\n\n\n4\nRobyn\n 3.11\n\n\n5\nTimbuktu\n 0.38\n\n\n\nDatasource: Spotify charts Nov 2022\n\n\n\n\n\n\n\n\n\n\n\n\nYour turn\n\n\n\n−+\n02:30\n\n\n\n\nDiscuss with your neighbour:\n\nWhat do we like?\nWhat is confusing?\n\n\n\nTip 1: Avoid rotated axis labels\nUgly 🤢\n\n\n\nTip 1: Avoid rotated axis labels\nFlip axes so that the text is easier to read 👓\n\n\n\nTip 2: Pay attention to the order of the bars\nBad 👎\n\n\n\nTip 2: Pay attention to the order of the bars\nIt is clear that José González recieves more streams than Robyn\n\n\n\nTip 3: Consider your titles, labels and axes\nUninformative️ ❗\n\n\n\nTip 3: Consider your titles, labels and axes\nNote the title, x-axis title, x-axis labels 📙\n\n\n\nTip 3: Consider your titles, labels and axes\nTitles and captions have different application areas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Monthly streams for Swedish musical artists. Data sources: Spotify charts in November 2022\n\n\n\n\n\n\n\nWe can use dots instead of bars\n\n\n\nWe can use dots instead of bars\n\n\n\nDots are preferable if we want to truncate the axes\nDataset: Solar panels in Sweden\n\n\n\nDots are preferable if we want to truncate the axes\n\n\nBar lengths donot accuratelyrepresent thedata values\n\n\nDots are preferable if we want to truncate the axes\n\n\nKey featuresof the dataare obscured\n\n\nDots are preferable if we want to truncate the axes\n\n\n\n\n\n\nOvercoming Excel\n\nTables\n\n\n\nOvercoming Excel: Tables\n\n\n\nWe often encounter datasets containing simple amounts 🤏\nHere is some data on a sample of Swedish musical artists 🎵\nI put this data into Excel, and asked it to insert a table 🗃️\n\n\n\n\n\n\n\n  \n  \n\n\n\nSwedish musical artists\n\n\nRank\nArtist\nMonthly listeners (m)\n\n\n\n\n1\nAvicii\n29.47\n\n\n2\nABBA\n23.48\n\n\n3\nJosé González\n 4.07\n\n\n4\nRobyn\n 3.11\n\n\n5\nTimbuktu\n 0.38\n\n\n\nDatasource: Spotify charts Nov 2022\n\n\n\n\n\n\n\n\n\n\n\nYour turn again\n\n\n\n−+\n02:30\n\n\n\n\nDiscuss with your neighbour:\n\nWhat do we like?\nWhat is confusing?\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n\n\n\nKey rules for table layout\n\n\nNumber\nRule\n\n\n\n\n1\nDo not use vertical lines.\n\n\n2\nDo not use heavy horizontal lines between data rows. (Horizontal lines as separator between the title row and the first data row or as frame for the entire table are fine.)\n\n\n3\nText columns should be left aligned.\n\n\n4\nNumber columns should be right aligned and should use the same number of decimal digits throughout.\n\n\n5\nColumns containing single characters are centred.\n\n\n6\nThe header fields are aligned with their data, i.e., the heading for a text column will be left aligned and the heading for a number column will be right aligned.\n\n\n\nSource: Claus Wilke’s Fundamentals of Data Visualization\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s apply these rules\n\n\n\n\n\n−+\n01:30\n\n\n\n\n  \n  \n\n\n\nKey rules for table layout\n\n\nNumber\nRule\n\n\n\n\n1\nDo not use vertical lines.\n\n\n2\nDo not use heavy horizontal lines between data rows. (Horizontal lines as separator between the title row and the first data row or as frame for the entire table are fine.)\n\n\n3\nText columns should be left aligned.\n\n\n4\nNumber columns should be right aligned and should use the same number of decimal digits throughout.\n\n\n5\nColumns containing single characters are centred.\n\n\n6\nThe header fields are aligned with their data, i.e., the heading for a text column will be left aligned and the heading for a number column will be right aligned.\n\n\n\nSource: Claus Wilke’s Fundamentals of Data Visualization\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable A\n\n\n\n\n\n\n\n\n\nTable B\n\n\n\n\n\n\n\nLet’s apply these rules\n\n\n\n\n\n−+\n01:30\n\n\n\n\n  \n  \n\n\n\nKey rules for table layout\n\n\nNumber\nRule\n\n\n\n\n1\nDo not use vertical lines.\n\n\n2\nDo not use heavy horizontal lines between data rows. (Horizontal lines as separator between the title row and the first data row or as frame for the entire table are fine.)\n\n\n3\nText columns should be left aligned.\n\n\n4\nNumber columns should be right aligned and should use the same number of decimal digits throughout.\n\n\n5\nColumns containing single characters are centred.\n\n\n6\nThe header fields are aligned with their data, i.e., the heading for a text column will be left aligned and the heading for a number column will be right aligned.\n\n\n\nSource: Claus Wilke’s Fundamentals of Data Visualization\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable C\n\n\n\n\n\n\n\n\n\nTable D\n\n\n\n\n\n\n\n\n\nStorytelling with data\n\nRelated time series\n\n\n\nPlotting related time series\nDataset: Fertility and births outside of marriage in Denmark and Greece.\nDefault choice for plotting is two line plots\n\n\n\nPlotting related time series\n\n\n\n\n\n\n\n\n\n\n\n\n\nPros 👍\n\nFamiliar\n\nCons 👎\n\nHard to keep track of each series\nDifficult to compare movements across short periods\n\n\n\n\nAn alternative: time on a third axis\n\n\n\n\nWhat have we learned?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBoth countries saw a large drop in fertility from the 1960s until the 1980s\nIn Denmark, after 1970 we see an increase in the share of children born outside of marriage\nIn contrast, Greek families have relatively few children outside of marriage.\nAfter 1990, Danish fertility increased from 1.3 to 1.8, while Greek fertility remained at ‘lowest-low’ levels, below replacement.\n\n\n\n\nWhat have we changed?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIndicators on the x- and y-axis and then show time with text labels\nLegend is replaced with colour coded title\nColours have meaning (main colour of country flag)\nPercentage labels on the y-axis\n\n\n\n\n\n\nStorytelling with data\n\nGiving context\n\n\n\nGiving context\nSometimes we may want to show a particular series of data in its correct context.\nFor instance, in our line graph above which showed the evolution of the share of births outside of marriage in Denmark and Greece, we might want to know if these two represent the extremes within Europe.\n\n\nGiving context\nDo Denmark and Greece represent the extremes of the share of children born outside of marriage in Europe?\n\n\n\n\nGiving context with an average\nOne way to do this would be to show an average for Europe\n\n\n\nGiving context with an interval ribbon\n\n\n\nGiving context with all of the data\nThis is silly\n\n\n\nGiving context with all of the data\nHere we highlight the series we are interested in and draw in the remaining series in grey\n\n\n\nWhat have we changed?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nShows each of the series\nWe can see that Denmark is a leader in the beginning, but is caught up by other nations\nDoes not hide outliers\nMakes clear the trends in your countries of interest\n\n\n\n\n\n\nStorytelling with data\n\nTips for polished figures\n\n\n\nTips for polishing your figures\nWhere to get great colours from for your plots:\n\n\n\n\n\nhelp spmap # Look for the palettes under fcolor\n\n\n\nRecreating published figures\n\nA FT chart published without the underlying data\n\nRecreating published figures\n\n\n\n\nRecreating published figures\n\n\n\n\n\nYou pay a heavy price\n\n\n\n\nAdditional data demo"
   },
   {
     "objectID": "lectures/lecture-1.html#map-with-appropriate-breaks",
     "href": "lectures/lecture-1.html#map-with-appropriate-breaks",
     "title": "Data visualization",
     "section": "Map with appropriate breaks",
-    "text": "Map with appropriate breaks\nAsk your neighbour:\n\nwhat kind of palette is this?\nIs it appropriate to use with this data?\n\n\n\n\n−+\n01:00"
+    "text": "Map with appropriate breaks\nAsk your neighbour:\n\nwhat kind of palette is this?\nIs it appropriate to use with this data?\n\n\n\n\n−+\n01:00\n\n\n\n\n\nSo have a look at this map that we have created - and tell me what kind of palette is this, and is it appropriate to use with this data?\nLet’s take 1 minute to discuss with your neighbour."
   },
   {
     "objectID": "lectures/lecture-1.html#section-1",
@@ -627,21 +627,21 @@
     "href": "lectures/lecture-1.html#examples-of-great-maps",
     "title": "Data visualization",
     "section": "Examples of great maps",
-    "text": "Examples of great maps\nFinancial Times analysis of Italian election results in 2018\n\n\n\n\n\n\n\n\n\n\nMaps work best when they show an emerging spatial pattern, as was the case with this map from the recent Italian elections.\nShowing the winner at municipality level clearly shows the political divisions in the country. In the north, the Northern League party triumphed largely on the back of an anti-immigration and anti-EU agenda. In the south, the anti-establishment Five Star Movement was even more successful, gaining a majority of votes in many areas"
+    "text": "Examples of great maps\nFinancial Times analysis of Italian election results in 2018\n\n\nThis is a map from the FT showing the results of the Italian elections in 2018. You can all get access to the FT through Lund and I think it’s a really great resource for data journalism and data visualization.\nMaps work best when they show an emerging spatial pattern, as was the case with this map from the recent Italian elections.\nShowing the winner at municipality level clearly shows the political divisions in the country. In the north, the Northern League party triumphed largely on the back of an anti-immigration and anti-EU agenda. In the south, the anti-establishment Five Star Movement was even more successful, gaining a majority of votes in many areas.\nWhat is also clever as that they have used a column chart in the map in order to help us understand the aggregate vote share for the main parties.\nWhat kind of palette do you think they have used here? Sequential, qualitative or diverging?\nA: qualitative, because they are showing the winner in each municipality."
   },
   {
     "objectID": "lectures/lecture-1.html#examples-of-great-maps-1",
     "href": "lectures/lecture-1.html#examples-of-great-maps-1",
     "title": "Data visualization",
     "section": "Examples of great maps",
-    "text": "Examples of great maps\nFinancial Times analysis of Italian election results in 2018\n\n\n\n\n\n\n\n\n\n\nAnother interesting take on the results was to show the per cent share of vote. This helped to emphasise just how strong the support was for the two parties."
+    "text": "Examples of great maps\nFinancial Times analysis of Italian election results in 2018\n\n\nAnother interesting take on the results was to show the per cent share of vote. This helped to emphasise just how strong the support was for the two parties.\nWhat kind of palette do you think they have used here? Sequential, qualitative or diverging?\nA: Sequential, because they are showing the share of the vote in each municipality for two main parties they want to compare.\nAnother thing I should mention is that they have been quite clever with the legend - you can see here the breaks are in specific places, in oder to best show that the Norhtern League’s support is really concentrated in the North, and the Five Star Movement’s support is really concentrated in the South and Sicily."
   },
   {
     "objectID": "lectures/lecture-1.html#examples-of-great-maps-2",
     "href": "lectures/lecture-1.html#examples-of-great-maps-2",
     "title": "Data visualization",
     "section": "Examples of great maps",
-    "text": "Examples of great maps\nHuman Terrain from The Pudding"
+    "text": "Examples of great maps\nHuman Terrain from The Pudding\n\n\nThe other place I really recommend you have a look for inspiration for good data journalism is a website called “The Pudding”. They have some really great data visualizations and data journalism pieces, inclduing this one that shows where people live in countries.\nHere i have a screenshow of the map showing the Oresund region, and we can see how centered the population is in Copenagenhagen and Malmo, and how the population density drops off as we move away from the cities to smaller towns.\nI will say that this is based on buildings and not people, so it is not a perfect representation of the population, but it is a really interesting way to show where people live in a country. Here you can see the Oresund bridge looks like it has people living on it, but that is not the case in reality.\nLet’s have a look at some other places - who has visited Japan before? Compare population growth…"
   },
   {
     "objectID": "lectures/lecture-1.html#examples-of-great-maps-3",
@@ -662,21 +662,21 @@
     "href": "lectures/lecture-1.html#overcoming-excel",
     "title": "Data visualization",
     "section": "Overcoming Excel",
-    "text": "Overcoming Excel\n\n\n\n\n\n\n\n\n\n\n\nExcel itself is not a bad tool.\nIt is very popular! See the info on jobs that require it."
+    "text": "Overcoming Excel\n\n\n\nExcel itself is not a bad tool.\nIt is very popular! See the info on jobs that require it."
   },
   {
     "objectID": "lectures/lecture-1.html#overcoming-excel-1",
     "href": "lectures/lecture-1.html#overcoming-excel-1",
     "title": "Data visualization",
     "section": "Overcoming Excel",
-    "text": "Overcoming Excel\n\n\n\n\n\n\n\n\n\n\nFormby et al (2017) Microsoft Excel: Is It An Important Job Skill for College Graduates?"
+    "text": "Overcoming Excel\n\n\nFormby et al (2017) Microsoft Excel: Is It An Important Job Skill for College Graduates?"
   },
   {
     "objectID": "lectures/lecture-1.html#overcoming-excel-2",
     "href": "lectures/lecture-1.html#overcoming-excel-2",
     "title": "Data visualization",
     "section": "Overcoming Excel",
-    "text": "Overcoming Excel\n\n\nTakeaways:\n\n\n\nYou will likely use Excel in the future 📊\nExcel’s default plots and tables can be improved upon 📈\nSimple rules can help you make your message clear 💎"
+    "text": "Overcoming Excel\n\nTakeaways:\n\n\n\nYou will likely use Excel in the future 📊\nExcel’s default plots and tables can be improved upon 📈\nSimple rules can help you make your message clear 💎"
   },
   {
     "objectID": "lectures/lecture-1.html#section-3",
@@ -697,56 +697,56 @@
     "href": "lectures/lecture-1.html#your-turn",
     "title": "Data visualization",
     "section": "Your turn",
-    "text": "Your turn\n\n\n\n−+\n02:30\n\n\n\n\n\n\n\n\n\n\n\n\nDiscuss with your neighbour:\n\nWhat do we like?\nWhat is confusing?"
+    "text": "Your turn\n\n\n\n−+\n02:30\n\n\n\n\nDiscuss with your neighbour:\n\nWhat do we like?\nWhat is confusing?"
   },
   {
     "objectID": "lectures/lecture-1.html#tip-1-avoid-rotated-axis-labels",
     "href": "lectures/lecture-1.html#tip-1-avoid-rotated-axis-labels",
     "title": "Data visualization",
     "section": "Tip 1: Avoid rotated axis labels",
-    "text": "Tip 1: Avoid rotated axis labels\n\nUgly 🤢"
+    "text": "Tip 1: Avoid rotated axis labels\nUgly 🤢"
   },
   {
     "objectID": "lectures/lecture-1.html#tip-1-avoid-rotated-axis-labels-1",
     "href": "lectures/lecture-1.html#tip-1-avoid-rotated-axis-labels-1",
     "title": "Data visualization",
     "section": "Tip 1: Avoid rotated axis labels",
-    "text": "Tip 1: Avoid rotated axis labels\n\nFlip axes so that the text is easier to read 👓"
+    "text": "Tip 1: Avoid rotated axis labels\nFlip axes so that the text is easier to read 👓"
   },
   {
     "objectID": "lectures/lecture-1.html#tip-2-pay-attention-to-the-order-of-the-bars",
     "href": "lectures/lecture-1.html#tip-2-pay-attention-to-the-order-of-the-bars",
     "title": "Data visualization",
     "section": "Tip 2: Pay attention to the order of the bars",
-    "text": "Tip 2: Pay attention to the order of the bars\n\nBad 👎"
+    "text": "Tip 2: Pay attention to the order of the bars\nBad 👎"
   },
   {
     "objectID": "lectures/lecture-1.html#tip-2-pay-attention-to-the-order-of-the-bars-1",
     "href": "lectures/lecture-1.html#tip-2-pay-attention-to-the-order-of-the-bars-1",
     "title": "Data visualization",
     "section": "Tip 2: Pay attention to the order of the bars",
-    "text": "Tip 2: Pay attention to the order of the bars\n\nIt is clear that José González recieves more streams than Robyn"
+    "text": "Tip 2: Pay attention to the order of the bars\nIt is clear that José González recieves more streams than Robyn"
   },
   {
     "objectID": "lectures/lecture-1.html#tip-3-consider-your-titles-labels-and-axes",
     "href": "lectures/lecture-1.html#tip-3-consider-your-titles-labels-and-axes",
     "title": "Data visualization",
     "section": "Tip 3: Consider your titles, labels and axes",
-    "text": "Tip 3: Consider your titles, labels and axes\n\nUninformative️ ❗"
+    "text": "Tip 3: Consider your titles, labels and axes\nUninformative️ ❗"
   },
   {
     "objectID": "lectures/lecture-1.html#tip-3-consider-your-titles-labels-and-axes-1",
     "href": "lectures/lecture-1.html#tip-3-consider-your-titles-labels-and-axes-1",
     "title": "Data visualization",
     "section": "Tip 3: Consider your titles, labels and axes",
-    "text": "Tip 3: Consider your titles, labels and axes\n\nNote the title, x-axis title, x-axis labels 📙"
+    "text": "Tip 3: Consider your titles, labels and axes\nNote the title, x-axis title, x-axis labels 📙"
   },
   {
     "objectID": "lectures/lecture-1.html#tip-3-consider-your-titles-labels-and-axes-2",
     "href": "lectures/lecture-1.html#tip-3-consider-your-titles-labels-and-axes-2",
     "title": "Data visualization",
     "section": "Tip 3: Consider your titles, labels and axes",
-    "text": "Tip 3: Consider your titles, labels and axes\n\nTitles and captions have different application areas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Monthly streams for Swedish musical artists. Data sources: Spotify charts in November 2022"
+    "text": "Tip 3: Consider your titles, labels and axes\nTitles and captions have different application areas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Monthly streams for Swedish musical artists. Data sources: Spotify charts in November 2022"
   },
   {
     "objectID": "lectures/lecture-1.html#we-can-use-dots-instead-of-bars",
@@ -774,14 +774,14 @@
     "href": "lectures/lecture-1.html#dots-are-preferable-if-we-want-to-truncate-the-axes-1",
     "title": "Data visualization",
     "section": "Dots are preferable if we want to truncate the axes",
-    "text": "Dots are preferable if we want to truncate the axes\n\n\n\n\n\n\n\n\n\n\nBar lengths donot accuratelyrepresent thedata values"
+    "text": "Dots are preferable if we want to truncate the axes\n\n\nBar lengths donot accuratelyrepresent thedata values"
   },
   {
     "objectID": "lectures/lecture-1.html#dots-are-preferable-if-we-want-to-truncate-the-axes-2",
     "href": "lectures/lecture-1.html#dots-are-preferable-if-we-want-to-truncate-the-axes-2",
     "title": "Data visualization",
     "section": "Dots are preferable if we want to truncate the axes",
-    "text": "Dots are preferable if we want to truncate the axes\n\n\n\n\n\n\n\n\n\n\nKey featuresof the dataare obscured"
+    "text": "Dots are preferable if we want to truncate the axes\n\n\nKey featuresof the dataare obscured"
   },
   {
     "objectID": "lectures/lecture-1.html#dots-are-preferable-if-we-want-to-truncate-the-axes-3",
@@ -809,7 +809,7 @@
     "href": "lectures/lecture-1.html#your-turn-again",
     "title": "Data visualization",
     "section": "Your turn again",
-    "text": "Your turn again\n\n\n\n−+\n02:30\n\n\n\n\n\n\n\n\n\n\n\n\nDiscuss with your neighbour:\n\nWhat do we like?\nWhat is confusing?"
+    "text": "Your turn again\n\n\n\n−+\n02:30\n\n\n\n\nDiscuss with your neighbour:\n\nWhat do we like?\nWhat is confusing?"
   },
   {
     "objectID": "lectures/lecture-1.html#section-5",
@@ -851,7 +851,7 @@
     "href": "lectures/lecture-1.html#plotting-related-time-series-1",
     "title": "Data visualization",
     "section": "Plotting related time series",
-    "text": "Plotting related time series\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPros 👍\n\nFamiliar\n\n\n\nCons 👎\n\nHard to keep track of each series\nDifficult to compare movements across short periods"
+    "text": "Plotting related time series\n\n\n\n\n\n\n\n\n\n\n\n\n\nPros 👍\n\nFamiliar\n\nCons 👎\n\nHard to keep track of each series\nDifficult to compare movements across short periods"
   },
   {
     "objectID": "lectures/lecture-1.html#an-alternative-time-on-a-third-axis",
@@ -949,7 +949,7 @@
     "href": "lectures/lecture-1.html#recreating-published-figures",
     "title": "Data visualization",
     "section": "Recreating published figures",
-    "text": "Recreating published figures\n\n\n\n\n\nA FT chart published without the underlying data"
+    "text": "Recreating published figures\n\nA FT chart published without the underlying data"
   },
   {
     "objectID": "lectures/lecture-1.html#recreating-published-figures-1",
@@ -992,5 +992,33 @@
     "title": "Data visualization",
     "section": "",
     "text": "Get you excited about storytelling with data\nShow some tips and tricks to make your maps and charts pop\n\n\n\n\n\n\nHans Rosling’s the best stats you’ve ever seen\n\n\n\n\nThis is not about the software. Rather, it is about the theory behind communicating well with data"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#recap-from-lab-1-exercises",
+    "href": "lectures/lecture-1.html#recap-from-lab-1-exercises",
+    "title": "Data visualization",
+    "section": "Recap from Lab 1 exercises",
+    "text": "Recap from Lab 1 exercises\n\nMake a map of the share of employment in industry in the year 2010 across the whole dataset"
+  },
+  {
+    "objectID": "lectures/lecture-1.html#recap-from-lab-1-exercises-1",
+    "href": "lectures/lecture-1.html#recap-from-lab-1-exercises-1",
+    "title": "Data visualization",
+    "section": "Recap from Lab 1 exercises",
+    "text": "Recap from Lab 1 exercises\n\n\n\n−+\n01:00\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiscuss with your neighbour:\n\nWhat do we like?\nWhat is confusing?\n\n\nspmap employment_share_industry using \"nutscoord.dta\" \n  if year == 2010, \n  id(_ID) fcolor(Spectral) legstyle(2) \n    title(\"Employment Share Industry - 2010\", size(large)) \n    osize(0.02 ..) ocolor(white ..) \n    clmethod(custom) clbreaks(0 (0.2) 1)\n    legend(pos(9) size(medium) rowgap(1.5) \n    label(6 \"80-100 %\") label(5 \"60-80 %\") \n    label(4 \"40-60 %\") label(3 \"20-40 %\") label(2 \"0-20 %\") \n    label(1 \"No Data\")) \n    ndfcolor(gray) ndocolor(white ..) ndsize(0.02 ..)\n\n\n\nSo I am going to ask you to turn to your neighbour, and discuss what you like about this map, and what is confusing about it.\nYou should hear a sound when the time is up. I’m really proud of the countdown timer and the sound in the slides and will be very sad if it doesn’t work, but if it doesn’t, I’ll just shout.\nOkay - what do we think? Feel free to raise your hands if you want to report back."
+  },
+  {
+    "objectID": "lectures/lecture-1.html#lets-plot-the-distribution-of-the-data",
+    "href": "lectures/lecture-1.html#lets-plot-the-distribution-of-the-data",
+    "title": "Data visualization",
+    "section": "Let’s plot the distribution of the data",
+    "text": "Let’s plot the distribution of the data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhistogram employment_share_industry if year == 2010, \n  color(midblue)\n\n\n\nSo in Stata we can make a histogram of our data with the hisogram command. This allows us to see the distribution of the data - for each region in the dataset, we look what the value is of regional share of employment in industry, and we count that value and add it to the bin.\nHere we can see that all of the data lies between about 0.08 and .4 - in percentage terms that means that the share of employment in industry is between 8 and 40 percent in 2010 across our dataset."
+  },
+  {
+    "objectID": "lectures/lecture-1.html#lets-plot-the-distribution-of-the-data-1",
+    "href": "lectures/lecture-1.html#lets-plot-the-distribution-of-the-data-1",
+    "title": "Data visualization",
+    "section": "Let’s plot the distribution of the data",
+    "text": "Let’s plot the distribution of the data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nkdensity employment_share_industry if year == 2010\n\n\n\nWe can also use what is called a kernel density plot to show the distribution of the data. This is a smoothed version of the histogram, where we can see the distribution of the data in a more continuous way.\nWhat can we say about the shape of the distribution?"
   }
 ]
