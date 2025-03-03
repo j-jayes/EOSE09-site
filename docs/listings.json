@@ -3,9 +3,10 @@
     "listing": "/index.html",
     "items": [
       "/labs/Lab-1.html",
-      "/labs/Lab-1-exercises.html",
-      "/labs/Lab-hints-graphs.html",
       "/labs/Lab-2.html",
+      "/labs/Lab-1-exercises.html",
+      "/labs/Lab-2-exercises.html",
+      "/labs/Lab-hints-graphs.html",
       "/lectures/lecture-1.html",
       "/resources/resources.html",
       "/resources/Additional-map-data.html",

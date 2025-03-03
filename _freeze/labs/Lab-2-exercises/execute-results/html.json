@@ -1,0 +1,15 @@
+{
+  "hash": "5b48180f63fb89dff88b9fb7fd532061",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Stata Lab 2: Exercises\"\nauthor: Jonathan Jayes\ndate: today\nformat:\n  html:\n    code-overflow: wrap\n  pdf:\n    documentclass: scrreprt\n    toc: true\nexecute: \n  eval: false\n  echo: true\nimage: \"Lab-1-resources/preview_exercises.png\"\n---\n\n\n\n\n\n\n## Setup\n\nSet your working directory and read in the data\n\n\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nclear all\nset more off\ncd \"/Users/jonathanjayes/Downloads/Lab-1\" // set your directory\n\n# Read in the data\nuse regional_dataset, clear\n```\n:::\n\n\n\n\n\n\n## Question 1\n\nMake a subplot map that compares relative regional GDP per capita in 4 different years and join the maps together (your chosen region).\n\nTry and make it such that there is only one legend in one subplot\n\n\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# loop through maps without \nforeach i of numlist 1950 (10) 1970 {\n\t\tspmap relative_gdp_cap_country using \"nutscoord.dta\" if year == `i' & country == \"France\", id(_ID) ///\n\t\t\tfcolor(YlOrRd) legend(pos(5)) legstyle(1) ///\n\t\t\tosize(0.02 ..) ocolor(white ..) ///\n\t\t\tclmethod(custom) clbreaks(0 0.8 1 1.2 3) ///\n\t\t\tname(relative_gdp_cap_map_`i', replace) ///\n\t\t\ttitle(`i') ///\n\t\t\tleg(off)\n}\n\nspmap relative_gdp_cap_country using \"nutscoord.dta\" if year == 1980 & country == \"France\", id(_ID) ///\n\t\t\tfcolor(YlOrRd) legend(pos(5)) legstyle(1) ///\n\t\t\tosize(0.02 ..) ocolor(white ..) ///\n\t\t\tclmethod(custom) clbreaks(0 0.8 1 1.2 3) ///\n\t\t\tname(relative_gdp_cap_map_1980, replace) ///\n\t\t\ttitle(1980) ///\n\t\t\tlegend(pos(9))\n\ngraph combine relative_gdp_cap_map_1950 relative_gdp_cap_map_1960 relative_gdp_cap_map_1970 relative_gdp_cap_map_1980, title(\"Relative regional GDP per capita\")\n```\n:::\n\n\n\n\n\n\n![Output](Lab-2-resources/lab-2-exercise-1.png)\n\n## Question 2\n\nMake a beta convergence plot (your region of choice)\nAdd labels to the plot for three of your regions\n\nSee [this post](https://j-jayes.github.io/EOSE09-site/resources/beta-convergence.html) for more information on beta convergence.\n\n## Question 3\n\nMake a map that highlights a region that you want to discuss with a dotted line (any region)\n\nSee [this post](https://j-jayes.github.io/EOSE09-site/resources/regions-dotted-line.html) for more information on how to make a map with a dotted line to highlight a region.",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
