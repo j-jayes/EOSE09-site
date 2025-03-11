@@ -123,7 +123,7 @@ gen cv_gdp = sd_gdp / mean_gdp
 # Then plot both measures for comparison
 twoway (connected w_cv_gdp year, lcolor(blue) mcolor(blue) msymbol(circle)) ///
        (connected cv_gdp year, lcolor(red) mcolor(red) msymbol(diamond)) ///
-       , title("Sigma-convergence: Weighted vs Unweighted") subtitle("Germany 1950 - 2015") ///
+       , title("Sigma-convergence: Weighted vs Unweighted") subtitle("Sweden 1950 - 2015") ///
        ytitle("Coefficient of variation") xtitle("Year") ///
        legend(label(1 "Population-weighted CV") label(2 "Unweighted CV"))
 ```
