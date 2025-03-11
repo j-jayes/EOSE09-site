@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Jonathan Jayes">
 <meta name="dcterms.date" content="2025-03-11">
 
-<title>How to install Stata on your personal computers – EOSE09</title>
+<title>Sigma Convergence – EOSE09</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -71,6 +106,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -120,11 +184,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#step-1-go-to-lu-software-downloads-page" id="toc-step-1-go-to-lu-software-downloads-page" class="nav-link active" data-scroll-target="#step-1-go-to-lu-software-downloads-page">Step 1: Go to LU software downloads page</a></li>
-  <li><a href="#step-2-log-in-to-the-lu-service-desk-programme-portal-at-the-bottom-of-the-page" id="toc-step-2-log-in-to-the-lu-service-desk-programme-portal-at-the-bottom-of-the-page" class="nav-link" data-scroll-target="#step-2-log-in-to-the-lu-service-desk-programme-portal-at-the-bottom-of-the-page">Step 2: Log in to the LU service desk programme portal at the bottom of the page</a></li>
-  <li><a href="#step-3-log-in-with-your-lu-credentials" id="toc-step-3-log-in-with-your-lu-credentials" class="nav-link" data-scroll-target="#step-3-log-in-with-your-lu-credentials">Step 3: Log in with your LU credentials</a></li>
-  <li><a href="#step-4-download-stata-and-the-license-file-.pdf" id="toc-step-4-download-stata-and-the-license-file-.pdf" class="nav-link" data-scroll-target="#step-4-download-stata-and-the-license-file-.pdf">Step 4: Download Stata and the license file (.pdf)</a></li>
-  <li><a href="#step-5-install-stata" id="toc-step-5-install-stata" class="nav-link" data-scroll-target="#step-5-install-stata">Step 5: Install Stata</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#calculating-the-coefficient-of-variation" id="toc-calculating-the-coefficient-of-variation" class="nav-link" data-scroll-target="#calculating-the-coefficient-of-variation">Calculating the coefficient of variation</a></li>
+  <li><a href="#plotting-the-coefficient-of-variation" id="toc-plotting-the-coefficient-of-variation" class="nav-link" data-scroll-target="#plotting-the-coefficient-of-variation">Plotting the coefficient of variation</a></li>
+  <li><a href="#compare-to-unweighted-coefficient-of-variation" id="toc-compare-to-unweighted-coefficient-of-variation" class="nav-link" data-scroll-target="#compare-to-unweighted-coefficient-of-variation">Compare to unweighted coefficient of variation</a></li>
+  <li><a href="#relationship-with-beta-convergence" id="toc-relationship-with-beta-convergence" class="nav-link" data-scroll-target="#relationship-with-beta-convergence">Relationship with Beta Convergence</a></li>
   </ul>
 </nav>
     </div>
@@ -133,13 +197,19 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">How to install Stata on your personal computers</h1>
+<h1 class="title">Sigma Convergence</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jonathan Jayes </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
@@ -156,59 +226,103 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This is a guide for downloading and installing Stata on your personal computer.</p>
-<p>If your Stata license has expired, you can follow the steps below to renew it, you do not need to download the software again, just the license file (.pdf).</p>
-<section id="step-1-go-to-lu-software-downloads-page" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-go-to-lu-software-downloads-page">Step 1: Go to LU software downloads page</h2>
-<p>The page can be found <a href="https://www.lunduniversity.lu.se/current-students/student-services-and-support/it-resources-and-assistance/software">here</a>.</p>
-<p>It looks like this (in English):</p>
+<p>I received a request to calculate and plot sigma convergence for Sweden using Stata.</p>
+<p>For a bit of background, from your textbook, the chapter called “From Empire to Republic” by Max-Stephan Schulze, we have the following:</p>
+<blockquote class="blockquote">
+<p>One way to think about regional inequality is in terms of so-called sigmaconvergence, i.e.&nbsp;a reduction over time in the dispersion of per capita income (or output) levels across regions (Barro and Sala-i-Martin 1991; Sala-i-Martin 1996). A typical measure of sigma-convergence is the population-weighted coefficient of variation. A decline in the coefficient is indicative of a reduction in regional income dispersion. Figure 3.1.1 shows two alternative measures: one that covers all years in the range and where Lower Austria includes Vienna (CV); the other where Lower Austria and Vienna are treated as separate NUTS 2 units (CV II)</p>
+</blockquote>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="installing-stata/01-lu-software.png" class="img-fluid figure-img"></p>
-<figcaption>Software downloads page</figcaption>
+<p><img src="Lab-2-resources/sigma-1.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 3.1.1</figcaption>
 </figure>
+</div>
+<p>We can calculate the population weighted coefficient of variation as follows in Stata:</p>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>clear all</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Set your working directory and read in the data</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>cd <span class="st">"/Users/jonathanjayes/Downloads/Lab-1"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>use <span class="st">"regional_dataset"</span>, clear</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Select country of interest</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>keep <span class="cf">if</span> country <span class="sc">==</span> <span class="st">"Sweden"</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Choose time period</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>keep <span class="cf">if</span> year <span class="sc">&gt;=</span> <span class="dv">1950</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># xtset tells Stata we will do time series operations</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>xtset _ID year</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="step-2-log-in-to-the-lu-service-desk-programme-portal-at-the-bottom-of-the-page" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-log-in-to-the-lu-service-desk-programme-portal-at-the-bottom-of-the-page">Step 2: Log in to the LU service desk programme portal at the bottom of the page</h2>
-<p>You need to be connected to the LU network to access this page, or the LU VPN I believe. Here is the link to the <a href="https://program.ldc.lu.se/">LU service desk programme portal</a>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="installing-stata/02-stata-link.png" class="img-fluid figure-img"></p>
-<figcaption>Service desk portal</figcaption>
-</figure>
+<section id="calculating-the-coefficient-of-variation" class="level2">
+<h2 class="anchored" data-anchor-id="calculating-the-coefficient-of-variation">Calculating the coefficient of variation</h2>
+<p>The coefficient of variation is a measure of relative variability. It is calculated as the ratio of the standard deviation to the mean. In this case, we are calculating the coefficient of variation of GDP per capita across regions in Sweden for each year in the dataset since 1950. The formula is:</p>
+<p><span class="math display">\[CV_t^w = \frac{\sigma_t^{y,w}}{\overline{y_t^w}}\]</span></p>
+<p>Where: - <span class="math inline">\(CV_t^w\)</span> is the population-weighted coefficient of variation at time <span class="math inline">\(t\)</span></p>
+<ul>
+<li><p><span class="math inline">\(\sigma_t^{y,w} = \sqrt{\sum_{i=1}^{N}w_{i,t}(y_{i,t} - \overline{y_t^w})^2}\)</span> is the population-weighted standard deviation of GDP per capita levels, and</p></li>
+<li><p><span class="math inline">\(\overline{y_t^w} = \sum_{i=1}^{N}w_{i,t}y_{i,t}\)</span> is the population-weighted mean GDP per capita</p></li>
+</ul>
+<p>We can calculate this in Stata using the following code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For population-weighted sigma convergence</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Calculate population weights for each region in each year</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>bysort year<span class="sc">:</span> egen total_pop_year <span class="ot">=</span> <span class="fu">sum</span>(regional_population)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>gen pop_weight <span class="ot">=</span> regional_population <span class="sc">/</span> total_pop_year</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Calculate weighted mean GDP per capita for each year</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>bysort year<span class="sc">:</span> egen w_mean_gdp <span class="ot">=</span> <span class="fu">sum</span>(regional_gdp_cap_1990 <span class="co"># pop_weight)</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Calculate weighted variance and then weighted standard deviation</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>gen <span class="at">sq_dev =</span> (regional_gdp_cap_1990 <span class="sc">-</span> w_mean_gdp)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>bysort year<span class="sc">:</span> egen <span class="at">w_var_gdp =</span> <span class="fu">sum</span>(sq_dev <span class="co"># pop_weight)</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>gen <span class="at">w_sd_gdp =</span> <span class="fu">sqrt</span>(w_var_gdp)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4: Calculate population-weighted coefficient of variation</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>gen <span class="at">w_cv_gdp =</span> w_sd_gdp <span class="sc">/</span> w_mean_gdp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="step-3-log-in-with-your-lu-credentials" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-log-in-with-your-lu-credentials">Step 3: Log in with your LU credentials</h2>
-<p>You will be asked to log in with your student account.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="installing-stata/03-log-in.png" class="img-fluid figure-img"></p>
-<figcaption>Log in</figcaption>
-</figure>
+<section id="plotting-the-coefficient-of-variation" class="level2">
+<h2 class="anchored" data-anchor-id="plotting-the-coefficient-of-variation">Plotting the coefficient of variation</h2>
+<p>It is a stylistic choice to plot the coefficient of variation as a line graph with points, and to add a linear trend line to show the overall trend. This is done with the <code>twoway</code> command in Stata. You can also just use a scatter plot and a line of best fit if you prefer.</p>
+<p>When plotting this over time, a downward trend in w_cv_gdp would indicate sigma convergence (decreasing inequality), while an upward trend would indicate sigma divergence (increasing inequality).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 5: Create the weighted sigma convergence plot</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">twoway</span> (connected w_cv_gdp year, <span class="fu">lcolor</span>(blue) <span class="fu">mcolor</span>(blue) <span class="fu">msymbol</span>(circle)) <span class="sc">/</span><span class="er">//</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>       (lfit w_cv_gdp year, <span class="fu">lcolor</span>(red)) <span class="sc">/</span><span class="er">//</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>       , <span class="fu">title</span>(<span class="st">"Population-weighted Sigma-convergence"</span>) <span class="fu">subtitle</span>(<span class="st">"Sweden 1950 - 2015"</span>) <span class="sc">/</span><span class="er">//</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>       <span class="fu">ytitle</span>(<span class="st">"Population-weighted CV of GDP per capita"</span>) <span class="fu">xtitle</span>(<span class="st">"Year"</span>) <span class="sc">/</span><span class="er">//</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>       <span class="fu">legend</span>(<span class="fu">label</span>(<span class="dv">1</span> <span class="st">"Annual weighted CV"</span>) <span class="fu">label</span>(<span class="dv">2</span> <span class="st">"Linear trend"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><img src="Lab-2-resources/sigma-2.png" class="img-fluid"></p>
 </section>
-<section id="step-4-download-stata-and-the-license-file-.pdf" class="level2">
-<h2 class="anchored" data-anchor-id="step-4-download-stata-and-the-license-file-.pdf">Step 4: Download Stata and the license file (.pdf)</h2>
-<p>You will be able to download Stata and the license file from the page that opens after you log in and select your operating system.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="installing-stata/04-download-stata.png" class="img-fluid figure-img"></p>
-<figcaption>Download Stata and the license file</figcaption>
-</figure>
+<section id="compare-to-unweighted-coefficient-of-variation" class="level2">
+<h2 class="anchored" data-anchor-id="compare-to-unweighted-coefficient-of-variation">Compare to unweighted coefficient of variation</h2>
+<p>Finally, we can compare the population-weighted coefficient of variation to the unweighted coefficient of variation. The unweighted coefficient of variation is calculated in the same way as the weighted version, but without the population weights. We can then plot both measures on the same graph for comparison.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 6: Compare weighted and unweighted measures</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># First calculate the unweighted CV as before</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>bysort year<span class="sc">:</span> egen mean_gdp <span class="ot">=</span> <span class="fu">mean</span>(regional_gdp_cap_1990)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>bysort year<span class="sc">:</span> egen sd_gdp <span class="ot">=</span> <span class="fu">sd</span>(regional_gdp_cap_1990)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>gen cv_gdp <span class="ot">=</span> sd_gdp <span class="sc">/</span> mean_gdp</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Then plot both measures for comparison</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">twoway</span> (connected w_cv_gdp year, <span class="fu">lcolor</span>(blue) <span class="fu">mcolor</span>(blue) <span class="fu">msymbol</span>(circle)) <span class="sc">/</span><span class="er">//</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>       (connected cv_gdp year, <span class="fu">lcolor</span>(red) <span class="fu">mcolor</span>(red) <span class="fu">msymbol</span>(diamond)) <span class="sc">/</span><span class="er">//</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>       , <span class="fu">title</span>(<span class="st">"Sigma-convergence: Weighted vs Unweighted"</span>) <span class="fu">subtitle</span>(<span class="st">"Germany 1950 - 2015"</span>) <span class="sc">/</span><span class="er">//</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>       <span class="fu">ytitle</span>(<span class="st">"Coefficient of variation"</span>) <span class="fu">xtitle</span>(<span class="st">"Year"</span>) <span class="sc">/</span><span class="er">//</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>       <span class="fu">legend</span>(<span class="fu">label</span>(<span class="dv">1</span> <span class="st">"Population-weighted CV"</span>) <span class="fu">label</span>(<span class="dv">2</span> <span class="st">"Unweighted CV"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><img src="Lab-2-resources/sigma-3.png" class="img-fluid"></p>
 </section>
-<section id="step-5-install-stata" class="level2">
-<h2 class="anchored" data-anchor-id="step-5-install-stata">Step 5: Install Stata</h2>
-<p>Run the installer and follow the instructions. You will be asked to enter the license, code and authorization number from the license PDF file you downloaded in step 4.</p>
-<p>When installed correctly, it should look like this, noting when the license expires:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="installing-stata/05-license.png" class="img-fluid figure-img"></p>
-<figcaption>Stata installed correctly</figcaption>
-</figure>
-</div>
+<section id="relationship-with-beta-convergence" class="level2">
+<h2 class="anchored" data-anchor-id="relationship-with-beta-convergence">Relationship with Beta Convergence</h2>
+<p>Beta (<span class="math inline">\(\beta\)</span>) convergence is necessary but not sufficient for sigma convergence. Mathematically, this relationship can be expressed as:</p>
+<p><span class="math display">\[\sigma_{t+1}^2 = (1-\beta)^2\sigma_t^2 + \sigma_{\varepsilon}^2\]</span></p>
+<p>Where: - <span class="math inline">\(\beta\)</span> is the beta convergence coefficient - <span class="math inline">\(\sigma_{\varepsilon}^2\)</span> is the variance of random shocks</p>
+<p>This equation shows that even with strong beta convergence (high <span class="math inline">\(\beta\)</span>), sigma convergence may not occur if random shocks (<span class="math inline">\(\sigma_{\varepsilon}^2\)</span>) are sufficiently large.</p>
 
 
 </section>
