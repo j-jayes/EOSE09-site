@@ -18,7 +18,7 @@
     "href": "index.html#labs",
     "title": "EOSE09 - Economy and Society: Regional Development and Growth",
     "section": "Labs",
-    "text": "Labs\n\n\n\n\n\n\n\n\n\n\nStata Lab 1: Mapping Growth - Basic Maps\n\n\n\n\n\n\nVinzent Ostermeyer, adapted Jonathan Jayes\n\n\nFeb 19, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStata Lab 2: Mapping Growth - Across Space and Time\n\n\n\n\n\n\nVinzent Ostermeyer, adapted Jonathan Jayes\n\n\nFeb 27, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStata Lab 1: Exercises\n\n\n\n\n\n\nJonathan Jayes\n\n\nMar 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStata Lab 2: Exercises\n\n\n\n\n\n\nJonathan Jayes\n\n\nMar 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStata Lab Hints: Basic Graphs\n\n\n\n\n\n\nJonathan Jayes\n\n\nMar 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSigma Convergence\n\n\n\n\n\n\nJonathan Jayes\n\n\nMar 11, 2025\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Labs\n\n\n\n\n\n\n\n\n\n\nStata Lab 1: Mapping Growth - Basic Maps\n\n\n\n\n\n\nVinzent Ostermeyer, adapted Jonathan Jayes\n\n\nFeb 19, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStata Lab 2: Mapping Growth - Across Space and Time\n\n\n\n\n\n\nVinzent Ostermeyer, adapted Jonathan Jayes\n\n\nFeb 27, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStata Lab 1: Exercises\n\n\n\n\n\n\nJonathan Jayes\n\n\nMar 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStata Lab 2: Exercises\n\n\n\n\n\n\nJonathan Jayes\n\n\nMar 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStata Lab Hints: Basic Graphs\n\n\n\n\n\n\nJonathan Jayes\n\n\nMar 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSigma-Convergence\n\n\n\n\n\n\nJonathan Jayes\n\n\nMar 11, 2025\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#lectures",
@@ -86,44 +86,44 @@
   {
     "objectID": "labs/sigma-convergence.html",
     "href": "labs/sigma-convergence.html",
-    "title": "Sigma Convergence",
+    "title": "Sigma-Convergence",
     "section": "",
-    "text": "I received a request to calculate and plot sigma convergence for Sweden using Stata.\nFor a bit of background, from your textbook, the chapter called “From Empire to Republic” by Max-Stephan Schulze, we have the following:\nWe can calculate the population weighted coefficient of variation as follows in Stata:"
+    "text": "I received a request to calculate and plot sigma-convergence for Sweden using Stata.\nFor a bit of background, from your textbook, the chapter called “From Empire to Republic” by Max-Stephan Schulze, we have the following:\nWe can calculate the population weighted coefficient of variation as follows in Stata:"
   },
   {
     "objectID": "labs/sigma-convergence.html#setup",
     "href": "labs/sigma-convergence.html#setup",
-    "title": "Sigma Convergence",
+    "title": "Sigma-Convergence",
     "section": "Setup",
     "text": "Setup\n\nclear all\n\n# Set your working directory and read in the data\ncd \"/Users/jonathanjayes/Downloads/Lab-1\"\n\nuse \"regional_dataset\", clear\n \n# Select country of interest\nkeep if country == \"Sweden\"\n# Choose time period\nkeep if year &gt;= 1950\n# xtset tells Stata we will do time series operations\nxtset _ID year"
   },
   {
     "objectID": "labs/sigma-convergence.html#calculating-the-coefficient-of-variation",
     "href": "labs/sigma-convergence.html#calculating-the-coefficient-of-variation",
-    "title": "Sigma Convergence",
+    "title": "Sigma-Convergence",
     "section": "Calculating the coefficient of variation",
-    "text": "Calculating the coefficient of variation\nThe coefficient of variation is a measure of relative variability. It is calculated as the ratio of the standard deviation to the mean. In this case, we are calculating the coefficient of variation of GDP per capita across regions in Sweden for each year in the dataset since 1950. The formula is:\n\\[CV_t^w = \\frac{\\sigma_t^{y,w}}{\\overline{y_t^w}}\\]\nWhere: - \\(CV_t^w\\) is the population-weighted coefficient of variation at time \\(t\\)\n\n\\(\\sigma_t^{y,w} = \\sqrt{\\sum_{i=1}^{N}w_{i,t}(y_{i,t} - \\overline{y_t^w})^2}\\) is the population-weighted standard deviation of GDP per capita levels, and\n\\(\\overline{y_t^w} = \\sum_{i=1}^{N}w_{i,t}y_{i,t}\\) is the population-weighted mean GDP per capita\n\nWe can calculate this in Stata using the following code:\n\n# For population-weighted sigma convergence\n# Step 1: Calculate population weights for each region in each year\nbysort year: egen total_pop_year = sum(regional_population)\ngen pop_weight = regional_population / total_pop_year\n\n# Step 2: Calculate weighted mean GDP per capita for each year\nbysort year: egen w_mean_gdp = sum(regional_gdp_cap_1990 # pop_weight)\n\n# Step 3: Calculate weighted variance and then weighted standard deviation\ngen sq_dev = (regional_gdp_cap_1990 - w_mean_gdp)^2\nbysort year: egen w_var_gdp = sum(sq_dev # pop_weight)\ngen w_sd_gdp = sqrt(w_var_gdp)\n\n# Step 4: Calculate population-weighted coefficient of variation\ngen w_cv_gdp = w_sd_gdp / w_mean_gdp"
+    "text": "Calculating the coefficient of variation\nThe coefficient of variation is a measure of relative variability. It is calculated as the ratio of the standard deviation to the mean. In this case, we are calculating the coefficient of variation of GDP per capita across regions in Sweden for each year in the dataset since 1950. The formula is:\n\\[CV_t^w = \\frac{\\sigma_t^{y,w}}{\\overline{y_t^w}}\\]\nWhere: - \\(CV_t^w\\) is the population-weighted coefficient of variation at time \\(t\\)\n\n\\(\\sigma_t^{y,w} = \\sqrt{\\sum_{i=1}^{N}w_{i,t}(y_{i,t} - \\overline{y_t^w})^2}\\) is the population-weighted standard deviation of GDP per capita levels, and\n\\(\\overline{y_t^w} = \\sum_{i=1}^{N}w_{i,t}y_{i,t}\\) is the population-weighted mean GDP per capita\n\nWe can calculate this in Stata using the following code:\n\n# For population-weighted sigma-convergence\n# Step 1: Calculate population weights for each region in each year\nbysort year: egen total_pop_year = sum(regional_population)\ngen pop_weight = regional_population / total_pop_year\n\n# Step 2: Calculate weighted mean GDP per capita for each year\nbysort year: egen w_mean_gdp = sum(regional_gdp_cap_1990 # pop_weight)\n\n# Step 3: Calculate weighted variance and then weighted standard deviation\ngen sq_dev = (regional_gdp_cap_1990 - w_mean_gdp)^2\nbysort year: egen w_var_gdp = sum(sq_dev # pop_weight)\ngen w_sd_gdp = sqrt(w_var_gdp)\n\n# Step 4: Calculate population-weighted coefficient of variation\ngen w_cv_gdp = w_sd_gdp / w_mean_gdp"
   },
   {
     "objectID": "labs/sigma-convergence.html#plotting-the-coefficient-of-variation",
     "href": "labs/sigma-convergence.html#plotting-the-coefficient-of-variation",
-    "title": "Sigma Convergence",
+    "title": "Sigma-Convergence",
     "section": "Plotting the coefficient of variation",
-    "text": "Plotting the coefficient of variation\nIt is a stylistic choice to plot the coefficient of variation as a line graph with points, and to add a linear trend line to show the overall trend. This is done with the twoway command in Stata. You can also just use a scatter plot and a line of best fit if you prefer.\nWhen plotting this over time, a downward trend in w_cv_gdp would indicate sigma convergence (decreasing inequality), while an upward trend would indicate sigma divergence (increasing inequality).\n\n# Step 5: Create the weighted sigma convergence plot\ntwoway (connected w_cv_gdp year, lcolor(blue) mcolor(blue) msymbol(circle)) ///\n       (lfit w_cv_gdp year, lcolor(red)) ///\n       , title(\"Population-weighted Sigma-convergence\") subtitle(\"Sweden 1950 - 2015\") ///\n       ytitle(\"Population-weighted CV of GDP per capita\") xtitle(\"Year\") ///\n       legend(label(1 \"Annual weighted CV\") label(2 \"Linear trend\"))"
+    "text": "Plotting the coefficient of variation\nIt is a stylistic choice to plot the coefficient of variation as a line graph with points, and to add a linear trend line to show the overall trend. This is done with the twoway command in Stata. You can also just use a scatter plot and a line of best fit if you prefer.\nWhen plotting this over time, a downward trend in w_cv_gdp would indicate sigma-convergence (decreasing inequality), while an upward trend would indicate sigma divergence (increasing inequality).\n\n# Step 5: Create the weighted sigma-convergence plot\ntwoway (connected w_cv_gdp year, lcolor(blue) mcolor(blue) msymbol(circle)) ///\n       (lfit w_cv_gdp year, lcolor(red)) ///\n       , title(\"Population-weighted Sigma-convergence\") subtitle(\"Sweden 1950 - 2015\") ///\n       ytitle(\"Population-weighted CV of GDP per capita\") xtitle(\"Year\") ///\n       legend(label(1 \"Annual weighted CV\") label(2 \"Linear trend\"))"
   },
   {
     "objectID": "labs/sigma-convergence.html#compare-to-unweighted-coefficient-of-variation",
     "href": "labs/sigma-convergence.html#compare-to-unweighted-coefficient-of-variation",
-    "title": "Sigma Convergence",
+    "title": "Sigma-Convergence",
     "section": "Compare to unweighted coefficient of variation",
     "text": "Compare to unweighted coefficient of variation\nFinally, we can compare the population-weighted coefficient of variation to the unweighted coefficient of variation. The unweighted coefficient of variation is calculated in the same way as the weighted version, but without the population weights. We can then plot both measures on the same graph for comparison.\n\n# Step 6: Compare weighted and unweighted measures\n# First calculate the unweighted CV as before\nbysort year: egen mean_gdp = mean(regional_gdp_cap_1990)\nbysort year: egen sd_gdp = sd(regional_gdp_cap_1990)\ngen cv_gdp = sd_gdp / mean_gdp\n\n# Then plot both measures for comparison\ntwoway (connected w_cv_gdp year, lcolor(blue) mcolor(blue) msymbol(circle)) ///\n       (connected cv_gdp year, lcolor(red) mcolor(red) msymbol(diamond)) ///\n       , title(\"Sigma-convergence: Weighted vs Unweighted\") subtitle(\"Germany 1950 - 2015\") ///\n       ytitle(\"Coefficient of variation\") xtitle(\"Year\") ///\n       legend(label(1 \"Population-weighted CV\") label(2 \"Unweighted CV\"))"
   },
   {
     "objectID": "labs/sigma-convergence.html#relationship-with-beta-convergence",
     "href": "labs/sigma-convergence.html#relationship-with-beta-convergence",
-    "title": "Sigma Convergence",
+    "title": "Sigma-Convergence",
     "section": "Relationship with Beta Convergence",
-    "text": "Relationship with Beta Convergence\nBeta (\\(\\beta\\)) convergence is necessary but not sufficient for sigma convergence. Mathematically, this relationship can be expressed as:\n\\[\\sigma_{t+1}^2 = (1-\\beta)^2\\sigma_t^2 + \\sigma_{\\varepsilon}^2\\]\nWhere: - \\(\\beta\\) is the beta convergence coefficient - \\(\\sigma_{\\varepsilon}^2\\) is the variance of random shocks\nThis equation shows that even with strong beta convergence (high \\(\\beta\\)), sigma convergence may not occur if random shocks (\\(\\sigma_{\\varepsilon}^2\\)) are sufficiently large."
+    "text": "Relationship with Beta Convergence\nBeta (\\(\\beta\\)) convergence is necessary but not sufficient for sigma-convergence. Mathematically, this relationship can be expressed as:\n\\[\\sigma_{t+1}^2 = (1-\\beta)^2\\sigma_t^2 + \\sigma_{\\varepsilon}^2\\]\nWhere: - \\(\\beta\\) is the beta convergence coefficient - \\(\\sigma_{\\varepsilon}^2\\) is the variance of random shocks\nThis equation shows that even with strong beta convergence (high \\(\\beta\\)), sigma-convergence may not occur if random shocks (\\(\\sigma_{\\varepsilon}^2\\)) are sufficiently large."
   },
   {
     "objectID": "labs/Lab-hints-graphs.html",

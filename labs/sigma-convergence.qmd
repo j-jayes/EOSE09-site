@@ -1,5 +1,5 @@
 ---
-title: "Sigma Convergence"
+title: "Sigma-Convergence"
 author: Jonathan Jayes
 date: today
 format:
@@ -14,11 +14,11 @@ execute:
 image: "Lab-1-resources/preview_exercises.png"
 ---
 
-I received a request to calculate and plot sigma convergence for Sweden using Stata.
+I received a request to calculate and plot sigma-convergence for Sweden using Stata.
 
 For a bit of background, from your textbook, the chapter called "From Empire to Republic" by Max-Stephan Schulze, we have the following:
 
-> One way to think about regional inequality is in terms of so-called sigmaconvergence, i.e. a reduction over time in the dispersion of per capita income (or output) levels across regions (Barro and Sala-i-Martin 1991; Sala-i-Martin 1996). A typical measure of sigma-convergence is the population-weighted coefficient of variation. A decline in the coefficient is indicative of a reduction in regional income dispersion. Figure 3.1.1 shows two alternative measures: one that covers all years in the range and where Lower Austria includes Vienna (CV); the other where Lower Austria and Vienna are treated as separate NUTS 2 units (CV II)
+> One way to think about regional inequality is in terms of so-called sigma-convergence, i.e. a reduction over time in the dispersion of per capita income (or output) levels across regions (Barro and Sala-i-Martin 1991; Sala-i-Martin 1996). A typical measure of sigma-convergence is the population-weighted coefficient of variation. A decline in the coefficient is indicative of a reduction in regional income dispersion. Figure 3.1.1 shows two alternative measures: one that covers all years in the range and where Lower Austria includes Vienna (CV); the other where Lower Austria and Vienna are treated as separate NUTS 2 units (CV II)
 
 ![Figure 3.1.1](Lab-2-resources/sigma-1.png)
 
@@ -66,7 +66,7 @@ We can calculate this in Stata using the following code:
 #| eval: false
 #| echo: true
 
-# For population-weighted sigma convergence
+# For population-weighted sigma-convergence
 # Step 1: Calculate population weights for each region in each year
 bysort year: egen total_pop_year = sum(regional_population)
 gen pop_weight = regional_population / total_pop_year
@@ -88,14 +88,14 @@ gen w_cv_gdp = w_sd_gdp / w_mean_gdp
 
 It is a stylistic choice to plot the coefficient of variation as a line graph with points, and to add a linear trend line to show the overall trend. This is done with the `twoway` command in Stata. You can also just use a scatter plot and a line of best fit if you prefer.
 
-When plotting this over time, a downward trend in w_cv_gdp would indicate sigma convergence (decreasing inequality), while an upward trend would indicate sigma divergence (increasing inequality).
+When plotting this over time, a downward trend in w_cv_gdp would indicate sigma-convergence (decreasing inequality), while an upward trend would indicate sigma divergence (increasing inequality).
 
 ```{r}
 #| eval: false
 #| echo: true
 
 
-# Step 5: Create the weighted sigma convergence plot
+# Step 5: Create the weighted sigma-convergence plot
 twoway (connected w_cv_gdp year, lcolor(blue) mcolor(blue) msymbol(circle)) ///
        (lfit w_cv_gdp year, lcolor(red)) ///
        , title("Population-weighted Sigma-convergence") subtitle("Sweden 1950 - 2015") ///
@@ -103,7 +103,6 @@ twoway (connected w_cv_gdp year, lcolor(blue) mcolor(blue) msymbol(circle)) ///
        legend(label(1 "Annual weighted CV") label(2 "Linear trend"))
 
 ```
-
 
 ![](Lab-2-resources/sigma-2.png)
 
@@ -114,7 +113,6 @@ Finally, we can compare the population-weighted coefficient of variation to the 
 ```{r}
 #| eval: false
 #| echo: true
-
 
 # Step 6: Compare weighted and unweighted measures
 # First calculate the unweighted CV as before
@@ -136,7 +134,7 @@ twoway (connected w_cv_gdp year, lcolor(blue) mcolor(blue) msymbol(circle)) ///
 
 ## Relationship with Beta Convergence
 
-Beta ($\beta$) convergence is necessary but not sufficient for sigma convergence. Mathematically, this relationship can be expressed as:
+Beta ($\beta$) convergence is necessary but not sufficient for sigma-convergence. Mathematically, this relationship can be expressed as:
 
 $$\sigma_{t+1}^2 = (1-\beta)^2\sigma_t^2 + \sigma_{\varepsilon}^2$$
 
@@ -144,4 +142,4 @@ Where:
 - $\beta$ is the beta convergence coefficient
 - $\sigma_{\varepsilon}^2$ is the variance of random shocks
 
-This equation shows that even with strong beta convergence (high $\beta$), sigma convergence may not occur if random shocks ($\sigma_{\varepsilon}^2$) are sufficiently large.
+This equation shows that even with strong beta convergence (high $\beta$), sigma-convergence may not occur if random shocks ($\sigma_{\varepsilon}^2$) are sufficiently large.

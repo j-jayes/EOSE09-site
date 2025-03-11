@@ -9,7 +9,7 @@
 <meta name="author" content="Jonathan Jayes">
 <meta name="dcterms.date" content="2025-03-11">
 
-<title>Sigma Convergence – EOSE09</title>
+<title>Sigma-Convergence – EOSE09</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -197,7 +197,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Sigma Convergence</h1>
+<h1 class="title">Sigma-Convergence</h1>
 </div>
 
 
@@ -226,10 +226,10 @@ window.Quarto = {
 </header>
 
 
-<p>I received a request to calculate and plot sigma convergence for Sweden using Stata.</p>
+<p>I received a request to calculate and plot sigma-convergence for Sweden using Stata.</p>
 <p>For a bit of background, from your textbook, the chapter called “From Empire to Republic” by Max-Stephan Schulze, we have the following:</p>
 <blockquote class="blockquote">
-<p>One way to think about regional inequality is in terms of so-called sigmaconvergence, i.e.&nbsp;a reduction over time in the dispersion of per capita income (or output) levels across regions (Barro and Sala-i-Martin 1991; Sala-i-Martin 1996). A typical measure of sigma-convergence is the population-weighted coefficient of variation. A decline in the coefficient is indicative of a reduction in regional income dispersion. Figure 3.1.1 shows two alternative measures: one that covers all years in the range and where Lower Austria includes Vienna (CV); the other where Lower Austria and Vienna are treated as separate NUTS 2 units (CV II)</p>
+<p>One way to think about regional inequality is in terms of so-called sigma-convergence, i.e.&nbsp;a reduction over time in the dispersion of per capita income (or output) levels across regions (Barro and Sala-i-Martin 1991; Sala-i-Martin 1996). A typical measure of sigma-convergence is the population-weighted coefficient of variation. A decline in the coefficient is indicative of a reduction in regional income dispersion. Figure 3.1.1 shows two alternative measures: one that covers all years in the range and where Lower Austria includes Vienna (CV); the other where Lower Austria and Vienna are treated as separate NUTS 2 units (CV II)</p>
 </blockquote>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -267,7 +267,7 @@ window.Quarto = {
 </ul>
 <p>We can calculate this in Stata using the following code:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For population-weighted sigma convergence</span></span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For population-weighted sigma-convergence</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Calculate population weights for each region in each year</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>bysort year<span class="sc">:</span> egen total_pop_year <span class="ot">=</span> <span class="fu">sum</span>(regional_population)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>gen pop_weight <span class="ot">=</span> regional_population <span class="sc">/</span> total_pop_year</span>
@@ -287,9 +287,9 @@ window.Quarto = {
 <section id="plotting-the-coefficient-of-variation" class="level2">
 <h2 class="anchored" data-anchor-id="plotting-the-coefficient-of-variation">Plotting the coefficient of variation</h2>
 <p>It is a stylistic choice to plot the coefficient of variation as a line graph with points, and to add a linear trend line to show the overall trend. This is done with the <code>twoway</code> command in Stata. You can also just use a scatter plot and a line of best fit if you prefer.</p>
-<p>When plotting this over time, a downward trend in w_cv_gdp would indicate sigma convergence (decreasing inequality), while an upward trend would indicate sigma divergence (increasing inequality).</p>
+<p>When plotting this over time, a downward trend in w_cv_gdp would indicate sigma-convergence (decreasing inequality), while an upward trend would indicate sigma divergence (increasing inequality).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 5: Create the weighted sigma convergence plot</span></span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 5: Create the weighted sigma-convergence plot</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">twoway</span> (connected w_cv_gdp year, <span class="fu">lcolor</span>(blue) <span class="fu">mcolor</span>(blue) <span class="fu">msymbol</span>(circle)) <span class="sc">/</span><span class="er">//</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>       (lfit w_cv_gdp year, <span class="fu">lcolor</span>(red)) <span class="sc">/</span><span class="er">//</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>       , <span class="fu">title</span>(<span class="st">"Population-weighted Sigma-convergence"</span>) <span class="fu">subtitle</span>(<span class="st">"Sweden 1950 - 2015"</span>) <span class="sc">/</span><span class="er">//</span></span>
@@ -319,10 +319,10 @@ window.Quarto = {
 </section>
 <section id="relationship-with-beta-convergence" class="level2">
 <h2 class="anchored" data-anchor-id="relationship-with-beta-convergence">Relationship with Beta Convergence</h2>
-<p>Beta (<span class="math inline">\(\beta\)</span>) convergence is necessary but not sufficient for sigma convergence. Mathematically, this relationship can be expressed as:</p>
+<p>Beta (<span class="math inline">\(\beta\)</span>) convergence is necessary but not sufficient for sigma-convergence. Mathematically, this relationship can be expressed as:</p>
 <p><span class="math display">\[\sigma_{t+1}^2 = (1-\beta)^2\sigma_t^2 + \sigma_{\varepsilon}^2\]</span></p>
 <p>Where: - <span class="math inline">\(\beta\)</span> is the beta convergence coefficient - <span class="math inline">\(\sigma_{\varepsilon}^2\)</span> is the variance of random shocks</p>
-<p>This equation shows that even with strong beta convergence (high <span class="math inline">\(\beta\)</span>), sigma convergence may not occur if random shocks (<span class="math inline">\(\sigma_{\varepsilon}^2\)</span>) are sufficiently large.</p>
+<p>This equation shows that even with strong beta convergence (high <span class="math inline">\(\beta\)</span>), sigma-convergence may not occur if random shocks (<span class="math inline">\(\sigma_{\varepsilon}^2\)</span>) are sufficiently large.</p>
 
 
 </section>
