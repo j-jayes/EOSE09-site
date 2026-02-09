@@ -7,3 +7,4 @@
 
 
 data/*
+**/*.quarto_ipynb
