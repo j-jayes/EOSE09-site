@@ -1,6 +1,6 @@
 ---
 title: "Sigma-Convergence"
-author: Jonathan Jayes
+author: Jonathan Jayes, updated by Nico Meffe
 date: today
 format:
   html:
@@ -14,7 +14,7 @@ execute:
 image: "Lab-1-resources/preview_exercises.png"
 ---
 
-I received a request to calculate and plot sigma-convergence for Sweden using Stata.
+In the past Jonathan received a request to calculate and plot sigma-convergence for Sweden using Stata.  This page shows some information he shared with his students about sigma-convergence in relation to this course.
 
 For a bit of background, from your textbook, the chapter called "From Empire to Republic" by Max-Stephan Schulze, we have the following:
 

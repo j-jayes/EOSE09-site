@@ -14,6 +14,7 @@ format:
     fig-width: 8
     fig-height: 6
     chalkboard: true
+    show-notes: False
 image: "lecture-1-resources/preview.png"
 editor: 
   markdown: 
@@ -43,7 +44,7 @@ update_geom_defaults("point", list(size = 2)) # 2 for full width, 2.5 for half w
 
 ## Purpose
 
-::: columns
+:::::: columns
 ::: {.column width="40%"}
 1.  Get you excited about storytelling with data
 
@@ -60,7 +61,7 @@ update_geom_defaults("point", list(size = 2)) # 2 for full width, 2.5 for half w
 
 [Hans Rosling's *the best stats you've ever seen*](https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen)
 :::
-:::
+::::::
 
 ::: aside
 This is not about the software.
@@ -68,16 +69,16 @@ Rather, it is about the theory behind communicating well with data
 :::
 
 ::: notes
+If you have not seen Hans Rosling's TED talk, I highly recommend it.
+It is a great example of how to tell a story with data.
 
-If you have not seen Hans Rosling's TED talk, I highly recommend it. It is a great example of how to tell a story with data.
-
-Hans Rosling was a Swedish doctor, who was passionate about using data to tell stories. He was a professor of international health at the Karolinska Institute in Stockholm, and he co-founded the Gapminder Foundation that was great at geting policy makers excited about data based decision making.
-
+Hans Rosling was a Swedish doctor, who was passionate about using data to tell stories.
+He was a professor of international health at the Karolinska Institute in Stockholm, and he co-founded the Gapminder Foundation that was great at geting policy makers excited about data based decision making.
 :::
 
 ## Structure
 
-::: columns
+:::::: columns
 ::: {.column width="40%"}
 1.  Improving your maps
 
@@ -97,16 +98,15 @@ Hans Rosling was a Swedish doctor, who was passionate about using data to tell s
 knitr::include_graphics(here::here("lectures", "lecture-1-resources", "overcoming_excel.png"))
 ```
 :::
-:::
+::::::
 
 ::: aside
 A cartoon in the style of Aardman Animations depicting an animatronic computer fighting with a spreadsheet, vibrant green lighting
 :::
 
 ::: notes
-
-Today's lecture will begin with a little addition to the excercises that we worked on yesterday. Then we will talk about Excel as a software, how to tell a story with your data, and we will end with a little demonstration about how to reproduce figures for your own analysis.
-
+Today's lecture will begin with a little addition to the excercises that we worked on yesterday.
+Then we will talk about Excel as a software, how to tell a story with your data, and we will end with a little demonstration about how to reproduce figures for your own analysis.
 :::
 
 ## Everything is a story
@@ -117,13 +117,11 @@ knitr::include_graphics(here::here("lectures", "lecture-1-resources", "abed.PNG"
 ```
 
 ::: notes
-
-This is a line that Abed says to Jeff in one of my favorite TV shows, Comunity.
+This is a line that Abed says to Jeff in the television show Comunity.
 
 Can I get a show of hands, who has seen Community?
 
-In any case, Community's creator Dan Harmon really likes this idea about everything being a story. 
-
+In any case, Community's creator Dan Harmon really likes this idea about everything being a story.
 :::
 
 ## Dan Harmon's Story Circle
@@ -135,13 +133,14 @@ knitr::include_graphics(here::here("lectures", "lecture-1-resources", "story-cir
 ```
 
 ::: notes
+So Dan Harmon also wrote Rick and Morty.
+Can I get a show of hands, who has seen Rick and Morty?
 
-So Dan Harmon also wrote Rick and Morty. Can I get a show of hands, who has seen Rick and Morty?
-
-Great! So Dan Harmon has this idea of the story circle. It is a way to structure a story, demonstrated here with an eight part pie chart showing an example of a Rick and Morty episode.
+Great!
+So Dan Harmon has this idea of the story circle.
+It is a way to structure a story, demonstrated here with an eight part pie chart showing an example of a Rick and Morty episode.
 
 Read the parts of the story circle out loud.
-
 :::
 
 ## Our Story Circle
@@ -168,10 +167,9 @@ Pay a heavy price: Hard to concentrate - relax with an inspiring video
 Return to familiar situation: your projects
 
 Having changed: I hope you learn something.
-
 :::
 
-## {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
+##  {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
 
 ::: {style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;"}
 [Improving your maps]{style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px"}
@@ -179,16 +177,11 @@ Having changed: I hope you learn something.
 <br>
 
 [Legend breaks]{style="font-size: 60px; font-weight: bold;"}
-
 :::
 
 ## Recap from Lab 1 exercises
 
-<blockquote>
-
-Make a map of the share of employment in industry in the year 2010 across the whole dataset
-
-</blockquote>
+<blockquote>Make a map of the share of employment in industry in the year 2010 across the whole dataset</blockquote>
 
 ## Recap from Lab 1 exercises
 
@@ -198,19 +191,16 @@ library(countdown)
 countdown(minutes = 1, seconds = 0, play_sound = TRUE)
 ```
 
-
 <br>
 
-:::: columns
+::::: columns
 ::: {.column width="50%"}
-
 ```{r}
 knitr::include_graphics(here::here("lectures", "lecture-1-resources", "stata_1.png"))
 ```
-
 :::
-::: {.column width="50%"}
 
+::: {.column width="50%"}
 Discuss with your neighbour:
 
 -   What do we like?
@@ -232,99 +222,86 @@ spmap employment_share_industry using "nutscoord.dta"
 	label(1 "No Data")) 
 	ndfcolor(gray) ndocolor(white ..) ndsize(0.02 ..)
 ```
-
 :::
-::::
+:::::
 
 ::: notes
+So I am going to ask you to turn to your neighbour, and discuss what you like about this map, and what is confusing about it.
 
-So I am going to ask you to turn to your neighbour, and discuss what you like about this map, and what is confusing about it. 
+You should hear a sound when the time is up.
+I'm really proud of the countdown timer and the sound in the slides and will be very sad if it doesn't work, but if it doesn't, I'll just shout.
 
-You should hear a sound when the time is up. I'm really proud of the countdown timer and the sound in the slides and will be very sad if it doesn't work, but if it doesn't, I'll just shout.
-
-Okay - what do we think? Feel free to raise your hands if you want to report back.
-
+Okay - what do we think?
+Feel free to raise your hands if you want to report back.
 :::
 
 ## Let's plot the distribution of the data
 
 <br>
 
-:::: columns
+::::: columns
 ::: {.column width="50%"}
-
 ```{r}
 knitr::include_graphics(here::here("lectures", "lecture-1-resources", "stata_1_2.png"))
 ```
-
 :::
-::: {.column width="50%"}
 
+::: {.column width="50%"}
 ```{r}
 #| echo: true
 #| eval: false
 histogram employment_share_industry if year == 2010, 
   color(midblue)
 ```
-
 :::
-::::
+:::::
 
 ::: notes
-
-So in Stata we can make a histogram of our data with the hisogram command. This allows us to see the distribution of the data - for each region in the dataset, we look what the value is of regional share of employment in industry, and we count that value and add it to the bin. 
+So in Stata we can make a histogram of our data with the hisogram command.
+This allows us to see the distribution of the data - for each region in the dataset, we look what the value is of regional share of employment in industry, and we count that value and add it to the bin.
 
 Here we can see that all of the data lies between about 0.08 and .4 - in percentage terms that means that the share of employment in industry is between 8 and 40 percent in 2010 across our dataset.
-
 :::
-
 
 ## Let's plot the distribution of the data
 
 <br>
 
-:::: columns
+::::: columns
 ::: {.column width="50%"}
-
 ```{r}
 knitr::include_graphics(here::here("lectures", "lecture-1-resources", "stata_2.png"))
 ```
-
 :::
-::: {.column width="50%"}
 
+::: {.column width="50%"}
 ```{r}
 #| echo: true
 #| eval: false
 kdensity employment_share_industry if year == 2010
 ```
-
 :::
-::::
+:::::
 
 ::: notes
-
-We can also use what is called a kernel density plot to show the distribution of the data. This is a smoothed version of the histogram, where we can see the distribution of the data in a more continuous way.
+We can also use what is called a kernel density plot to show the distribution of the data.
+This is a smoothed version of the histogram, where we can see the distribution of the data in a more continuous way.
 
 What can we say about the shape of the distribution?
-
 :::
-
 
 ## Now let's make breaks based on this information
 
 <br>
 
-:::: columns
+::::: columns
 ::: {.column width="50%"}
-
 ```{r}
 knitr::include_graphics(here::here("lectures", "lecture-1-resources", "stata_3.png"))
 ```
-
 :::
-::: {.column width="50%"}
 
+::: {.column width="50%"}
 ```{r}
 #| echo: true
 #| eval: false
@@ -343,18 +320,16 @@ spmap employment_share_industry using "nutscoord.dta"
 	ndfcolor(gray) ndocolor(white ..) ndsize(0.02 ..)
 	
 ```
-
 :::
-::::
+:::::
 
 ::: notes
-
-Here instead of using the breaks covering all the way from zero to 100 percent, we trim the breaks to cover the range of the data, in this case from zero to 45 percent, which we break up into six bins. 
+Here instead of using the breaks covering all the way from zero to 100 percent, we trim the breaks to cover the range of the data, in this case from zero to 45 percent, which we break up into six bins.
 
 Now it is much more clear that in Paris, Copenagen, Oslo and Stockholm, there are relatively few people working in industry, (and we know that the majority work in services).
 
-In contrast, in Northern Italy, as we spoke about yesterday, there is a strong industrial base. In the Basque country, there is a strong industrial base around Bilbao. 
-
+In contrast, in Northern Italy, as we spoke about yesterday, there is a strong industrial base.
+In the Basque country, there is a strong industrial base around Bilbao.
 :::
 
 ## Colour scales
@@ -363,25 +338,16 @@ Uses of color in data visualization
 
 . . .
 
-<table style = "border: none; line-height: 2.5;">
-<tr style = "background: white;">
-<td style = "text-align: left; width: 50%;">
-1. Distinguish categories (qualitative)
-</td>
-<td>
-<img src = "lecture-1-resources/qualitative.png" width = 100% style = "text-align: right; vertical-align: middle"></img>
-</td>
-</tr>
-</table>
+|  |  |
+|:-----------------------------------|------------------------------------|
+| 1\. Distinguish categories (qualitative) | ![](lecture-1-resources/qualitative.png) |
 
 ::: notes
-
 Now we are going to talk about the different types of colour scales that we can use in data visualization.
 
 We looked yesterday at some sequential palettes, like the Blues2 palette that comes standard in Stata.
 
 There are also other type, including qualitative palettes, which are used to distinguish between different categories.
-
 :::
 
 ## Qualitative scale example
@@ -424,7 +390,6 @@ df %>%
 Palette name: Okabe-Ito
 
 ::: notes
-
 In this graph I have chosen to plot some data about the number of solar panels installed in various Swedish towns, and the installed capacity of those solar panels.
 
 The data isn't important in this case, but we can see that there is a strong linear relationship between the number of solar panels installed and the installed capacity of those solar panels.
@@ -433,8 +398,8 @@ In this case, we might want to distinguish between different counties in Sweden,
 
 We can see that there are both the largest number of panels and the largest installed capacity in Gothenburg, followed by Stockholm and Malmö - which makes sense.
 
-In this instance, we can choose colours that distingish between the different counties, and we can see that the Okabe-Ito palette is a good choice for this. We aren't saying that this town is 'more Skane' than others, so a sequential palette is not appropriate.
-
+In this instance, we can choose colours that distingish between the different counties, and we can see that the Okabe-Ito palette is a good choice for this.
+We aren't saying that this town is 'more Skane' than others, so a sequential palette is not appropriate.
 :::
 
 ## Qualitative scale example
@@ -505,30 +470,13 @@ Palette name: Brewer Dark2
 
 ## Uses of color in data visualization
 
-<table style = "border: none; line-height: 2.5;">
-<tr style = "background: white;">
-<td style = "text-align: left; width: 50%;">
-1. Distinguish categories (qualitative)
-</td>
-<td>
-<img src = "lecture-1-resources/qualitative.png" width = 100% style = "text-align: right; vertical-align: middle"></img>
-</td>
-</tr>
-
-<tr style = "background: white;">
-<td style = "text-align: left;">
-2. Represent numeric values (sequential)
-</td>
-<td>
-<img src = "lecture-1-resources/sequential.png" width = 100% style = "text-align: right; vertical-align: middle"></img>
-</td>
-</tr>
-</table>
+|  |  |
+|:-----------------------------------|------------------------------------|
+| 1\. Distinguish categories (qualitative) | ![](lecture-1-resources/qualitative.png) |
+| 2\. Represent numeric values (sequential) | ![](lecture-1-resources/sequential.png) |
 
 ::: notes
-
 The next palette is a sequential palette, which is used to represent numeric values, or numbers that are ordered in some way.
-
 :::
 
 ## Sequential scale example
@@ -566,8 +514,7 @@ sun_hours %>%
 Palette name: inferno
 
 ::: notes
-
-Here we are looking at the number of hours of sunlight in different cities around the world. 
+Here we are looking at the number of hours of sunlight in different cities around the world.
 
 We can see that in Lund, because we are quite far North, we have very few hours of sunlight in the winter, and a lot of hours of sunlight in the summer.
 
@@ -577,8 +524,8 @@ We can also see that in Cape Town and Livingstone Zambia we have the reverse pat
 
 The inferno sequential palette is a good choice for this data, as it shows the progression of the number of hours of sunlight in a clear way.
 
-For a sequential palette, you want the person looking at your plot to be able to see clearly the progression of the data, as well as which is high and which is low. I think in this case it makes sense to use the brighter end of the scale as high, because we associate it with sunlight - quite neat!!.
-
+For a sequential palette, you want the person looking at your plot to be able to see clearly the progression of the data, as well as which is high and which is low.
+I think in this case it makes sense to use the brighter end of the scale as high, because we associate it with sunlight - quite neat!!.
 :::
 
 ## Sequential scale example
@@ -615,39 +562,14 @@ Palette name: viridis
 
 ## Uses of color in data visualization
 
-<table style = "border: none; line-height: 2.5;">
-<tr style = "background: white;">
-<td style = "text-align: left; width: 50%;">
-1. Distinguish categories (qualitative)
-</td>
-<td>
-<img src = "lecture-1-resources/qualitative.png" width = 100% style = "text-align: right; vertical-align: middle"></img>
-</td>
-</tr>
-
-<tr style = "background: white;">
-<td style = "text-align: left;">
-2. Represent numeric values (sequential)
-</td>
-<td>
-<img src = "lecture-1-resources/sequential.png" width = 100% style = "text-align: right; vertical-align: middle"></img>
-</td>
-</tr>
-
-<tr style = "background: white;">
-<td style = "text-align: left;">
-3. Represent numeric values (diverging)
-</td>
-<td>
-<img src = "lecture-1-resources/diverging.png" width = 100% style = "text-align: right; vertical-align: middle"></img>
-</td>
-</tr>
-</table>
+|  |  |
+|:-----------------------------------|------------------------------------|
+| 1\. Distinguish categories (qualitative) | ![](lecture-1-resources/qualitative.png) |
+| 2\. Represent numeric values (sequential) | ![](lecture-1-resources/sequential.png) |
+| 3\. Represent numeric values (diverging) | ![](lecture-1-resources/diverging.png) |
 
 ::: notes
-
-Next we can talk about a diverging palette, which is used to represent numeric values that are ordered in some way, and we want to know how far each point is away from the midpoint or median value. 
-
+Next we can talk about a diverging palette, which is used to represent numeric values that are ordered in some way, and we want to know how far each point is away from the midpoint or median value.
 :::
 
 ## Diverging scale example
@@ -704,58 +626,24 @@ df %>%
 ```
 
 ::: notes
+In this instance, we are looking at the solar panel data that we had before, this time, just in Stockholm county.
+We want to know how far each point is away from the median value of installed solar capacity in Stockholm county - and we can see that the red values are high, and the blue values are low, while the median is a white colour.
 
-In this instance, we are looking at the solar panel data that we had before, this time, just in Stockholm county. We want to know how far each point is away from the median value of installed solar capacity in Stockholm county - and we can see that the red values are high, and the blue values are low, while the median is a white colour. 
-
-In this case we have a log scale on the y-axis because the data is quite skewed, and we want to be able to see the differences between the points more clearly. So Stockholm city has almost 10X the median installed solar capacity in the county.
-
+In this case we have a log scale on the y-axis because the data is quite skewed, and we want to be able to see the differences between the points more clearly.
+So Stockholm city has almost 10X the median installed solar capacity in the county.
 :::
-
 
 ## Uses of color in data visualization
 
-<table style = "border: none; line-height: 2.5;">
-<tr style = "background: white;">
-<td style = "text-align: left; width: 50%;">
-1. Distinguish categories (qualitative)
-</td>
-<td>
-<img src = "lecture-1-resources/qualitative.png" width = 100% style = "text-align: right; vertical-align: middle;"></img>
-</td>
-</tr>
-
-<tr style = "background: white;">
-<td style = "text-align: left;">
-2. Represent numeric values (sequential)
-</td>
-<td>
-<img src = "lecture-1-resources/sequential.png" width = 100% style = "text-align: right; vertical-align: middle"></img>
-</td>
-</tr>
-
-<tr style = "background: white;">
-<td style = "text-align: left;">
-3. Represent numeric values (diverging)
-</td>
-<td>
-<img src = "lecture-1-resources/diverging.png" width = 100% style = "text-align: right; vertical-align: middle"></img>
-</td>
-</tr>
-
-<tr style = "background: white;">
-<td style = "text-align: left;">
-4. Highlight
-</td>
-<td>
-<img src = "lecture-1-resources/highlight.png" width = 100% style = "text-align: right; vertical-align: middle"></img>
-</td>
-</tr>
-</table>
+|  |  |
+|:-----------------------------------|------------------------------------|
+| 1\. Distinguish categories (qualitative) | ![](lecture-1-resources/qualitative.png) |
+| 2\. Represent numeric values (sequential) | ![](lecture-1-resources/sequential.png) |
+| 3\. Represent numeric values (diverging) | ![](lecture-1-resources/diverging.png) |
+| 4\. Highlight | ![](lecture-1-resources/highlight.png) |
 
 ::: notes
-
 The last type of palette that we are going to talk about is a highlight palette, which is used to highlight a particular point or set of points in a plot where you have a lot of information.
-
 :::
 
 ## Highlight example
@@ -784,9 +672,7 @@ df %>%
   )
 ```
 
-
 ::: notes
-
 In this example, we have information on the share of children born outside of marriage in Europe.
 
 We have a lot of lines, and we are interested in highlighting two countries in order to compare them over time.
@@ -795,10 +681,10 @@ We can see that in Denmark, the share of children born outside of marriage was h
 
 In contrast, in Greece, the share of children born outside of marriage was very low in 1960, and because of the importance of the Orthodox church in Greece, it has remained low throughout the period, only increasing to about 12,5% in 2021.
 
-I did another neat thing here, where I used the markdown in the title to colour the country names in the legend to match the colours of the lines. This way we don't need to have a legend and a title, and we can save some space on the plot. I also used the colours from the flags of the countries, which is a nice touch, if I do say so myself.
-
+I did another neat thing here, where I used the markdown in the title to colour the country names in the legend to match the colours of the lines.
+This way we don't need to have a legend and a title, and we can save some space on the plot.
+I also used the colours from the flags of the countries, which is a nice touch, if I do say so myself.
 :::
-
 
 ## Using density plots to set your legend breaks: quick example
 
@@ -838,11 +724,9 @@ df_lan %>%
 ```
 
 ::: notes
-
 Let's recap quickly, we have a dataset of solar panels in Sweden, and we are interested in the installed capacity of solar panels in different counties in Sweden.
 
 We want to make a choropleth, or a map that is coloured based on the installed capacity of solar panels in each county.
-
 :::
 
 ## How to decide on values for the bins?
@@ -877,22 +761,20 @@ map <- st_read(here::here("lectures", "lecture-1-resources", "maps", "sverige-la
 ```
 
 ::: notes
-
 How do we decide on the values for the bins in our choropleth?
 
 Let's make a histogram of the installed capacity of solar panels in the different counties in Sweden.
 
-We can see the range goes from zero to about 300. 
-
+We can see the range goes from zero to about 300.
 :::
 
 ## Map with appropriate breaks
 
-Ask your neighbour: 
+Ask your neighbour:
 
-1. what kind of palette is this? 
+1.  what kind of palette is this?
 
-2. Is it appropriate to use with this data?
+2.  Is it appropriate to use with this data?
 
 ```{r}
 #| fig-align: center
@@ -923,15 +805,12 @@ df_map %>%
 ```
 
 ::: notes
-
 So have a look at this map that we have created - and tell me what kind of palette is this, and is it appropriate to use with this data?
 
 Let's take 1 minute to discuss with your neighbour.
-
 :::
 
-
-## {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
+##  {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
 
 ::: {style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;"}
 [Improving your maps]{style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px"}
@@ -939,7 +818,6 @@ Let's take 1 minute to discuss with your neighbour.
 <br>
 
 [Great Choropleths]{style="font-size: 60px; font-weight: bold;"}
-
 :::
 
 ## Examples of great maps
@@ -953,19 +831,21 @@ knitr::include_graphics(here::here("lectures", "lecture-1-resources", "ft_italy_
 ```
 
 ::: notes
-This is a map from the FT showing the results of the Italian elections in 2018. You can all get access to the FT through Lund and I think it's a really great resource for data journalism and data visualization.
+This is a map from the FT showing the results of the Italian elections in 2018.
+You can all get access to the FT through Lund and I think it's a really great resource for data journalism and data visualization.
 
 Maps work best when they show an emerging spatial pattern, as was the case with this map from the recent Italian elections.
 
-Showing the winner at municipality level clearly shows the political divisions in the country. In the north, the Northern League party triumphed largely on the back of an anti-immigration and anti-EU agenda. In the south, the anti-establishment Five Star Movement was even more successful, gaining a majority of votes in many areas.
-
+Showing the winner at municipality level clearly shows the political divisions in the country.
+In the north, the Northern League party triumphed largely on the back of an anti-immigration and anti-EU agenda.
+In the south, the anti-establishment Five Star Movement was even more successful, gaining a majority of votes in many areas.
 
 What is also clever as that they have used a column chart in the map in order to help us understand the aggregate vote share for the main parties.
 
-What kind of palette do you think they have used here? Sequential, qualitative or diverging?
+What kind of palette do you think they have used here?
+Sequential, qualitative or diverging?
 
 A: qualitative, because they are showing the winner in each municipality.
-
 :::
 
 ## Examples of great maps
@@ -979,15 +859,15 @@ knitr::include_graphics(here::here("lectures", "lecture-1-resources", "ft_italy_
 ```
 
 ::: notes
+Another interesting take on the results was to show the per cent share of vote.
+This helped to emphasise just how strong the support was for the two parties.
 
-Another interesting take on the results was to show the per cent share of vote. This helped to emphasise just how strong the support was for the two parties.
-
-What kind of palette do you think they have used here? Sequential, qualitative or diverging?
+What kind of palette do you think they have used here?
+Sequential, qualitative or diverging?
 
 A: Sequential, because they are showing the share of the vote in each municipality for two main parties they want to compare.
 
 Another thing I should mention is that they have been quite clever with the legend - you can see here the breaks are in specific places, in oder to best show that the Norhtern League's support is really concentrated in the North, and the Five Star Movement's support is really concentrated in the South and Sicily.
-
 :::
 
 ## Examples of great maps
@@ -1000,17 +880,17 @@ Another thing I should mention is that they have been quite clever with the lege
 knitr::include_graphics(here::here("lectures", "lecture-1-resources", "population_southern_sweden.PNG"))
 ```
 
-
 ::: notes
-
-The other place I really recommend you have a look for inspiration for good data journalism is a website called "The Pudding". They have some really great data visualizations and data journalism pieces, inclduing this one that shows where people live in countries.
+The other place I really recommend you have a look for inspiration for good data journalism is a website called "The Pudding".
+They have some really great data visualizations and data journalism pieces, inclduing this one that shows where people live in countries.
 
 Here i have a screenshow of the map showing the Oresund region, and we can see how centered the population is in Copenagenhagen and Malmo, and how the population density drops off as we move away from the cities to smaller towns.
 
-I will say that this is based on buildings and not people, so it is not a perfect representation of the population, but it is a really interesting way to show where people live in a country. Here you can see the Oresund bridge looks like it has people living on it, but that is not the case in reality. 
+I will say that this is based on buildings and not people, so it is not a perfect representation of the population, but it is a really interesting way to show where people live in a country.
+Here you can see the Oresund bridge looks like it has people living on it, but that is not the case in reality.
 
-Let's have a look at some other places - who has visited Japan before? Compare population growth...
-
+Let's have a look at some other places - who has visited Japan before?
+Compare population growth...
 :::
 
 ## Examples of great maps
@@ -1023,7 +903,7 @@ Let's have a look at some other places - who has visited Japan before? Compare p
 knitr::include_graphics(here::here("lectures", "lecture-1-resources", "map-with-scale.PNG"))
 ```
 
-## {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
+##  {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
 
 ::: {style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;"}
 [Overcoming Excel]{style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px"}
@@ -1031,7 +911,6 @@ knitr::include_graphics(here::here("lectures", "lecture-1-resources", "map-with-
 <br>
 
 [Motivation]{style="font-size: 60px; font-weight: bold;"}
-
 :::
 
 ## Overcoming Excel
@@ -1118,7 +997,7 @@ tribble(
 
 ### Takeaways:
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 1.  You will likely use Excel in the future 📊
 
@@ -1128,13 +1007,10 @@ tribble(
 :::
 
 ::: {.column width="50%"}
-
-
-
 :::
-:::
+:::::
 
-## {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
+##  {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
 
 ::: {style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;"}
 [Overcoming Excel]{style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px"}
@@ -1142,9 +1018,7 @@ tribble(
 <br>
 
 [Charts]{style="font-size: 60px; font-weight: bold;"}
-
 :::
-
 
 ## Overcoming Excel: Column plot
 
@@ -1167,7 +1041,7 @@ artists <- tibble(
 
 ```
 
-::: columns
+:::::: columns
 ::: {.column width="30%"}
 -   We often encounter datasets containing simple amounts 🤏
 
@@ -1206,9 +1080,8 @@ artists %>%
 ```
 
 <!-- ::: -->
-
 :::
-:::
+::::::
 
 ## Your turn
 
@@ -1291,7 +1164,7 @@ knitr::include_graphics(here::here("lectures", "lecture-1-resources", "excel_4.p
 
 ### Titles and captions have different application areas
 
-:::: columns
+:::::: columns
 ::: {.column width="45%"}
 ```{r}
 #| fig-align: center
@@ -1344,7 +1217,7 @@ artists %>%
     )
 ```
 :::
-::::
+::::::
 
 ## We can use dots instead of bars
 
@@ -1522,7 +1395,7 @@ df %>%
   )
 ```
 
-## {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
+##  {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
 
 ::: {style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;"}
 [Overcoming Excel]{style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px"}
@@ -1530,12 +1403,11 @@ df %>%
 <br>
 
 [Tables]{style="font-size: 60px; font-weight: bold;"}
-
 :::
 
 ## Overcoming Excel: Tables
 
-:::: columns
+:::::: columns
 ::: {.column width="30%"}
 -   We often encounter datasets containing simple amounts 🤏
 
@@ -1548,7 +1420,6 @@ df %>%
 :::
 
 ::: {.column width="60%"}
-
 ```{r}
 artists %>%
   gt() %>%
@@ -1570,9 +1441,8 @@ artists %>%
   ) %>%
   as_raw_html(inline_css = TRUE)
 ```
-
 :::
-::::
+::::::
 
 ## Your turn again
 
@@ -1593,14 +1463,13 @@ Discuss with your neighbour:
 
 -   What is confusing?
 
-## {background-color="FFFFFF"}
+##  {background-color="FFFFFF"}
 
-:::: columns
+:::::: columns
 ::: {.column width="10%"}
 :::
 
 ::: {.column width="80%"}
-
 ```{r}
 
 table_rules <- tribble(
@@ -1629,18 +1498,16 @@ table_rules %>%
   as_raw_html(inline_css = TRUE)
 
 ```
-
 :::
 
 ::: {.column width="10%"}
 :::
-::::
+::::::
 
 ## Let's apply these rules
 
-:::: columns
+::::: columns
 ::: {.column width="60%"}
-
 ```{r}
 countdown(minutes = 1, seconds = 30, play_sound = TRUE)
 
@@ -1658,11 +1525,9 @@ table_rules %>%
   as_raw_html(inline_css = TRUE)
 
 ```
-
 :::
 
 ::: {.column width="40%"}
-
 ```{r}
 #| fig-align: center
 #| fig-cap: "Table A"
@@ -1676,15 +1541,13 @@ knitr::include_graphics(here::here("lectures", "lecture-1-resources", "excel_tab
 
 knitr::include_graphics(here::here("lectures", "lecture-1-resources", "excel_tab_3.png"))
 ```
-
 :::
-::::
+:::::
 
 ## Let's apply these rules
 
-:::: columns
+::::: columns
 ::: {.column width="60%"}
-
 ```{r}
 countdown(minutes = 1, seconds = 30, play_sound = TRUE)
 
@@ -1702,7 +1565,6 @@ table_rules %>%
   as_raw_html(inline_css = TRUE)
 
 ```
-
 :::
 
 ::: {.column width="40%"}
@@ -1713,20 +1575,16 @@ table_rules %>%
 knitr::include_graphics(here::here("lectures", "lecture-1-resources", "excel_tab_4.png"))
 ```
 
-
 ```{r}
 #| fig-align: center
 #| fig-cap: "Table D"
 
 knitr::include_graphics(here::here("lectures", "lecture-1-resources", "excel_tab_5.png"))
 ```
-
-
 :::
-::::
+:::::
 
-
-## {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
+##  {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
 
 ::: {style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;"}
 [Storytelling with data]{style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px"}
@@ -1734,14 +1592,13 @@ knitr::include_graphics(here::here("lectures", "lecture-1-resources", "excel_tab
 <br>
 
 [Related time series]{style="font-size: 60px; font-weight: bold;"}
-
 :::
 
 ## Plotting related time series
 
 Dataset: Fertility and births outside of marriage in Denmark and Greece.
 
-Default choice for plotting is two line plots 
+Default choice for plotting is two line plots
 
 ```{r}
 df <- read.csv(here::here("lectures", "lecture-1-resources", "df_denmark_greece.csv")) %>% as_tibble()
@@ -1779,9 +1636,8 @@ df %>%
 
 <br>
 
-:::: columns
+::::: columns
 ::: {.column width="60%"}
-
 ```{r}
 df %>%
   # gives meaningful variable names
@@ -1806,23 +1662,20 @@ df %>%
   ggthemes::theme_pander(base_size = 17) +
   theme(legend.position = "bottom")
 ```
-
 :::
 
 ::: {.column width="40%"}
-
 ### Pros 👍
 
-- Familiar
+-   Familiar
 
 ### Cons 👎
 
-- Hard to keep track of each series
+-   Hard to keep track of each series
 
-- Difficult to compare movements across short periods
-
+-   Difficult to compare movements across short periods
 :::
-::::
+:::::
 
 ## An alternative: time on a third axis
 
@@ -1864,14 +1717,12 @@ df %>%
 
 ```
 
-
 ## What have we learned?
 
 <br>
 
-:::: columns
+::::: columns
 ::: {.column width="60%"}
-
 ```{r}
 #| fig-align: center
 
@@ -1907,28 +1758,25 @@ df %>%
   )
 
 ```
-
 :::
+
 ::: {.column width="40%"}
+-   Both countries saw a large drop in fertility from the 1960s until the 1980s
 
-- Both countries saw a large drop in fertility from the 1960s until the 1980s
+-   In Denmark, after 1970 we see an increase in the share of children born outside of marriage
 
-- In Denmark, after 1970 we see an increase in the share of children born outside of marriage
+-   In contrast, Greek families have relatively few children outside of marriage.
 
-- In contrast, Greek families have relatively few children outside of marriage.
-
-- After 1990, Danish fertility increased from 1.3 to 1.8, while Greek fertility remained at 'lowest-low' levels, below replacement.
-
+-   After 1990, Danish fertility increased from 1.3 to 1.8, while Greek fertility remained at 'lowest-low' levels, below replacement.
 :::
-::::
+:::::
 
 ## What have we changed?
 
 <br>
 
-:::: columns
+::::: columns
 ::: {.column width="60%"}
-
 ```{r}
 #| fig-align: center
 
@@ -1965,22 +1813,20 @@ df %>%
   )
 
 ```
-
 :::
+
 ::: {.column width="40%"}
+-   Indicators on the x- and y-axis and then show time with text labels
 
-- Indicators on the x- and y-axis and then show time with text labels
+-   Legend is replaced with colour coded title
 
-- Legend is replaced with colour coded title
+-   Colours have meaning (main colour of country flag)
 
-- Colours have meaning (main colour of country flag)
-
-- Percentage labels on the y-axis
-
+-   Percentage labels on the y-axis
 :::
-::::
+:::::
 
-## {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
+##  {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
 
 ::: {style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;"}
 [Storytelling with data]{style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px"}
@@ -1988,12 +1834,11 @@ df %>%
 <br>
 
 [Giving context]{style="font-size: 60px; font-weight: bold;"}
-
 :::
 
 ## Giving context
 
-Sometimes we may want to show a particular series of data in its correct context. 
+Sometimes we may want to show a particular series of data in its correct context.
 
 For instance, in our line graph above which showed the evolution of the share of births outside of marriage in **Denmark and Greece**, we might want to know if these two represent the **extremes** within Europe.
 
@@ -2141,14 +1986,12 @@ df %>%
   )
 ```
 
-
 ## What have we changed?
 
 <br>
 
-:::: columns
+::::: columns
 ::: {.column width="60%"}
-
 ```{r}
 #| fig-align: center
 df %>%
@@ -2170,22 +2013,20 @@ df %>%
   )
 
 ```
-
 :::
+
 ::: {.column width="40%"}
+-   Shows each of the series
 
-- Shows each of the series
+-   We can see that Denmark is a leader in the beginning, but is caught up by other nations
 
-- We can see that Denmark is a leader in the beginning, but is caught up by other nations
+-   Does not hide outliers
 
-- Does not hide outliers
-
-- Makes clear the trends in your countries of interest
-
+-   Makes clear the trends in your countries of interest
 :::
-::::
+:::::
 
-## {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
+##  {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
 
 ::: {style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #69b1e9; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;"}
 [Storytelling with data]{style="font-size: 120px; font-weight: bold; line-height: 1em; margin: 0px"}
@@ -2193,7 +2034,6 @@ df %>%
 <br>
 
 [Tips for polished figures]{style="font-size: 60px; font-weight: bold;"}
-
 :::
 
 ## Tips for polishing your figures
@@ -2255,28 +2095,30 @@ df %>%
 
 <br>
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/TVCFedRgg5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/TVCFedRgg5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+</iframe>
 
 ## You pay a heavy price
 
-<iframe width="1300" height="700" src="https://www.youtube.com/embed/5Zg-C8AAIGg?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1300" height="700" src="https://www.youtube.com/embed/5Zg-C8AAIGg?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+</iframe>
 
 ## Additional data demo
 
 <br>
 
-::: {.columns}
-::: {.column}
-
+::::: columns
+::: column
 ```{r}
 knitr::include_url("https://j-jayes.github.io/EOSE09-site/resources/Additional-map-data.html")
 ```
-
 :::
-::: {.column}
 
+::: column
 ```{r}
 knitr::include_url("https://j-jayes.github.io/EOSE09-site/resources/dose-demo.html")
 ```
 :::
-:::
+:::::
