@@ -4,6 +4,7 @@ title-slide-attributes:
   data-background-image: "lecture-1-resources/preview.png"
   data-background-size: "30%"
   data-background-opacity: "0.6"
+  
 format: 
   revealjs:
     code-overflow: wrap
@@ -14,7 +15,8 @@ format:
     fig-width: 8
     fig-height: 6
     chalkboard: true
-    show-notes: False
+    show-notes: false
+    
 image: "lecture-1-resources/preview.png"
 editor: 
   markdown: 
@@ -46,9 +48,11 @@ update_geom_defaults("point", list(size = 2)) # 2 for full width, 2.5 for half w
 
 :::::: columns
 ::: {.column width="40%"}
-1.  Get you excited about storytelling with data
+1.  The importance of storytelling with data.
 
-2.  Show some tips and tricks to make your maps and charts pop
+2.  Get you excited about storytelling with data
+
+3.  Show some tips and tricks to make your maps and charts pop
 :::
 
 ::: {.column width="10%"}
@@ -109,20 +113,151 @@ Today's lecture will begin with a little addition to the excercises that we work
 Then we will talk about Excel as a software, how to tell a story with your data, and we will end with a little demonstration about how to reproduce figures for your own analysis.
 :::
 
-## Everything is a story
+## The importance of a good story
+
+:::::: columns
+::: {.column width="45%"}
+<div style="text-align: center;">
+```{r}
+#| fig-align: center
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "Ignaz_Semmelweis.PNG"))
+```
+
+| Ignaz Semmelweis
+| (1818-1865)
+</div>
+:::
+::: {.column width="10%"}
+:::
+::: {.column width="45%"}
+<div style="text-align: center;">
+```{r}
+#| fig-align: center
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "Florence_Nightingale.png"))
+```
+
+| Florence Nightingale
+| (1830 - 1910)
+</div>
+:::
+::::::
+
+
+
+::: aside
+This example about story telling with data -including images and graphics- comes from *Effective Data Storytelling* by Brent Dykes (2020).
+:::
+
+
+
+::: notes
+Who recognizes Ignaz Semmelweis - sorry for the pronounciation- and who recognizes Florence Nigthengale?
+
+Now let me tell you why.
+
+Begin story.....
+:::
+
+
+## A mystery in the maternity ward
+
 
 ```{r}
 #| fig-align: center
-knitr::include_graphics(here::here("lectures", "lecture-1-resources", "abed.PNG"))
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "Childbed_mortality_dr_midwives.PNG"))
+```
+
+
+
+::: notes
+- higher deaths
+...
+- can you guess why?
+...
+- friend died in morgue...
+:::
+
+
+## An answer!?
+
+
+```{r}
+#| fig-align: center
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "Semmelweis_findings.png"))
+```
+
+
+
+::: notes
+- Can you guess why now?
+No, let me tell you more about the experiments...
+:::
+
+## Now?
+
+
+```{r}
+#| fig-align: center
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "Nightingale_pamphlet.png"))
+```
+
+
+::: notes
+- first XXXXXXXXXXX
+- first female member or Royal XXXXXXX
+
+:::
+
+
+
+## How about now?
+
+
+```{r}
+#| fig-align: center
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "Semmelweis_results_different_1.png"))
 ```
 
 ::: notes
-This is a line that Abed says to Jeff in the television show Comunity.
 
-Can I get a show of hands, who has seen Community?
-
-In any case, Community's creator Dan Harmon really likes this idea about everything being a story.
 :::
+
+## How about now?
+
+
+```{r}
+#| fig-align: center
+knitr::include_graphics(here::here("lectures", "lecture-1-resources", "Semmelweis_results_different_2.png"))
+```
+
+
+::: notes
+
+:::
+
+
+## Critical thinking
+
+
+```{r}
+#| fig-align: center
+#| out-width: 90%
+knitr::include_graphics(
+  here::here("lectures", "lecture-1-resources", 
+             "direct_v_indirect_communication.png")
+)
+```
+::: {.text-center}
+Need to think about what our goals are and who our audience is when we decide how we want to present our findings.
+:::
+
+::: notes
+- there was racism against hungarians vs Nightingale fame
+- his desire for precision and detail vs quick communication.
+
+:::
+
+
 
 ## Dan Harmon's Story Circle
 
