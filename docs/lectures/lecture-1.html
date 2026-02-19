@@ -12,7 +12,7 @@
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
-  <meta name="dcterms.date" content="2026-02-16">
+  <meta name="dcterms.date" content="2026-02-19">
   <title>EOSE09 – Data visualization</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -201,18 +201,18 @@
 
 <section id="title-slide" data-background-image="lecture-1-resources/preview.png" data-background-opacity="0.6" data-background-size="30%" class="quarto-title-block center">
   <h1 class="title">Data visualization</h1>
+  <p class="subtitle">A Jonathan Jayes presentation modified by Nico Meffe</p>
 
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2026-02-16</p>
+  <p class="date">2026-02-19</p>
 </section>
 <section id="purpose" class="slide level2">
 <h2>Purpose</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <ol type="1">
-<li><p>The importance of storytelling with data.</p></li>
 <li><p>Get you excited about storytelling with data</p></li>
 <li><p>Show some tips and tricks to make your maps and charts pop</p></li>
 </ol>
@@ -246,6 +246,7 @@
 <div class="columns">
 <div class="column" style="width:40%;">
 <ol type="1">
+<li><p>The importance of storytelling with data.</p></li>
 <li><p>Improving your maps</p></li>
 <li><p>Overcoming Excel</p></li>
 <li><p>Telling a story with data</p></li>
@@ -266,7 +267,7 @@
 </div></div>
 
 <aside class="notes">
-<p>Today’s lecture will begin with a little addition to the excercises that we worked on yesterday. Then we will talk about Excel as a software, how to tell a story with your data, and we will end with a little demonstration about how to reproduce figures for your own analysis.</p>
+<p>Today’s lecture will begin with a little addition to the exercises that we worked on yesterday. Then we will talk about Excel as a software, how to tell a story with your data, and we will end with a little demonstration about how to reproduce figures for your own analysis.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -317,9 +318,8 @@
 </div></div>
 
 <aside class="notes">
-<p>Who recognizes Ignaz Semmelweis - sorry for the pronounciation- and who recognizes Florence Nigthengale?</p>
+<p>Who recognizes the name or image of: Ignaz Semmelweis - sorry for the pronounciation- and who recognizes Florence Nigthengale?</p>
 <p>Now let me tell you why.</p>
-<p>Begin story…..</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -338,11 +338,9 @@
 <h2>A mystery in the maternity ward</h2>
 
 <img data-src="lecture-1-resources/Childbed_mortality_dr_midwives.png" class="quarto-figure quarto-figure-center r-stretch" width="578"><aside class="notes">
-<ul>
-<li>higher deaths …</li>
-<li>can you guess why? …</li>
-<li>friend died in morgue…</li>
-</ul>
+<p>Semmelweis was appointed to the first assistant to the professor of obstetrics at a Vienna maternity hospital in 1846.</p>
+<p>Many patients were dying of (puerperal) or childbed fever including seemingly healthy women. Expecting women would suddenly become ill and die shortly after birth.</p>
+<p>Semmelweis decided to investigate. At this hopital there was a clinic for training doctors and another for midwives. He noticed a pattern. At this time germs or infections were not known so people thought the issue could be bad air ‘miasma’, overcrowding, cold temperature or delivery methods.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -360,8 +358,16 @@
 
 <img data-src="lecture-1-resources/Semmelweis_findings.png" class="quarto-figure quarto-figure-center r-stretch" width="613"><aside class="notes">
 <ul>
-<li>Can you guess why now? No, let me tell you more about the experiments…</li>
+<li>Can you guess why now?</li>
 </ul>
+<p>Semmelweis had a breakthrough at a terrible price. A friend and teacher died shortly after they were accidently poked by a student’s scapel during an autopsy. His symptoms before dying were similar to the women experiencing childbed fever.</p>
+<p>The training doctors often started their day performing autopsies while the midwives did not. Semmelweis hypothesized that some sort of ‘poisonous’ particles were being transmitted to the mothers from the cadavers in the morgue.</p>
+<p>He found a chemical solution that was able to remove the smell of ‘autopsy tissue’ from the doctors’ hands.</p>
+<p>He experimented with a hand washing policy that dramatically reduced the mortality rate, including some months of 0 deaths!</p>
+<p>Without a theory, however, he was not able to renew his position at the training hospital. Other doctors mocked and critized his ideas.</p>
+<p>Semmelweis even published a book with over 60 tables and NO charts!</p>
+<p>This chart is similar to a modern difference-in-differences approach. It compares the mortality rates of the Dublin Maternity hospital to the one in Vienna before and after <strong>1823</strong>. That was the year the hospital introduced autopsies as part of its practice.</p>
+<p>rebut: AI, tylenol (acetaminophen) are examples of adoption without understanding the mechanism/theory.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -378,10 +384,12 @@
 <h2>Now?</h2>
 
 <img data-src="lecture-1-resources/Nightingale_pamphlet.png" class="quarto-figure quarto-figure-center r-stretch" width="563"><aside class="notes">
-<ul>
-<li>first XXXXXXXXXXX</li>
-<li>first female member or Royal XXXXXXX</li>
-</ul>
+<p>In 1858 Nightingale became the first female Fellow of the Royal Statistical Society in England.</p>
+<p>During the Crimean War (1853-1856) the British public found out about the horrible conditions of woudned soldiers. In response Nightingale led a team of 38 nurses to assist.</p>
+<p>Nightingale fought resistance from male doctors to improve “cleanliness, sanitation, ventilation nutrition, and” other factors. This dropped mortality rates from 42% to 2%!</p>
+<p>When she returned she was a famous national icon and was granted a meeting with Queen Victoria. Nightingale managed to gain permission to investigate the health conditions of the British Army.</p>
+<p>Working with statistician William Farr, she produced this chart to show some of her results. This is called a <strong>polar area diagram</strong> and it was given out in pamphlets to the public and distributed widely. She also did not understand the mechanism, however, she was able to change the policy of the Army in regards to sanitation procedures.</p>
+<p>[ British soldiers aged 20 - 35 had 2X mortality rate of civilians.]</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -398,7 +406,7 @@
 <h2>How about now?</h2>
 
 <img data-src="lecture-1-resources/Semmelweis_results_different_1.png" class="quarto-figure quarto-figure-center r-stretch" width="613"><aside class="notes">
-
+<p>This is a chart that the author of the book Brent Dykes made using Semmelweis’ data.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -415,7 +423,7 @@
 <h2>How about now?</h2>
 
 <img data-src="lecture-1-resources/Semmelweis_results_different_2.png" class="quarto-figure quarto-figure-center r-stretch" width="605"><aside class="notes">
-
+<p>This is the data from the table I showed you that Semmelweis created showing mortality rates for the hospital in Dublin compared to his in Vienna.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -438,7 +446,11 @@
 <ul>
 <li>there was racism against hungarians vs Nightingale fame</li>
 <li>his desire for precision and detail vs quick communication.</li>
+<li>This is a critical thinking skill that requires you to understand your data and what story you are trying to tell.</li>
 </ul>
+<p>Especially outside of academia being able to think about how to convince an audience of a story using visuals is very important. We are more likely to be in the situation of Semmelweis or Nightingale and not necessarily understand the mechanism but wanting to convince a boss of our ideas. This is useful in the private sector, politics or for non-profits. Decisions have to be made even if there is not enough data or understanding.</p>
+<p>With AI eating up coding jobs it is your ability to <em>choose</em> the correct form of storytelling to convince others, but also to enhance your own understanding of a problem. I think the most important skill to take from the project is critical thinking and deciding <em>how</em> to use images to argue.</p>
+<p>Images can often allow people to convince themselves more than you could by talking or writing.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -512,7 +524,7 @@ Make a map of the share of employment in industry in the year 2010 across the wh
 <h2>Recap from Lab 1 exercises</h2>
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_5da4051e" minutes="1" seconds="0" update-every="1" play-sound="true" tabindex="0" style="right:0;bottom:0;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_e6108fa1" minutes="1" seconds="0" update-every="1" play-sound="true" tabindex="0" style="right:0;bottom:0;"></countdown-timer>
 </div>
 </div>
 <p><br></p>
@@ -663,8 +675,8 @@ Make a map of the share of employment in industry in the year 2010 across the wh
 </div></div>
 <aside class="notes">
 <p>Here instead of using the breaks covering all the way from zero to 100 percent, we trim the breaks to cover the range of the data, in this case from zero to 45 percent, which we break up into six bins.</p>
-<p>Now it is much more clear that in Paris, Copenagen, Oslo and Stockholm, there are relatively few people working in industry, (and we know that the majority work in services).</p>
-<p>In contrast, in Northern Italy, as we spoke about yesterday, there is a strong industrial base. In the Basque country, there is a strong industrial base around Bilbao.</p>
+<p>Now it is much more clear that in Paris, Copenhagen, Oslo and Stockholm, there are relatively few people working in industry, (and we know that the majority work in services).</p>
+<p>In contrast, in Northern Italy, as we spoke about last lab, there is a strong industrial base. In the Basque country, there is a strong industrial base around Bilbao.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -922,7 +934,7 @@ Make a map of the share of employment in industry in the year 2010 across the wh
 <p>Dataset: Solar panels in Sweden</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="ixemwwbzzq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="pwubpsgcfu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
   
   
 <table class="gt_table caption-top" data-quarto-bootstrap="false" style="-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 26px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" data-bgcolor="#FFFFFF">
@@ -1036,6 +1048,7 @@ Make a map of the share of employment in industry in the year 2010 across the wh
 <img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-32-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"><aside class="notes">
 <p>So have a look at this map that we have created - and tell me what kind of palette is this, and is it appropriate to use with this data?</p>
 <p>Let’s take 1 minute to discuss with your neighbour.</p>
+<p>-Sequential</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1087,7 +1100,7 @@ Make a map of the share of employment in industry in the year 2010 across the wh
 <p>Another interesting take on the results was to show the per cent share of vote. This helped to emphasise just how strong the support was for the two parties.</p>
 <p>What kind of palette do you think they have used here? Sequential, qualitative or diverging?</p>
 <p>A: Sequential, because they are showing the share of the vote in each municipality for two main parties they want to compare.</p>
-<p>Another thing I should mention is that they have been quite clever with the legend - you can see here the breaks are in specific places, in oder to best show that the Norhtern League’s support is really concentrated in the North, and the Five Star Movement’s support is really concentrated in the South and Sicily.</p>
+<p>Another thing I should mention is that they have been quite clever with the legend - you can see here the breaks are in specific places, in oder to best show that the Norhtern League’s support is really concentrated in the North, and the Five Star Movement’s support is really concentrated in the South and Sicily. [ break at 45 etc. note range is same on both - otherwise difficult to compare]</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1141,6 +1154,8 @@ Make a map of the share of employment in industry in the year 2010 across the wh
 <img data-src="lecture-1_files/figure-revealjs/unnamed-chunk-37-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"><aside class="notes">
 <p>Excel itself is not a bad tool.</p>
 <p>It is very popular! See the info on jobs that require it.</p>
+<p>[ Don’t be worried, remember what I said before, this is not project is not about learning stata, but critical thinking and the ability to communicate data in an effective manner.</p>
+<p>]</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1198,7 +1213,7 @@ Make a map of the share of employment in industry in the year 2010 across the wh
 <!-- ::: {style="all:initial;"} -->
 <div class="cell">
 <div class="cell-output-display">
-<div id="vrrfdfagdi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="fuastidrqs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
   
   
 <table class="gt_table caption-top" data-quarto-bootstrap="false" style="-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 32px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" data-bgcolor="#FFFFFF">
@@ -1256,7 +1271,7 @@ Make a map of the share of employment in industry in the year 2010 across the wh
 <h2>Your turn</h2>
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_46429f4b" minutes="2" seconds="30" update-every="1" play-sound="true" tabindex="0" style="right:0;bottom:0;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_b6bcc992" minutes="2" seconds="30" update-every="1" play-sound="true" tabindex="0" style="right:0;bottom:0;"></countdown-timer>
 </div>
 </div>
 
@@ -1377,7 +1392,7 @@ Make a map of the share of employment in industry in the year 2010 across the wh
 </div><div class="column" style="width:60%;">
 <div class="cell">
 <div class="cell-output-display">
-<div id="izqoifevwr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="tlgpkbtifr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
   
   
 <table class="gt_table caption-top" data-quarto-bootstrap="false" style="-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 32px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" data-bgcolor="#FFFFFF">
@@ -1434,7 +1449,7 @@ Make a map of the share of employment in industry in the year 2010 across the wh
 <h2>Your turn again</h2>
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_ba70e55b" minutes="2" seconds="30" update-every="1" play-sound="true" tabindex="0" style="right:0;bottom:0;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_5bce2455" minutes="2" seconds="30" update-every="1" play-sound="true" tabindex="0" style="right:0;bottom:0;"></countdown-timer>
 </div>
 </div>
 
@@ -1452,7 +1467,7 @@ Make a map of the share of employment in industry in the year 2010 across the wh
 </div><div class="column" style="width:80%;">
 <div class="cell">
 <div class="cell-output-display">
-<div id="umdbhjmvqn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="ojwbzggtjk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
   
   
 <table class="gt_table caption-top" data-quarto-bootstrap="false" style="-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 32px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" data-bgcolor="#FFFFFF">
@@ -1511,10 +1526,10 @@ Make a map of the share of employment in industry in the year 2010 across the wh
 <div class="column" style="width:60%;">
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_98a4631c" minutes="1" seconds="30" update-every="1" play-sound="true" tabindex="0" style="right:0;bottom:0;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_fd748b45" minutes="1" seconds="30" update-every="1" play-sound="true" tabindex="0" style="right:0;bottom:0;"></countdown-timer>
 </div>
 <div class="cell-output-display">
-<div id="ededjxmryt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="xtenhyuyjo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
   
   
 <table class="gt_table caption-top" data-quarto-bootstrap="false" style="-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 32px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" data-bgcolor="#FFFFFF">
@@ -1592,10 +1607,10 @@ Make a map of the share of employment in industry in the year 2010 across the wh
 <div class="column" style="width:60%;">
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_34951a85" minutes="1" seconds="30" update-every="1" play-sound="true" tabindex="0" style="right:0;bottom:0;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_9627603d" minutes="1" seconds="30" update-every="1" play-sound="true" tabindex="0" style="right:0;bottom:0;"></countdown-timer>
 </div>
 <div class="cell-output-display">
-<div id="ngjfteqano" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="aozfkqsotu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
   
   
 <table class="gt_table caption-top" data-quarto-bootstrap="false" style="-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 32px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" data-bgcolor="#FFFFFF">

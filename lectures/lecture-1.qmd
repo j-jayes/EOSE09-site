@@ -1,5 +1,6 @@
 ---
 title: "Data visualization"
+subtitle: "A Jonathan Jayes presentation modified by Nico Meffe"
 title-slide-attributes:
   data-background-image: "lecture-1-resources/preview.png"
   data-background-size: "30%"
@@ -21,7 +22,7 @@ image: "lecture-1-resources/preview.png"
 editor: 
   markdown: 
     wrap: sentence
-date: today
+date: 19 February 2026
 ---
 
 ```{r}
@@ -48,11 +49,10 @@ update_geom_defaults("point", list(size = 2)) # 2 for full width, 2.5 for half w
 
 :::::: columns
 ::: {.column width="40%"}
-1.  The importance of storytelling with data.
 
-2.  Get you excited about storytelling with data
+1.  Get you excited about storytelling with data
 
-3.  Show some tips and tricks to make your maps and charts pop
+2.  Show some tips and tricks to make your maps and charts pop
 :::
 
 ::: {.column width="10%"}
@@ -84,13 +84,15 @@ He was a professor of international health at the Karolinska Institute in Stockh
 
 :::::: columns
 ::: {.column width="40%"}
-1.  Improving your maps
+1. The importance of storytelling with data. 
 
-2.  Overcoming Excel
+2.  Improving your maps
 
-3.  Telling a story with data
+3.  Overcoming Excel
 
-4.  Reproducing figures for publication
+4.  Telling a story with data
+
+5.  Reproducing figures for publication
 :::
 
 ::: {.column width="10%"}
@@ -109,7 +111,7 @@ A cartoon in the style of Aardman Animations depicting an animatronic computer f
 :::
 
 ::: notes
-Today's lecture will begin with a little addition to the excercises that we worked on yesterday.
+Today's lecture will begin with a little addition to the exercises that we worked on yesterday.
 Then we will talk about Excel as a software, how to tell a story with your data, and we will end with a little demonstration about how to reproduce figures for your own analysis.
 :::
 
@@ -151,11 +153,13 @@ This example about story telling with data -including images and graphics- comes
 
 
 ::: notes
-Who recognizes Ignaz Semmelweis - sorry for the pronounciation- and who recognizes Florence Nigthengale?
+Who recognizes the name or image of: Ignaz Semmelweis - sorry for the pronounciation- and who recognizes Florence Nigthengale?
 
 Now let me tell you why.
 
-Begin story.....
+
+
+
 :::
 
 
@@ -170,11 +174,14 @@ knitr::include_graphics(here::here("lectures", "lecture-1-resources", "Childbed_
 
 
 ::: notes
-- higher deaths
-...
-- can you guess why?
-...
-- friend died in morgue...
+
+Semmelweis was appointed to the first assistant to the professor of obstetrics at a Vienna maternity hospital in 1846.
+
+Many patients were dying of (puerperal) or childbed fever including seemingly healthy women.  Expecting women would suddenly become ill and die shortly after birth.
+
+Semmelweis decided to investigate.  At this hopital there was a clinic for training doctors and another for midwives.  He noticed a pattern.  At this time germs or infections were not known so people thought the issue could be bad air 'miasma', overcrowding, cold temperature or delivery methods. 
+
+
 :::
 
 
@@ -190,7 +197,24 @@ knitr::include_graphics(here::here("lectures", "lecture-1-resources", "Semmelwei
 
 ::: notes
 - Can you guess why now?
-No, let me tell you more about the experiments...
+
+Semmelweis had a breakthrough at a terrible price.
+A friend and teacher died shortly after they were accidently poked by a student's scapel during an autopsy.  His symptoms before dying were similar to the women experiencing childbed fever. 
+
+The training doctors often started their day performing autopsies while the midwives did not.  Semmelweis hypothesized that some sort of 'poisonous' particles were being transmitted to the mothers from the cadavers in the morgue.
+
+He found a chemical solution that was able to remove the smell of 'autopsy tissue' from the doctors' hands.
+
+He experimented with a hand washing policy that dramatically reduced the mortality rate, including some months of 0 deaths!
+
+Without a theory, however, he was not able to renew his position at the training hospital. Other doctors mocked and critized his ideas.
+
+Semmelweis even published a book with over 60 tables and NO charts!
+
+This chart is similar to a modern difference-in-differences approach. It compares the mortality rates of the Dublin Maternity hospital to the one in Vienna before and after **1823**.  That was the year the hospital introduced autopsies as part of its practice.
+
+rebut:
+AI, tylenol (acetaminophen) are examples of adoption without understanding the mechanism/theory.
 :::
 
 ## Now?
@@ -203,8 +227,21 @@ knitr::include_graphics(here::here("lectures", "lecture-1-resources", "Nightinga
 
 
 ::: notes
-- first XXXXXXXXXXX
-- first female member or Royal XXXXXXX
+In 1858 Nightingale became the first female Fellow of the Royal Statistical Society in England.
+
+During the Crimean War (1853-1856) the British public found out about the horrible conditions of woudned soldiers.  In response Nightingale led a team of 38 nurses to assist.
+
+ Nightingale fought resistance from male doctors to improve "cleanliness, sanitation, ventilation nutrition, and" other factors.  This dropped mortality rates from 42% to 2%!
+ 
+ When she returned she was a famous national icon and was granted a meeting with Queen Victoria.  Nightingale managed to gain permission to investigate the health conditions of the British Army.
+ 
+ Working with statistician William Farr, she produced this chart to show some of her results.  This is called a **polar area diagram** and it was given out in pamphlets to the public and distributed widely.  She also did not understand the mechanism, however, she was able to change the policy of the Army in regards to sanitation procedures.
+ 
+[
+British soldiers aged 20 - 35 had 2X mortality rate of civilians.
+]
+
+
 
 :::
 
@@ -219,7 +256,7 @@ knitr::include_graphics(here::here("lectures", "lecture-1-resources", "Semmelwei
 ```
 
 ::: notes
-
+This is a chart that the author of the book Brent Dykes made using Semmelweis' data.
 :::
 
 ## How about now?
@@ -232,6 +269,8 @@ knitr::include_graphics(here::here("lectures", "lecture-1-resources", "Semmelwei
 
 
 ::: notes
+This is the data from the table I showed you that Semmelweis created showing mortality rates for the hospital in Dublin compared to his in Vienna. 
+
 
 :::
 
@@ -249,11 +288,19 @@ knitr::include_graphics(
 ```
 ::: {.text-center}
 Need to think about what our goals are and who our audience is when we decide how we want to present our findings.
+
 :::
 
 ::: notes
 - there was racism against hungarians vs Nightingale fame
 - his desire for precision and detail vs quick communication.
+- This is a critical thinking skill that requires you to understand your data and what story you are trying to tell. 
+
+Especially outside of academia being able to think about how to convince an audience of a story using visuals is very important.  We are more likely to be in the situation of Semmelweis or Nightingale and not necessarily understand the mechanism but wanting to convince a boss of our ideas.  This is useful in the private sector, politics or for non-profits.  Decisions have to be made even if there is not enough data or understanding. 
+
+With AI eating up coding jobs it is your ability to *choose* the correct form of storytelling to convince others, but also to enhance your own understanding of a problem.  I think the most important skill to take from the project is critical thinking and deciding *how* to use images to argue. 
+
+Images can often allow people to convince themselves more than you could by talking or writing.
 
 :::
 
@@ -461,9 +508,9 @@ spmap employment_share_industry using "nutscoord.dta"
 ::: notes
 Here instead of using the breaks covering all the way from zero to 100 percent, we trim the breaks to cover the range of the data, in this case from zero to 45 percent, which we break up into six bins.
 
-Now it is much more clear that in Paris, Copenagen, Oslo and Stockholm, there are relatively few people working in industry, (and we know that the majority work in services).
+Now it is much more clear that in Paris, Copenhagen, Oslo and Stockholm, there are relatively few people working in industry, (and we know that the majority work in services).
 
-In contrast, in Northern Italy, as we spoke about yesterday, there is a strong industrial base.
+In contrast, in Northern Italy, as we spoke about last lab, there is a strong industrial base.
 In the Basque country, there is a strong industrial base around Bilbao.
 :::
 
@@ -943,6 +990,8 @@ df_map %>%
 So have a look at this map that we have created - and tell me what kind of palette is this, and is it appropriate to use with this data?
 
 Let's take 1 minute to discuss with your neighbour.
+
+-Sequential
 :::
 
 ##  {background-color="#e99869" background-image="lecture-1-resources/preview.png" background-position="left" background-size="contain"}
@@ -1003,6 +1052,10 @@ Sequential, qualitative or diverging?
 A: Sequential, because they are showing the share of the vote in each municipality for two main parties they want to compare.
 
 Another thing I should mention is that they have been quite clever with the legend - you can see here the breaks are in specific places, in oder to best show that the Norhtern League's support is really concentrated in the North, and the Five Star Movement's support is really concentrated in the South and Sicily.
+[
+break at 45 etc.
+note range is same on both - otherwise difficult to compare
+]
 :::
 
 ## Examples of great maps
@@ -1092,6 +1145,11 @@ Excel itself is not a bad tool.
 
 It is very popular!
 See the info on jobs that require it.
+
+[
+Don't be worried, remember what I said before, this is not project is not about learning stata, but critical thinking and the ability to communicate data in an effective manner. 
+
+]
 :::
 
 ## Overcoming Excel
